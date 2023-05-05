@@ -4,17 +4,22 @@ import armament_dict from "./data/armaments.json";
 type Arm = {
   category: string,
   name: string,
-  weight: number
+  weight: number,
+  setOwned: Setter<boolean>,
+  owned: Accessor<boolean>
 }
 
 let rcategories: { [id: string]: boolean } = {};
 let armaments: Arm[] = Object.keys(armament_dict).map(function (wname) {
   let wpn = armament_dict[wname];
   rcategories[wpn.category] = true
+  const [c, s] = createSignal(false)
   return {
     category: wpn.category,
     name: wpn.name,
-    weight: wpn.weight
+    weight: wpn.weight,
+    setOwned: s,
+    owned: c
   };
 });
 
@@ -46,7 +51,6 @@ const Armament: Component = () => {
     const [c, s] = createSignal(true);
     ncategories[cat] = { cat: c, set: s, name: cat }
   }
-  console.log(ncategories)
 
   return <div>
     <For each={Object.keys(ncategories)}>{(cat) => {
@@ -60,7 +64,14 @@ const Armament: Component = () => {
     </For>
     <ul>
       <For each={armaments}>{(ow) =>
-        <Show when={ncategories[ow.category].cat()}><li>{ow.name}</li></Show>
+        <Show when={ncategories[ow.category].cat()}>
+          <li>
+            <button type="button" class={button_class(ow.owned())} onClick={() => {
+              ow.setOwned(!ow.owned())
+            }}>OW?</button>
+            {ow.name}
+          </li>
+        </Show>
       }</For>
     </ul>
   </div >
