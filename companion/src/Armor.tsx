@@ -1,4 +1,4 @@
-import { Accessor, Component, For, Setter, Show, createSignal, onMount } from "solid-js";
+import { Accessor, For, Setter, Show, createSignal } from "solid-js";
 import armor_dict from "./data/armor.json";
 
 type Armor = {
@@ -16,6 +16,13 @@ type Armor = {
     pierce: number,
     slash: number,
     strike: number
+  },
+  resistances: {
+    focus: number,
+    immunity: number,
+    poise: number,
+    robustness: number,
+    vitality: number
   },
 }
 
@@ -61,7 +68,8 @@ for (let aname of Object.keys(armor_dict)) {
     weight: armor.weight,
     setOwned: s,
     owned: c,
-    absorptions: armor.absorptions
+    absorptions: armor.absorptions,
+    resistances: armor.resistances
   });
 }
 
@@ -88,31 +96,51 @@ function button_class(active: boolean) {
   }
 }
 
-const ACol = (armors: Armor[]) => {
+const ACol = (armors: Armor[], filter: string) => {
   return <div class="btn-group-vertical" role="group">
     <For each={armors}>{(ow) =>
-      <button type="button" class={button_class(ow.owned())} onClick={() => {
-        ow.setOwned(!ow.owned())
-      }}>{ow.name}</button>
+      <Show when={ow.name.toLowerCase().includes(filter.toLowerCase())}>
+        <button type="button" class={button_class(ow.owned())} onClick={() => {
+          ow.setOwned(!ow.owned())
+        }}>{ow.name}</button>
+      </Show>
     }</For>
   </div>
 }
 
-const Armor: Component = () => {
-  return <div class="row align-items-start">
-    <div class="col">
-      {ACol(armors.Head)}
+const set_all_owned = () => {
+  const suball = (arr: Armor[]) => {
+    for (let a of arr) {
+      a.setOwned(true)
+    }
+  }
+  suball(armors.Head)
+  suball(armors.Arms)
+  suball(armors.Body)
+  suball(armors.Legs)
+}
+
+const Armor = (filter: string) => {
+  return <div>
+    <div class="row align-items-start">
+      <button class="btn btn-danger" onClick={set_all_owned}>Set all armors to owned</button>
     </div>
-    <div class="col">
-      {ACol(armors.Arms)}
-    </div>
-    <div class="col">
-      {ACol(armors.Body)}
-    </div>
-    <div class="col">
-      {ACol(armors.Legs)}
-    </div>
+    <div class="row align-items-start">
+      <div class="col">
+        {ACol(armors.Head, filter)}
+      </div>
+      <div class="col">
+        {ACol(armors.Arms, filter)}
+      </div>
+      <div class="col">
+        {ACol(armors.Body, filter)}
+      </div>
+      <div class="col">
+        {ACol(armors.Legs, filter)}
+      </div>
+    </div >
   </div >
 };
 
 export default Armor;
+export { type Armors, armors }
