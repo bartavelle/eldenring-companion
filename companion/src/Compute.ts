@@ -1,5 +1,6 @@
 import Armor, { Armors } from "./Armor";
 import { Weights } from "./WSelector";
+import { ArmorSlots } from "./Common"
 
 type ALst = {
   values: Weights<number>,
@@ -8,10 +9,10 @@ type ALst = {
   weight: number
 }
 
-function prepare_armor(weights: Weights<number>, lst: Armor[]): ALst[] {
+function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string): ALst[] {
   let tmp: ALst[] = [];
   for (let a of lst) {
-    if (!a.owned())
+    if (!a.owned() && a.name !== forced)
       continue;
     const score = weights.absorptions.fire * a.absorptions.fire +
       weights.absorptions.holy * a.absorptions.holy +
@@ -53,7 +54,7 @@ function prepare_armor(weights: Weights<number>, lst: Armor[]): ALst[] {
     if (curel === null) {
       curel = a
     } else {
-      if (curel.weight <= a.weight) {
+      if (a.n !== forced && curel.weight <= a.weight) {
         continue
       }
       out.push(curel)
@@ -88,24 +89,33 @@ function prepare_armor(weights: Weights<number>, lst: Armor[]): ALst[] {
   return out
 }
 
-type Selection = {
-  arms: ALst | null,
-  body: ALst | null,
-  head: ALst | null,
-  legs: ALst | null,
-}
+type Selection = ArmorSlots<ALst | null>
 
-function compute_best(budget: number, weights: Weights<number>, mins: Weights<number>, armors: Armors): Selection {
-  const arms = prepare_armor(weights, armors.Arms)
-  const body = prepare_armor(weights, armors.Body)
-  const head = prepare_armor(weights, armors.Head)
-  const legs = prepare_armor(weights, armors.Legs)
+function compute_best(budget: number, weights: Weights<number>, mins: Weights<number>, armors: Armors, forced: ArmorSlots<string>): Selection {
+  let arms = prepare_armor(weights, armors.Arms, forced.Arms)
+  let body = prepare_armor(weights, armors.Body, forced.Body)
+  let head = prepare_armor(weights, armors.Head, forced.Head)
+  let legs = prepare_armor(weights, armors.Legs, forced.Legs)
+
+  if (forced.Arms !== "Any") {
+    arms = arms.filter((a) => a.n === forced.Arms)
+  }
+  if (forced.Body !== "Any") {
+    body = body.filter((a) => a.n === forced.Body)
+  }
+  if (forced.Head !== "Any") {
+    head = head.filter((a) => a.n === forced.Head)
+  }
+  if (forced.Legs !== "Any") {
+    legs = legs.filter((a) => a.n === forced.Legs)
+  }
+
   let best_score = 0
   let best_selection: Selection = {
-    arms: null,
-    body: null,
-    head: null,
-    legs: null,
+    Arms: null,
+    Body: null,
+    Head: null,
+    Legs: null,
   }
   const reach_minimal = (values: Weights<number>) => {
     return values.absorptions.fire >= mins.absorptions.fire
@@ -128,16 +138,16 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
     if (bw < 0) {
       continue
     }
-    const values = selection_total({ arms: null, body: b, head: null, legs: null }).values
+    const values = selection_total({ Arms: null, Body: b, Head: null, Legs: null }).values
     if (reach_minimal(values)) {
       const curscore = b.score
       if (curscore > best_score) {
         best_score = curscore
         best_selection = {
-          arms: null,
-          body: b,
-          head: null,
-          legs: null
+          Arms: null,
+          Body: b,
+          Head: null,
+          Legs: null
         }
       }
     }
@@ -146,16 +156,16 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
       if (bl < 0) {
         continue
       }
-      const values = selection_total({ arms: null, body: b, head: null, legs: l }).values
+      const values = selection_total({ Arms: null, Body: b, Head: null, Legs: l }).values
       if (reach_minimal(values)) {
         const curscore = b.score + l.score
         if (curscore > best_score) {
           best_score = curscore
           best_selection = {
-            arms: null,
-            body: b,
-            head: null,
-            legs: l
+            Arms: null,
+            Body: b,
+            Head: null,
+            Legs: l
           }
         }
       }
@@ -164,16 +174,16 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
         if (bh < 0) {
           continue
         }
-        const values = selection_total({ arms: null, body: b, head: h, legs: l }).values
+        const values = selection_total({ Arms: null, Body: b, Head: h, Legs: l }).values
         if (reach_minimal(values)) {
           const curscore = b.score + l.score + h.score
           if (curscore > best_score) {
             best_score = curscore
             best_selection = {
-              arms: null,
-              body: b,
-              head: h,
-              legs: l
+              Arms: null,
+              Body: b,
+              Head: h,
+              Legs: l
             }
           }
         }
@@ -182,7 +192,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
           if (ba < 0) {
             continue
           }
-          let values = selection_total({ arms: a, body: b, head: h, legs: l }).values
+          let values = selection_total({ Arms: a, Body: b, Head: h, Legs: l }).values
           if (!reach_minimal(values)) {
             continue
           }
@@ -190,10 +200,10 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
           if (curscore > best_score) {
             best_score = curscore
             best_selection = {
-              arms: a,
-              body: b,
-              head: h,
-              legs: l
+              Arms: a,
+              Body: b,
+              Head: h,
+              Legs: l
             }
           }
           break
@@ -208,17 +218,17 @@ function selection_total(s: Selection): ALst {
   type GF = (a: ALst) => number;
   const v = (getter: GF) => {
     let t = 0
-    if (s.arms !== null) {
-      t += getter(s.arms)
+    if (s.Arms !== null) {
+      t += getter(s.Arms)
     }
-    if (s.body !== null) {
-      t += getter(s.body)
+    if (s.Body !== null) {
+      t += getter(s.Body)
     }
-    if (s.legs !== null) {
-      t += getter(s.legs)
+    if (s.Legs !== null) {
+      t += getter(s.Legs)
     }
-    if (s.head !== null) {
-      t += getter(s.head)
+    if (s.Head !== null) {
+      t += getter(s.Head)
     }
     return t
   }
@@ -252,4 +262,4 @@ function selection_total(s: Selection): ALst {
 }
 
 export default compute_best
-export { type Selection, type ALst, selection_total }
+export { type Selection, type ALst, type ArmorSlots, selection_total }

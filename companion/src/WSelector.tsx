@@ -101,7 +101,7 @@ function eselector(i: string, n: string, s: SPair<number>): JSX.Element {
   let id = i + "_" + n + "_id";
   return <div class="row">
     <label for={id} class="form-label col">{n}</label>
-    <input type="number" class="form-control col" id={id} value={s.access()} onChange={(v) => s.set(parseInt(v.currentTarget.value))} />
+    <input type="number" class="form-control col" id={id} value={s.access()} onChange={(v) => s.set(parseFloat(v.currentTarget.value))} />
   </div>
 }
 
