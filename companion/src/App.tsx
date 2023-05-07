@@ -133,6 +133,7 @@ function App() {
   const [filter, setFilter] = createSignal("")
   const [weightmode, setWeightmode] = createSignal("70%")
   const [totalWeight, setTotalWeight] = createSignal(45)
+  const [extraWeight, setExtraWeight] = createSignal(0)
   const weights = defaultWeights();
   const mins = defaultMins();
   return (
@@ -149,26 +150,25 @@ function App() {
       </div>
 
       <div class="row">
-        {best_calc(weight_budget(weightmode(), totalWeight(), weapons_weight()), weights, mins, armors)}
+        {best_calc(weight_budget(weightmode(), totalWeight(), weapons_weight() + extraWeight()), weights, mins, armors)}
       </div>
 
       <div class="row">
         <div class="col">
-          <label for="filter_input" class="form-label">Filter</label>
-          <input class="form-control" id="filter_input" aria-aria-describedby="filter_help" onInput={(e) => setFilter(e.currentTarget.value)}></input>
-          <div id="filter_help" class="form-text">Type here to quickly select elements</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label for="total_weight" class="form-label">Total weight</label>
-          <input class="form-control" id="total_weight" aria-describedby="total_weight_help" value={totalWeight()}
+          <label for="total_weight" class="form-label">Carrying capacity</label>
+          <input class="form-control" id="total_weight" type="number" aria-describedby="total_weight_help" value={totalWeight()}
             onInput={(e) => setTotalWeight(parseInt(e.currentTarget.value))} />
           <div id="total_weight_help" class="form-text">Total weight you can bear</div>
         </div>
         <div class="col">
+          <label for="extra_weight" class="form-label">Extra weight</label>
+          <input class="form-control" id="extra_weight" type="number" aria-describedby="extra_weight_help" value={extraWeight()}
+            onInput={(e) => setExtraWeight(parseInt(e.currentTarget.value))} />
+          <div id="extra_weight_help" class="form-text">extra weight you can bear</div>
+        </div>
+        <div class="col">
           <label for="wpncweight" class="form-label">Weapons + charms weight</label>
-          <input class="form-control" id="wpncweight" disabled value={weapons_weight()} />
+          <input class="form-control" id="wpncweight" disabled value={weapons_weight() + extraWeight()} />
         </div>
         <div class="col">
           <label for="wmode" class="form-label">Mode</label>
@@ -180,10 +180,17 @@ function App() {
         </div>
         <div class="col">
           <label for="wbudget" class="form-label">Weight budget</label>
-          <input class="form-control" id="wbudget" disabled value={weight_budget(weightmode(), totalWeight(), weapons_weight())} />
+          <input class="form-control" id="wbudget" disabled value={Number(weight_budget(weightmode(), totalWeight(), weapons_weight())).toFixed(1)} />
         </div>
       </div>
       {WeaponSelector(armaments)}
+      <div class="row">
+        <div class="col">
+          <label for="filter_input" class="form-label">Filter</label>
+          <input class="form-control" id="filter_input" aria-aria-describedby="filter_help" onInput={(e) => setFilter(e.currentTarget.value)}></input>
+          <div id="filter_help" class="form-text">Type here to quickly select elements</div>
+        </div>
+      </div>
       <div class="row">
         {Armor(filter())}
       </div >

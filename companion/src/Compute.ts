@@ -107,20 +107,75 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
     head: null,
     legs: null,
   }
+  const reach_minimal = (values: Weights<number>) => {
+    return values.absorptions.fire >= mins.absorptions.fire
+      && values.absorptions.holy >= mins.absorptions.holy
+      && values.absorptions.lightning >= mins.absorptions.lightning
+      && values.absorptions.magic >= mins.absorptions.magic
+      && values.absorptions.physical >= mins.absorptions.physical
+      && values.absorptions.pierce >= mins.absorptions.pierce
+      && values.absorptions.slash >= mins.absorptions.slash
+      && values.absorptions.strike >= mins.absorptions.strike
+      && values.resistances.focus >= mins.resistances.focus
+      && values.resistances.immunity >= mins.resistances.immunity
+      && values.resistances.poise >= mins.resistances.poise
+      && values.resistances.robustness >= mins.resistances.robustness
+      && values.resistances.vitality >= mins.resistances.vitality
+
+  }
   for (let b of body) {
     let bw = budget - b.weight
     if (bw < 0) {
       continue
+    }
+    const values = selection_total({ arms: null, body: b, head: null, legs: null }).values
+    if (reach_minimal(values)) {
+      const curscore = b.score
+      if (curscore > best_score) {
+        best_score = curscore
+        best_selection = {
+          arms: null,
+          body: b,
+          head: null,
+          legs: null
+        }
+      }
     }
     for (let l of legs) {
       let bl = bw - l.weight
       if (bl < 0) {
         continue
       }
+      const values = selection_total({ arms: null, body: b, head: null, legs: l }).values
+      if (reach_minimal(values)) {
+        const curscore = b.score + l.score
+        if (curscore > best_score) {
+          best_score = curscore
+          best_selection = {
+            arms: null,
+            body: b,
+            head: null,
+            legs: l
+          }
+        }
+      }
       for (let h of head) {
         let bh = bl - h.weight
         if (bh < 0) {
           continue
+        }
+        const values = selection_total({ arms: null, body: b, head: h, legs: l }).values
+        if (reach_minimal(values)) {
+          const curscore = b.score + l.score + h.score
+          if (curscore > best_score) {
+            best_score = curscore
+            best_selection = {
+              arms: null,
+              body: b,
+              head: h,
+              legs: l
+            }
+          }
         }
         for (let a of arms) {
           let ba = bh - a.weight
@@ -128,20 +183,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
             continue
           }
           let values = selection_total({ arms: a, body: b, head: h, legs: l }).values
-          if (values.absorptions.fire < mins.absorptions.fire
-            || values.absorptions.holy < mins.absorptions.holy
-            || values.absorptions.lightning < mins.absorptions.lightning
-            || values.absorptions.magic < mins.absorptions.magic
-            || values.absorptions.physical < mins.absorptions.physical
-            || values.absorptions.pierce < mins.absorptions.pierce
-            || values.absorptions.slash < mins.absorptions.slash
-            || values.absorptions.strike < mins.absorptions.strike
-            || values.resistances.focus < mins.resistances.focus
-            || values.resistances.immunity < mins.resistances.immunity
-            || values.resistances.poise < mins.resistances.poise
-            || values.resistances.robustness < mins.resistances.robustness
-            || values.resistances.vitality < mins.resistances.vitality
-          ) {
+          if (!reach_minimal(values)) {
             continue
           }
           const curscore = b.score + l.score + h.score + a.score

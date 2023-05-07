@@ -1,4 +1,4 @@
-import { Accessor, For, Setter, Show, createSignal } from "solid-js";
+import { Accessor, For, Setter, Show, createSignal, onMount } from "solid-js";
 import armor_dict from "./data/armor.json";
 
 type Armor = {
@@ -88,6 +88,39 @@ armors.Arms.sort(sorter)
 armors.Body.sort(sorter)
 armors.Legs.sort(sorter)
 
+
+function save_owned() {
+  let owned_map: { [id: string]: boolean } = {}
+  let update_map = (lst: Armor[]) => {
+    for (let l of lst) {
+      owned_map[l.name] = l.owned()
+    }
+  }
+  update_map(armors.Head)
+  update_map(armors.Arms)
+  update_map(armors.Body)
+  update_map(armors.Legs)
+  localStorage.setItem("armors", JSON.stringify(owned_map))
+}
+
+function load_owned() {
+  let x = localStorage.getItem("armors")
+  if (x === null) {
+    console.log("no previous storage")
+    return
+  }
+  let owned_map: { [id: string]: boolean } = JSON.parse(x)
+  let update_map = (lst: Armor[]) => {
+    for (let l of lst) {
+      l.setOwned(!!owned_map[l.name])
+    }
+  }
+  update_map(armors.Head)
+  update_map(armors.Arms)
+  update_map(armors.Body)
+  update_map(armors.Legs)
+}
+
 function button_class(active: boolean) {
   if (active) {
     return "btn btn-primary"
@@ -102,6 +135,7 @@ const ACol = (armors: Armor[], filter: string) => {
       <Show when={ow.name.toLowerCase().includes(filter.toLowerCase())}>
         <button type="button" class={button_class(ow.owned())} onClick={() => {
           ow.setOwned(!ow.owned())
+          save_owned()
         }}>{ow.name}</button>
       </Show>
     }</For>
@@ -121,10 +155,10 @@ const set_all_owned = () => {
 }
 
 const Armor = (filter: string) => {
+  onMount(async () => {
+    load_owned()
+  })
   return <div>
-    <div class="row align-items-start">
-      <button class="btn btn-danger" onClick={set_all_owned}>Set all armors to owned</button>
-    </div>
     <div class="row align-items-start">
       <div class="col">
         {ACol(armors.Head, filter)}
@@ -139,6 +173,9 @@ const Armor = (filter: string) => {
         {ACol(armors.Legs, filter)}
       </div>
     </div >
+    <div class="row align-items-start">
+      <button class="btn btn-danger" onClick={set_all_owned}>Set all armors to owned</button>
+    </div>
   </div >
 };
 

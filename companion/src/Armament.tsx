@@ -1,4 +1,4 @@
-import { Accessor, For, Setter, Show, createSignal } from "solid-js";
+import { Accessor, For, Setter, Show, createSignal, onMount } from "solid-js";
 import armament_dict from "./data/armaments.json";
 
 type Arm = {
@@ -20,6 +20,26 @@ let armaments: Arm[] = Object.keys(armament_dict).map(function (wname) {
     owned: c
   };
 });
+
+function save_owned() {
+  let owned_map: { [id: string]: boolean } = {}
+  for (let a of armaments) {
+    owned_map[a.name] = a.owned()
+  }
+  localStorage.setItem("armaments", JSON.stringify(owned_map))
+}
+
+function load_owned() {
+  let x = localStorage.getItem("armaments")
+  if (x === null) {
+    console.log("no previous storage")
+    return
+  }
+  let owned_map: { [id: string]: boolean } = JSON.parse(x)
+  for (let a of armaments) {
+    a.setOwned(!!owned_map[a.name])
+  }
+}
 
 armaments.sort((a: Arm, b: Arm) => {
   if (a.category < b.category) {
@@ -44,11 +64,15 @@ function button_class(active: boolean) {
 }
 
 const Armament = (filter: string) => {
+  onMount(async () => {
+    load_owned()
+  })
   return <div>
     <For each={armaments}>{(ow) =>
       <Show when={ow.name.toLowerCase().includes(filter.toLowerCase())}>
         <button type="button" class={button_class(ow.owned())} onClick={() => {
           ow.setOwned(!ow.owned())
+          save_owned()
         }}>
           {ow.name}
         </button>
