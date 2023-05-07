@@ -127,6 +127,23 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
           if (ba < 0) {
             continue
           }
+          let values = selection_total({ arms: a, body: b, head: h, legs: l }).values
+          if (values.absorptions.fire < mins.absorptions.fire
+            || values.absorptions.holy < mins.absorptions.holy
+            || values.absorptions.lightning < mins.absorptions.lightning
+            || values.absorptions.magic < mins.absorptions.magic
+            || values.absorptions.physical < mins.absorptions.physical
+            || values.absorptions.pierce < mins.absorptions.pierce
+            || values.absorptions.slash < mins.absorptions.slash
+            || values.absorptions.strike < mins.absorptions.strike
+            || values.resistances.focus < mins.resistances.focus
+            || values.resistances.immunity < mins.resistances.immunity
+            || values.resistances.poise < mins.resistances.poise
+            || values.resistances.robustness < mins.resistances.robustness
+            || values.resistances.vitality < mins.resistances.vitality
+          ) {
+            continue
+          }
           const curscore = b.score + l.score + h.score + a.score
           if (curscore > best_score) {
             best_score = curscore
