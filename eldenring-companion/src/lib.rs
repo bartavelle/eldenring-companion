@@ -14,54 +14,54 @@ extern "C" {
     fn alert(s: &str);
 }
 
-#[derive(Serialize, Deserialize)]
-enum ArmorCategory {
+#[derive(Serialize, Deserialize, Clone, Copy, Debug)]
+pub enum ArmorCategory {
     Head,
     Arms,
     Body,
     Legs,
 }
 
-#[derive(Serialize, Deserialize)]
-struct Absorptions<A> {
-    fire: A,
-    holy: A,
-    lightning: A,
-    magic: A,
-    physical: A,
-    pierce: A,
-    slash: A,
-    strike: A,
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct Absorptions<A> {
+    pub fire: A,
+    pub holy: A,
+    pub lightning: A,
+    pub magic: A,
+    pub physical: A,
+    pub pierce: A,
+    pub slash: A,
+    pub strike: A,
 }
 
-#[derive(Serialize, Deserialize)]
-struct Armor {
-    category: ArmorCategory,
-    name: String,
-    weight: f64,
-    absorptions: Absorptions<i64>,
-    resistances: Resistances<i64>,
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct Armor {
+    pub category: ArmorCategory,
+    pub name: String,
+    pub weight: f64,
+    pub absorptions: Absorptions<f64>,
+    pub resistances: Resistances<f64>,
 }
 
-#[derive(Serialize, Deserialize)]
-struct Resistances<A> {
-    focus: A,
-    immunity: A,
-    poise: A,
-    robustness: A,
-    vitality: A,
+#[derive(Serialize, Deserialize, Clone, Debug)]
+pub struct Resistances<A> {
+    pub focus: A,
+    pub immunity: A,
+    pub poise: A,
+    pub robustness: A,
+    pub vitality: A,
 }
 
-#[derive(Serialize, Deserialize)]
-struct Body<A> {
-    head: A,
-    arms: A,
-    body: A,
-    legs: A,
+#[derive(Serialize, Deserialize, Clone, Default, Debug)]
+pub struct Body<A> {
+    pub head: A,
+    pub arms: A,
+    pub body: A,
+    pub legs: A,
 }
 
 impl<A> Body<Vec<A>> {
-    fn fmap<B, F>(self, f: F) -> Body<Vec<B>>
+    pub fn fmap<B, F>(self, f: F) -> Body<Vec<B>>
     where
         F: Fn(A) -> B,
     {
@@ -75,33 +75,33 @@ impl<A> Body<Vec<A>> {
 }
 
 #[derive(Serialize, Deserialize)]
-struct Weights {
-    absorptions: Absorptions<f64>,
-    resistances: Resistances<f64>,
+pub struct Weights {
+    pub absorptions: Absorptions<f64>,
+    pub resistances: Resistances<f64>,
 }
 
-#[derive(Serialize, Deserialize)]
-struct Scored {
-    name: String,
-    weight: f64,
-    score: f64,
+#[derive(Serialize, Deserialize, Clone)]
+pub struct Scored {
+    pub name: String,
+    pub weight: f64,
+    pub score: f64,
 }
 
-fn scores(i: Body<Vec<Armor>>, w: &Weights) -> Body<Vec<Scored>> {
+pub fn scores(i: Body<Vec<Armor>>, w: &Weights) -> Body<Vec<Scored>> {
     let score = |a: &Armor| {
-        a.resistances.focus as f64 * w.resistances.focus
-            + a.resistances.immunity as f64 * w.resistances.immunity
-            + a.resistances.poise as f64 * w.resistances.poise
-            + a.resistances.robustness as f64 * w.resistances.robustness
-            + a.resistances.vitality as f64 * w.resistances.vitality
-            + a.absorptions.fire as f64 * w.absorptions.fire
-            + a.absorptions.holy as f64 * w.absorptions.holy
-            + a.absorptions.lightning as f64 * w.absorptions.lightning
-            + a.absorptions.magic as f64 * w.absorptions.magic
-            + a.absorptions.physical as f64 * w.absorptions.physical
-            + a.absorptions.pierce as f64 * w.absorptions.pierce
-            + a.absorptions.slash as f64 * w.absorptions.slash
-            + a.absorptions.strike as f64 * w.absorptions.strike
+        a.resistances.focus * w.resistances.focus
+            + a.resistances.immunity * w.resistances.immunity
+            + a.resistances.poise * w.resistances.poise
+            + a.resistances.robustness * w.resistances.robustness
+            + a.resistances.vitality * w.resistances.vitality
+            + a.absorptions.fire * w.absorptions.fire
+            + a.absorptions.holy * w.absorptions.holy
+            + a.absorptions.lightning * w.absorptions.lightning
+            + a.absorptions.magic * w.absorptions.magic
+            + a.absorptions.physical * w.absorptions.physical
+            + a.absorptions.pierce * w.absorptions.pierce
+            + a.absorptions.slash * w.absorptions.slash
+            + a.absorptions.strike * w.absorptions.strike
     };
     i.fmap(|armor| {
         let score = score(&armor);
@@ -149,42 +149,35 @@ impl NextComparer {
                 } else {
                     let mut curvec = self.curvec;
                     curvec.push(prev);
-                    Self {
-                        curvec,
-                        curel: Some(s),
-                    }
+                    Self { curvec, curel: Some(s) }
                 }
             }
         }
     }
 }
 
-fn prepare_list(i: Vec<Scored>) -> Vec<Scored> {
-    let mut i = i;
+fn prepare_list(i: &[Scored]) -> Vec<Scored> {
+    let mut i = i.to_vec();
     i.push(Scored {
         name: "Nothing".into(),
         weight: 0.0,
         score: 0.0,
     });
     i.sort_unstable_by(|a, b| {
-        b.score.partial_cmp(&a.score).unwrap_or_else(|| {
-            a.weight
-                .partial_cmp(&b.weight)
-                .unwrap_or_else(|| a.name.cmp(&b.name))
-        })
+        b.score
+            .partial_cmp(&a.score)
+            .unwrap_or_else(|| a.weight.partial_cmp(&b.weight).unwrap_or_else(|| a.name.cmp(&b.name)))
     });
 
-    i.into_iter()
-        .fold(NextComparer::new(), |acc, n| acc.next(n))
-        .finalize()
+    i.into_iter().fold(NextComparer::new(), |acc, n| acc.next(n)).finalize()
 }
 
-fn search(i: Body<Vec<Scored>>, weight_budget: f64) -> Body<String> {
+pub fn search(i: &Body<Vec<Scored>>, weight_budget: f64) -> (Body<String>, f64) {
     // first, sort by scores
-    let head = prepare_list(i.head);
-    let arms = prepare_list(i.arms);
-    let body = prepare_list(i.body);
-    let legs = prepare_list(i.legs);
+    let head = prepare_list(&i.head);
+    let arms = prepare_list(&i.arms);
+    let body = prepare_list(&i.body);
+    let legs = prepare_list(&i.legs);
 
     let mut best = Body {
         head: "Empty".into(),
@@ -198,18 +191,45 @@ fn search(i: Body<Vec<Scored>>, weight_budget: f64) -> Body<String> {
         if bbudget < 0.0 {
             continue;
         }
+        let score = b.score;
+        if score > best_score {
+            best = Body {
+                head: "Empty".to_string(),
+                arms: "Empty".to_string(),
+                body: b.name.clone(),
+                legs: "Empty".to_string(),
+            }
+        }
         for l in &legs {
             let lbudget = bbudget - l.weight;
             if lbudget < 0.0 {
                 continue;
+            }
+            let score = b.score + l.score;
+            if score > best_score {
+                best = Body {
+                    head: "Empty".to_string(),
+                    arms: "Empty".to_string(),
+                    body: b.name.clone(),
+                    legs: l.name.clone(),
+                }
             }
             for a in &arms {
                 let abudget = lbudget - a.weight;
                 if abudget < 0.0 {
                     continue;
                 }
+                let score = b.score + l.score + a.score;
+                if score > best_score {
+                    best = Body {
+                        head: "Empty".to_string(),
+                        arms: a.name.clone(),
+                        body: b.name.clone(),
+                        legs: l.name.clone(),
+                    }
+                }
                 for h in &head {
-                    let hbudget = abudget - a.weight;
+                    let hbudget = abudget - h.weight;
                     if hbudget < 0.0 {
                         continue;
                     }
@@ -230,7 +250,7 @@ fn search(i: Body<Vec<Scored>>, weight_budget: f64) -> Body<String> {
         }
     }
 
-    best
+    (best, best_score)
 }
 
 #[wasm_bindgen]
@@ -242,7 +262,7 @@ pub fn optimize_armor(armors: JsValue, weights: JsValue, weight_budget: f64) -> 
 
     alert("Hello, eldenring-companion!");
 
-    let res = search(warmor, weight_budget);
+    let res = search(&warmor, weight_budget);
 
     serde_wasm_bindgen::to_value(&res).unwrap()
 }
@@ -278,7 +298,7 @@ mod test {
             weight: 1.0,
             score: 1.0,
         };
-        let o = prepare_list(vec![e3, e5, e1, e2, e4])
+        let o = prepare_list(&[e3, e5, e1, e2, e4])
             .into_iter()
             .map(|s| s.score)
             .collect::<Vec<_>>();

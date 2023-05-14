@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "eldenring-companion",
+    "optimizer"
+]
