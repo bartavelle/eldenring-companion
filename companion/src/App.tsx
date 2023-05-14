@@ -280,7 +280,7 @@ function App() {
               localStorage.setItem("extraWeight", JSON.stringify(v))
               setExtraWeight(v)
             }} />
-          <div id="extra_weight_help" class="form-text">extra weight you can bear</div>
+          <div id="extra_weight_help" class="form-text">Extra weight such as charms</div>
         </div>
         <div class="col">
           <label for="wpncweight" class="form-label">Weapons + charms weight</label>
@@ -296,7 +296,7 @@ function App() {
         </div>
         <div class="col">
           <label for="wbudget" class="form-label">Weight budget</label>
-          <input class="form-control" id="wbudget" disabled value={Number(weight_budget(weightmode(), totalWeight(), weapons_weight())).toFixed(1)} />
+          <input class="form-control" id="wbudget" disabled value={Number(weight_budget(weightmode(), totalWeight(), weapons_weight() + extraWeight())).toFixed(1)} />
         </div>
       </div>
       {ArmorSelector(armors)}

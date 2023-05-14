@@ -1,6 +1,6 @@
 import Armor, { Armors } from "./Armor";
 import { Weights } from "./WSelector";
-import { ArmorSlots } from "./Common"
+import { ArmorSlots, Azipwith } from "./Common"
 
 type ALst = {
   values: Weights<number>,
@@ -92,23 +92,14 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string): 
 type Selection = ArmorSlots<ALst | null>
 
 function compute_best(budget: number, weights: Weights<number>, mins: Weights<number>, armors: Armors, forced: ArmorSlots<string>): Selection {
-  let arms = prepare_armor(weights, armors.Arms, forced.Arms)
-  let body = prepare_armor(weights, armors.Body, forced.Body)
-  let head = prepare_armor(weights, armors.Head, forced.Head)
-  let legs = prepare_armor(weights, armors.Legs, forced.Legs)
 
-  if (forced.Arms !== "Any") {
-    arms = arms.filter((a) => a.n === forced.Arms)
-  }
-  if (forced.Body !== "Any") {
-    body = body.filter((a) => a.n === forced.Body)
-  }
-  if (forced.Head !== "Any") {
-    head = head.filter((a) => a.n === forced.Head)
-  }
-  if (forced.Legs !== "Any") {
-    legs = legs.filter((a) => a.n === forced.Legs)
-  }
+  let prepared = Azipwith((ar, fo) => {
+    let o = prepare_armor(weights, ar, fo)
+    if (fo !== "Any") {
+      o = o.filter((a) => a.n == fo)
+    }
+    return o
+  }, armors, forced)
 
   let best_score = 0
   let best_selection: Selection = {
@@ -133,7 +124,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
       && values.resistances.vitality >= mins.resistances.vitality
 
   }
-  for (let b of body) {
+  for (let b of prepared.Body) {
     let bw = budget - b.weight
     if (bw < 0) {
       continue
@@ -151,7 +142,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
         }
       }
     }
-    for (let l of legs) {
+    for (let l of prepared.Legs) {
       let bl = bw - l.weight
       if (bl < 0) {
         continue
@@ -169,7 +160,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
           }
         }
       }
-      for (let h of head) {
+      for (let h of prepared.Head) {
         let bh = bl - h.weight
         if (bh < 0) {
           continue
@@ -187,7 +178,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
             }
           }
         }
-        for (let a of arms) {
+        for (let a of prepared.Arms) {
           let ba = bh - a.weight
           if (ba < 0) {
             continue
