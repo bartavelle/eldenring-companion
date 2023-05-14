@@ -88,8 +88,24 @@ pub struct Scored {
 }
 
 pub fn scores(i: Body<Vec<Armor>>, w: &Weights) -> Body<Vec<Scored>> {
+    let total_weights = w.resistances.focus
+        + w.resistances.immunity
+        + w.resistances.poise
+        + w.resistances.robustness
+        + w.resistances.vitality
+        + w.absorptions.fire
+        + w.absorptions.holy
+        + w.absorptions.lightning
+        + w.absorptions.magic
+        + w.absorptions.physical
+        + w.absorptions.pierce
+        + w.absorptions.slash
+        + w.absorptions.strike;
+    if total_weights == 0.0 {
+        return Body::default()
+    }
     let score = |a: &Armor| {
-        a.resistances.focus * w.resistances.focus
+        (a.resistances.focus * w.resistances.focus
             + a.resistances.immunity * w.resistances.immunity
             + a.resistances.poise * w.resistances.poise
             + a.resistances.robustness * w.resistances.robustness
@@ -101,7 +117,8 @@ pub fn scores(i: Body<Vec<Armor>>, w: &Weights) -> Body<Vec<Scored>> {
             + a.absorptions.physical * w.absorptions.physical
             + a.absorptions.pierce * w.absorptions.pierce
             + a.absorptions.slash * w.absorptions.slash
-            + a.absorptions.strike * w.absorptions.strike
+            + a.absorptions.strike * w.absorptions.strike)
+            / total_weights
     };
     i.fmap(|armor| {
         let score = score(&armor);
@@ -259,9 +276,6 @@ pub fn optimize_armor(armors: JsValue, weights: JsValue, weight_budget: f64) -> 
     let weights: Weights = serde_wasm_bindgen::from_value(weights).unwrap();
 
     let warmor = scores(armors, &weights);
-
-    alert("Hello, eldenring-companion!");
-
     let res = search(&warmor, weight_budget);
 
     serde_wasm_bindgen::to_value(&res).unwrap()

@@ -79,7 +79,7 @@ fn main() {
     let warmor = scores(game_data.armors, &weights);
     let mut weight_budget = 0.0;
     let mut best_score = 0.0;
-    while weight_budget < 50.0 {
+    while weight_budget < 100.0 {
         let (best, score) = search(&warmor, weight_budget);
         if score != best_score {
             println!("{:2.1} {:2.1} - {:?}", weight_budget, score, best);
