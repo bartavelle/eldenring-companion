@@ -1,4 +1,5 @@
 use eldenring_companion::{scores, search, Absorptions, Body, Resistances, Scored, Weights};
+use gamedata::Game;
 use std::path::PathBuf;
 use structopt::StructOpt;
 
@@ -13,10 +14,7 @@ enum Mode {
 }
 
 #[derive(Debug, StructOpt)]
-#[structopt(
-    name = "optimizer",
-    about = "Spits various statistics about elden ring"
-)]
+#[structopt(name = "optimizer", about = "Spits various statistics about elden ring")]
 struct Opt {
     /// Path to the data dir containing the .json files
     #[structopt(long)]
@@ -26,6 +24,8 @@ struct Opt {
     /// maximum weight budget
     #[structopt(long, default_value = "65")]
     max: f64,
+    #[structopt(long, default_value = "elden_ring")]
+    game: Game,
     #[structopt(subcommand)]
     mode: Mode,
 }
@@ -87,7 +87,7 @@ impl From<VWeights> for Weights {
 
 fn main() {
     let args = Opt::from_args();
-    let game_data = load_data(&args.datadir);
+    let game_data = load_data(&args.datadir, args.game);
     let weights: Weights = args.weights.into();
     let warmor = scores(game_data.armors, &weights);
 
@@ -126,16 +126,8 @@ fn individual(warmor: &Body<Vec<Scored>>) {
             .chain(warmor.body.iter())
             .chain(warmor.legs.iter())
     };
-    let max_score = alliter()
-        .map(|a| a.score)
-        .max_by(|a, b| a.total_cmp(b))
-        .unwrap()
-        + 1.0;
-    let max_weight = alliter()
-        .map(|a| a.weight)
-        .max_by(|a, b| a.total_cmp(b))
-        .unwrap()
-        + 1.0;
+    let max_score = alliter().map(|a| a.score).max_by(|a, b| a.total_cmp(b)).unwrap() + 1.0;
+    let max_weight = alliter().map(|a| a.weight).max_by(|a, b| a.total_cmp(b)).unwrap() + 1.0;
 
     let w = |n: f64| 50.0 + n * 1820.0 / max_weight;
     let h = |n: f64| 50.0 + (max_score - n) * 980.0 / max_score;
@@ -144,11 +136,7 @@ fn individual(warmor: &Body<Vec<Scored>>) {
         let mut sc = 0.0;
         while sc < max_score {
             let lh = h(sc);
-            println!(
-                r#"<text x="5" y="{}" class="small">{}</text>"#,
-                lh + 7.0,
-                sc
-            );
+            println!(r#"<text x="5" y="{}" class="small">{}</text>"#, lh + 7.0, sc);
             println!(r#"<line x1="40" x2="50" y1="{}" y2="{}"/>"#, lh, lh);
             if sc > 0.0 {
                 println!(
@@ -200,7 +188,6 @@ fn individual(warmor: &Body<Vec<Scored>>) {
         show(a, "#f0f")
     }
 
-
     println!("</svg>");
 }
 
@@ -240,11 +227,7 @@ fn combination(warmor: &Body<Vec<Scored>>, max_weight: f64) {
         let mut sc = 0.0;
         while sc < max_score {
             let lh = h(sc);
-            println!(
-                r#"<text x="5" y="{}" class="small">{}</text>"#,
-                lh + 7.0,
-                sc
-            );
+            println!(r#"<text x="5" y="{}" class="small">{}</text>"#, lh + 7.0, sc);
             if sc > 0.0 {
                 println!(r#"<line x1="40" x2="50" y1="{}" y2="{}"/>"#, lh, lh);
             }
