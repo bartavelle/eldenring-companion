@@ -1,5 +1,7 @@
 mod utils;
 
+use std::cmp::Ordering;
+
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 
@@ -102,7 +104,7 @@ pub fn scores(i: Body<Vec<Armor>>, w: &Weights) -> Body<Vec<Scored>> {
         + w.absorptions.slash
         + w.absorptions.strike;
     if total_weights == 0.0 {
-        return Body::default()
+        return Body::default();
     }
     let score = |a: &Armor| {
         (a.resistances.focus * w.resistances.focus
@@ -181,9 +183,15 @@ fn prepare_list(i: &[Scored]) -> Vec<Scored> {
         score: 0.0,
     });
     i.sort_unstable_by(|a, b| {
-        b.score
-            .partial_cmp(&a.score)
-            .unwrap_or_else(|| a.weight.partial_cmp(&b.weight).unwrap_or_else(|| a.name.cmp(&b.name)))
+        match b.score.partial_cmp(&a.score) {
+            Some(Ordering::Greater) => Ordering::Greater,
+            Some(Ordering::Less) => Ordering::Less,
+            _ => match a.weight.partial_cmp(&b.weight) {
+                Some(Ordering::Greater) => Ordering::Greater,
+                Some(Ordering::Less) => Ordering::Less,
+                _ => a.name.cmp(&b.name),
+            },
+        }
     });
 
     i.into_iter().fold(NextComparer::new(), |acc, n| acc.next(n)).finalize()

@@ -61,6 +61,9 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string): 
       curel = a
     }
   }
+  if (curel !== null) {
+    out.push(curel)
+  }
   out.push({
     values: {
       absorptions: {
@@ -95,6 +98,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
 
   let prepared = Azipwith((ar, fo) => {
     let o = prepare_armor(weights, ar, fo)
+    // forced items
     if (fo !== "Any") {
       o = o.filter((a) => a.n == fo)
     }
