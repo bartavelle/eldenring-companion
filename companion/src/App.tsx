@@ -185,14 +185,15 @@ function best_col(r: ALst | null): JSX.Element {
       <td> {Number(r.values.resistances.immunity).toFixed(0)} </td>
       <td> {Number(r.values.resistances.robustness).toFixed(0)} </td>
       <td> {Number(r.values.resistances.vitality).toFixed(0)} </td>
+      <td> {Number(r.score).toFixed(0)} </td>
     </tr>
   }
 }
 
-function best_calc(budget: number, weights: Weights<SPair<number>>, mins: Weights<SPair<number>>, armors: Armors, forced: ArmorSlots<string>): JSX.Element {
+function best_calc(budget: number, weights: Weights<SPair<number>>, mins: Weights<SPair<number>>, armors: Armors, forced: ArmorSlots<string>, all: boolean = false): JSX.Element {
   const nweights: Weights<number> = weights_map(weights, (x) => x.access())
   const nmin: Weights<number> = weights_map(mins, (x) => x.access())
-  let r = compute_best(budget, nweights, nmin, armors, forced)
+  let r = compute_best(budget, nweights, nmin, armors, forced, all)
 
   return <table class="table">
     <thead>
@@ -212,6 +213,7 @@ function best_calc(budget: number, weights: Weights<SPair<number>>, mins: Weight
         <th scope="col">Imm.</th>
         <th scope="col">Rob.</th>
         <th scope="col">Vit.</th>
+        <th scope="col">Sc.</th>
       </tr>
     </thead>
     <tbody>
@@ -229,6 +231,7 @@ function App() {
   const [weightmode, setWeightmode] = createSignal("70%")
   const [totalWeight, setTotalWeight] = createSignal(45)
   const [extraWeight, setExtraWeight] = createSignal(0)
+  const [bestShown, setBestShown] = createSignal(false)
   const weights = defaultWeights();
   const mins = defaultMins();
   onMount(() => {
@@ -255,6 +258,23 @@ function App() {
         </div>
       </div>
 
+      <div class="accordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <div class="accordion-button">
+              Theoritical best (if all armors were available)
+            </div>
+          </h2>
+
+          <div class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              {
+                best_calc(weight_budget(weightmode(), totalWeight(), weapons_weight() + extraWeight()), weights, mins, armors, get_forced(), true)
+              }
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
         {
           best_calc(weight_budget(weightmode(), totalWeight(), weapons_weight() + extraWeight()), weights, mins, armors, get_forced())
@@ -314,7 +334,7 @@ function App() {
       <div class="row">
         {Armament(filter())}
       </div>
-    </div>
+    </div >
   );
 };
 

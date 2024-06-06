@@ -9,10 +9,10 @@ type ALst = {
   weight: number
 }
 
-function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string): ALst[] {
+function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string, all: boolean): ALst[] {
   let tmp: ALst[] = [];
   for (let a of lst) {
-    if (!a.owned() && a.name !== forced)
+    if (!(all || a.owned()) && a.name !== forced)
       continue;
     const score = weights.absorptions.fire * a.absorptions.fire +
       weights.absorptions.holy * a.absorptions.holy +
@@ -94,10 +94,10 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string): 
 
 type Selection = ArmorSlots<ALst | null>
 
-function compute_best(budget: number, weights: Weights<number>, mins: Weights<number>, armors: Armors, forced: ArmorSlots<string>): Selection {
+function compute_best(budget: number, weights: Weights<number>, mins: Weights<number>, armors: Armors, forced: ArmorSlots<string>, all: boolean = false): Selection {
 
   let prepared = Azipwith((ar, fo) => {
-    let o = prepare_armor(weights, ar, fo)
+    let o = prepare_armor(weights, ar, fo, all)
     // forced items
     if (fo !== "Any") {
       o = o.filter((a) => a.n == fo)

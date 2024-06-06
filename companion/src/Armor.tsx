@@ -142,18 +142,6 @@ const ACol = (armors: Armor[], filter: string) => {
   </div>
 }
 
-const set_all_owned = () => {
-  const suball = (arr: Armor[]) => {
-    for (let a of arr) {
-      a.setOwned(true)
-    }
-  }
-  suball(armors.Head)
-  suball(armors.Arms)
-  suball(armors.Body)
-  suball(armors.Legs)
-}
-
 const Armor = (filter: string) => {
   onMount(async () => {
     load_owned()
@@ -173,9 +161,6 @@ const Armor = (filter: string) => {
         {ACol(armors.Legs, filter)}
       </div>
     </div >
-    <div class="row align-items-start">
-      <button class="btn btn-danger" onClick={set_all_owned}>Set all armors to owned</button>
-    </div>
   </div >
 };
 
