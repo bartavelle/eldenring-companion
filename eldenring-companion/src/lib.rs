@@ -16,7 +16,7 @@ extern "C" {
     fn alert(s: &str);
 }
 
-#[derive(Serialize, Deserialize, Clone, Copy, Debug)]
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ArmorCategory {
     Head,
     Arms,
@@ -24,7 +24,7 @@ pub enum ArmorCategory {
     Legs,
 }
 
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]
 pub struct Absorptions<A> {
     pub fire: A,
     pub holy: A,
@@ -36,7 +36,7 @@ pub struct Absorptions<A> {
     pub strike: A,
 }
 
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
 pub struct Armor {
     pub category: ArmorCategory,
     pub name: String,
@@ -45,7 +45,7 @@ pub struct Armor {
     pub resistances: Resistances<f64>,
 }
 
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]
 pub struct Resistances<A> {
     pub focus: A,
     pub immunity: A,
