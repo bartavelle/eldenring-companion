@@ -9,4 +9,5 @@ byteorder = "1.5.0"
 clap = { version = "4.5.11", features = ["derive"] }
 libaes = "0.7.0"
 memchr = "2.7.4"
+packed_struct = { path = "packed_struct.rs/packed_struct" }
 zstd = "0.13.2"

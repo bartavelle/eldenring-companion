@@ -1,6 +1,8 @@
 use byteorder::{BigEndian, LittleEndian, ReadBytesExt};
 use std::io::{Cursor, Read};
 
+use crate::utils::{assert_char, assert_u32, read_utf16, reverse_bits};
+
 pub fn decompress(bytes: Vec<u8>) -> Vec<u8> {
     match &bytes[..4] {
         b"DCP\0" => todo!(),
@@ -11,16 +13,6 @@ pub fn decompress(bytes: Vec<u8>) -> Vec<u8> {
         },
         _ => bytes,
     }
-}
-
-fn assert_char<R: Read>(c: &[u8; 4], r: &mut R) {
-    let mut buf = [0_u8; 4];
-    r.read_exact(&mut buf).unwrap();
-    assert_eq!(&buf, c);
-}
-fn assert_u32<R: Read>(expected: u32, r: &mut R) {
-    let actual = r.read_u32::<BigEndian>().unwrap();
-    assert_eq!(expected, actual);
 }
 
 fn validate_dcx<R: Read>(cur: &mut R) -> (u32, u32) {
@@ -94,7 +86,7 @@ struct Format {
 impl Format {
     fn new(b: u8, bit_big_endian: bool) -> Self {
         assert!(!bit_big_endian);
-        Self { inner: b }
+        Self { inner: reverse_bits(b) }
     }
 
     fn has_long_offsets(&self) -> bool {
@@ -128,7 +120,7 @@ pub struct BND4 {
     unk5: bool,
     version: String,
     data: Vec<u8>,
-    headers: Vec<BinderFileHeader>,
+    files: Vec<BinderFileHeader>,
 }
 
 impl BND4 {
@@ -184,8 +176,23 @@ impl BND4 {
             unk5,
             version,
             data,
-            headers,
+            files: headers,
         })
+    }
+
+    pub fn file_names(&self) -> Vec<&str> {
+        self.files
+            .iter()
+            .map(|f| f.name.as_deref().unwrap_or_default())
+            .collect()
+    }
+
+    pub fn get_file<'a>(&'a self, name: &str) -> Option<&'a [u8]> {
+        let f = self
+            .files
+            .iter()
+            .find(|f| f.name.as_ref().map(|f| f.contains(name)).unwrap_or(false))?;
+        Some(&self.data[f.offset..f.offset + f.size])
     }
 }
 
@@ -201,7 +208,7 @@ struct BinderFileHeader {
 
 impl BinderFileHeader {
     fn from_reader<R: Read>(cur: &mut R, format: Format, unicode: bool, data: &[u8]) -> anyhow::Result<Self> {
-        let flags = cur.read_u8()?;
+        let flags = reverse_bits(cur.read_u8()?);
         assert_eq!(cur.read_u8()?, 0);
         assert_eq!(cur.read_u8()?, 0);
         assert_eq!(cur.read_u8()?, 0);
@@ -225,16 +232,7 @@ impl BinderFileHeader {
         let name = if format.has_names() {
             if unicode {
                 let offset = cur.read_u32::<LittleEndian>()? as usize;
-                let Some(ln) = memchr::memmem::find(&data[offset..], &[0, 0]) else {
-                    anyhow::bail!("could not find name end");
-                };
-                let (front, slice, back) = unsafe { data[offset..=offset + ln].align_to::<u16>() };
-                if front.is_empty() && back.is_empty() {
-                    Some(String::from_utf16(slice)?)
-                } else {
-                    anyhow::bail!("could not align")
-                }
-                // Some()
+                Some(read_utf16(&data[offset..])?)
             } else {
                 todo!("JIS")
             }
