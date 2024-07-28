@@ -4,4 +4,4 @@ members = [
     "eldenring-companion",
     "htmlupdater",
     "optimizer"
-]
+, "paramextract"]
