@@ -60,12 +60,12 @@ impl<'t> Params<'t> {
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
-            eprintln!("TODO: data_start {data_start}")
+            // eprintln!("TODO: data_start {data_start}")
         } else {
             let data_start = cur.read_u64::<LittleEndian>()?;
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
-            eprintln!("TODO: data_start {data_start}")
+            // eprintln!("TODO: data_start {data_start}")
         }
         let mut rows = Vec::new();
         for _ in 0..row_count {

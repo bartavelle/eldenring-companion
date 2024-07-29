@@ -1,11 +1,13 @@
 use packed_struct::prelude::*;
 
+// TODO: reorder bools to adjust for lsb mode
+
 #[allow(non_camel_case_types)]
 #[derive(PackedStruct, Debug, Clone)]
 #[packed_struct(endian="lsb", bit_numbering="msb0")]
 pub struct EQUIP_PARAM_WEAPON_ST {
-    pub disable_paramn_t: bool, // NT版出力から外すか - ○をつけたパラメータをNT版パッケージでは除外します
     pub disable_param_reserve1: Integer<u8, packed_bits::Bits::<7>>, // パッケージ出力用リザーブ1 - パッケージ出力用リザーブ1
+    pub disable_paramn_t: bool, // NT版出力から外すか - ○をつけたパラメータをNT版パッケージでは除外します
     pub disable_param_reserve2: [u8;3], // パッケージ出力用リザーブ2 - パッケージ出力用リザーブ2
     pub behavior_variation_id: i32, // 行動バリエーションID - 攻撃時に参照する行動パラメータIDを決定するときに使う
     pub sort_id: i32, // ソートID - ソートID(-1:集めない)(プログラム内で強化レベルを加味するため s32 では７桁が限界)
@@ -103,6 +105,7 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub blood_guard_resist: i8, // 出血攻撃カット率 - 出血にする攻撃力（特殊効果パラメータに設定）をどれだけカットするか
     pub curse_guard_resist: i8, // 呪攻撃カット率 - 呪いにする攻撃力（特殊効果パラメータに設定）をどれだけカットするか
     pub atk_attribute: u8, // 物理属性1 - 物理属性1
+
     pub right_hand_equipable: bool, // 右手装備 - 右手装備可能か.
     pub left_hand_equipable: bool, // 左手装備 - 左手装備可能か.
     pub both_hand_equipable: bool, // 両手装備 - 両手装備可能か.
@@ -111,6 +114,7 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub enable_guard: bool, // ガード可能 - 左手装備時L1でガード
     pub enable_parry: bool, // パリィ可能 - 左手装備時L2でパリィ
     pub enable_magic: bool, // 魔法可能 - 攻撃時に魔法発動
+
     pub enable_sorcery: bool, // 呪術可能 - 攻撃時に呪術発動
     pub enable_miracle: bool, // 奇蹟可能 - 攻撃時に奇蹟発動
     pub enable_vow_magic: bool, // 誓約魔法可能 - 攻撃時に誓約魔法発動
@@ -119,6 +123,7 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub is_slash_attack_type: bool, // 斬撃 - メニュー表示用攻撃タイプ。斬撃か
     pub is_thrust_attack_type: bool, // 刺突 - メニュー表示用攻撃タイプ。刺突か
     pub is_enhance: bool, // エンチャント可能か？ - 松脂などで、強化可能か？
+
     pub is_hero_point_correct: bool, // 人間性補正あるか - 人間性による攻撃力補正があるか
     pub is_custom: bool, // 強化できるか？ - 強化ショップで強化対象リストに並ぶ(仕様変更で削除するかも？)
     pub disable_base_change_reset: bool, // 転職リセット禁止か - 転職リセット禁止か
@@ -127,9 +132,11 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub simple_model_for_dlc: bool, // DLC用シンプルモデルありか - ＤＬＣ用シンプルモデルが存在しているか
     pub lantern_wep: bool, // ランタン武器 - ランタン武器か
     pub is_versus_ghost_wep: bool, // 対霊武器 - NPCパラの「霊体か」が○の相手に攻撃を当たるようになります。また、攻撃パラの「霊体攻撃か」が○の攻撃をガードできるようになります。
+
     pub base_change_category: Integer<u8, packed_bits::Bits::<6>>, // 武器転職カテゴリ - 武器転職カテゴリ。属性アイコン表示に使用します。
     pub is_dragon_slayer: bool, // 竜狩りか - 竜狩り武器か
     pub is_deposit: bool, // 預けれるか - 倉庫に預けれるか
+
     pub disable_multi_drop_share: bool, // マルチドロップ共有禁止か - マルチドロップ共有禁止か
     pub is_discard: bool, // 捨てれるか - アイテムを捨てれるか？TRUE=捨てれる
     pub is_drop: bool, // その場に置けるか - アイテムをその場に置けるか？TRUE=置ける
@@ -137,6 +144,7 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub enable_throw: bool, // 投げ可能 - 投げ可能な武器かどうか
     pub show_dialog_cond_type: Integer<u8, packed_bits::Bits::<2>>, // 取得ダイアログ表示条件 - アイテム取得時にアイテム取得ダイアログに表示するか（未入力: newのみ）
     pub disable_gem_attr: bool, // 魔石属性変更禁止か - 魔石属性変更禁止か
+
     pub def_sfx_material1: u16, // 防御SFX材質1 - 攻撃パラから使用される防御SFX材質1
     pub wep_collidable_type0: u8, // 武器コライダブル設定 - 武器のコライダブル設定
     pub wep_collidable_type1: u8, // 武器1コライダブル設定 - 武器1のコライダブル設定
@@ -170,12 +178,14 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub def_se_material2: u16, // 防御SE材質2 - 攻撃パラから使用される防御SE材質2
     pub absorp_param_id: i32, // 吸着位置Id - 武器吸着位置パラメータのId。この値により武器が吸着する位置を決定する(-1：旧ソースコード直書きの値を参照する)
     pub toughness_correct_rate: f32, // 強靭度 補正倍率 - 強靭度の基本値を補正する倍率です
+
     pub is_valid_toughprot_s_a_dmg: bool, // 防具SAダメージ倍率が初期値でも有効か？ - 防具SAが初期値でも強靭度計算が行われるかどうか。詳細は強靭度仕様書.xlsxを確認してください
     pub is_dual_blade: bool, // 双剣か - この武器は双剣か。
     pub is_auto_equip: bool, // 自動装填可能か - 矢・ボルトのみ有効。新しくこの武器を拾っ時に対象装備スロットが空の場合に自動で装備するかどうか
     pub is_enable_emergency_step: bool, // 緊急回避可能か - 緊急回避可能な武器かどうか。ビヘイビアスクリプトに渡す。
     pub invisible_on_remo: bool, // カットシーン中非表示か - カットシーン中非表示か
     pub pad2: Integer<u8, packed_bits::Bits::<3>>, // pad - 
+
     pub correct_typemagic: u8, // 補正タイプ（魔法攻撃力） - 一次パラメータによる魔法攻撃力の補正グラフのタイプを決める
     pub correct_typefire: u8, // 補正タイプ（炎攻撃力） - 一次パラメータによる炎攻撃力の補正グラフのタイプを決める
     pub correct_typethunder: u8, // 補正タイプ（雷攻撃力） - 一次パラメータによる雷攻撃力の補正グラフのタイプを決める
@@ -236,6 +246,7 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub sale_value: i32, // 販売価格 - 販売価格
     pub reinforce_shop_category: u8, // 強化ショップカテゴリ - 強化ショップカテゴリ
     pub max_arrow_quantity: u8, // 矢の最大所持数 - 矢の最大所持数
+
     pub resident_sfx_1is_visible_for_hang: bool, // 常駐SFX1納刀時表示するか - 「常駐SFX1納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID1」に設定されているSFXを非表示にする
     pub resident_sfx_2is_visible_for_hang: bool, // 常駐SFX2納刀時表示するか - 「常駐SFX2納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID2」に設定されているSFXを非表示にする
     pub resident_sfx_3is_visible_for_hang: bool, // 常駐SFX3納刀時表示するか - 「常駐SFX3納刀時表示するか」がtrueの場合、武器が納刀された時に「常駐SFXID3」に設定されているSFXを非表示にする
@@ -244,6 +255,7 @@ pub struct EQUIP_PARAM_WEAPON_ST {
     pub is_soul_param_id_change_model1: bool, // モデル_1 ソウルパラムID差し替え可能か - vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか
     pub is_soul_param_id_change_model2: bool, // モデル_2 ソウルパラムID差し替え可能か - vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか
     pub is_soul_param_id_change_model3: bool, // モデル_3 ソウルパラムID差し替え可能か - vfxパラメータの「武器エンチャント用ソウルパラムID」と「武器エンチャント用インビジブルウェポンか」設定が適応されるか
+
     pub wep_se_id_offset: i8, // 武器SEIDオフセット値 - SEIDのオフセット値 
     pub base_change_price: i32, // 進化価格 - 進化価格
     pub level_sync_correct_id: i16, // レベルシンク補正ID - レベルシンク補正ID
