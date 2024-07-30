@@ -23,14 +23,18 @@ pub(crate) fn best_stats(
     accorrect: &BTreeMap<u32, Stat<Damage<i16>>>,
     mixed_damage_scale: f32,
     two_handed: bool,
+    mins: Stat<u8>,
 ) -> BTreeMap<u32, Best> {
-    let statbounds = wpn.required.map2_r(&wpn.correct_a, |&req, &cor| {
-        if cor > 0.0 {
-            (std::cmp::max(req, 10), 100)
-        } else {
-            (10, 11)
-        }
-    });
+    let statbounds = wpn
+        .required
+        .map2_r(&wpn.correct_a, |&req, &cor| {
+            if cor > 0.0 {
+                (std::cmp::max(req, 10), 100)
+            } else {
+                (10, 11)
+            }
+        })
+        .map2(mins, |(l, h), mn| (std::cmp::max(l, mn), std::cmp::max(h, mn + 1)));
 
     let damages = wpn
         .correct_d

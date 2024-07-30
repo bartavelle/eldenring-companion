@@ -101,6 +101,10 @@ impl<A> Damage<A> {
             holy: f(&self.holy, &other.holy),
         }
     }
+
+    pub fn to_slice(&self) -> [&A; 5] {
+        [&self.physics, &self.magic, &self.fire, &self.lightning, &self.holy]
+    }
 }
 
 #[derive(Debug, Serialize)]

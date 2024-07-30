@@ -118,7 +118,7 @@ impl Format {
 pub struct BND4 {
     unk4: bool,
     unk5: bool,
-    version: String,
+    pub version: String,
     data: Vec<u8>,
     files: Vec<BinderFileHeader>,
 }

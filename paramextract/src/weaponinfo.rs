@@ -1,11 +1,12 @@
 use anyhow::Context;
+use serde::Serialize;
 
 use crate::{
     stats::{Damage, Effect, Stat},
     structs::equip_param_weapon::EQUIP_PARAM_WEAPON_ST,
 };
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Serialize)]
 pub enum Infusion {
     Standard,
     Heavy,
@@ -49,6 +50,7 @@ impl Infusion {
 pub struct WeaponInfo {
     pub name: String,
     pub weight: f32,
+    pub id: u32,
     pub mainid: u32,
     pub infusion: Infusion,
     pub attack_base: Damage<u16>,
@@ -66,6 +68,7 @@ impl WeaponInfo {
         Ok(Self {
             name,
             weight: eqp.weight,
+            id,
             mainid: id / 10000,
             infusion,
             attack_base: Damage {
