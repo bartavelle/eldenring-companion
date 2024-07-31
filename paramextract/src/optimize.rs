@@ -4,8 +4,8 @@ use serde::Serialize;
 
 use crate::{
     scaling::Scaling,
-    stats::{Damage, Passive, Stat},
-    weaponinfo::{max_scaling, WeaponInfo},
+    stats::{Damage, Passive, Reinforcement, Stat},
+    weaponinfo::WeaponInfo,
 };
 
 #[derive(Debug, Serialize)]
@@ -26,7 +26,7 @@ pub struct Scaled<A> {
 
 pub(crate) fn best_stats(
     wpn: &WeaponInfo,
-    reinforce: &BTreeMap<u32, Damage<f32>>,
+    reinforce: &BTreeMap<u32, Reinforcement>,
     graphes: &HashMap<u32, Scaling>,
     accorrect: &BTreeMap<u32, Stat<Damage<i16>>>,
     two_handed: bool,
@@ -51,8 +51,9 @@ pub(crate) fn best_stats(
         .correct_e
         .fmap_r(|&dmg_type| graphes.get(&(dmg_type as u32)).unwrap());
 
-    let reinforce_scale = reinforce.get(&(wpn.reinforce_id as u32)).unwrap();
+    let reinforcement = reinforce.get(&(wpn.reinforce_id as u32)).unwrap();
     let accorrect = accorrect.get(&(wpn.correct_id as u32)).unwrap();
+
 
     let mut out = Scaled::default();
     let constant_effect = if wpn
@@ -64,10 +65,8 @@ pub(crate) fn best_stats(
     } else {
         Some(wpn.passives.iter().map(|psv| (psv.tp, psv.base)).collect::<Vec<_>>())
     };
-    let base_damage = wpn.attack_base.map2_r(reinforce_scale, |&a, &b| a as f32 * b);
-    let base_scaling = wpn
-        .correct_a
-        .map2_r(&max_scaling(wpn.reinforce_id), |&a, &b| (a * b / 100.0));
+    let base_damage = wpn.attack_base.map2_r(&reinforcement.damage, |&a, &b| a as f32 * b);
+    let base_scaling = wpn.correct_a.map2_r(&reinforcement.stats, |&a, &b| (a * b / 100.0));
 
     let base_damage_scaler = accorrect.map2_r(&base_scaling, |&ac, &y| ac.fmap_r(|&x| (x as f32) * y / 100.0));
 

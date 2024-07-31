@@ -3,7 +3,7 @@ use packed_struct::PackedStructSlice;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use scaling::Scaling;
 use serde::Serialize;
-use stats::{Damage, Stat};
+use stats::{Damage, Reinforcement, Stat};
 use std::{
     collections::{BTreeMap, HashMap},
     io::{BufRead, BufReader},
@@ -123,14 +123,30 @@ fn main() -> anyhow::Result<()> {
         let rw = structs::reinforce_param_weapon::REINFORCE_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
         let upgrade_level = rid % 100;
         let reinforce_type = rid - upgrade_level;
-        let reinforce_level = Damage {
+        let reinforce_damage = Damage {
             physics: rw.physics_atk_rate,
             magic: rw.magic_atk_rate,
             fire: rw.fire_atk_rate,
             lightning: rw.thunder_atk_rate,
             holy: rw.dark_atk_rate,
         };
-        reinforce.insert(reinforce_type, reinforce_level);
+        let reinforce_stats = Stat {
+            str: rw.correct_strength_rate,
+            dex: rw.correct_agility_rate,
+            int: rw.correct_magic_rate,
+            fth: rw.correct_faith_rate,
+            arc: rw.correct_luck_rate,
+        };
+        reinforce.insert(
+            reinforce_type,
+            Reinforcement {
+                damage: reinforce_damage,
+                stats: reinforce_stats,
+                sp1: rw.resident_sp_effect_id1,
+                sp2: rw.resident_sp_effect_id2,
+                sp3: rw.resident_sp_effect_id3,
+            },
+        );
     }
 
     let raw_aec = regulations.get_file("AttackElementCorrectParam").unwrap();
@@ -248,7 +264,7 @@ fn main() -> anyhow::Result<()> {
         }
         let eqpr = structs::equip_param_weapon::EQUIP_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
         if let Some(nm) = weapons_names.get(&rid) {
-            let wpn = WeaponInfo::new(nm.clone(), rid, &eqpr, &sp_effects)?;
+            let wpn = WeaponInfo::new(nm.clone(), rid, &eqpr, &sp_effects, &reinforce)?;
             weapons.push(wpn);
         }
     }

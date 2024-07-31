@@ -4,7 +4,7 @@ use anyhow::Context;
 use serde::Serialize;
 
 use crate::{
-    stats::{Damage, Effect, Passive, Stat},
+    stats::{Damage, Effect, Passive, Reinforcement, Stat},
     structs::{equip_param_weapon::EQUIP_PARAM_WEAPON_ST, sp_effect::SP_EFFECT_PARAM_ST},
 };
 
@@ -78,6 +78,7 @@ impl WeaponInfo {
         id: u32,
         eqp: &EQUIP_PARAM_WEAPON_ST,
         sp: &BTreeMap<u32, SP_EFFECT_PARAM_ST>,
+        reinforce: &BTreeMap<u32, Reinforcement>,
     ) -> anyhow::Result<Self> {
         let infusion = Infusion::from_id(id % 10000).with_context(|| anyhow::anyhow!("weapon {name}[{id}]"))?;
         let mut passives = Vec::new();
@@ -118,15 +119,8 @@ impl WeaponInfo {
             } else {
                 None
             };
-            if let Some((rawbase, tp)) = btp {
-                let base = match (eqp.reinforce_type_id, tp, id) {
-                    (900, Passive::Frost, _) => (rawbase as f32) * 1.59,
-                    (1100, Passive::Poison, 0) | (1100, Passive::Blood, 0) | (1000, Passive::Poison, 1) => {
-                        (rawbase as f32) * 1.44
-                    }
-                    _ => rawbase as f32,
-                };
-                passives.push(PassiveLvl { id: id as u8, tp, base });
+            if let Some((base, tp)) = btp {
+                passives.push(PassiveLvl { id: id as u8, tp, base: base as f32 });
             }
         }
         Ok(Self {
@@ -179,135 +173,5 @@ impl WeaponInfo {
 
     pub fn multidamage(&self) -> bool {
         self.attack_base.to_slice().into_iter().filter(|&&x| x != 0).count() > 1
-    }
-}
-
-pub fn max_scaling(reinforce_id: i16) -> Stat<f32> {
-    match reinforce_id {
-        0 => Stat {
-            str: 1.5,
-            dex: 1.5,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // default
-        100 => Stat {
-            str: 2.8,
-            dex: 0.0,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // heavy high
-        200 => Stat {
-            str: 1.3,
-            dex: 2.8,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // keen high
-        300 => Stat {
-            str: 1.9,
-            dex: 1.9,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // quality
-        400 => Stat {
-            str: 2.1,
-            dex: 1.2,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // fire
-        500 => Stat {
-            str: 1.8,
-            dex: 1.8,
-            int: 1.8,
-            fth: 2.3,
-            arc: 1.8,
-        }, // flame art
-        600 => Stat {
-            str: 1.2,
-            dex: 2.1,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // lightning
-        700 => Stat {
-            str: 1.8,
-            dex: 1.8,
-            int: 1.8,
-            fth: 2.3,
-            arc: 1.8,
-        }, // sacred
-        800 => Stat {
-            str: 1.3,
-            dex: 1.3,
-            int: 2.35,
-            fth: 1.8,
-            arc: 1.8,
-        }, // magic
-        900 => Stat {
-            str: 1.9,
-            dex: 1.9,
-            int: 2.0,
-            fth: 1.8,
-            arc: 1.8,
-        }, // cold
-        1000 | 1100 => Stat {
-            str: 1.9,
-            dex: 1.9,
-            int: 1.9,
-            fth: 1.9,
-            arc: 1.45,
-        }, // poison / blood
-        1200 => Stat {
-            str: 1.5,
-            dex: 1.5,
-            int: 1.5,
-            fth: 1.5,
-            arc: 1.8,
-        }, // occult
-        1300 => Stat {
-            str: 1.5,
-            dex: 1.5,
-            int: 4.3,
-            fth: 2.4,
-            arc: 2.4,
-        }, // carian sorcery sword
-        3000 => Stat {
-            str: 1.0,
-            dex: 1.0,
-            int: 1.0,
-            fth: 1.0,
-            arc: 1.0,
-        }, // no reinforce
-        5000 => Stat {
-            str: 1.3,
-            dex: 2.5,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // keen low
-        6000 => Stat {
-            str: 2.6,
-            dex: 1.2,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // heavy low
-        2200 => Stat::all(1.8),               // somber
-        1900 | 2400 => Stat::all(3.0),        // staves
-        3100 | 3200 | 3300 => Stat::all(0.0), // crossbows
-        8000 | 8100 | 8200 => Stat {
-            str: 1.8,
-            dex: 1.8,
-            int: 1.8,
-            fth: 1.8,
-            arc: 1.8,
-        }, // shields
-        8300 | 8500 => Stat::all(3.0),        // shields 4 / coil shield
-
-        _ => panic!("unknown reinforce_id: {reinforce_id}"),
     }
 }
