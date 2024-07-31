@@ -168,6 +168,8 @@ impl WeaponInfo {
                 poison: eqp.correct_typepoison,
                 blood: eqp.correct_typeblood,
                 madness: eqp.correct_typemadness,
+                frost: 0,
+                scarlet_rot: 0,
             },
             reinforce_id: eqp.reinforce_type_id,
             correct_id: eqp.attack_element_correct_id,

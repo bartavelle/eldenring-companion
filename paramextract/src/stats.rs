@@ -22,16 +22,6 @@ impl<A: Copy> Stat<A> {
 }
 
 impl<A> Stat<A> {
-    pub(crate) fn fmap<B, F: Fn(A) -> B>(self, f: F) -> Stat<B> {
-        Stat {
-            str: f(self.str),
-            dex: f(self.dex),
-            int: f(self.int),
-            fth: f(self.fth),
-            arc: f(self.arc),
-        }
-    }
-
     pub(crate) fn map2<B, C, F: Fn(A, B) -> C>(self, other: Stat<B>, f: F) -> Stat<C> {
         Stat {
             str: f(self.str, other.str),
@@ -53,13 +43,37 @@ impl<A> Stat<A> {
     }
 }
 
-#[derive(Debug, Clone, Copy, Serialize)]
+#[derive(Debug, Clone, Copy, Serialize, PartialEq, Eq)]
 pub struct Damage<A> {
     pub physics: A,
     pub magic: A,
     pub fire: A,
     pub lightning: A,
     pub holy: A,
+}
+
+impl<A: PartialOrd> PartialOrd for Damage<A> {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        if self == other {
+            Some(std::cmp::Ordering::Equal)
+        } else if self.physics >= other.physics
+            && self.magic >= other.magic
+            && self.fire >= other.fire
+            && self.lightning >= other.lightning
+            && self.holy >= other.holy
+        {
+            Some(std::cmp::Ordering::Greater)
+        } else if self.physics <= other.physics
+            && self.magic <= other.magic
+            && self.fire <= other.fire
+            && self.lightning <= other.lightning
+            && self.holy <= other.holy
+        {
+            Some(std::cmp::Ordering::Less)
+        } else {
+            None
+        }
+    }
 }
 
 impl<A> Damage<A> {
@@ -100,10 +114,12 @@ impl<A> Damage<A> {
 
 #[derive(Debug, Serialize)]
 pub struct Effect<A> {
-    pub poison: A,
     pub blood: A,
+    pub frost: A,
     pub sleep: A,
+    pub scarlet_rot: A,
     pub madness: A,
+    pub poison: A,
 }
 
 impl<A> Effect<A> {
@@ -113,6 +129,8 @@ impl<A> Effect<A> {
             blood: f(&self.blood),
             sleep: f(&self.sleep),
             madness: f(&self.madness),
+            frost: f(&self.frost),
+            scarlet_rot: f(&self.scarlet_rot),
         }
     }
 }

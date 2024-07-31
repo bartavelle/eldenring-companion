@@ -8,6 +8,7 @@ use std::{
     collections::{BTreeMap, HashMap},
     io::{BufRead, BufReader},
     path::{Path, PathBuf},
+    sync::RwLock,
 };
 use weaponinfo::{Infusion, WeaponInfo};
 
@@ -284,26 +285,26 @@ fn main() -> anyhow::Result<()> {
                 .iter()
                 .find(|w| w.name == weapon)
                 .expect("could not find weapon");
-            for r in optimize::best_stats(
-                wpn,
-                &reinforce,
-                &graphes,
-                &attack_correct_param,
-                mixed_damage_scale.unwrap_or(0.7),
-                two_handed,
-                mins,
-            ) {
+            let best = optimize::best_stats(wpn, &reinforce, &graphes, &attack_correct_param, two_handed, mins);
+            let rbest = match mixed_damage_scale {
+                None=> best.r75,
+                Some(1.0) => best.r100,
+                Some(0.75) => best.r75,
+                Some(0.5) => best.r50,
+                _ => panic!("only handles level mixed level 1 0.75 or 0.5")
+            };
+            for r in rbest {
                 println!("{r:?}")
             }
         }
         Command::GenAll { out, limit } => {
-            #[derive(PartialEq, Eq, Serialize, Debug)]
+            #[derive(PartialEq, Eq, Serialize, Debug, Clone, Copy)]
             enum THStatus {
                 OneHand,
                 TwoHands,
                 Any,
             }
-            #[derive(Serialize, Debug)]
+            #[derive(Serialize, Clone, Debug)]
             struct WpnParams<'t> {
                 mixed: f32,
                 handling: THStatus,
@@ -316,31 +317,12 @@ fn main() -> anyhow::Result<()> {
             // generate all json files in /tmp/machin
             for wpn in &weapons {
                 // multiple or single damage type
-                let mix_choice = if wpn.multidamage() {
-                    vec![1.0, 0.75, 0.5]
-                } else {
-                    vec![1.0]
-                };
-                for mixed in mix_choice {
-                    if wpn.correct_a.str > 0.0 {
-                        for th in [THStatus::OneHand, THStatus::TwoHands] {
-                            todo.push((
-                                WpnParams {
-                                    mixed,
-                                    handling: th,
-                                    id: wpn.id,
-                                    name: &wpn.name,
-                                    mainid: wpn.mainid,
-                                    infusion: wpn.infusion,
-                                },
-                                wpn,
-                            ));
-                        }
-                    } else {
+                if wpn.correct_a.str > 0.0 {
+                    for th in [THStatus::OneHand, THStatus::TwoHands] {
                         todo.push((
                             WpnParams {
-                                mixed,
-                                handling: THStatus::Any,
+                                mixed: 1.0,
+                                handling: th,
                                 id: wpn.id,
                                 name: &wpn.name,
                                 mainid: wpn.mainid,
@@ -349,6 +331,18 @@ fn main() -> anyhow::Result<()> {
                             wpn,
                         ));
                     }
+                } else {
+                    todo.push((
+                        WpnParams {
+                            mixed: 1.0,
+                            handling: THStatus::Any,
+                            id: wpn.id,
+                            name: &wpn.name,
+                            mainid: wpn.mainid,
+                            infusion: wpn.infusion,
+                        },
+                        wpn,
+                    ));
                 }
             }
 
@@ -358,6 +352,8 @@ fn main() -> anyhow::Result<()> {
             }
 
             eprintln!("TODO: {} elements", todo.len());
+
+            let index: RwLock<Vec<WpnParams>> = RwLock::new(Vec::new());
 
             todo.par_iter().for_each(|(params, wpn)| {
                 let start = std::time::Instant::now();
@@ -371,15 +367,37 @@ fn main() -> anyhow::Result<()> {
                     &reinforce,
                     &graphes,
                     &attack_correct_param,
-                    params.mixed,
                     params.handling == THStatus::TwoHands,
                     Stat::all(10),
                 );
-                let mut path = out.clone();
 
-                path.push(format!("{}-{thi}-{}.json", wpn.id, params.mixed));
-                let mut fo = std::fs::File::create(path).unwrap();
-                serde_json::to_writer(&mut fo, &optim_result).unwrap();
+                let save_file = |mixed: f32, wpn: &WeaponInfo, best| {
+                    let mut path = out.clone();
+                    path.push(format!("{}-{thi}-{}.json", wpn.id, mixed));
+                    let mut fo = std::fs::File::create(path).unwrap();
+                    serde_json::to_writer(&mut fo, &best).unwrap();
+                };
+
+                let mut lk = index.write().unwrap();
+
+                if wpn.multidamage() {
+                    let mut p75 = params.clone();
+                    p75.mixed = 0.75;
+                    save_file(0.75, wpn, optim_result.r75);
+                    lk.push(p75);
+
+                    let mut p50 = params.clone();
+                    p50.mixed = 0.5;
+                    save_file(0.5, wpn, optim_result.r50);
+                    lk.push(p50);
+
+                    save_file(1.0, wpn, optim_result.r100);
+                    lk.push(params.clone());
+                } else {
+                    save_file(1.0, wpn, optim_result.r100);
+                    lk.push(params.clone())
+                }
+
                 let end = std::time::Instant::now();
                 let elapsed = end - start;
                 if elapsed > std::time::Duration::from_secs(5) {
