@@ -7,13 +7,13 @@ use serde::Serialize;
 use crate::{
     erformat::{bnd4::BND4, load_params},
     scaling::Scaling,
-    stats::{Damage, Effect, Passive, Reinforcement, Stat},
     structs::{
         attack_element_correct::ATTACK_ELEMENT_CORRECT_PARAM_ST, calc_correct_graph::CACL_CORRECT_GRAPH_ST,
         equip_param_weapon::EQUIP_PARAM_WEAPON_ST, reinforce_param_weapon::REINFORCE_PARAM_WEAPON_ST,
         sp_effect::SP_EFFECT_PARAM_ST,
     },
 };
+use ertypes::stats::{Damage, Effect, Passive, Reinforcement, Stat};
 
 #[derive(Debug, Clone, Copy, Serialize)]
 pub enum Infusion {

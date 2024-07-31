@@ -324,6 +324,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ertypes"
+version = "0.1.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "funty"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -562,6 +569,8 @@ dependencies = [
  "anyhow",
  "byteorder",
  "clap 4.5.11",
+ "eldenring-companion",
+ "ertypes",
  "libaes",
  "memchr",
  "packed_struct",

@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
+use ertypes::stats::Stat;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use serde::Serialize;
-use stats::Stat;
 use std::{
     collections::HashMap,
     io::{BufRead, BufReader},
@@ -10,11 +10,11 @@ use std::{
 };
 use weaponinfo::{Infusion, WeaponData, WeaponInfo};
 
+pub mod armor;
 pub mod erformat;
 pub mod optimize;
 pub mod regulation;
 pub mod scaling;
-pub mod stats;
 pub mod structs;
 pub mod utils;
 pub mod weaponinfo;
@@ -89,7 +89,11 @@ fn main() -> anyhow::Result<()> {
     eprintln!("regulation version {}", regulations.version);
 
     match args.command {
-        Command::ArmorDump => {}
+        Command::ArmorDump => {
+            let armor_names = load_names(&args.data, "EquipParamProtector.txt")?;
+            let armor = armor::load_armor(&regulations, &armor_names)?;
+            // println!("{armor:?}");
+        }
         Command::Optimize {
             weapon,
             mixed_damage_scale,

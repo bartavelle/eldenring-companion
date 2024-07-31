@@ -1,10 +1,8 @@
 use serde::Serialize;
 use std::collections::BTreeMap;
 
-use crate::{
-    stats::{Damage, Passive, Stat},
-    weaponinfo::{WeaponData, WeaponInfo},
-};
+use crate::weaponinfo::{WeaponData, WeaponInfo};
+use ertypes::stats::{Damage, Passive, Stat};
 
 #[derive(Debug, Serialize)]
 pub struct Best {

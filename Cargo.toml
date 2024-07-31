@@ -1,7 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
-    "eldenring-companion",
+    "eldenring-companion", "ertypes",
     "htmlupdater",
     "optimizer"
 , "paramextract"]

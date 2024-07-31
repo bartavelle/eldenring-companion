@@ -10,7 +10,7 @@ pub struct Stat<A> {
 }
 
 impl<A: Copy> Stat<A> {
-    pub(crate) fn all(a: A) -> Self {
+    pub fn all(a: A) -> Self {
         Stat {
             str: a,
             dex: a,
@@ -22,7 +22,7 @@ impl<A: Copy> Stat<A> {
 }
 
 impl<A> Stat<A> {
-    pub(crate) fn map2<B, C, F: Fn(A, B) -> C>(self, other: Stat<B>, f: F) -> Stat<C> {
+    pub fn map2<B, C, F: Fn(A, B) -> C>(self, other: Stat<B>, f: F) -> Stat<C> {
         Stat {
             str: f(self.str, other.str),
             dex: f(self.dex, other.dex),
@@ -32,7 +32,7 @@ impl<A> Stat<A> {
         }
     }
 
-    pub(crate) fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Stat<B>, f: F) -> Stat<C> {
+    pub fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Stat<B>, f: F) -> Stat<C> {
         Stat {
             str: f(&self.str, &other.str),
             dex: f(&self.dex, &other.dex),
@@ -77,7 +77,7 @@ impl<A: PartialOrd> PartialOrd for Damage<A> {
 }
 
 impl<A> Damage<A> {
-    pub(crate) fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Damage<B> {
+    pub fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Damage<B> {
         Damage {
             physics: f(&self.physics),
             magic: f(&self.magic),
@@ -87,7 +87,7 @@ impl<A> Damage<A> {
         }
     }
 
-    pub(crate) fn map2<B, C, F: Fn(A, B) -> C>(self, other: Damage<B>, f: F) -> Damage<C> {
+    pub fn map2<B, C, F: Fn(A, B) -> C>(self, other: Damage<B>, f: F) -> Damage<C> {
         Damage {
             physics: f(self.physics, other.physics),
             magic: f(self.magic, other.magic),
@@ -97,7 +97,7 @@ impl<A> Damage<A> {
         }
     }
 
-    pub(crate) fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Damage<B>, f: F) -> Damage<C> {
+    pub fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Damage<B>, f: F) -> Damage<C> {
         Damage {
             physics: f(&self.physics, &other.physics),
             magic: f(&self.magic, &other.magic),
@@ -107,7 +107,7 @@ impl<A> Damage<A> {
         }
     }
 
-    pub(crate) fn to_slice(&self) -> [&A; 5] {
+    pub fn to_slice(&self) -> [&A; 5] {
         [&self.physics, &self.magic, &self.fire, &self.lightning, &self.holy]
     }
 }
@@ -123,7 +123,7 @@ pub struct Effect<A> {
 }
 
 impl<A> Effect<A> {
-    pub(crate) fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Effect<B> {
+    pub fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Effect<B> {
         Effect {
             poison: f(&self.poison),
             blood: f(&self.blood),
