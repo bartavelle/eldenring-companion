@@ -5,7 +5,7 @@ use packed_struct::PackedStructSlice;
 use serde::Serialize;
 
 use crate::{
-    bnd4::BND4,
+    erformat::{bnd4::BND4, load_params},
     scaling::Scaling,
     stats::{Damage, Effect, Passive, Reinforcement, Stat},
     structs::{
@@ -80,25 +80,11 @@ pub struct WeaponInfo {
 }
 
 fn load_sp_effects(reg: &BND4) -> anyhow::Result<BTreeMap<u32, SP_EFFECT_PARAM_ST>> {
-    let raw_spe = reg.get_file("SpEffect").unwrap();
-    let spe = crate::params::Params::from_bytes(raw_spe)?;
-    let mut sp_effects = BTreeMap::new();
-    for ridx in 0..spe.row_count() {
-        let (rid, rdata) = spe.raw_row(ridx);
-        let rw = SP_EFFECT_PARAM_ST::unpack_from_slice(rdata)?;
-        sp_effects.insert(rid, rw);
-    }
-    Ok(sp_effects)
+    load_params(reg, "SpEffect", |rid, a: SP_EFFECT_PARAM_ST| (rid, a))
 }
 
 fn load_reinforcement(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Reinforcement>> {
-    let mut reinforce = BTreeMap::new();
-    let raw_rein = reg.get_file("ReinforceParamWeapon").unwrap();
-    let rein = crate::params::Params::from_bytes(raw_rein)?;
-    // they are stored in increasing order, so we can just update
-    for ridx in 0..rein.row_count() {
-        let (rid, rdata) = rein.raw_row(ridx);
-        let rw = REINFORCE_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
+    load_params(reg, "ReinforceParamWeapon", |rid, rw: REINFORCE_PARAM_WEAPON_ST| {
         let upgrade_level = rid % 100;
         let reinforce_type = rid - upgrade_level;
         let reinforce_damage = Damage {
@@ -115,7 +101,7 @@ fn load_reinforcement(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Reinforcement>
             fth: rw.correct_faith_rate,
             arc: rw.correct_luck_rate,
         };
-        reinforce.insert(
+        (
             reinforce_type,
             Reinforcement {
                 damage: reinforce_damage,
@@ -124,102 +110,98 @@ fn load_reinforcement(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Reinforcement>
                 sp2: rw.resident_sp_effect_id2,
                 sp3: rw.resident_sp_effect_id3,
             },
-        );
-    }
-    Ok(reinforce)
+        )
+    })
 }
 
 fn load_aec(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Stat<Damage<i16>>>> {
-    let raw_aec = reg.get_file("AttackElementCorrectParam").unwrap();
-    let aec = crate::params::Params::from_bytes(raw_aec)?;
-    // they are stored in increasing order, so we can just update
-    let mut attack_correct_param = BTreeMap::new();
-    for ridx in 0..aec.row_count() {
-        let (rid, rdata) = aec.raw_row(ridx);
-        let rw = ATTACK_ELEMENT_CORRECT_PARAM_ST::unpack_from_slice(rdata)?;
-        let d = |rate: i16, iscorrected: bool| if iscorrected { rate } else { 0 };
-        let correct = Stat {
-            str: Damage {
-                physics: d(
-                    rw.influence_strength_correct_rate_by_physics,
-                    rw.is_strength_correct_by_physics,
-                ),
-                magic: d(
-                    rw.influence_strength_correct_rate_by_magic,
-                    rw.is_strength_correct_by_magic,
-                ),
-                fire: d(
-                    rw.influence_strength_correct_rate_by_fire,
-                    rw.is_strength_correct_by_fire,
-                ),
-                lightning: d(
-                    rw.influence_strength_correct_rate_by_thunder,
-                    rw.is_strength_correct_by_thunder,
-                ),
-                holy: d(
-                    rw.influence_strength_correct_rate_by_dark,
-                    rw.is_strength_correct_by_dark,
-                ),
-            },
-            dex: Damage {
-                physics: d(
-                    rw.influence_dexterity_correct_rate_by_physics,
-                    rw.is_dexterity_correct_by_physics,
-                ),
-                magic: d(
-                    rw.influence_dexterity_correct_rate_by_magic,
-                    rw.is_dexterity_correct_by_magic,
-                ),
-                fire: d(
-                    rw.influence_dexterity_correct_rate_by_fire,
-                    rw.is_dexterity_correct_by_fire,
-                ),
-                lightning: d(
-                    rw.influence_dexterity_correct_rate_by_thunder,
-                    rw.is_dexterity_correct_by_thunder,
-                ),
-                holy: d(
-                    rw.influence_dexterity_correct_rate_by_dark,
-                    rw.is_dexterity_correct_by_dark,
-                ),
-            },
-            int: Damage {
-                physics: d(
-                    rw.influence_magic_correct_rate_by_physics,
-                    rw.is_magic_correct_by_physics,
-                ),
-                magic: d(rw.influence_magic_correct_rate_by_magic, rw.is_magic_correct_by_magic),
-                fire: d(rw.influence_magic_correct_rate_by_fire, rw.is_magic_correct_by_fire),
-                lightning: d(
-                    rw.influence_magic_correct_rate_by_thunder,
-                    rw.is_magic_correct_by_thunder,
-                ),
-                holy: d(rw.influence_magic_correct_rate_by_dark, rw.is_magic_correct_by_dark),
-            },
-            fth: Damage {
-                physics: d(
-                    rw.influence_faith_correct_rate_by_physics,
-                    rw.is_faith_correct_by_physics,
-                ),
-                magic: d(rw.influence_faith_correct_rate_by_magic, rw.is_faith_correct_by_magic),
-                fire: d(rw.influence_faith_correct_rate_by_fire, rw.is_faith_correct_by_fire),
-                lightning: d(
-                    rw.influence_faith_correct_rate_by_thunder,
-                    rw.is_faith_correct_by_thunder,
-                ),
-                holy: d(rw.influence_faith_correct_rate_by_dark, rw.is_faith_correct_by_dark),
-            },
-            arc: Damage {
-                physics: d(rw.influence_luck_correct_rate_by_physics, rw.is_luck_correct_by_physics),
-                magic: d(rw.influence_luck_correct_rate_by_magic, rw.is_luck_correct_by_magic),
-                fire: d(rw.influence_luck_correct_rate_by_fire, rw.is_luck_correct_by_fire),
-                lightning: d(rw.influence_luck_correct_rate_by_thunder, rw.is_luck_correct_by_thunder),
-                holy: d(rw.influence_luck_correct_rate_by_dark, rw.is_luck_correct_by_dark),
-            },
-        };
-        attack_correct_param.insert(rid, correct);
-    }
-    Ok(attack_correct_param)
+    load_params(
+        reg,
+        "AttackElementCorrectParam",
+        |rid, rw: ATTACK_ELEMENT_CORRECT_PARAM_ST| {
+            let d = |rate: i16, iscorrected: bool| if iscorrected { rate } else { 0 };
+            let correct = Stat {
+                str: Damage {
+                    physics: d(
+                        rw.influence_strength_correct_rate_by_physics,
+                        rw.is_strength_correct_by_physics,
+                    ),
+                    magic: d(
+                        rw.influence_strength_correct_rate_by_magic,
+                        rw.is_strength_correct_by_magic,
+                    ),
+                    fire: d(
+                        rw.influence_strength_correct_rate_by_fire,
+                        rw.is_strength_correct_by_fire,
+                    ),
+                    lightning: d(
+                        rw.influence_strength_correct_rate_by_thunder,
+                        rw.is_strength_correct_by_thunder,
+                    ),
+                    holy: d(
+                        rw.influence_strength_correct_rate_by_dark,
+                        rw.is_strength_correct_by_dark,
+                    ),
+                },
+                dex: Damage {
+                    physics: d(
+                        rw.influence_dexterity_correct_rate_by_physics,
+                        rw.is_dexterity_correct_by_physics,
+                    ),
+                    magic: d(
+                        rw.influence_dexterity_correct_rate_by_magic,
+                        rw.is_dexterity_correct_by_magic,
+                    ),
+                    fire: d(
+                        rw.influence_dexterity_correct_rate_by_fire,
+                        rw.is_dexterity_correct_by_fire,
+                    ),
+                    lightning: d(
+                        rw.influence_dexterity_correct_rate_by_thunder,
+                        rw.is_dexterity_correct_by_thunder,
+                    ),
+                    holy: d(
+                        rw.influence_dexterity_correct_rate_by_dark,
+                        rw.is_dexterity_correct_by_dark,
+                    ),
+                },
+                int: Damage {
+                    physics: d(
+                        rw.influence_magic_correct_rate_by_physics,
+                        rw.is_magic_correct_by_physics,
+                    ),
+                    magic: d(rw.influence_magic_correct_rate_by_magic, rw.is_magic_correct_by_magic),
+                    fire: d(rw.influence_magic_correct_rate_by_fire, rw.is_magic_correct_by_fire),
+                    lightning: d(
+                        rw.influence_magic_correct_rate_by_thunder,
+                        rw.is_magic_correct_by_thunder,
+                    ),
+                    holy: d(rw.influence_magic_correct_rate_by_dark, rw.is_magic_correct_by_dark),
+                },
+                fth: Damage {
+                    physics: d(
+                        rw.influence_faith_correct_rate_by_physics,
+                        rw.is_faith_correct_by_physics,
+                    ),
+                    magic: d(rw.influence_faith_correct_rate_by_magic, rw.is_faith_correct_by_magic),
+                    fire: d(rw.influence_faith_correct_rate_by_fire, rw.is_faith_correct_by_fire),
+                    lightning: d(
+                        rw.influence_faith_correct_rate_by_thunder,
+                        rw.is_faith_correct_by_thunder,
+                    ),
+                    holy: d(rw.influence_faith_correct_rate_by_dark, rw.is_faith_correct_by_dark),
+                },
+                arc: Damage {
+                    physics: d(rw.influence_luck_correct_rate_by_physics, rw.is_luck_correct_by_physics),
+                    magic: d(rw.influence_luck_correct_rate_by_magic, rw.is_luck_correct_by_magic),
+                    fire: d(rw.influence_luck_correct_rate_by_fire, rw.is_luck_correct_by_fire),
+                    lightning: d(rw.influence_luck_correct_rate_by_thunder, rw.is_luck_correct_by_thunder),
+                    holy: d(rw.influence_luck_correct_rate_by_dark, rw.is_luck_correct_by_dark),
+                },
+            };
+            (rid, correct)
+        },
+    )
 }
 
 fn load_weapons(
@@ -229,7 +211,7 @@ fn load_weapons(
     reinforce: &BTreeMap<u32, Reinforcement>,
 ) -> anyhow::Result<Vec<WeaponInfo>> {
     let raw_equip_param_weapon = reg.get_file("EquipParamWeapon").unwrap();
-    let equip_param_weapon = crate::params::Params::from_bytes(raw_equip_param_weapon)?;
+    let equip_param_weapon = crate::erformat::params::Params::from_bytes(raw_equip_param_weapon)?;
 
     let mut weapons = Vec::new();
 
@@ -260,24 +242,18 @@ fn load_weapons(
     Ok(weapons)
 }
 
-fn load_correct(reg: &BND4) -> anyhow::Result<HashMap<u32, Scaling>> {
-    let raw_calc_correct_graph = reg.get_file("CalcCorrectGraph").unwrap();
-    let calc_correct_graph = crate::params::Params::from_bytes(raw_calc_correct_graph)?;
-    let mut graphes = HashMap::new();
-    for ridx in 0..calc_correct_graph.row_count() {
-        let (rid, rdata) = calc_correct_graph.raw_row(ridx);
-        let clc = CACL_CORRECT_GRAPH_ST::unpack_from_slice(rdata)?;
+fn load_correct(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Scaling>> {
+    load_params(reg, "CalcCorrectGraph", |rid, clc: CACL_CORRECT_GRAPH_ST| {
         let row = Scaling::new(&clc);
-        graphes.insert(rid, row);
-    }
-    Ok(graphes)
+        (rid, row)
+    })
 }
 
 pub struct WeaponData {
     pub sp_effects: BTreeMap<u32, SP_EFFECT_PARAM_ST>,
     pub reinforcement: BTreeMap<u32, Reinforcement>,
     pub aec: BTreeMap<u32, Stat<Damage<i16>>>,
-    pub graphes: HashMap<u32, Scaling>,
+    pub graphes: BTreeMap<u32, Scaling>,
     pub weapons: Vec<WeaponInfo>,
 }
 

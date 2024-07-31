@@ -10,9 +10,8 @@ use std::{
 };
 use weaponinfo::{Infusion, WeaponData, WeaponInfo};
 
-pub mod bnd4;
+pub mod erformat;
 pub mod optimize;
-pub mod params;
 pub mod regulation;
 pub mod scaling;
 pub mod stats;
