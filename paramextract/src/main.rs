@@ -1,20 +1,19 @@
 use clap::{Parser, Subcommand};
-use packed_struct::PackedStructSlice;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
-use scaling::Scaling;
 use serde::Serialize;
-use stats::{Damage, Reinforcement, Stat};
+use stats::Stat;
 use std::{
-    collections::{BTreeMap, HashMap},
+    collections::HashMap,
     io::{BufRead, BufReader},
     path::{Path, PathBuf},
     sync::RwLock,
 };
-use weaponinfo::{Infusion, WeaponInfo};
+use weaponinfo::{Infusion, WeaponData, WeaponInfo};
 
 pub mod bnd4;
 pub mod optimize;
 pub mod params;
+pub mod regulation;
 pub mod scaling;
 pub mod stats;
 pub mod structs;
@@ -58,18 +57,7 @@ enum Command {
         #[arg(short, long, help = "Limit amount of computer json (for testing)")]
         limit: Option<usize>,
     },
-}
-
-static REGULATION_KEY: [u8; 32] = [
-    0x99, 0xBF, 0xFC, 0x36, 0x6A, 0x6B, 0xC8, 0xC6, 0xF5, 0x82, 0x7D, 0x09, 0x36, 0x02, 0xD6, 0x76, 0xC4, 0x28, 0x92,
-    0xA0, 0x1C, 0x20, 0x7F, 0xB0, 0x24, 0xD3, 0xAF, 0x4E, 0x49, 0x3F, 0xEF, 0x99,
-];
-
-fn decrypt(key: &[u8; 32], encrypted: &[u8]) -> Vec<u8> {
-    let iv = &encrypted[..16];
-    let data = &encrypted[16..];
-    let cipher = libaes::Cipher::new_256(key);
-    cipher.cbc_decrypt(iv, data)
+    ArmorDump,
 }
 
 fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
@@ -97,189 +85,12 @@ fn main() -> anyhow::Result<()> {
     // let raw_prm = bnd4::decompress(dec_prm);
     // let parambnd = bnd4::BND4::parse(raw_prm).unwrap();
 
-    let weapons_names = load_names(&args.data, "EquipParamWeapon.txt")?;
-
-    let enc_reg = std::fs::read(args.regulation)?;
-    let dec_reg = decrypt(&REGULATION_KEY, &enc_reg);
-    let raw_reg = bnd4::decompress(dec_reg);
-    let regulations = bnd4::BND4::parse(raw_reg).unwrap();
+    let weapon_names = load_names(&args.data, "EquipParamWeapon.txt")?;
+    let regulations = regulation::load_regulation(&args.regulation)?;
     eprintln!("regulation version {}", regulations.version);
 
-    let raw_spe = regulations.get_file("SpEffect").unwrap();
-    let spe = params::Params::from_bytes(raw_spe)?;
-    let mut sp_effects = BTreeMap::new();
-    for ridx in 0..spe.row_count() {
-        let (rid, rdata) = spe.raw_row(ridx);
-        let rw = structs::sp_effect::SP_EFFECT_PARAM_ST::unpack_from_slice(rdata)?;
-        sp_effects.insert(rid, rw);
-    }
-
-    let mut reinforce = BTreeMap::new();
-    let raw_rein = regulations.get_file("ReinforceParamWeapon").unwrap();
-    let rein = params::Params::from_bytes(raw_rein)?;
-    // they are stored in increasing order, so we can just update
-    for ridx in 0..rein.row_count() {
-        let (rid, rdata) = rein.raw_row(ridx);
-        let rw = structs::reinforce_param_weapon::REINFORCE_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
-        let upgrade_level = rid % 100;
-        let reinforce_type = rid - upgrade_level;
-        let reinforce_damage = Damage {
-            physics: rw.physics_atk_rate,
-            magic: rw.magic_atk_rate,
-            fire: rw.fire_atk_rate,
-            lightning: rw.thunder_atk_rate,
-            holy: rw.dark_atk_rate,
-        };
-        let reinforce_stats = Stat {
-            str: rw.correct_strength_rate,
-            dex: rw.correct_agility_rate,
-            int: rw.correct_magic_rate,
-            fth: rw.correct_faith_rate,
-            arc: rw.correct_luck_rate,
-        };
-        reinforce.insert(
-            reinforce_type,
-            Reinforcement {
-                damage: reinforce_damage,
-                stats: reinforce_stats,
-                sp1: rw.resident_sp_effect_id1,
-                sp2: rw.resident_sp_effect_id2,
-                sp3: rw.resident_sp_effect_id3,
-            },
-        );
-    }
-
-    let raw_aec = regulations.get_file("AttackElementCorrectParam").unwrap();
-    let aec = params::Params::from_bytes(raw_aec)?;
-    // they are stored in increasing order, so we can just update
-    let mut attack_correct_param = BTreeMap::new();
-    for ridx in 0..aec.row_count() {
-        let (rid, rdata) = aec.raw_row(ridx);
-        let rw = structs::attack_element_correct::ATTACK_ELEMENT_CORRECT_PARAM_ST::unpack_from_slice(rdata)?;
-        let d = |rate: i16, iscorrected: bool| if iscorrected { rate } else { 0 };
-        let correct = Stat {
-            str: Damage {
-                physics: d(
-                    rw.influence_strength_correct_rate_by_physics,
-                    rw.is_strength_correct_by_physics,
-                ),
-                magic: d(
-                    rw.influence_strength_correct_rate_by_magic,
-                    rw.is_strength_correct_by_magic,
-                ),
-                fire: d(
-                    rw.influence_strength_correct_rate_by_fire,
-                    rw.is_strength_correct_by_fire,
-                ),
-                lightning: d(
-                    rw.influence_strength_correct_rate_by_thunder,
-                    rw.is_strength_correct_by_thunder,
-                ),
-                holy: d(
-                    rw.influence_strength_correct_rate_by_dark,
-                    rw.is_strength_correct_by_dark,
-                ),
-            },
-            dex: Damage {
-                physics: d(
-                    rw.influence_dexterity_correct_rate_by_physics,
-                    rw.is_dexterity_correct_by_physics,
-                ),
-                magic: d(
-                    rw.influence_dexterity_correct_rate_by_magic,
-                    rw.is_dexterity_correct_by_magic,
-                ),
-                fire: d(
-                    rw.influence_dexterity_correct_rate_by_fire,
-                    rw.is_dexterity_correct_by_fire,
-                ),
-                lightning: d(
-                    rw.influence_dexterity_correct_rate_by_thunder,
-                    rw.is_dexterity_correct_by_thunder,
-                ),
-                holy: d(
-                    rw.influence_dexterity_correct_rate_by_dark,
-                    rw.is_dexterity_correct_by_dark,
-                ),
-            },
-            int: Damage {
-                physics: d(
-                    rw.influence_magic_correct_rate_by_physics,
-                    rw.is_magic_correct_by_physics,
-                ),
-                magic: d(rw.influence_magic_correct_rate_by_magic, rw.is_magic_correct_by_magic),
-                fire: d(rw.influence_magic_correct_rate_by_fire, rw.is_magic_correct_by_fire),
-                lightning: d(
-                    rw.influence_magic_correct_rate_by_thunder,
-                    rw.is_magic_correct_by_thunder,
-                ),
-                holy: d(rw.influence_magic_correct_rate_by_dark, rw.is_magic_correct_by_dark),
-            },
-            fth: Damage {
-                physics: d(
-                    rw.influence_faith_correct_rate_by_physics,
-                    rw.is_faith_correct_by_physics,
-                ),
-                magic: d(rw.influence_faith_correct_rate_by_magic, rw.is_faith_correct_by_magic),
-                fire: d(rw.influence_faith_correct_rate_by_fire, rw.is_faith_correct_by_fire),
-                lightning: d(
-                    rw.influence_faith_correct_rate_by_thunder,
-                    rw.is_faith_correct_by_thunder,
-                ),
-                holy: d(rw.influence_faith_correct_rate_by_dark, rw.is_faith_correct_by_dark),
-            },
-            arc: Damage {
-                physics: d(rw.influence_luck_correct_rate_by_physics, rw.is_luck_correct_by_physics),
-                magic: d(rw.influence_luck_correct_rate_by_magic, rw.is_luck_correct_by_magic),
-                fire: d(rw.influence_luck_correct_rate_by_fire, rw.is_luck_correct_by_fire),
-                lightning: d(rw.influence_luck_correct_rate_by_thunder, rw.is_luck_correct_by_thunder),
-                holy: d(rw.influence_luck_correct_rate_by_dark, rw.is_luck_correct_by_dark),
-            },
-        };
-        attack_correct_param.insert(rid, correct);
-    }
-
-    let raw_equip_param_weapon = regulations.get_file("EquipParamWeapon").unwrap();
-    let equip_param_weapon = params::Params::from_bytes(raw_equip_param_weapon)?;
-
-    let mut weapons = Vec::new();
-
-    for ridx in 0..equip_param_weapon.row_count() {
-        let (rid, rdata) = equip_param_weapon.raw_row(ridx);
-        if rid == 99999999 {
-            continue;
-        }
-        if rid < 1000000 {
-            // items
-            continue;
-        }
-        if (30000000..33000000).contains(&rid) {
-            // shields
-            continue;
-        }
-
-        if (50000000..53500000).contains(&rid) {
-            // arrows
-            continue;
-        }
-        let eqpr = structs::equip_param_weapon::EQUIP_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
-        if let Some(nm) = weapons_names.get(&rid) {
-            let wpn = WeaponInfo::new(nm.clone(), rid, &eqpr, &sp_effects, &reinforce)?;
-            weapons.push(wpn);
-        }
-    }
-
-    let raw_calc_correct_graph = regulations.get_file("CalcCorrectGraph").unwrap();
-    let calc_correct_graph = params::Params::from_bytes(raw_calc_correct_graph)?;
-    let mut graphes = HashMap::new();
-    for ridx in 0..calc_correct_graph.row_count() {
-        let (rid, rdata) = calc_correct_graph.raw_row(ridx);
-        let clc = structs::calc_correct_graph::CACL_CORRECT_GRAPH_ST::unpack_from_slice(rdata)?;
-        let row = Scaling::new(&clc);
-        graphes.insert(rid, row);
-    }
-
     match args.command {
+        Command::ArmorDump => {}
         Command::Optimize {
             weapon,
             mixed_damage_scale,
@@ -290,6 +101,7 @@ fn main() -> anyhow::Result<()> {
             min_fth,
             min_arc,
         } => {
+            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
             let mins = Stat {
                 str: min_str,
                 dex: min_dex,
@@ -297,11 +109,12 @@ fn main() -> anyhow::Result<()> {
                 fth: min_fth,
                 arc: min_arc,
             };
-            let wpn = weapons
+            let wpn = wpn_data
+                .weapons
                 .iter()
                 .find(|w| w.name == weapon)
                 .expect("could not find weapon");
-            let best = optimize::best_stats(wpn, &reinforce, &graphes, &attack_correct_param, two_handed, mins);
+            let best = optimize::best_stats(wpn, &wpn_data, two_handed, mins);
             let rbest = match mixed_damage_scale {
                 None => best.r75,
                 Some(1.0) => best.r100,
@@ -314,6 +127,7 @@ fn main() -> anyhow::Result<()> {
             }
         }
         Command::GenAll { out, limit } => {
+            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
             #[derive(PartialEq, Eq, Serialize, Debug, Clone, Copy)]
             enum THStatus {
                 OneHand,
@@ -331,7 +145,7 @@ fn main() -> anyhow::Result<()> {
             }
             let mut todo = Vec::new();
             // generate all json files in /tmp/machin
-            for wpn in &weapons {
+            for wpn in &wpn_data.weapons {
                 // multiple or single damage type
                 if wpn.correct_a.str > 0.0 {
                     for th in [THStatus::OneHand, THStatus::TwoHands] {
@@ -378,14 +192,8 @@ fn main() -> anyhow::Result<()> {
                     THStatus::OneHand => "1H",
                     THStatus::TwoHands => "2H",
                 };
-                let optim_result = optimize::best_stats(
-                    wpn,
-                    &reinforce,
-                    &graphes,
-                    &attack_correct_param,
-                    params.handling == THStatus::TwoHands,
-                    Stat::all(10),
-                );
+                let optim_result =
+                    optimize::best_stats(wpn, &wpn_data, params.handling == THStatus::TwoHands, Stat::all(10));
 
                 let save_file = |mixed: f32, wpn: &WeaponInfo, best| {
                     let mut path = out.clone();

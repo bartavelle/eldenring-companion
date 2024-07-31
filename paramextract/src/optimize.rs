@@ -1,11 +1,9 @@
-use std::collections::{BTreeMap, HashMap};
-
 use serde::Serialize;
+use std::collections::BTreeMap;
 
 use crate::{
-    scaling::Scaling,
-    stats::{Damage, Passive, Reinforcement, Stat},
-    weaponinfo::WeaponInfo,
+    stats::{Damage, Passive, Stat},
+    weaponinfo::{WeaponData, WeaponInfo},
 };
 
 #[derive(Debug, Serialize)]
@@ -26,9 +24,7 @@ pub struct Scaled<A> {
 
 pub(crate) fn best_stats(
     wpn: &WeaponInfo,
-    reinforce: &BTreeMap<u32, Reinforcement>,
-    graphes: &HashMap<u32, Scaling>,
-    accorrect: &BTreeMap<u32, Stat<Damage<i16>>>,
+    wpndata: &WeaponData,
     two_handed: bool,
     mins: Stat<u8>,
 ) -> Scaled<BTreeMap<u32, Best>> {
@@ -45,15 +41,14 @@ pub(crate) fn best_stats(
 
     let damages = wpn
         .correct_d
-        .fmap_r(|&dmg_type| graphes.get(&(dmg_type as u32)).unwrap());
+        .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
 
     let effects = wpn
         .correct_e
-        .fmap_r(|&dmg_type| graphes.get(&(dmg_type as u32)).unwrap());
+        .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
 
-    let reinforcement = reinforce.get(&(wpn.reinforce_id as u32)).unwrap();
-    let accorrect = accorrect.get(&(wpn.correct_id as u32)).unwrap();
-
+    let reinforcement = wpndata.reinforcement.get(&(wpn.reinforce_id as u32)).unwrap();
+    let accorrect = wpndata.aec.get(&(wpn.correct_id as u32)).unwrap();
 
     let mut out = Scaled::default();
     let constant_effect = if wpn
