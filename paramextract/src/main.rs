@@ -104,6 +104,15 @@ fn main() -> anyhow::Result<()> {
     let regulations = bnd4::BND4::parse(raw_reg).unwrap();
     eprintln!("regulation version {}", regulations.version);
 
+    let raw_spe = regulations.get_file("SpEffect").unwrap();
+    let spe = params::Params::from_bytes(raw_spe)?;
+    let mut sp_effects = BTreeMap::new();
+    for ridx in 0..spe.row_count() {
+        let (rid, rdata) = spe.raw_row(ridx);
+        let rw = structs::sp_effect::SP_EFFECT_PARAM_ST::unpack_from_slice(rdata)?;
+        sp_effects.insert(rid, rw);
+    }
+
     let mut reinforce = BTreeMap::new();
     let raw_rein = regulations.get_file("ReinforceParamWeapon").unwrap();
     let rein = params::Params::from_bytes(raw_rein)?;
@@ -238,7 +247,7 @@ fn main() -> anyhow::Result<()> {
         }
         let eqpr = structs::equip_param_weapon::EQUIP_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
         if let Some(nm) = weapons_names.get(&rid) {
-            let wpn = WeaponInfo::new(nm.clone(), rid, &eqpr)?;
+            let wpn = WeaponInfo::new(nm.clone(), rid, &eqpr, &sp_effects)?;
             weapons.push(wpn);
         }
     }
@@ -288,13 +297,13 @@ fn main() -> anyhow::Result<()> {
             }
         }
         Command::GenAll { out, limit } => {
-            #[derive(PartialEq, Eq, Serialize)]
+            #[derive(PartialEq, Eq, Serialize, Debug)]
             enum THStatus {
                 OneHand,
                 TwoHands,
                 Any,
             }
-            #[derive(Serialize)]
+            #[derive(Serialize, Debug)]
             struct WpnParams<'t> {
                 mixed: f32,
                 handling: THStatus,
@@ -306,7 +315,8 @@ fn main() -> anyhow::Result<()> {
             let mut todo = Vec::new();
             // generate all json files in /tmp/machin
             for wpn in &weapons {
-                let mix_choice = if wpn.correct_d.to_slice().into_iter().filter(|&&x| x != 0).count() > 1 {
+                // multiple or single damage type
+                let mix_choice = if wpn.multidamage() {
                     vec![1.0, 0.75, 0.5]
                 } else {
                     vec![1.0]
@@ -373,7 +383,7 @@ fn main() -> anyhow::Result<()> {
                 let end = std::time::Instant::now();
                 let elapsed = end - start;
                 if elapsed > std::time::Duration::from_secs(5) {
-                    println!("{} {:.2}s", wpn.name, elapsed.as_secs_f32())
+                    println!("{:?} {:.2}s", params, elapsed.as_secs_f32())
                 }
             });
 

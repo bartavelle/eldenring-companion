@@ -53,7 +53,7 @@ fn decompress_krak(bytes: &[u8]) -> anyhow::Result<Vec<u8>> {
     let (uncompressed, compressed) = validate_dcx(&mut cur);
     assert_char(b"KRAK", &mut cur);
     assert_u32(32, &mut cur);
-    let compression_level = cur.read_u8()?;
+    let _compression_level = cur.read_u8()?;
     assert_eq!(cur.read_u8()?, 0);
     assert_eq!(cur.read_u8()?, 0);
     assert_eq!(cur.read_u8()?, 0);
@@ -64,8 +64,8 @@ fn decompress_krak(bytes: &[u8]) -> anyhow::Result<Vec<u8>> {
     assert_char(b"DCA\0", &mut cur);
     assert_u32(8, &mut cur);
     let start = cur.position() as usize;
-    let end = start + compressed as usize;
-    let mut decompressed = vec![0; uncompressed as usize];
+    let _end = start + compressed as usize;
+    let mut _decompressed = vec![0; uncompressed as usize];
     // let decompressed_size = oodle_safe::decompress(
     //     &bytes[start..end],
     //     &mut decompressed,
@@ -116,8 +116,8 @@ impl Format {
 
 #[derive(Debug)]
 pub struct BND4 {
-    unk4: bool,
-    unk5: bool,
+    _unk4: bool,
+    _unk5: bool,
     pub version: String,
     data: Vec<u8>,
     files: Vec<BinderFileHeader>,
@@ -127,8 +127,8 @@ impl BND4 {
     pub fn parse(data: Vec<u8>) -> anyhow::Result<Self> {
         let mut cur = Cursor::new(&data);
         assert_char(b"BND4", &mut cur);
-        let unk4 = cur.read_u8()? != 0;
-        let unk5 = cur.read_u8()? != 0;
+        let _unk4 = cur.read_u8()? != 0;
+        let _unk5 = cur.read_u8()? != 0;
         assert_eq!(cur.read_u8()?, 0);
         assert_eq!(cur.read_u8()?, 0);
 
@@ -172,8 +172,8 @@ impl BND4 {
         }
 
         Ok(Self {
-            unk4,
-            unk5,
+            _unk4,
+            _unk5,
             version,
             data,
             files: headers,
@@ -198,11 +198,11 @@ impl BND4 {
 
 #[derive(Debug)]
 struct BinderFileHeader {
-    flags: u8,
+    _flags: u8,
     size: usize,
-    uncompressed_size: Option<usize>,
+    _uncompressed_size: Option<usize>,
     offset: usize,
-    id: Option<u32>,
+    _id: Option<u32>,
     name: Option<String>,
 }
 
@@ -241,11 +241,11 @@ impl BinderFileHeader {
         };
         assert!(!format.is_name1());
         Ok(Self {
-            flags,
+            _flags: flags,
             size,
-            uncompressed_size,
+            _uncompressed_size: uncompressed_size,
             offset,
-            id,
+            _id: id,
             name,
         })
     }

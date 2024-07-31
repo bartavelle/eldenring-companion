@@ -6,7 +6,7 @@ use crate::utils::{assert_u32, read_utf16};
 
 struct Row {
     id: u32,
-    name: Option<String>,
+    _name: Option<String>,
     index: u64,
 }
 
@@ -29,15 +29,15 @@ impl<'t> Params<'t> {
         assert!(!be);
         let format_2d = bts[0x2d];
         let format_2e = bts[0x2e];
-        let param_format_version = bts[0x2f];
+        let _param_format_version = bts[0x2f];
         let mut cur = std::io::Cursor::new(bts);
-        let string_offset = cur.read_u32::<LittleEndian>()?;
+        let _string_offset = cur.read_u32::<LittleEndian>()?;
         let _ = cur.read_u16::<LittleEndian>()?;
         let _unk06 = cur.read_u16::<LittleEndian>()?;
-        let data_version = cur.read_u16::<LittleEndian>()?;
+        let _data_version = cur.read_u16::<LittleEndian>()?;
         let row_count = cur.read_u16::<LittleEndian>()?;
 
-        let (param_type, param_type_offset) = if (format_2d & OFFSET_PARAM_TYPE) != 0 {
+        let (param_type, _param_type_offset) = if (format_2d & OFFSET_PARAM_TYPE) != 0 {
             assert_u32(0, &mut cur);
             let param_type_offset = cur.read_u64::<LittleEndian>()?;
             let mut buf = [0; 0x14];
@@ -56,13 +56,13 @@ impl<'t> Params<'t> {
         }
         let _ = cur.read_u32::<LittleEndian>()?;
         if (format_2d & FLAG01) != 0 && (format_2d & INT_DATA_OFFSET) != 0 {
-            let data_start = cur.read_u32::<LittleEndian>()?;
+            let _data_start = cur.read_u32::<LittleEndian>()?;
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
             // eprintln!("TODO: data_start {data_start}")
         } else {
-            let data_start = cur.read_u64::<LittleEndian>()?;
+            let _data_start = cur.read_u64::<LittleEndian>()?;
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
             // eprintln!("TODO: data_start {data_start}")
@@ -84,7 +84,7 @@ impl<'t> Params<'t> {
             let name: Option<String> = if name_offset != 0 {
                 // does not handle row_count == 1
                 if format_2e & UNICODE_ROW_NAME != 0 {
-                    Some(read_utf16(&bts[name_offset as usize..])?)
+                    read_utf16(&bts[name_offset as usize..]).ok()
                 } else {
                     todo!("shiftJIS")
                 }
@@ -93,7 +93,7 @@ impl<'t> Params<'t> {
             };
             rows.push(Row {
                 id,
-                name,
+                _name: name,
                 index: dataindex,
             });
         }
@@ -121,8 +121,8 @@ impl<'t> Params<'t> {
         let end = start + self.row_size as usize;
         (rowid.id, &self.data[start..end])
     }
-    
+
     pub(crate) fn row_count(&self) -> usize {
-      self.rows.len()
+        self.rows.len()
     }
 }

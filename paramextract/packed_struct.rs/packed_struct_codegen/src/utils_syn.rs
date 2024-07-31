@@ -1,5 +1,5 @@
 use proc_macro2::TokenStream;
-use syn::{Error, PathSegment, Result, spanned::Spanned, TypePath};
+use syn::{spanned::Spanned, Error, PathSegment, Result, TypePath};
 
 pub fn get_single_segment(type_path: &TypePath) -> Result<&PathSegment> {
     if type_path.path.segments.len() == 1 {
@@ -12,10 +12,11 @@ pub fn get_single_segment(type_path: &TypePath) -> Result<&PathSegment> {
 
 pub fn get_expr_int_val(expr: &syn::Expr) -> Result<usize> {
     match expr {
-        syn::Expr::Lit(syn::ExprLit { lit: syn::Lit::Int(lit_int), ..})  => {
-            Ok(lit_int.base10_parse()?)
-        },
-        _ => Err(Error::new(expr.span(), "Unsupported extraction of int value"))
+        syn::Expr::Lit(syn::ExprLit {
+            lit: syn::Lit::Int(lit_int),
+            ..
+        }) => Ok(lit_int.base10_parse()?),
+        _ => Err(Error::new(expr.span(), "Unsupported extraction of int value")),
     }
 }
 

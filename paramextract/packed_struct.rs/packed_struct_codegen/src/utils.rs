@@ -2,7 +2,7 @@ use std::ops::*;
 
 pub struct NextBits;
 pub trait BitsRange {
-    fn get_bits_range(&self, packed_bit_width: usize, prev_range: &Option<Range<usize>>) -> Range<usize>; 
+    fn get_bits_range(&self, packed_bit_width: usize, prev_range: &Option<Range<usize>>) -> Range<usize>;
 }
 
 impl BitsRange for usize {
@@ -17,7 +17,7 @@ impl BitsRange for Range<usize> {
     }
 }
 
-impl BitsRange for NextBits {    
+impl BitsRange for NextBits {
     fn get_bits_range(&self, packed_bit_width: usize, prev_range: &Option<Range<usize>>) -> Range<usize> {
         if let Some(ref prev_range) = prev_range {
             (prev_range.end + 1)..((prev_range.end + 1) + packed_bit_width - 1)
@@ -27,8 +27,7 @@ impl BitsRange for NextBits {
     }
 }
 
-
-pub fn ones_u8(n: u8) -> u8 {    
+pub fn ones_u8(n: u8) -> u8 {
     match n {
         0 => 0b00000000,
         1 => 0b00000001,
@@ -38,10 +37,9 @@ pub fn ones_u8(n: u8) -> u8 {
         5 => 0b00011111,
         6 => 0b00111111,
         7 => 0b01111111,
-        _ => 0b11111111
+        _ => 0b11111111,
     }
 }
-
 
 // From rustc
 pub fn to_snake_case(mut str: &str) -> String {

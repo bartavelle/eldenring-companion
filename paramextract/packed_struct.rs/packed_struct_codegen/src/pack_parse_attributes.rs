@@ -5,7 +5,7 @@ pub enum PackStructAttributeKind {
     SizeBytes,
     //SizeBits,
     DefaultIntEndianness,
-    BitNumbering
+    BitNumbering,
 }
 
 impl PackStructAttributeKind {
@@ -16,7 +16,7 @@ impl PackStructAttributeKind {
             SizeBytes => "size_bytes",
             //SizeBits => "size_bits",
             DefaultIntEndianness => "endian",
-            BitNumbering => "bit_numbering"
+            BitNumbering => "bit_numbering",
         }
     }
 }
@@ -25,13 +25,14 @@ pub enum PackStructAttribute {
     SizeBytes(usize),
     //SizeBits(usize),
     DefaultIntEndianness(IntegerEndianness),
-    BitNumbering(BitNumbering)
+    BitNumbering(BitNumbering),
 }
 
 impl PackStructAttribute {
     pub fn parse(name: &str, val: &str) -> Result<Self, String> {
         if name == PackStructAttributeKind::DefaultIntEndianness.get_attr_name() {
-            let v = IntegerEndianness::from_str(val).ok_or_else(|| format!("Invalid default int endian value: {}", val))?;
+            let v =
+                IntegerEndianness::from_str(val).ok_or_else(|| format!("Invalid default int endian value: {}", val))?;
             return Ok(PackStructAttribute::DefaultIntEndianness(v));
         }
 
@@ -63,7 +64,7 @@ impl PackStructAttribute {
             }
         }
         r
-    }    
+    }
 }
 
 #[derive(Clone, Copy)]
@@ -75,7 +76,7 @@ pub enum PackFieldAttributeKind {
     ElementSizeBits,
     SizeBytes,
     SizeBits,
-    Ty
+    Ty,
 }
 
 impl PackFieldAttributeKind {
@@ -90,7 +91,7 @@ impl PackFieldAttributeKind {
             SizeBits => "size_bits",
             ElementSizeBytes => "element_size_bytes",
             ElementSizeBits => "element_size_bits",
-            Ty => "ty"
+            Ty => "ty",
         }
     }
 }
@@ -101,17 +102,19 @@ pub enum PackFieldAttribute {
     BytePosition(BitsPositionParsed),
     SizeBits(usize),
     ElementSizeBits(usize),
-    Ty(TyKind)
+    Ty(TyKind),
 }
 
 pub enum TyKind {
-    Enum
+    Enum,
 }
 
 impl PackFieldAttribute {
     pub fn parse(name: &str, val: &str) -> Result<Self, String> {
-        if name == PackFieldAttributeKind::IntEndiannes.get_attr_name() {            
-            return Ok(PackFieldAttribute::IntEndiannes(IntegerEndianness::from_str(val).unwrap()));
+        if name == PackFieldAttributeKind::IntEndiannes.get_attr_name() {
+            return Ok(PackFieldAttribute::IntEndiannes(
+                IntegerEndianness::from_str(val).unwrap(),
+            ));
         }
 
         if name == PackFieldAttributeKind::BitPosition.get_attr_name() {
@@ -162,23 +165,22 @@ impl PackFieldAttribute {
     }
 }
 
-
 /// Supported formats:
-/// 
+///
 /// Single bit
 /// 0
 ///
 /// Open ended, start bit:
 /// 0..
 /// 0:
-/// 
+///
 /// Inclusive range
 /// 0:1
 /// 0..=1
-/// 
+///
 /// Exclusive range
 /// 0..2
-/// 
+///
 /// Returns: INCLUSIVE range
 pub fn parse_position_val(v: &str, multiplier: usize) -> Result<BitsPositionParsed, String> {
     let v = v.trim();
@@ -205,12 +207,14 @@ pub fn parse_position_val(v: &str, multiplier: usize) -> Result<BitsPositionPars
             let start = parse_num(s[0])?;
             let end = parse_num(s[1])?;
             if multiplier > 1 {
-                return Ok(BitsPositionParsed::range_in_order(start * multiplier, ((end+1) * multiplier)-1));
+                return Ok(BitsPositionParsed::range_in_order(
+                    start * multiplier,
+                    ((end + 1) * multiplier) - 1,
+                ));
             } else {
                 return Ok(BitsPositionParsed::range_in_order(start, end));
             }
         }
-
     } else if v.contains("..") {
         // exclusive
 
@@ -221,9 +225,12 @@ pub fn parse_position_val(v: &str, multiplier: usize) -> Result<BitsPositionPars
             if end == 0 {
                 panic!("Ending cannot be 0 for exclusive ranges.");
             }
-            
+
             if multiplier > 1 {
-                return Ok(BitsPositionParsed::range_in_order(start * multiplier, ((end-1) * multiplier)-1));
+                return Ok(BitsPositionParsed::range_in_order(
+                    start * multiplier,
+                    ((end - 1) * multiplier) - 1,
+                ));
             } else {
                 return Ok(BitsPositionParsed::range_in_order(start, end - 1));
             }
@@ -232,8 +239,11 @@ pub fn parse_position_val(v: &str, multiplier: usize) -> Result<BitsPositionPars
         // single bit
 
         let start = parse_num(v)?;
-        if multiplier > 1 {            
-            return Ok(BitsPositionParsed::Range(start * multiplier, ((start+1) * multiplier)-1));
+        if multiplier > 1 {
+            return Ok(BitsPositionParsed::Range(
+                start * multiplier,
+                ((start + 1) * multiplier) - 1,
+            ));
         } else {
             return Ok(BitsPositionParsed::Range(start, start));
         }
@@ -241,7 +251,6 @@ pub fn parse_position_val(v: &str, multiplier: usize) -> Result<BitsPositionPars
 
     panic!("Invalid bits position. Tried to parse: '{}'", v);
 }
-
 
 #[test]
 fn test_parse_position_val() {

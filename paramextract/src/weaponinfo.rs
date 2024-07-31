@@ -1,9 +1,11 @@
+use std::collections::BTreeMap;
+
 use anyhow::Context;
 use serde::Serialize;
 
 use crate::{
-    stats::{Damage, Effect, Stat},
-    structs::equip_param_weapon::EQUIP_PARAM_WEAPON_ST,
+    stats::{Damage, Effect, Passive, Stat},
+    structs::{equip_param_weapon::EQUIP_PARAM_WEAPON_ST, sp_effect::SP_EFFECT_PARAM_ST},
 };
 
 #[derive(Debug, Clone, Copy, Serialize)]
@@ -47,6 +49,13 @@ impl Infusion {
 // *_correct_rate
 
 #[derive(Debug)]
+pub struct PassiveLvl {
+    pub id: u8,
+    pub tp: Passive,
+    pub base: f32,
+}
+
+#[derive(Debug)]
 pub struct WeaponInfo {
     pub name: String,
     pub weight: f32,
@@ -60,11 +69,66 @@ pub struct WeaponInfo {
     pub correct_e: Effect<u8>,
     pub reinforce_id: i16,
     pub correct_id: i32,
+    pub passives: Vec<PassiveLvl>,
 }
 
 impl WeaponInfo {
-    pub fn new(name: String, id: u32, eqp: &EQUIP_PARAM_WEAPON_ST) -> anyhow::Result<Self> {
+    pub fn new(
+        name: String,
+        id: u32,
+        eqp: &EQUIP_PARAM_WEAPON_ST,
+        sp: &BTreeMap<u32, SP_EFFECT_PARAM_ST>,
+    ) -> anyhow::Result<Self> {
         let infusion = Infusion::from_id(id % 10000).with_context(|| anyhow::anyhow!("weapon {name}[{id}]"))?;
+        let mut passives = Vec::new();
+
+        for (id, effect) in [
+            eqp.sp_effect_behavior_id0,
+            eqp.sp_effect_behavior_id1,
+            eqp.sp_effect_behavior_id2,
+        ]
+        .into_iter()
+        .enumerate()
+        {
+            if effect < 0 {
+                continue;
+            }
+            /*
+             apparently sp_attribute is set according to the passive type:
+              * 20 -> poison
+              * 21 -> disease
+              * 22 -> blood
+              * 23 -> cold
+              * 24 -> sleep
+              * 25 -> madness
+            */
+            let i = sp.get(&(effect as u32)).unwrap();
+            let btp = if i.blood_attack_power > 0 {
+                Some((i.blood_attack_power, Passive::Blood))
+            } else if i.sleep_attack_power > 0 {
+                Some((i.sleep_attack_power, Passive::Sleep))
+            } else if i.freeze_attack_power > 0 {
+                Some((i.freeze_attack_power, Passive::Frost))
+            } else if i.disease_attack_power > 0 {
+                Some((i.disease_attack_power, Passive::ScarletRot))
+            } else if i.madness_attack_power > 0 {
+                Some((i.madness_attack_power, Passive::Madness))
+            } else if i.poizon_attack_power > 0 {
+                Some((i.poizon_attack_power, Passive::Poison))
+            } else {
+                None
+            };
+            if let Some((rawbase, tp)) = btp {
+                let base = match (eqp.reinforce_type_id, tp, id) {
+                    (900, Passive::Frost, _) => (rawbase as f32) * 1.59,
+                    (1100, Passive::Poison, 0) | (1100, Passive::Blood, 0) | (1000, Passive::Poison, 1) => {
+                        (rawbase as f32) * 1.44
+                    }
+                    _ => rawbase as f32,
+                };
+                passives.push(PassiveLvl { id: id as u8, tp, base });
+            }
+        }
         Ok(Self {
             name,
             weight: eqp.weight,
@@ -107,7 +171,12 @@ impl WeaponInfo {
             },
             reinforce_id: eqp.reinforce_type_id,
             correct_id: eqp.attack_element_correct_id,
+            passives,
         })
+    }
+
+    pub fn multidamage(&self) -> bool {
+        self.attack_base.to_slice().into_iter().filter(|&&x| x != 0).count() > 1
     }
 }
 

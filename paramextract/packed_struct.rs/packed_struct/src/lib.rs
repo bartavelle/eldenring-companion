@@ -133,11 +133,11 @@
 //! ```element_size_bytes``` | ```1```, ... | Same as above, multiplied by 8.
 //! ```ty``` | ```enum``` | Packing helper for primitive enums.
 //! ```endian``` | ```msb``` or ```lsb``` | Integer endianness. Applies to u16/i16 and larger types.
-//! 
+//!
 //! ## Bit and byte positioning
-//! 
+//!
 //! Used for either ```bits``` or ```bytes``` on fields. The examples are for MSB0 positioning.
-//! 
+//!
 //! Value | Comment
 //! :--|:--
 //! ```0``` | A single bit or byte
@@ -195,7 +195,7 @@
 //! ```
 //!
 //! ## Nested packed types
-//! 
+//!
 //! ```rust
 //! use packed_struct::prelude::*;
 //! #[derive(PackedStruct, Debug, PartialEq)]
@@ -262,13 +262,13 @@
 //!     Ok(())
 //! }
 //! ```
-//! 
+//!
 //! # Primitive enums with simple discriminants
-//! 
+//!
 //! Supported backing integer types: ```u8```, ```u16```, ```u32```, ```u64```, ```i8```, ```i16```, ```i32```, ```i64```.
-//! 
+//!
 //! Explicit or implicit backing type:
-//! 
+//!
 //! ```rust
 //! use packed_struct::prelude::*;
 //!
@@ -277,15 +277,15 @@
 //!     VariantMin = 0,
 //!     VariantMax = 255
 //! }
-//! 
+//!
 //! #[derive(PrimitiveEnum_i16, Clone, Copy)]
 //! pub enum ExplicitType {
 //!     VariantMin = -32768,
 //!     VariantMax = 32767
 //! }
-//! 
+//!
 //! use packed_struct::PrimitiveEnum;
-//! 
+//!
 //! let t = ImplicitType::VariantMin;
 //! let tn: u8 = t.to_primitive();
 //! assert_eq!(0, tn);
@@ -293,19 +293,19 @@
 //! let t = ImplicitType::from_primitive(255).unwrap();
 //! assert_eq!(ImplicitType::VariantMax, t);
 //! ```
-//! 
+//!
 //! # Primitive enum packing with support for catch-all unknown values
-//! 
+//!
 //! ```rust
 //! use packed_struct::prelude::*;
-//! 
+//!
 //! #[derive(PrimitiveEnum_u8, Debug, Clone, Copy)]
 //! pub enum Field {
 //!     A = 1,
 //!     B = 2,
 //!     C = 3
 //! }
-//! 
+//!
 //! #[derive(PackedStruct, Debug, PartialEq)]
 //! #[packed_struct(bit_numbering="msb0")]
 //! pub struct Register {
@@ -317,19 +317,19 @@
 //! [crates-url]: https://crates.io/crates/packed_struct
 
 #![cfg_attr(not(feature = "std"), no_std)]
-
-#![cfg_attr(feature="alloc", feature(alloc))]
+#![cfg_attr(feature = "alloc", feature(alloc))]
 
 extern crate packed_struct_codegen;
 
-#[cfg(feature="alloc")]
+#[cfg(feature = "alloc")]
 #[macro_use]
 extern crate alloc;
 
 #[cfg(feature = "use_serde")]
 extern crate serde;
 #[cfg(feature = "use_serde")]
-#[macro_use] extern crate serde_derive;
+#[macro_use]
+extern crate serde_derive;
 
 mod internal_prelude;
 
@@ -340,7 +340,7 @@ mod primitive_enum;
 
 pub use primitive_enum::*;
 
-#[cfg(any(feature="alloc", feature="std"))]
+#[cfg(any(feature = "alloc", feature = "std"))]
 pub mod debug_fmt;
 
 mod types_array;
@@ -352,7 +352,7 @@ mod types_reserved;
 
 pub mod types_tuples;
 
-#[cfg(any(feature="alloc", feature="std"))]
+#[cfg(any(feature = "alloc", feature = "std"))]
 mod types_vec;
 
 /// Implementations and wrappers for various packing types.
@@ -364,11 +364,11 @@ pub mod types {
         pub use super::super::types_bits::*;
     }
 
-    pub use super::types_num::*;
     pub use super::types_array::*;
-    pub use super::types_reserved::*;
     pub use super::types_generic::*;
-    #[cfg(any(feature="alloc", feature="std"))]
+    pub use super::types_num::*;
+    pub use super::types_reserved::*;
+    #[cfg(any(feature = "alloc", feature = "std"))]
     pub use super::types_vec::*;
 }
 
@@ -378,8 +378,8 @@ pub use self::packing::*;
 pub mod derive {
     pub use packed_struct_codegen::PackedStruct;
     pub use packed_struct_codegen::PrimitiveEnum;
-    pub use packed_struct_codegen::{PrimitiveEnum_u8, PrimitiveEnum_u16, PrimitiveEnum_u32, PrimitiveEnum_u64};
-    pub use packed_struct_codegen::{PrimitiveEnum_i8, PrimitiveEnum_i16, PrimitiveEnum_i32, PrimitiveEnum_i64};
+    pub use packed_struct_codegen::{PrimitiveEnum_i16, PrimitiveEnum_i32, PrimitiveEnum_i64, PrimitiveEnum_i8};
+    pub use packed_struct_codegen::{PrimitiveEnum_u16, PrimitiveEnum_u32, PrimitiveEnum_u64, PrimitiveEnum_u8};
 }
 
 pub mod prelude {
@@ -390,27 +390,32 @@ pub mod prelude {
     pub use crate::{PackedStruct, PackedStructSlice, PackingError};
 
     pub use crate::PrimitiveEnum;
-    #[cfg(any(feature="alloc", feature="std"))]
+    #[cfg(any(feature = "alloc", feature = "std"))]
     pub use crate::PrimitiveEnumDynamicStr;
 
-    #[cfg(not(any(feature="alloc", feature="std")))]
+    #[cfg(not(any(feature = "alloc", feature = "std")))]
     pub use crate::PrimitiveEnumStaticStr;
-
 
     pub use crate::EnumCatchAll;
 
-    pub use crate::types::*;
     pub use crate::types::bits as packed_bits;
+    pub use crate::types::*;
 }
 
 use internal_prelude::v1::*;
 
-fn lib_get_slice<T, I: slice::SliceIndex<[T]>>(src: &[T], index: I) -> Result<&<I as slice::SliceIndex<[T]>>::Output, PackingError> {
+fn lib_get_slice<T, I: slice::SliceIndex<[T]>>(
+    src: &[T],
+    index: I,
+) -> Result<&<I as slice::SliceIndex<[T]>>::Output, PackingError> {
     let slice_len = src.len();
     src.get(index).ok_or(PackingError::SliceIndexingError { slice_len })
 }
 
-fn lib_get_mut_slice<T, I: slice::SliceIndex<[T]>>(src: &mut [T], index: I) -> Result<&mut <I as slice::SliceIndex<[T]>>::Output, PackingError> {
+fn lib_get_mut_slice<T, I: slice::SliceIndex<[T]>>(
+    src: &mut [T],
+    index: I,
+) -> Result<&mut <I as slice::SliceIndex<[T]>>::Output, PackingError> {
     let slice_len = src.len();
     src.get_mut(index).ok_or(PackingError::SliceIndexingError { slice_len })
 }

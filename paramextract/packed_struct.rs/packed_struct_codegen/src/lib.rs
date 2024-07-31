@@ -9,7 +9,7 @@ extern crate syn;
 extern crate quote;
 
 use proc_macro::TokenStream;
-use syn::{DeriveInput, parse_macro_input};
+use syn::{parse_macro_input, DeriveInput};
 
 mod pack;
 mod pack_codegen;
@@ -17,8 +17,8 @@ mod pack_codegen_docs;
 mod pack_parse;
 mod pack_parse_attributes;
 
-mod primitive_enum;
 mod common;
+mod primitive_enum;
 mod utils;
 mod utils_syn;
 
@@ -26,10 +26,10 @@ mod utils_syn;
 #[proc_macro_derive(PackedStruct, attributes(packed_struct, packed_field))]
 pub fn derive_packable_bytes(tokens: TokenStream) -> TokenStream {
     let input = parse_macro_input!(tokens as DeriveInput);
-    
+
     let parsed = match pack_parse::parse_struct(&input) {
         Ok(p) => p,
-        Err(e) => return e.to_compile_error().into()
+        Err(e) => return e.to_compile_error().into(),
     };
 
     pack_codegen::derive_pack(&parsed)

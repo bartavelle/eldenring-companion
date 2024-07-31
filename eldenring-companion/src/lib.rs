@@ -182,16 +182,14 @@ fn prepare_list(i: &[Scored]) -> Vec<Scored> {
         weight: 0.0,
         score: 0.0,
     });
-    i.sort_unstable_by(|a, b| {
-        match b.score.partial_cmp(&a.score) {
+    i.sort_unstable_by(|a, b| match b.score.partial_cmp(&a.score) {
+        Some(Ordering::Greater) => Ordering::Greater,
+        Some(Ordering::Less) => Ordering::Less,
+        _ => match a.weight.partial_cmp(&b.weight) {
             Some(Ordering::Greater) => Ordering::Greater,
             Some(Ordering::Less) => Ordering::Less,
-            _ => match a.weight.partial_cmp(&b.weight) {
-                Some(Ordering::Greater) => Ordering::Greater,
-                Some(Ordering::Less) => Ordering::Less,
-                _ => a.name.cmp(&b.name),
-            },
-        }
+            _ => a.name.cmp(&b.name),
+        },
     });
 
     i.into_iter().fold(NextComparer::new(), |acc, n| acc.next(n)).finalize()

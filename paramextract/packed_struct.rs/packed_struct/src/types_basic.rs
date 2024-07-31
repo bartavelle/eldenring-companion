@@ -13,7 +13,7 @@ impl PackedStruct for bool {
         match src[0] {
             1 => Ok(true),
             0 => Ok(false),
-            _ => Err(PackingError::InvalidValue)
+            _ => Err(PackingError::InvalidValue),
         }
     }
 }
@@ -24,7 +24,6 @@ impl PackedStructInfo for bool {
         1
     }
 }
-
 
 impl PackedStruct for u8 {
     type ByteArray = [u8; 1];
@@ -47,7 +46,6 @@ impl PackedStructInfo for u8 {
     }
 }
 
-
 impl PackedStruct for i8 {
     type ByteArray = [u8; 1];
 
@@ -68,7 +66,6 @@ impl PackedStructInfo for i8 {
         8
     }
 }
-
 
 impl PackedStruct for () {
     type ByteArray = [u8; 0];

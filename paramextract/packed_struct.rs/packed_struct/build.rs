@@ -12,22 +12,27 @@ fn main() {
     let dest_path = Path::new(&out_dir).join("generate_bytes_and_bits.rs");
     let mut f = File::create(&dest_path).unwrap();
 
-    let up_to_bytes = 
-        if cfg!(feature = "byte_types_256") {
-            256
-        } else if cfg!(feature = "byte_types_64") {
-            64
-        } else {
-            32
-        };
+    let up_to_bytes = if cfg!(feature = "byte_types_256") {
+        256
+    } else if cfg!(feature = "byte_types_64") {
+        64
+    } else {
+        32
+    };
 
     // bits
     for i in 1..(up_to_bytes * 8) {
-        let b = format!("bits_type!(Bits::<{}>, {}, Bytes::<{}>, {});\r\n", i, i, (i as f32 / 8.0).ceil() as usize, if (i % 8) == 0 {
-            "BitsFullBytes"
-        } else {
-            "BitsPartialBytes"
-        });
+        let b = format!(
+            "bits_type!(Bits::<{}>, {}, Bytes::<{}>, {});\r\n",
+            i,
+            i,
+            (i as f32 / 8.0).ceil() as usize,
+            if (i % 8) == 0 {
+                "BitsFullBytes"
+            } else {
+                "BitsPartialBytes"
+            }
+        );
         f.write_all(b.as_bytes()).unwrap();
     }
 }

@@ -17,12 +17,10 @@ pub trait NumberOfBits: Copy + Clone + Debug + Default {
 }
 
 /// These bits are a multiple of 8
-pub trait BitsFullBytes {} 
+pub trait BitsFullBytes {}
 
 /// These bits are not a multiple of 8
 pub trait BitsPartialBytes {}
-
-
 
 /// Number of bytes that the generic type should occupy.
 pub trait NumberOfBytes: Copy + Clone + Debug + Default {
@@ -94,7 +92,7 @@ macro_rules! bits_type {
             }
         }
 
-        impl $TBK for $T { }
+        impl $TBK for $T {}
     };
 }
 
@@ -105,8 +103,10 @@ fn bytes_rotate_right(s: &mut [u8], bytes: usize) {
     {
         let mut i = s.len() - bytes - 1;
         loop {
-            s[i+bytes] = s[i];            
-            if i == 0 { break;}
+            s[i + bytes] = s[i];
+            if i == 0 {
+                break;
+            }
             i -= 1;
         }
     }

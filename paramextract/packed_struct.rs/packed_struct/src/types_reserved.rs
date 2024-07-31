@@ -37,7 +37,7 @@ impl ReservedBitValue for BitZero {
 #[derive(Default, Copy, Clone, PartialEq, Eq, Hash)]
 pub struct ReservedBits<V, B> {
     value: V,
-    bits: PhantomData<B>
+    bits: PhantomData<B>,
 }
 
 impl<B> Debug for ReservedBits<BitZero, B> {
@@ -64,23 +64,31 @@ impl<B> Display for ReservedBits<BitOne, B> {
     }
 }
 
-
-
 use crate::packing::*;
-use crate::types_bits::{NumberOfBits, NumberOfBytes, ByteArray};
+use crate::types_bits::{ByteArray, NumberOfBits, NumberOfBytes};
 
-impl<V, B> PackedStruct for ReservedBits<V, B> where Self: Default, V: ReservedBitValue, B: NumberOfBits {
+impl<V, B> PackedStruct for ReservedBits<V, B>
+where
+    Self: Default,
+    V: ReservedBitValue,
+    B: NumberOfBits,
+{
     type ByteArray = <<B as NumberOfBits>::Bytes as NumberOfBytes>::AsBytes;
     fn pack(&self) -> PackingResult<<<B as NumberOfBits>::Bytes as NumberOfBytes>::AsBytes> {
-        Ok(<<<B as NumberOfBits>::Bytes as NumberOfBytes>::AsBytes>::new(V::get_reserved_bit_value_byte()))
+        Ok(<<<B as NumberOfBits>::Bytes as NumberOfBytes>::AsBytes>::new(
+            V::get_reserved_bit_value_byte(),
+        ))
     }
 
     fn unpack(_src: &<<B as NumberOfBits>::Bytes as NumberOfBytes>::AsBytes) -> Result<Self, PackingError> {
-        Ok(Self:: default())
+        Ok(Self::default())
     }
 }
 
-impl<V, B> PackedStructInfo for ReservedBits<V, B> where B: NumberOfBits {
+impl<V, B> PackedStructInfo for ReservedBits<V, B>
+where
+    B: NumberOfBits,
+{
     #[inline]
     fn packed_bits() -> usize {
         B::number_of_bits()

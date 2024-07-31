@@ -4,7 +4,7 @@ use serde::Serialize;
 
 use crate::{
     scaling::Scaling,
-    stats::{Damage, Stat},
+    stats::{Damage, Passive, Stat},
     weaponinfo::{max_scaling, WeaponInfo},
 };
 
@@ -13,6 +13,7 @@ pub struct Best {
     pub score: f32,
     pub stats: Stat<u8>,
     pub damage: Damage<u32>,
+    pub effect: Vec<(Passive, f32)>,
     // pub effect: Effect<u32>,
 }
 
@@ -40,8 +41,14 @@ pub(crate) fn best_stats(
         .correct_d
         .fmap_r(|&dmg_type| graphes.get(&(dmg_type as u32)).unwrap());
 
+    let effects = wpn
+        .correct_e
+        .fmap_r(|&dmg_type| graphes.get(&(dmg_type as u32)).unwrap());
+
     let reinforce_scale = reinforce.get(&(wpn.reinforce_id as u32)).unwrap();
     let accorrect = accorrect.get(&(wpn.correct_id as u32)).unwrap();
+
+    println!("{wpn:?}");
 
     let mut out = BTreeMap::new();
 
@@ -59,10 +66,29 @@ pub(crate) fn best_stats(
                             arc,
                         };
                         let saturation = curstats.fmap(|stt| damages.fmap_r(|sc| sc.power(stt)));
+
                         let base_damage = wpn.attack_base.map2_r(reinforce_scale, |&a, &b| a as f32 * b);
                         let base_scaling = wpn
                             .correct_a
                             .map2_r(&max_scaling(wpn.reinforce_id), |&a, &b| (a * b / 100.0));
+
+                        let saturation_e = effects.fmap_r(|sc| sc.power(arc) * base_scaling.arc / 100.0);
+
+                        let effect = wpn
+                            .passives
+                            .iter()
+                            .map(|psv| {
+                                (
+                                    psv.tp,
+                                    psv.base
+                                        * (1.0
+                                            + match psv.tp {
+                                                Passive::Blood | Passive::Poison => saturation_e.blood,
+                                                _ => 0.0,
+                                            }),
+                                )
+                            })
+                            .collect();
 
                         let scaled_sat = saturation
                             .map2(base_scaling, |a, b| a.fmap_r(|&x| x * b))
@@ -97,6 +123,7 @@ pub(crate) fn best_stats(
                                 arc,
                             },
                             damage: damages.fmap_r(|&x| x as u32),
+                            effect,
                         };
 
                         match out.get(&level) {

@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Copy, Serialize)]
 pub struct Stat<A> {
@@ -10,7 +10,7 @@ pub struct Stat<A> {
 }
 
 impl<A: Copy> Stat<A> {
-    pub fn all(a: A) -> Self {
+    pub(crate) fn all(a: A) -> Self {
         Stat {
             str: a,
             dex: a,
@@ -22,7 +22,7 @@ impl<A: Copy> Stat<A> {
 }
 
 impl<A> Stat<A> {
-    pub fn fmap<B, F: Fn(A) -> B>(self, f: F) -> Stat<B> {
+    pub(crate) fn fmap<B, F: Fn(A) -> B>(self, f: F) -> Stat<B> {
         Stat {
             str: f(self.str),
             dex: f(self.dex),
@@ -31,17 +31,8 @@ impl<A> Stat<A> {
             arc: f(self.arc),
         }
     }
-    pub fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Stat<B> {
-        Stat {
-            str: f(&self.str),
-            dex: f(&self.dex),
-            int: f(&self.int),
-            fth: f(&self.fth),
-            arc: f(&self.arc),
-        }
-    }
 
-    pub fn map2<B, C, F: Fn(A, B) -> C>(self, other: Stat<B>, f: F) -> Stat<C> {
+    pub(crate) fn map2<B, C, F: Fn(A, B) -> C>(self, other: Stat<B>, f: F) -> Stat<C> {
         Stat {
             str: f(self.str, other.str),
             dex: f(self.dex, other.dex),
@@ -51,7 +42,7 @@ impl<A> Stat<A> {
         }
     }
 
-    pub fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Stat<B>, f: F) -> Stat<C> {
+    pub(crate) fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Stat<B>, f: F) -> Stat<C> {
         Stat {
             str: f(&self.str, &other.str),
             dex: f(&self.dex, &other.dex),
@@ -72,7 +63,7 @@ pub struct Damage<A> {
 }
 
 impl<A> Damage<A> {
-    pub fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Damage<B> {
+    pub(crate) fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Damage<B> {
         Damage {
             physics: f(&self.physics),
             magic: f(&self.magic),
@@ -82,7 +73,7 @@ impl<A> Damage<A> {
         }
     }
 
-    pub fn map2<B, C, F: Fn(A, B) -> C>(self, other: Damage<B>, f: F) -> Damage<C> {
+    pub(crate) fn map2<B, C, F: Fn(A, B) -> C>(self, other: Damage<B>, f: F) -> Damage<C> {
         Damage {
             physics: f(self.physics, other.physics),
             magic: f(self.magic, other.magic),
@@ -92,7 +83,7 @@ impl<A> Damage<A> {
         }
     }
 
-    pub fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Damage<B>, f: F) -> Damage<C> {
+    pub(crate) fn map2_r<B, C, F: Fn(&A, &B) -> C>(&self, other: &Damage<B>, f: F) -> Damage<C> {
         Damage {
             physics: f(&self.physics, &other.physics),
             magic: f(&self.magic, &other.magic),
@@ -102,7 +93,7 @@ impl<A> Damage<A> {
         }
     }
 
-    pub fn to_slice(&self) -> [&A; 5] {
+    pub(crate) fn to_slice(&self) -> [&A; 5] {
         [&self.physics, &self.magic, &self.fire, &self.lightning, &self.holy]
     }
 }
@@ -116,21 +107,22 @@ pub struct Effect<A> {
 }
 
 impl<A> Effect<A> {
-    pub fn fmap<B, F: Fn(A) -> B>(self, f: F) -> Effect<B> {
+    pub(crate) fn fmap_r<B, F: Fn(&A) -> B>(&self, f: F) -> Effect<B> {
         Effect {
-            poison: f(self.poison),
-            blood: f(self.blood),
-            sleep: f(self.sleep),
-            madness: f(self.madness),
+            poison: f(&self.poison),
+            blood: f(&self.blood),
+            sleep: f(&self.sleep),
+            madness: f(&self.madness),
         }
     }
+}
 
-    pub fn map2<B, C, F: Fn(A, B) -> C>(self, other: Effect<B>, f: F) -> Effect<C> {
-        Effect {
-            poison: f(self.poison, other.poison),
-            blood: f(self.blood, other.blood),
-            sleep: f(self.sleep, other.sleep),
-            madness: f(self.madness, other.madness),
-        }
-    }
+#[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum Passive {
+    Blood,
+    Frost,
+    Sleep,
+    ScarletRot,
+    Madness,
+    Poison,
 }
