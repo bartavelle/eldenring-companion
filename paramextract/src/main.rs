@@ -287,11 +287,11 @@ fn main() -> anyhow::Result<()> {
                 .expect("could not find weapon");
             let best = optimize::best_stats(wpn, &reinforce, &graphes, &attack_correct_param, two_handed, mins);
             let rbest = match mixed_damage_scale {
-                None=> best.r75,
+                None => best.r75,
                 Some(1.0) => best.r100,
                 Some(0.75) => best.r75,
                 Some(0.5) => best.r50,
-                _ => panic!("only handles level mixed level 1 0.75 or 0.5")
+                _ => panic!("only handles level mixed level 1 0.75 or 0.5"),
             };
             for r in rbest {
                 println!("{r:?}")
@@ -406,8 +406,9 @@ fn main() -> anyhow::Result<()> {
             });
 
             // write summary
-            let params = todo.into_iter().map(|p| p.0).collect::<Vec<_>>();
+            let params = index.into_inner().unwrap();
             let mut path = out.clone();
+
             path.push("index.json");
             let mut fo = std::fs::File::create(path).unwrap();
             serde_json::to_writer(&mut fo, &params).unwrap();
