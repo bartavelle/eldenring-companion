@@ -119,8 +119,15 @@ impl WeaponInfo {
             } else {
                 None
             };
-            if let Some((base, tp)) = btp {
-                passives.push(PassiveLvl { id: id as u8, tp, base: base as f32 });
+            if let Some((rawbase, tp)) = btp {
+                let base = match (eqp.reinforce_type_id, tp, id) {
+                    (900, Passive::Frost, _) => (rawbase as f32) * 1.59,
+                    (1100, Passive::Poison, 0) | (1100, Passive::Blood, 0) | (1000, Passive::Poison, 1) => {
+                        (rawbase as f32) * 1.44
+                    }
+                    _ => rawbase as f32,
+                };
+                passives.push(PassiveLvl { id: id as u8, tp, base });
             }
         }
         Ok(Self {

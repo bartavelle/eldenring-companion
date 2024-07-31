@@ -94,6 +94,7 @@ pub(crate) fn best_stats(
         });
 
         for dex in statbounds.dex.0..statbounds.dex.1 {
+            // these tests can cut computation times to 1/3rd. They are written in this way because Stat only provides a partial order
             if arc > statbounds.arc.0 && base_damage_scaler.dex > base_damage_scaler.arc && dex < arc {
                 continue;
             }
