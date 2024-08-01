@@ -19,9 +19,6 @@ fn convx(i: f32) -> f64 {
 const UNOBTAINABLE: [&str; 1] = ["Deathbed Smalls"];
 
 pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Result<BTreeMap<u32, Armor>> {
-    let mut erf = std::fs::File::open("companion/src/data/armor.json")?;
-    let original: HashMap<String, Armor> = serde_json::from_reader(&mut erf)?;
-
     load_params_filter(
         reg,
         "EquipParamProtector",
@@ -63,15 +60,6 @@ pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Res
                     vitality: raw_armor.resist_curse as f64,
                 },
             };
-
-            if let Some(original) = original.get(name) {
-                if original != &armor {
-                    println!("orig {:?}", original);
-                    println!("prsd {:?}", armor);
-                    println!();
-                }
-            }
-
             Some((rid, armor))
         },
     )

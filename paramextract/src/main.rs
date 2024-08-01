@@ -3,8 +3,8 @@ use ertypes::stats::Stat;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use serde::Serialize;
 use std::{
-    collections::HashMap,
-    io::{BufRead, BufReader},
+    collections::{BTreeMap, HashMap},
+    io::{stdout, BufRead, BufReader},
     path::{Path, PathBuf},
     sync::{atomic::AtomicUsize, RwLock},
 };
@@ -92,7 +92,11 @@ fn main() -> anyhow::Result<()> {
         Command::ArmorDump => {
             let armor_names = load_names(&args.data, "EquipParamProtector.txt")?;
             let armor = armor::load_armor(&regulations, &armor_names)?;
-            println!("{armor:#?}");
+            let to_json = armor
+                .into_values()
+                .map(|armor| (armor.name.clone(), armor))
+                .collect::<BTreeMap<_, _>>();
+            serde_json::to_writer_pretty(stdout(), &to_json)?;
         }
         Command::Optimize {
             weapon,
