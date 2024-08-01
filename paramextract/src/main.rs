@@ -57,6 +57,7 @@ enum Command {
         limit: Option<usize>,
     },
     ArmorDump,
+    WeaponDump,
 }
 
 fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
@@ -97,6 +98,10 @@ fn main() -> anyhow::Result<()> {
                 .map(|armor| (armor.name.clone(), armor))
                 .collect::<BTreeMap<_, _>>();
             serde_json::to_writer_pretty(stdout(), &to_json)?;
+        }
+        Command::WeaponDump => {
+            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
+            serde_json::to_writer_pretty(stdout(), &wpn_data)?;
         }
         Command::Optimize {
             weapon,

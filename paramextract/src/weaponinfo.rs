@@ -55,14 +55,14 @@ impl Infusion {
 
 // *_correct_rate
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct PassiveLvl {
     pub id: u8,
     pub tp: Passive,
     pub base: f32,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct WeaponInfo {
     pub name: String,
     pub weight: f32,
@@ -79,8 +79,20 @@ pub struct WeaponInfo {
     pub passives: Vec<PassiveLvl>,
 }
 
-fn load_sp_effects(reg: &BND4) -> anyhow::Result<BTreeMap<u32, SP_EFFECT_PARAM_ST>> {
-    load_params(reg, "SpEffect", |rid, a: SP_EFFECT_PARAM_ST| (rid, a))
+fn load_sp_effects(reg: &BND4) -> anyhow::Result<BTreeMap<u32, SpEffect>> {
+    load_params(reg, "SpEffect", |rid, a: SP_EFFECT_PARAM_ST| {
+        (
+            rid,
+            SpEffect {
+                poizon_attack_power: a.poizon_attack_power as f32,
+                disease_attack_power: a.disease_attack_power as f32,
+                blood_attack_power: a.blood_attack_power as f32,
+                freeze_attack_power: a.freeze_attack_power as f32,
+                sleep_attack_power: a.sleep_attack_power as f32,
+                madness_attack_power: a.madness_attack_power as f32,
+            },
+        )
+    })
 }
 
 fn load_reinforcement(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Reinforcement>> {
@@ -207,7 +219,7 @@ fn load_aec(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Stat<Damage<i16>>>> {
 fn load_weapons(
     reg: &BND4,
     weapons_names: &HashMap<u32, String>,
-    sp_effects: &BTreeMap<u32, SP_EFFECT_PARAM_ST>,
+    sp_effects: &BTreeMap<u32, SpEffect>,
     reinforce: &BTreeMap<u32, Reinforcement>,
 ) -> anyhow::Result<Vec<WeaponInfo>> {
     let raw_equip_param_weapon = reg.get_file("EquipParamWeapon").unwrap();
@@ -249,8 +261,19 @@ fn load_correct(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Scaling>> {
     })
 }
 
+#[derive(Serialize)]
+pub struct SpEffect {
+    poizon_attack_power: f32,
+    disease_attack_power: f32,
+    blood_attack_power: f32,
+    freeze_attack_power: f32,
+    sleep_attack_power: f32,
+    madness_attack_power: f32,
+}
+
+#[derive(Serialize)]
 pub struct WeaponData {
-    pub sp_effects: BTreeMap<u32, SP_EFFECT_PARAM_ST>,
+    pub sp_effects: BTreeMap<u32, SpEffect>,
     pub reinforcement: BTreeMap<u32, Reinforcement>,
     pub aec: BTreeMap<u32, Stat<Damage<i16>>>,
     pub graphes: BTreeMap<u32, Scaling>,
@@ -279,7 +302,7 @@ impl WeaponInfo {
         name: String,
         id: u32,
         eqp: &EQUIP_PARAM_WEAPON_ST,
-        sp: &BTreeMap<u32, SP_EFFECT_PARAM_ST>,
+        sp: &BTreeMap<u32, SpEffect>,
         reinforce: &BTreeMap<u32, Reinforcement>,
     ) -> anyhow::Result<Self> {
         let infusion = Infusion::from_id(id % 10000).with_context(|| anyhow::anyhow!("weapon {name}[{id}]"))?;
@@ -308,32 +331,34 @@ impl WeaponInfo {
             */
 
             let i = sp.get(&(effect as u32)).unwrap();
-            assert!(match eqp.sp_attribute {
-                20 => i.poizon_attack_power,
-                21 => i.disease_attack_power,
-                22 => i.blood_attack_power,
-                23 => i.freeze_attack_power,
-                24 => i.sleep_attack_power,
-                25 => i.madness_attack_power,
-                _ => 1,
-            } > 0);
-            let btp = if i.blood_attack_power > 0 {
+            assert!(
+                match eqp.sp_attribute {
+                    20 => i.poizon_attack_power,
+                    21 => i.disease_attack_power,
+                    22 => i.blood_attack_power,
+                    23 => i.freeze_attack_power,
+                    24 => i.sleep_attack_power,
+                    25 => i.madness_attack_power,
+                    _ => 1.0,
+                } > 0.0
+            );
+            let btp = if i.blood_attack_power > 0.0 {
                 Some((i.blood_attack_power, Passive::Blood))
-            } else if i.sleep_attack_power > 0 {
+            } else if i.sleep_attack_power > 0.0 {
                 Some((i.sleep_attack_power, Passive::Sleep))
-            } else if i.freeze_attack_power > 0 {
+            } else if i.freeze_attack_power > 0.0 {
                 Some((i.freeze_attack_power, Passive::Frost))
-            } else if i.disease_attack_power > 0 {
+            } else if i.disease_attack_power > 0.0 {
                 Some((i.disease_attack_power, Passive::ScarletRot))
-            } else if i.madness_attack_power > 0 {
+            } else if i.madness_attack_power > 0.0 {
                 Some((i.madness_attack_power, Passive::Madness))
-            } else if i.poizon_attack_power > 0 {
+            } else if i.poizon_attack_power > 0.0 {
                 Some((i.poizon_attack_power, Passive::Poison))
             } else {
                 None
             };
             if let Some((base, tp)) = btp {
-                passives.push(PassiveLvl { id: id as u8, tp, base: base as f32 });
+                passives.push(PassiveLvl { id: id as u8, tp, base });
             }
         }
         Ok(Self {

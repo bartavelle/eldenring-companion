@@ -145,7 +145,7 @@ pub enum Passive {
     Poison,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize)]
 pub struct Reinforcement {
     pub damage: Damage<f32>,
     pub stats: Stat<f32>,

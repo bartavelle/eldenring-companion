@@ -1,6 +1,8 @@
+use serde::Serialize;
+
 use crate::structs::calc_correct_graph::CACL_CORRECT_GRAPH_ST;
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Scaling {
     // starts at stat point 1
     inner: Vec<f32>,
