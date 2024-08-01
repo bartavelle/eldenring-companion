@@ -6,7 +6,7 @@ use std::{
     collections::HashMap,
     io::{BufRead, BufReader},
     path::{Path, PathBuf},
-    sync::RwLock,
+    sync::{atomic::AtomicUsize, RwLock},
 };
 use weaponinfo::{Infusion, WeaponData, WeaponInfo};
 
@@ -92,7 +92,7 @@ fn main() -> anyhow::Result<()> {
         Command::ArmorDump => {
             let armor_names = load_names(&args.data, "EquipParamProtector.txt")?;
             let armor = armor::load_armor(&regulations, &armor_names)?;
-            // println!("{armor:?}");
+            println!("{armor:#?}");
         }
         Command::Optimize {
             weapon,
@@ -183,10 +183,14 @@ fn main() -> anyhow::Result<()> {
                 // TODO: properly resize
                 todo = todo.into_iter().take(limit).collect();
             }
+            // reverse so that the slow ones (smithscript stuff) are computed first
+            todo.reverse();
 
             eprintln!("TODO: {} elements", todo.len());
 
             let index: RwLock<Vec<WpnParams>> = RwLock::new(Vec::new());
+            let done = AtomicUsize::new(0);
+            let total = todo.len();
 
             todo.par_iter().for_each(|(params, wpn)| {
                 let start = std::time::Instant::now();
@@ -227,9 +231,8 @@ fn main() -> anyhow::Result<()> {
 
                 let end = std::time::Instant::now();
                 let elapsed = end - start;
-                if elapsed > std::time::Duration::from_secs(5) {
-                    println!("{:?} {:.2}s", params, elapsed.as_secs_f32())
-                }
+                let dn = done.fetch_add(1, std::sync::atomic::Ordering::SeqCst);
+                println!("{dn}/{total} {:?} {:.2}s", params, elapsed.as_secs_f32())
             });
 
             // write summary

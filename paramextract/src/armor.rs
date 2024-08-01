@@ -68,7 +68,7 @@ pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Res
                 if original != &armor {
                     println!("orig {:?}", original);
                     println!("prsd {:?}", armor);
-                    println!("");
+                    println!();
                 }
             }
 
