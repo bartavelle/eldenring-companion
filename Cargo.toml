@@ -1,7 +1,3 @@
 [workspace]
 resolver = "2"
-members = [
-    "eldenring-companion", "ertypes",
-    "htmlupdater",
-    "optimizer"
-, "paramextract"]
+members = ["eldenring-companion", "ertypes", "optimizer" , "paramextract"]

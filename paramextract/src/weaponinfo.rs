@@ -106,9 +106,9 @@ fn load_reinforcement(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Reinforcement>
             Reinforcement {
                 damage: reinforce_damage,
                 stats: reinforce_stats,
-                sp1: rw.resident_sp_effect_id1,
-                sp2: rw.resident_sp_effect_id2,
-                sp3: rw.resident_sp_effect_id3,
+                sp0: rw.sp_effect_id1,
+                sp1: rw.sp_effect_id2,
+                sp2: rw.sp_effect_id3,
             },
         )
     })
@@ -285,10 +285,11 @@ impl WeaponInfo {
         let infusion = Infusion::from_id(id % 10000).with_context(|| anyhow::anyhow!("weapon {name}[{id}]"))?;
         let mut passives = Vec::new();
 
+        let reinforce = reinforce.get(&(eqp.reinforce_type_id as u32)).unwrap();
         for (id, effect) in [
-            eqp.sp_effect_behavior_id0,
-            eqp.sp_effect_behavior_id1,
-            eqp.sp_effect_behavior_id2,
+            eqp.sp_effect_behavior_id0 + reinforce.sp0 as i32,
+            eqp.sp_effect_behavior_id1 + reinforce.sp1 as i32,
+            eqp.sp_effect_behavior_id2 + reinforce.sp2 as i32,
         ]
         .into_iter()
         .enumerate()
@@ -305,7 +306,17 @@ impl WeaponInfo {
               * 24 -> sleep
               * 25 -> madness
             */
+
             let i = sp.get(&(effect as u32)).unwrap();
+            assert!(match eqp.sp_attribute {
+                20 => i.poizon_attack_power,
+                21 => i.disease_attack_power,
+                22 => i.blood_attack_power,
+                23 => i.freeze_attack_power,
+                24 => i.sleep_attack_power,
+                25 => i.madness_attack_power,
+                _ => 1,
+            } > 0);
             let btp = if i.blood_attack_power > 0 {
                 Some((i.blood_attack_power, Passive::Blood))
             } else if i.sleep_attack_power > 0 {
@@ -321,15 +332,8 @@ impl WeaponInfo {
             } else {
                 None
             };
-            if let Some((rawbase, tp)) = btp {
-                let base = match (eqp.reinforce_type_id, tp, id) {
-                    (900, Passive::Frost, _) => (rawbase as f32) * 1.59,
-                    (1100, Passive::Poison, 0) | (1100, Passive::Blood, 0) | (1000, Passive::Poison, 1) => {
-                        (rawbase as f32) * 1.44
-                    }
-                    _ => rawbase as f32,
-                };
-                passives.push(PassiveLvl { id: id as u8, tp, base });
+            if let Some((base, tp)) = btp {
+                passives.push(PassiveLvl { id: id as u8, tp, base: base as f32 });
             }
         }
         Ok(Self {
