@@ -92,7 +92,7 @@ fn main() {
     let warmor = scores(game_data.armors, &weights);
 
     match args.mode {
-        Mode::Combination => combination(&warmor, args.max),
+        Mode::Combination => combination(&warmor, &weights, args.max),
         Mode::Individual => individual(&warmor),
     }
 }
@@ -191,7 +191,7 @@ fn individual(warmor: &Body<Vec<Scored>>) {
     println!("</svg>");
 }
 
-fn combination(warmor: &Body<Vec<Scored>>, max_weight: f64) {
+fn combination(warmor: &Body<Vec<Scored>>, weights: &Weights, max_weight: f64) {
     println!(
         r#"<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -218,7 +218,7 @@ fn combination(warmor: &Body<Vec<Scored>>, max_weight: f64) {
 <line x1="1870" y1="50" x2="1870" y2="1030"/>
 "#
     );
-    let (_, max_score) = search(warmor, max_weight);
+    let (_, max_score) = search(warmor, weights, max_weight);
 
     let w = |n: f64| 50.0 + n * 1820.0 / max_weight;
     let h = |n: f64| 50.0 + (max_score - n) * 980.0 / max_score;
@@ -260,7 +260,7 @@ fn combination(warmor: &Body<Vec<Scored>>, max_weight: f64) {
     let mut prev_weight = 0.0;
 
     while weight_budget <= max_weight {
-        let (best, score) = search(warmor, weight_budget);
+        let (best, score) = search(warmor, weights, weight_budget);
         if score > best_score {
             if let Some(pbest) = &curbest {
                 println!(

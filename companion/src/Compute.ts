@@ -1,9 +1,10 @@
-import Armor, { Armors } from "./Armor";
+import Armor, { Armors, Absorption } from "./Armor";
 import { Weights } from "./WSelector";
 import { ArmorSlots, Azipwith } from "./Common"
 
 type ALst = {
   values: Weights<number>,
+  orig_absorptions: Absorption,
   n: string,
   score: number,
   weight: number
@@ -29,9 +30,10 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string, a
       weights.resistances.immunity * a.resistances.immunity
     tmp.push({
       values: {
-        absorptions: a.absorptions,
+        absorptions: a.mul_absorptions,
         resistances: a.resistances,
       },
+      orig_absorptions: a.absorptions,
       n: a.name,
       score: score,
       weight: a.weight
@@ -67,14 +69,14 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string, a
   out.push({
     values: {
       absorptions: {
-        fire: 0,
-        holy: 0,
-        lightning: 0,
-        magic: 0,
-        physical: 0,
-        pierce: 0,
-        slash: 0,
-        strike: 0
+        fire: 1,
+        holy: 1,
+        lightning: 1,
+        magic: 1,
+        physical: 1,
+        pierce: 1,
+        slash: 1,
+        strike: 1
       },
       resistances: {
         focus: 0,
@@ -83,6 +85,16 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string, a
         robustness: 0,
         vitality: 0
       }
+    },
+    orig_absorptions: {
+      fire: 0,
+      holy: 0,
+      lightning: 0,
+      magic: 0,
+      physical: 0,
+      pierce: 0,
+      slash: 0,
+      strike: 0
     },
     n: "Empty",
     score: 0,
@@ -93,6 +105,77 @@ function prepare_armor(weights: Weights<number>, lst: Armor[], forced: string, a
 }
 
 type Selection = ArmorSlots<ALst | null>
+
+function compound_absorptions(rs: Absorption[]): Absorption {
+  var cur = {
+    fire: 1,
+    holy: 1,
+    lightning: 1,
+    magic: 1,
+    physical: 1,
+    pierce: 1,
+    slash: 1,
+    strike: 1
+  };
+  for (let r of rs) {
+    cur.fire *= r.fire;
+    cur.holy *= r.holy;
+    cur.lightning *= r.lightning;
+    cur.magic *= r.magic;
+    cur.physical *= r.physical;
+    cur.pierce *= r.pierce;
+    cur.slash *= r.slash;
+    cur.strike *= r.strike;
+  }
+  return {
+    fire: 100.0 * (1.0 - cur.fire),
+    holy: 100.0 * (1.0 - cur.holy),
+    lightning: 100.0 * (1.0 - cur.lightning),
+    magic: 100.0 * (1.0 - cur.magic),
+    physical: 100.0 * (1.0 - cur.physical),
+    pierce: 100.0 * (1.0 - cur.pierce),
+    slash: 100.0 * (1.0 - cur.slash),
+    strike: 100.0 * (1.0 - cur.strike)
+
+  }
+}
+
+function score_of(rs: ALst[], weights: Weights<number>): number {
+  var abso: Absorption[] = [];
+  var res = {
+    focus: 0,
+    immunity: 0,
+    poise: 0,
+    robustness: 0,
+    vitality: 0
+  }
+  for (let r of rs) {
+    abso.push(r.values.absorptions)
+    res.focus += r.values.resistances.focus;
+    res.immunity += r.values.resistances.immunity;
+    res.poise += r.values.resistances.poise;
+    res.robustness += r.values.resistances.robustness;
+    res.vitality += r.values.resistances.vitality;
+  }
+  let a = {
+    absorptions: compound_absorptions(abso),
+    resistances: res
+  }
+  const score = weights.absorptions.fire * a.absorptions.fire +
+    weights.absorptions.holy * a.absorptions.holy +
+    weights.absorptions.lightning * a.absorptions.lightning +
+    weights.absorptions.magic * a.absorptions.magic +
+    weights.absorptions.physical * a.absorptions.physical +
+    weights.absorptions.pierce * a.absorptions.pierce +
+    weights.absorptions.slash * a.absorptions.slash +
+    weights.absorptions.strike * a.absorptions.strike +
+    weights.resistances.focus * a.resistances.focus +
+    weights.resistances.poise * a.resistances.poise +
+    weights.resistances.robustness * a.resistances.robustness +
+    weights.resistances.vitality * a.resistances.vitality +
+    weights.resistances.immunity * a.resistances.immunity
+  return score
+}
 
 function compute_best(budget: number, weights: Weights<number>, mins: Weights<number>, armors: Armors, forced: ArmorSlots<string>, all: boolean = false): Selection {
 
@@ -105,7 +188,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
     return o
   }, armors, forced)
 
-  let best_score = 0
+  let best_score = 1
   let best_selection: Selection = {
     Arms: null,
     Body: null,
@@ -135,7 +218,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
     }
     const values = selection_total({ Arms: null, Body: b, Head: null, Legs: null }).values
     if (reach_minimal(values)) {
-      const curscore = b.score
+      const curscore = score_of([b], weights)
       if (curscore > best_score) {
         best_score = curscore
         best_selection = {
@@ -153,7 +236,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
       }
       const values = selection_total({ Arms: null, Body: b, Head: null, Legs: l }).values
       if (reach_minimal(values)) {
-        const curscore = b.score + l.score
+        const curscore = score_of([b, l], weights)
         if (curscore > best_score) {
           best_score = curscore
           best_selection = {
@@ -171,7 +254,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
         }
         const values = selection_total({ Arms: null, Body: b, Head: h, Legs: l }).values
         if (reach_minimal(values)) {
-          const curscore = b.score + l.score + h.score
+          const curscore = score_of([b, l, h], weights)
           if (curscore > best_score) {
             best_score = curscore
             best_selection = {
@@ -191,7 +274,7 @@ function compute_best(budget: number, weights: Weights<number>, mins: Weights<nu
           if (!reach_minimal(values)) {
             continue
           }
-          const curscore = b.score + l.score + h.score + a.score
+          const curscore = score_of([b, l, h, a], weights)
           if (curscore > best_score) {
             best_score = curscore
             best_selection = {
@@ -227,22 +310,39 @@ function selection_total(s: Selection): ALst {
     }
     return t
   }
+  const m = (getter: GF) => {
+    let t = 1.0
+    if (s.Arms !== null) {
+      t *= getter(s.Arms)
+    }
+    if (s.Body !== null) {
+      t *= getter(s.Body)
+    }
+    if (s.Legs !== null) {
+      t *= getter(s.Legs)
+    }
+    if (s.Head !== null) {
+      t *= getter(s.Head)
+    }
+    return 100.0 * (1.0 - t)
+  }
+  let absorptions = {
+    fire: m((x) => x.values.absorptions.fire),
+    holy: m((x) => x.values.absorptions.holy),
+    lightning: m((x) => x.values.absorptions.lightning),
+    magic: m((x) => x.values.absorptions.magic),
+    physical: m((x) => x.values.absorptions.physical),
+    slash: m((x) => x.values.absorptions.slash),
+    pierce: m((x) => x.values.absorptions.pierce),
+    strike: m((x) => x.values.absorptions.strike),
+  };
 
   return {
     n: "Total",
     score: v((x) => x.score),
     weight: v((x) => x.weight),
     values: {
-      absorptions: {
-        fire: v((x) => x.values.absorptions.fire),
-        holy: v((x) => x.values.absorptions.holy),
-        lightning: v((x) => x.values.absorptions.lightning),
-        magic: v((x) => x.values.absorptions.magic),
-        physical: v((x) => x.values.absorptions.physical),
-        slash: v((x) => x.values.absorptions.slash),
-        pierce: v((x) => x.values.absorptions.pierce),
-        strike: v((x) => x.values.absorptions.strike),
-      },
+      absorptions: absorptions,
       resistances: {
         focus: v((x) => x.values.resistances.focus),
         poise: v((x) => x.values.resistances.poise),
@@ -251,7 +351,8 @@ function selection_total(s: Selection): ALst {
         vitality: v((x) => x.values.resistances.vitality),
       }
 
-    }
+    },
+    orig_absorptions: absorptions,
   }
 
 }

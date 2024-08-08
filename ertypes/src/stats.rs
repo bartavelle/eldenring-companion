@@ -1,4 +1,14 @@
+use clap::ValueEnum;
 use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Copy, Serialize, ValueEnum)]
+pub enum Statistic {
+    Str,
+    Dex,
+    Int,
+    Fth,
+    Arc,
+}
 
 #[derive(Debug, Clone, Copy, Serialize)]
 pub struct Stat<A> {
@@ -39,6 +49,25 @@ impl<A> Stat<A> {
             int: f(&self.int, &other.int),
             fth: f(&self.fth, &other.fth),
             arc: f(&self.arc, &other.arc),
+        }
+    }
+
+    pub fn get(&self, stat: Statistic) -> &A {
+        match stat {
+            Statistic::Str => &self.str,
+            Statistic::Dex => &self.dex,
+            Statistic::Int => &self.int,
+            Statistic::Fth => &self.fth,
+            Statistic::Arc => &self.arc,
+        }
+    }
+    pub fn set(&mut self, stat: Statistic, v: A) {
+        match stat {
+            Statistic::Str => self.str = v,
+            Statistic::Dex => self.dex = v,
+            Statistic::Int => self.int = v,
+            Statistic::Fth => self.fth = v,
+            Statistic::Arc => self.arc = v,
         }
     }
 }

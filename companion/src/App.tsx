@@ -173,14 +173,14 @@ function best_col(r: ALst | null): JSX.Element {
       <td> {r.n} </td>
       <td> {Number(r.weight).toFixed(1)} </td>
       <td> {Number(r.values.resistances.poise).toFixed(0)} </td>
-      <td> {Number(r.values.absorptions.fire).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.holy).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.lightning).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.magic).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.physical).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.pierce).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.slash).toFixed(1)} </td>
-      <td> {Number(r.values.absorptions.strike).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.fire).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.holy).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.lightning).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.magic).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.physical).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.pierce).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.slash).toFixed(1)} </td>
+      <td> {Number(r.orig_absorptions.strike).toFixed(1)} </td>
       <td> {Number(r.values.resistances.focus).toFixed(0)} </td>
       <td> {Number(r.values.resistances.immunity).toFixed(0)} </td>
       <td> {Number(r.values.resistances.robustness).toFixed(0)} </td>

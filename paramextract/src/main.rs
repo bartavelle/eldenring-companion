@@ -1,5 +1,6 @@
-use clap::{Parser, Subcommand};
-use ertypes::stats::Stat;
+use clap::{Parser, Subcommand, ValueEnum};
+use ertypes::stats::{Stat, Statistic};
+use optimize::calc_damage;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use serde::Serialize;
 use std::{
@@ -30,6 +31,23 @@ struct Args {
     command: Command,
 }
 
+#[derive(Debug, Clone, Copy)]
+struct StatValue {
+    stat: Statistic,
+    value: u8,
+}
+
+fn parse_statvalue(s: &str) -> Result<StatValue, String> {
+    match s.split_once(':').or_else(|| s.split_once('=')) {
+        None => Err("must be formed like STAT=LEVEL, ie. str=80".to_string()),
+        Some((l, r)) => {
+            let stat = Statistic::from_str(l, true)?;
+            let value = r.parse::<u8>().map_err(|rr| rr.to_string())?;
+            Ok(StatValue { stat, value })
+        }
+    }
+}
+
 #[derive(Debug, Subcommand)]
 enum Command {
     Optimize {
@@ -58,6 +76,14 @@ enum Command {
     },
     ArmorDump,
     WeaponDump,
+    WeaponSearch {
+        #[arg(value_parser = parse_statvalue, help = "Main stats, in order")]
+        stats: Vec<StatValue>,
+        #[arg(short, long, help = "Mixed damage penalty (for lower damages)")]
+        mixed_damage_scale: Option<f32>,
+        #[arg(short, long, help = "Amount of weapons to display", default_value_t = 30)]
+        limit: usize,
+    },
 }
 
 fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
@@ -102,6 +128,37 @@ fn main() -> anyhow::Result<()> {
         Command::WeaponDump => {
             let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
             serde_json::to_writer_pretty(stdout(), &wpn_data)?;
+        }
+        Command::WeaponSearch {
+            stats,
+            mixed_damage_scale,
+            limit,
+        } => {
+            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
+            let mut rstats = Stat::all(10);
+            for stt in &stats {
+                rstats.set(stt.stat, stt.value);
+            }
+            // filter weapons that matches the stats
+            let mut wpns = wpn_data
+                .weapons
+                .iter()
+                .filter(|w| {
+                    stats
+                        .iter()
+                        .all(|stt| *w.correct_a.get(stt.stat) > 0.0 && *w.required.get(stt.stat) <= stt.value)
+                })
+                .map(|wpn| {
+                    (
+                        calc_damage(wpn, &wpn_data, rstats, mixed_damage_scale.unwrap_or(1.0)),
+                        wpn,
+                    )
+                })
+                .collect::<Vec<_>>();
+            wpns.sort_by(|a, b| b.0.score.partial_cmp(&a.0.score).unwrap());
+            for (b, wpn) in wpns.iter().take(limit) {
+                println!("{} - {b:?}", wpn.name);
+            }
         }
         Command::Optimize {
             weapon,

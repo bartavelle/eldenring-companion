@@ -1,22 +1,25 @@
 import { Accessor, For, Setter, Show, createSignal, onMount } from "solid-js";
 import armor_dict from "./data/armor.json";
 
+type Absorption = {
+  fire: number,
+  holy: number,
+  lightning: number,
+  magic: number,
+  physical: number,
+  pierce: number,
+  slash: number,
+  strike: number
+}
+
 type Armor = {
   category: "Legs" | "Body" | "Head" | "Arms",
   name: string,
   weight: number,
   setOwned: Setter<boolean>,
   owned: Accessor<boolean>
-  absorptions: {
-    fire: number,
-    holy: number,
-    lightning: number,
-    magic: number,
-    physical: number,
-    pierce: number,
-    slash: number,
-    strike: number
-  },
+  absorptions: Absorption,
+  mul_absorptions: Absorption,
   resistances: {
     focus: number,
     immunity: number,
@@ -40,6 +43,8 @@ let armors: Armors = {
   Body: [],
   Head: [],
 }
+
+let rmul = (x: number) => (100.0 - x) / 100.0;
 
 for (let aname of Object.keys(armor_dict)) {
   let armor = armor_dict[aname];
@@ -69,6 +74,16 @@ for (let aname of Object.keys(armor_dict)) {
     setOwned: s,
     owned: c,
     absorptions: armor.absorptions,
+    mul_absorptions: {
+      fire: rmul(armor.absorptions.fire),
+      holy: rmul(armor.absorptions.holy),
+      lightning: rmul(armor.absorptions.lightning),
+      magic: rmul(armor.absorptions.magic),
+      physical: rmul(armor.absorptions.physical),
+      pierce: rmul(armor.absorptions.pierce),
+      slash: rmul(armor.absorptions.slash),
+      strike: rmul(armor.absorptions.strike),
+    },
     resistances: armor.resistances
   });
 }
@@ -165,4 +180,4 @@ const Armor = (filter: string) => {
 };
 
 export default Armor;
-export { type Armors, armors }
+export { type Armors, type Absorption, armors }

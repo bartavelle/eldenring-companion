@@ -1,8 +1,11 @@
 use serde::Serialize;
 use std::collections::BTreeMap;
 
-use crate::weaponinfo::{WeaponData, WeaponInfo};
-use ertypes::stats::{Damage, Passive, Stat};
+use crate::{
+    scaling::Scaling,
+    weaponinfo::{WeaponData, WeaponInfo},
+};
+use ertypes::stats::{Damage, Effect, Passive, Stat};
 
 #[derive(Debug, Serialize)]
 pub struct Best {
@@ -20,6 +23,111 @@ pub struct Scaled<A> {
     pub r50: A,
 }
 
+pub struct WeaponStats<'t> {
+    pub base_damage: Damage<f32>,
+    pub base_scaling: Stat<f32>,
+    pub base_damage_scaler: Stat<Damage<f32>>,
+    pub constant_effect: Option<Vec<(Passive, f32)>>,
+    pub damages: Damage<&'t Scaling>,
+    pub effects: Effect<&'t Scaling>,
+}
+
+impl<'t> WeaponStats<'t> {
+    pub fn new(wpn: &WeaponInfo, wpndata: &'t WeaponData) -> Self {
+        let damages = wpn
+            .correct_d
+            .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
+
+        let effects = wpn
+            .correct_e
+            .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
+
+        let reinforcement = wpndata.reinforcement.get(&(wpn.reinforce_id as u32)).unwrap();
+        let accorrect = wpndata.aec.get(&(wpn.correct_id as u32)).unwrap();
+
+        let constant_effect = if wpn
+            .passives
+            .iter()
+            .any(|p| p.tp == Passive::Blood || p.tp == Passive::Poison)
+        {
+            None
+        } else {
+            Some(wpn.passives.iter().map(|psv| (psv.tp, psv.base)).collect::<Vec<_>>())
+        };
+        let base_damage = wpn.attack_base.map2_r(&reinforcement.damage, |&a, &b| a as f32 * b);
+        let base_scaling = wpn.correct_a.map2_r(&reinforcement.stats, |&a, &b| (a * b / 100.0));
+
+        let base_damage_scaler = accorrect.map2_r(&base_scaling, |&ac, &y| ac.fmap_r(|&x| (x as f32) * y / 100.0));
+
+        WeaponStats {
+            constant_effect,
+            base_damage,
+            base_scaling,
+            base_damage_scaler,
+            damages,
+            effects,
+        }
+    }
+}
+
+pub(crate) fn calc_damage(wpn: &WeaponInfo, wpndata: &WeaponData, stats: Stat<u8>, mixlevel: f32) -> Best {
+    let WeaponStats {
+        base_damage,
+        base_scaling,
+        base_damage_scaler,
+        constant_effect,
+        damages,
+        effects,
+    } = WeaponStats::new(wpn, wpndata);
+    let effect = constant_effect.clone().unwrap_or_else(|| {
+        let saturation_e = effects.fmap_r(|sc| sc.power(stats.arc) * base_scaling.arc / 100.0);
+
+        wpn.passives
+            .iter()
+            .map(|psv| {
+                (
+                    psv.tp,
+                    psv.base
+                        * (1.0
+                            + match psv.tp {
+                                Passive::Blood => saturation_e.blood,
+                                Passive::Poison => saturation_e.poison,
+                                _ => 0.0,
+                            }),
+                )
+            })
+            .collect()
+    });
+    let arc_damage = damages.map2_r(&base_damage_scaler.arc, |sc, &y| sc.power(stats.arc) * y);
+    let dex_damage = damages.map2_r(&base_damage_scaler.dex, |sc, &y| sc.power(stats.dex) * y);
+    let str_damage = damages.map2_r(&base_damage_scaler.str, |sc, &y| sc.power(stats.str) * y);
+    let int_damage = damages.map2_r(&base_damage_scaler.int, |sc, &y| sc.power(stats.int) * y);
+    let fth_damage = damages.map2_r(&base_damage_scaler.fth, |sc, &y| sc.power(stats.fth) * y);
+    let sat_damages = arc_damage
+        .map2(dex_damage, |a, b| a + b)
+        .map2(int_damage, |a, b| a + b)
+        .map2(str_damage, |a, b| a + b)
+        .map2(fth_damage, |a, b| a + b);
+
+    let damages = base_damage.map2(sat_damages, |base, st| base * (1.0 + st / 100.0));
+    let mut all_damages: [f32; 5] = [
+        damages.physics,
+        damages.fire,
+        damages.holy,
+        damages.lightning,
+        damages.magic,
+    ];
+    all_damages.sort_by(|&a, &b| b.total_cmp(&a));
+    let score0: f32 = all_damages[0];
+    let scoren = all_damages[1..].iter().copied().sum::<f32>();
+    Best {
+        score: score0 + scoren * mixlevel,
+        stats,
+        damage: damages.fmap_r(|&x| x as u32),
+        effect,
+    }
+}
+
 pub(crate) fn best_stats(
     wpn: &WeaponInfo,
     wpndata: &WeaponData,
@@ -32,36 +140,20 @@ pub(crate) fn best_stats(
             if cor > 0.0 {
                 (std::cmp::max(req, 10), 100)
             } else {
-                (10, 11)
+                (req, req + 1)
             }
         })
         .map2(mins, |(l, h), mn| (std::cmp::max(l, mn), std::cmp::max(h, mn + 1)));
-
-    let damages = wpn
-        .correct_d
-        .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
-
-    let effects = wpn
-        .correct_e
-        .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
-
-    let reinforcement = wpndata.reinforcement.get(&(wpn.reinforce_id as u32)).unwrap();
-    let accorrect = wpndata.aec.get(&(wpn.correct_id as u32)).unwrap();
+    let WeaponStats {
+        base_damage,
+        base_scaling,
+        base_damage_scaler,
+        constant_effect,
+        damages,
+        effects,
+    } = WeaponStats::new(wpn, wpndata);
 
     let mut out = Scaled::default();
-    let constant_effect = if wpn
-        .passives
-        .iter()
-        .any(|p| p.tp == Passive::Blood || p.tp == Passive::Poison)
-    {
-        None
-    } else {
-        Some(wpn.passives.iter().map(|psv| (psv.tp, psv.base)).collect::<Vec<_>>())
-    };
-    let base_damage = wpn.attack_base.map2_r(&reinforcement.damage, |&a, &b| a as f32 * b);
-    let base_scaling = wpn.correct_a.map2_r(&reinforcement.stats, |&a, &b| (a * b / 100.0));
-
-    let base_damage_scaler = accorrect.map2_r(&base_scaling, |&ac, &y| ac.fmap_r(|&x| (x as f32) * y / 100.0));
 
     for arc in statbounds.arc.0..statbounds.arc.1 {
         let arc_damage = damages.map2_r(&base_damage_scaler.arc, |sc, &y| sc.power(arc) * y);
