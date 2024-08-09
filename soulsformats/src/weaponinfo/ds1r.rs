@@ -194,7 +194,7 @@ pub fn new_weaponinfo(
         name,
         weight: eqp.weight,
         id,
-        mainid: id / 10000,
+        mainid: id / 1000,
         attack_base: Damage {
             physics: eqp.attack_base_physics,
             magic: eqp.attack_base_magic,

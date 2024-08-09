@@ -73,6 +73,7 @@ enum Command {
 
 fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
     let mut dir = dir.to_owned();
+    let mut namesmap: HashMap<String, u8> = HashMap::new();
     dir.push(name);
     let f = std::fs::File::open(dir)?;
     let b = BufReader::new(f);
@@ -81,8 +82,16 @@ fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
         let l = l?;
         match l.split_once('\t') {
             Some((rawid, nm)) => {
+                let name = nm.trim().to_string();
+                let name = if let Some(prev) = namesmap.insert(name.clone(), 0) {
+                    let newname = format!("{} ({})", &name, prev + 1);
+                    namesmap.insert(name, prev + 1);
+                    newname
+                } else {
+                    name
+                };
                 let id = rawid.parse()?;
-                out.insert(id, nm.trim().to_string());
+                out.insert(id, name);
             }
             None => panic!("malformed name line {l}"),
         }
@@ -96,6 +105,8 @@ fn main() -> anyhow::Result<()> {
     let content = std::fs::read(args.params)?;
     let dec = decompress(content);
     let params: BND4 = soulsformats::formats::bnd3::BND3::parse(dec)?.into();
+
+    eprintln!("version {}", params.version);
 
     match args.command {
         Command::WeaponDump => {
