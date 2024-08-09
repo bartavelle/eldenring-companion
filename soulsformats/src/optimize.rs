@@ -70,7 +70,7 @@ impl<'t> WeaponStats<'t> {
     }
 }
 
-pub(crate) fn calc_damage(wpn: &WeaponInfo, wpndata: &WeaponData, stats: Stat<u8>, mixlevel: f32) -> Best {
+pub fn calc_damage(wpn: &WeaponInfo, wpndata: &WeaponData, stats: Stat<u8>, mixlevel: f32) -> Best {
     let WeaponStats {
         base_damage,
         base_scaling,
@@ -128,7 +128,7 @@ pub(crate) fn calc_damage(wpn: &WeaponInfo, wpndata: &WeaponData, stats: Stat<u8
     }
 }
 
-pub(crate) fn best_stats(
+pub fn best_stats(
     wpn: &WeaponInfo,
     wpndata: &WeaponData,
     two_handed: bool,

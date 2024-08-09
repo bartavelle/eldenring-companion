@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use crate::structs::calc_correct_graph::CACL_CORRECT_GRAPH_ST;
+use crate::structs::{calc_correct_graph::CACL_CORRECT_GRAPH_ST, ds1r};
 
 #[derive(Debug, Serialize)]
 pub struct Scaling {
@@ -47,6 +47,44 @@ fn add_scale(v: &mut Vec<f32>, max_val_a: f32, max_val_b: f32, max_grow_a: f32, 
 
 impl Scaling {
     pub fn new(params: &CACL_CORRECT_GRAPH_ST) -> Self {
+        let mut inner = Vec::new();
+        add_scale(
+            &mut inner,
+            params.stage_max_val0,
+            params.stage_max_val1,
+            params.stage_max_grow_val0,
+            params.stage_max_grow_val1,
+            params.adj_pt_max_grow_val0,
+        );
+        add_scale(
+            &mut inner,
+            params.stage_max_val1,
+            params.stage_max_val2,
+            params.stage_max_grow_val1,
+            params.stage_max_grow_val2,
+            params.adj_pt_max_grow_val1,
+        );
+        add_scale(
+            &mut inner,
+            params.stage_max_val2,
+            params.stage_max_val3,
+            params.stage_max_grow_val2,
+            params.stage_max_grow_val3,
+            params.adj_pt_max_grow_val2,
+        );
+        add_scale(
+            &mut inner,
+            params.stage_max_val3,
+            params.stage_max_val4,
+            params.stage_max_grow_val3,
+            params.stage_max_grow_val4,
+            params.adj_pt_max_grow_val3,
+        );
+        inner.push(params.stage_max_grow_val4);
+        Self { inner }
+    }
+
+    pub fn new_ds1r(params: &ds1r::calc_correct_graph::CACL_CORRECT_GRAPH_ST) -> Self {
         let mut inner = Vec::new();
         add_scale(
             &mut inner,

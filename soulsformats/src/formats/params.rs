@@ -2,11 +2,11 @@ use std::io::Read;
 
 use byteorder::{LittleEndian, ReadBytesExt};
 
-use crate::utils::{assert_u32, read_utf16};
+use crate::utils::{assert_u32, read_ascii, read_utf16};
 
 struct Row {
     id: u32,
-    _name: Option<String>,
+    name: Option<String>,
     index: u64,
 }
 
@@ -49,23 +49,23 @@ impl<'t> Params<'t> {
         } else {
             let mut o = vec![0; 0x20];
             cur.read_exact(&mut o)?;
-            (Some(o), None)
+            (Some(read_ascii(&o)), None)
         };
         if let Some(param_type) = param_type {
-            eprintln!("TODO, handle param type {param_type:x?}")
+            eprintln!("TODO, handle param type {param_type}")
         }
-        let _ = cur.read_u32::<LittleEndian>()?;
+        let _some_format = cur.read_u32::<LittleEndian>()?;
         if (format_2d & FLAG01) != 0 && (format_2d & INT_DATA_OFFSET) != 0 {
             let _data_start = cur.read_u32::<LittleEndian>()?;
+            eprintln!("TODO: data_start 0x{_data_start:x}");
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
-            // eprintln!("TODO: data_start {data_start}")
-        } else {
+        } else if (format_2d & LONG_DATA_OFFSET) != 0 {
             let _data_start = cur.read_u64::<LittleEndian>()?;
+            eprintln!("TODO: data_start (B) 0x{_data_start:x}");
             assert_u32(0, &mut cur);
             assert_u32(0, &mut cur);
-            // eprintln!("TODO: data_start {data_start}")
         }
         let mut rows = Vec::new();
         for _ in 0..row_count {
@@ -86,14 +86,14 @@ impl<'t> Params<'t> {
                 if format_2e & UNICODE_ROW_NAME != 0 {
                     read_utf16(&bts[name_offset as usize..]).ok()
                 } else {
-                    todo!("shiftJIS")
+                    Some(read_ascii(&bts[name_offset as usize..]))
                 }
             } else {
                 None
             };
             rows.push(Row {
                 id,
-                _name: name,
+                name,
                 index: dataindex,
             });
         }
@@ -115,11 +115,11 @@ impl<'t> Params<'t> {
         })
     }
 
-    pub fn raw_row(&'t self, idx: usize) -> (u32, &'t [u8]) {
+    pub fn raw_row(&'t self, idx: usize) -> (u32, Option<&'t str>, &'t [u8]) {
         let rowid = &self.rows[idx];
         let start = rowid.index as usize;
         let end = start + self.row_size as usize;
-        (rowid.id, &self.data[start..end])
+        (rowid.id, rowid.name.as_deref(), &self.data[start..end])
     }
 
     pub(crate) fn row_count(&self) -> usize {

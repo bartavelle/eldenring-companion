@@ -1,82 +1,7 @@
-use byteorder::{BigEndian, LittleEndian, ReadBytesExt};
+use byteorder::{LittleEndian, ReadBytesExt};
 use std::io::{Cursor, Read};
 
-use crate::utils::{assert_char, assert_u32, read_utf16, reverse_bits};
-
-pub fn decompress(bytes: Vec<u8>) -> Vec<u8> {
-    match &bytes[..4] {
-        b"DCP\0" => todo!(),
-        b"DCX\0" => match &bytes[40..44] {
-            b"ZSTD" => decompress_zstd(&bytes),
-            b"KRAK" => decompress_krak(&bytes).unwrap(),
-            x => todo!("unsupported compression format {}", String::from_utf8_lossy(x)),
-        },
-        _ => bytes,
-    }
-}
-
-fn validate_dcx<R: Read>(cur: &mut R) -> (u32, u32) {
-    assert_char(b"DCX\0", cur);
-    assert_u32(0x11000, cur);
-    assert_u32(24, cur);
-    assert_u32(36, cur);
-    assert_u32(68, cur);
-    assert_u32(76, cur);
-    assert_char(b"DCS\0", cur);
-    let uncompressed = cur.read_u32::<BigEndian>().unwrap();
-    let compressed = cur.read_u32::<BigEndian>().unwrap();
-    assert_char(b"DCP\0", cur);
-    (uncompressed, compressed)
-}
-
-fn decompress_zstd(bytes: &[u8]) -> Vec<u8> {
-    let mut cur = Cursor::new(bytes);
-    let (_, compressed) = validate_dcx(&mut cur);
-    assert_char(b"ZSTD", &mut cur);
-    assert_u32(32, &mut cur);
-    assert_u32(0x15000000, &mut cur);
-    assert_u32(0, &mut cur);
-    assert_u32(0, &mut cur);
-    assert_u32(0, &mut cur);
-    assert_u32(0x10100, &mut cur);
-    assert_char(b"DCA\0", &mut cur);
-    assert_u32(8, &mut cur);
-    // resize
-    let start = cur.position() as usize;
-    let end = start + compressed as usize;
-    let mut newcur = Cursor::new(&bytes[start..end]);
-    zstd::decode_all(&mut newcur).unwrap()
-}
-
-fn decompress_krak(bytes: &[u8]) -> anyhow::Result<Vec<u8>> {
-    let mut cur = Cursor::new(bytes);
-    let (uncompressed, compressed) = validate_dcx(&mut cur);
-    assert_char(b"KRAK", &mut cur);
-    assert_u32(32, &mut cur);
-    let _compression_level = cur.read_u8()?;
-    assert_eq!(cur.read_u8()?, 0);
-    assert_eq!(cur.read_u8()?, 0);
-    assert_eq!(cur.read_u8()?, 0);
-    assert_u32(0, &mut cur);
-    assert_u32(0, &mut cur);
-    assert_u32(0, &mut cur);
-    assert_u32(0x10100, &mut cur);
-    assert_char(b"DCA\0", &mut cur);
-    assert_u32(8, &mut cur);
-    let start = cur.position() as usize;
-    let _end = start + compressed as usize;
-    let mut _decompressed = vec![0; uncompressed as usize];
-    // let decompressed_size = oodle_safe::decompress(
-    //     &bytes[start..end],
-    //     &mut decompressed,
-    //     None,
-    //     Some(oodle_safe::CheckCRC::Yes),
-    //     None,
-    //     None,
-    // );
-    // todo!("{compression_level} - {uncompressed} - {decompressed_size:?}")
-    todo!()
-}
+use crate::utils::{assert_char, read_utf16, reverse_bits};
 
 #[derive(Clone, Copy)]
 struct Format {
@@ -116,11 +41,9 @@ impl Format {
 
 #[derive(Debug)]
 pub struct BND4 {
-    _unk4: bool,
-    _unk5: bool,
     pub version: String,
-    data: Vec<u8>,
-    files: Vec<BinderFileHeader>,
+    pub(super) data: Vec<u8>,
+    pub(super) files: Vec<BinderFileHeader>,
 }
 
 impl BND4 {
@@ -172,8 +95,6 @@ impl BND4 {
         }
 
         Ok(Self {
-            _unk4,
-            _unk5,
             version,
             data,
             files: headers,
@@ -197,13 +118,13 @@ impl BND4 {
 }
 
 #[derive(Debug)]
-struct BinderFileHeader {
-    _flags: u8,
-    size: usize,
-    _uncompressed_size: Option<usize>,
-    offset: usize,
-    _id: Option<u32>,
-    name: Option<String>,
+pub(super) struct BinderFileHeader {
+    pub(super) _flags: u8,
+    pub(super) size: usize,
+    pub(super) _uncompressed_size: Option<usize>,
+    pub(super) offset: usize,
+    pub(super) _id: Option<u32>,
+    pub(super) name: Option<String>,
 }
 
 impl BinderFileHeader {

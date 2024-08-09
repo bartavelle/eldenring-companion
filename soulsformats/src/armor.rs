@@ -3,7 +3,7 @@ use std::collections::{BTreeMap, HashMap};
 use eldenring_companion::{Absorptions, Armor, ArmorCategory, Resistances};
 
 use crate::{
-    erformat::{bnd4::BND4, load_params_filter},
+    formats::{bnd4::BND4, load_params_filter},
     structs::equip_param_protector::EQUIP_PARAM_PROTECTOR_ST,
 };
 
@@ -22,7 +22,7 @@ pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Res
     load_params_filter(
         reg,
         "EquipParamProtector",
-        |rid, raw_armor: EQUIP_PARAM_PROTECTOR_ST| {
+        |rid, _, raw_armor: EQUIP_PARAM_PROTECTOR_ST| {
             if rid < 40000 {
                 return None;
             }

@@ -1,24 +1,15 @@
 use clap::{Parser, Subcommand, ValueEnum};
 use ertypes::stats::{Stat, Statistic};
-use optimize::calc_damage;
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use serde::Serialize;
+use soulsformats::optimize::calc_damage;
+use soulsformats::weaponinfo::{Infusion, WeaponData, WeaponInfo};
 use std::{
     collections::{BTreeMap, HashMap},
     io::{stdout, BufRead, BufReader},
     path::{Path, PathBuf},
     sync::{atomic::AtomicUsize, RwLock},
 };
-use weaponinfo::{Infusion, WeaponData, WeaponInfo};
-
-pub mod armor;
-pub mod erformat;
-pub mod optimize;
-pub mod regulation;
-pub mod scaling;
-pub mod structs;
-pub mod utils;
-pub mod weaponinfo;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -107,18 +98,15 @@ fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
 
 fn main() -> anyhow::Result<()> {
     let args = Args::parse();
-    // let dec_prm = std::fs::read(args.parambnd)?;
-    // let raw_prm = bnd4::decompress(dec_prm);
-    // let parambnd = bnd4::BND4::parse(raw_prm).unwrap();
 
     let weapon_names = load_names(&args.data, "EquipParamWeapon.txt")?;
-    let regulations = regulation::load_regulation(&args.regulation)?;
+    let regulations = soulsformats::regulation::load_regulation(&args.regulation)?;
     eprintln!("regulation version {}", regulations.version);
 
     match args.command {
         Command::ArmorDump => {
             let armor_names = load_names(&args.data, "EquipParamProtector.txt")?;
-            let armor = armor::load_armor(&regulations, &armor_names)?;
+            let armor = soulsformats::armor::load_armor(&regulations, &armor_names)?;
             let to_json = armor
                 .into_values()
                 .map(|armor| (armor.name.clone(), armor))
@@ -126,7 +114,7 @@ fn main() -> anyhow::Result<()> {
             serde_json::to_writer_pretty(stdout(), &to_json)?;
         }
         Command::WeaponDump => {
-            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
+            let wpn_data = WeaponData::load_er(&regulations, &weapon_names)?;
             serde_json::to_writer_pretty(stdout(), &wpn_data)?;
         }
         Command::WeaponSearch {
@@ -134,7 +122,7 @@ fn main() -> anyhow::Result<()> {
             mixed_damage_scale,
             limit,
         } => {
-            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
+            let wpn_data = WeaponData::load_er(&regulations, &weapon_names)?;
             let mut rstats = Stat::all(10);
             for stt in &stats {
                 rstats.set(stt.stat, stt.value);
@@ -170,7 +158,7 @@ fn main() -> anyhow::Result<()> {
             min_fth,
             min_arc,
         } => {
-            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
+            let wpn_data = WeaponData::load_er(&regulations, &weapon_names)?;
             let mins = Stat {
                 str: min_str,
                 dex: min_dex,
@@ -183,7 +171,7 @@ fn main() -> anyhow::Result<()> {
                 .iter()
                 .find(|w| w.name == weapon)
                 .expect("could not find weapon");
-            let best = optimize::best_stats(wpn, &wpn_data, two_handed, mins);
+            let best = soulsformats::optimize::best_stats(wpn, &wpn_data, two_handed, mins);
             let rbest = match mixed_damage_scale {
                 None => best.r75,
                 Some(1.0) => best.r100,
@@ -196,7 +184,7 @@ fn main() -> anyhow::Result<()> {
             }
         }
         Command::GenAll { out, limit } => {
-            let wpn_data = WeaponData::load(&regulations, &weapon_names)?;
+            let wpn_data = WeaponData::load_er(&regulations, &weapon_names)?;
             #[derive(PartialEq, Eq, Serialize, Debug, Clone, Copy)]
             enum THStatus {
                 OneHand,
@@ -265,8 +253,12 @@ fn main() -> anyhow::Result<()> {
                     THStatus::OneHand => "1H",
                     THStatus::TwoHands => "2H",
                 };
-                let optim_result =
-                    optimize::best_stats(wpn, &wpn_data, params.handling == THStatus::TwoHands, Stat::all(10));
+                let optim_result = soulsformats::optimize::best_stats(
+                    wpn,
+                    &wpn_data,
+                    params.handling == THStatus::TwoHands,
+                    Stat::all(10),
+                );
 
                 let save_file = |mixed: f32, wpn: &WeaponInfo, best| {
                     let mut path = out.clone();

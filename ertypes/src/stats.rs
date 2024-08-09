@@ -181,4 +181,5 @@ pub struct Reinforcement {
     pub sp0: u8,
     pub sp1: u8,
     pub sp2: u8,
+    pub name: Option<String>,
 }

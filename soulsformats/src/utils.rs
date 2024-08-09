@@ -1,6 +1,7 @@
 use std::io::Read;
 
 use byteorder::{BigEndian, ReadBytesExt};
+use encoding_rs::SHIFT_JIS;
 
 pub fn reverse_bits(i: u8) -> u8 {
     (0..8)
@@ -25,6 +26,15 @@ pub fn assert_char<R: Read>(c: &[u8; 4], r: &mut R) {
 pub fn assert_u32<R: Read>(expected: u32, r: &mut R) {
     let actual = r.read_u32::<BigEndian>().unwrap();
     assert_eq!(expected, actual);
+}
+
+pub fn read_ascii(data: &[u8]) -> String {
+    let rdata = match memchr::memchr(0, &data) {
+        None => data,
+        Some(last) => &data[..last],
+    };
+    let (cow, _, _) = SHIFT_JIS.decode(rdata);
+    cow.to_string()
 }
 
 pub fn read_utf16(data: &[u8]) -> anyhow::Result<String> {
