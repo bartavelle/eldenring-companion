@@ -63,7 +63,6 @@ impl BND3 {
         assert!(!bit_big_endian);
 
         let file_count = cur.read_u32::<LittleEndian>()?;
-        eprintln!("file count {file_count}");
         let _eof_header = cur.read_u32::<LittleEndian>()?;
         let unk18 = cur.read_u32::<LittleEndian>()?;
         assert!(unk18 == 0 || unk18 == 0x80000000);

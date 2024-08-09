@@ -20,7 +20,7 @@ pub struct Stat<A> {
 }
 
 impl<A: Copy> Stat<A> {
-    pub fn all(a: A) -> Self {
+    pub const fn all(a: A) -> Self {
         Stat {
             str: a,
             dex: a,

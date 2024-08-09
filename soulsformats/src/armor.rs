@@ -4,7 +4,7 @@ use eldenring_companion::{Absorptions, Armor, ArmorCategory, Resistances};
 
 use crate::{
     formats::{bnd4::BND4, load_params_filter},
-    structs::equip_param_protector::EQUIP_PARAM_PROTECTOR_ST,
+    structs::{ds1r, equip_param_protector::EQUIP_PARAM_PROTECTOR_ST},
 };
 
 fn conv(i: f32) -> f64 {
@@ -22,7 +22,7 @@ pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Res
     load_params_filter(
         reg,
         "EquipParamProtector",
-        |rid, _, raw_armor: EQUIP_PARAM_PROTECTOR_ST| {
+        |rid, _nm, raw_armor: EQUIP_PARAM_PROTECTOR_ST| {
             if rid < 40000 {
                 return None;
             }
@@ -61,6 +61,55 @@ pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Res
                 },
             };
             Some((rid, armor))
+        },
+    )
+}
+
+pub fn load_armor_ds1(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Armor>> {
+    load_params_filter(
+        reg,
+        "EquipParamProtector",
+        |rid, nm, raw_armor: ds1r::equip_param_protector::EQUIP_PARAM_PROTECTOR_ST| {
+            if rid < 40000 {
+                return None;
+            }
+            let name = nm?.to_string();
+            if UNOBTAINABLE.contains(&name.as_str()) {
+                return None;
+            }
+            let category = match raw_armor.equip_model_category {
+                2 => ArmorCategory::Body,
+                6 => ArmorCategory::Legs,
+                1 => ArmorCategory::Arms,
+                5 => ArmorCategory::Head,
+                _ => panic!("invalid body type {rid}/{name} {raw_armor:?}"),
+            };
+
+            panic!("{name}: {raw_armor:#?}");
+
+            // let armor = Armor {
+            //     category,
+            //     name: name.to_string(),
+            //     weight: conv(raw_armor.weight),
+            //     absorptions: Absorptions {
+            //         fire: convx(raw_armor.defense_fire),
+            //         holy: convx(0.0),
+            //         lightning: convx(raw_armor.thunder_damage_cut_rate),
+            //         magic: convx(raw_armor.magic_damage_cut_rate),
+            //         physical: convx(raw_armor.neutral_damage_cut_rate),
+            //         pierce: convx(raw_armor.thrust_damage_cut_rate),
+            //         slash: convx(raw_armor.slash_damage_cut_rate),
+            //         strike: convx(raw_armor.blow_damage_cut_rate),
+            //     },
+            //     resistances: Resistances {
+            //         focus: raw_armor.resist_madness as f64,
+            //         immunity: raw_armor.resist_disease as f64,
+            //         poise: conv(raw_armor.toughness_correct_rate * 1000.0),
+            //         robustness: raw_armor.resist_blood as f64,
+            //         vitality: raw_armor.resist_curse as f64,
+            //     },
+            // };
+            // Some((rid, armor))
         },
     )
 }

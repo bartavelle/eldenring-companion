@@ -62,7 +62,7 @@ impl WeaponData {
         er::load_weapondata(reg, names)
     }
 
-    pub fn load_ds1r(reg: &BND4) -> anyhow::Result<Self> {
-        ds1r::load_weapondata(reg)
+    pub fn load_ds1r(reg: &BND4, weapon_names: &HashMap<u32, String>) -> anyhow::Result<Self> {
+        ds1r::load_weapondata(reg, weapon_names)
     }
 }

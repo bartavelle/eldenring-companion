@@ -3,7 +3,7 @@ use ertypes::stats::{Stat, Statistic};
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use serde::Serialize;
 use soulsformats::optimize::calc_damage;
-use soulsformats::weaponinfo::{Infusion, WeaponData, WeaponInfo};
+use soulsformats::weaponinfo::{WeaponData, WeaponInfo};
 use std::{
     collections::{BTreeMap, HashMap},
     io::{stdout, BufRead, BufReader},
@@ -198,10 +198,8 @@ fn main() -> anyhow::Result<()> {
                 id: u32,
                 name: &'t str,
                 mainid: u32,
-                infusion: Infusion,
             }
             let mut todo = Vec::new();
-            // generate all json files in /tmp/machin
             for wpn in &wpn_data.weapons {
                 // multiple or single damage type
                 if wpn.correct_a.str > 0.0 {
@@ -213,7 +211,6 @@ fn main() -> anyhow::Result<()> {
                                 id: wpn.id,
                                 name: &wpn.name,
                                 mainid: wpn.mainid,
-                                infusion: wpn.infusion,
                             },
                             wpn,
                         ));
@@ -226,7 +223,6 @@ fn main() -> anyhow::Result<()> {
                             id: wpn.id,
                             name: &wpn.name,
                             mainid: wpn.mainid,
-                            infusion: wpn.infusion,
                         },
                         wpn,
                     ));

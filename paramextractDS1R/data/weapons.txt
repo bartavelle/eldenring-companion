@@ -1,0 +1,241 @@
+100000	Dagger 
+101000	Parrying Dagger 
+102000	Ghost Blade 
+103000	Bandit's Knife 
+104000	Priscilla's Dagger 
+199000	徘徊短剣 
+200000	Shortsword 
+201000	Longsword 
+202000	Broadsword 
+203000	Broken Straight Sword 
+204000	Balder Side Sword 
+205000	Crystal Straight Sword 
+206000	Sunlight Straight Sword 
+207000	Barbed Straight Sword 
+208000	Silv. Knight Str. Sword 
+209000	Astora's Straight Sword 
+210000	Darksword 
+211000	Drake Sword 
+212000	Straight Sword Hilt 
+299000	徘徊直剣 
+300000	Bastard Sword 
+301000	Claymore 
+302000	Man-serpent Greatsword 
+303000	Flamberge 
+304000	Crystal Greatsword 
+306000	Stone Greatsword 
+307000	Greatsword of Artorias 
+309000	Moonlight Greatsword 
+310000	Black Knight Sword 
+311000	Greatsword of Artorias 
+312000	Greatsword of Artorias 
+314000	Great Lord Greatsword 
+315000	Great Lord Greatsword 
+350000	Zweihander 
+351000	Greatsword 
+352000	Demon Great Machete 
+354000	Dragon Greatsword 
+355000	Black Knight Greatsword 
+398000	徘徊大剣 
+399000	徘徊特大剣 
+400000	Scimitar 
+401000	Falchion 
+402000	Shotel 
+403000	Jagged Ghost Blade 
+405000	Painting Guardian Sword 
+406000	Quelaag's Furysword 
+450000	Server 
+451000	Murakumo 
+453000	Gravelord Sword 
+498000	徘徊曲剣 
+499000	徘徊大曲剣 
+500000	Uchigatana 
+501000	Washing Pole 
+502000	Iaito 
+503000	Chaos Blade 
+599000	徘徊刀 
+600000	Mail Breaker 
+601000	Rapier 
+602000	Estoc 
+603000	Velka's Rapier 
+604000	Ricard's Rapier 
+699000	徘徊刺剣 
+700000	Hand Axe 
+701000	Battle Axe 
+702000	Crescent Axe 
+703000	Butcher Knife 
+704000	Golem Axe 
+705000	Gargoyle Tail Axe 
+750000	Greataxe 
+751000	Demon's Greataxe 
+752000	Dragon King Greataxe 
+753000	Black Knight Greataxe 
+798000	徘徊斧 
+799000	徘徊大斧 
+800000	Club 
+801000	Mace 
+802000	Morning Star 
+803000	Warpick 
+804000	Pickaxe 
+809000	Reinforced Club 
+810000	Blacksmith Hammer 
+811000	Blacksmith Giant Hammer 
+812000	Hammer of Vamos 
+850000	Great Club 
+851000	Grant 
+852000	Demon's Great Hammer 
+854000	Dragon Tooth 
+855000	Large Club 
+856000	Smough's Hammer 
+857000	Smough's Hammer 
+898000	徘徊槌 
+899000	徘徊大槌 
+900000	Fists 
+901000	Caestus 
+902000	Claw 
+903000	Dragon Bone Fist 
+904000	Dark Hand 
+999000	徘徊拳 
+1000000	Spear 
+1001000	Winged Spear 
+1002000	Partizan 
+1003000	Demon's Spear 
+1004000	Channeler's Trident 
+1006000	Silver Knight Spear 
+1050000	Pike 
+1051000	Dragonslayer Spear 
+1052000	Moonlight Butterfly Horn 
+1053000	Moonlight Butterfly Horn 
+1054000	Dragonslayer Spear 
+1099000	徘徊槍 
+1100000	Halberd 
+1101000	Giant's Halberd 
+1102000	Titanite Catch Pole 
+1103000	Gargoyle's Halberd 
+1105000	Black Knight Halberd 
+1106000	Lucerne  
+1107000	Scythe 
+1150000	Great Scythe 
+1151000	Lifehunt Scythe 
+1199000	徘徊竿状 
+1200000	Short Bow 
+1201000	Longbow 
+1202000	Black Bow of Pharis 
+1203000	Dragonslayer Greatbow 
+1204000	Composite Bow 
+1205000	Darkmoon Bow 
+1250000	Light Crossbow 
+1251000	Heavy Crossbow 
+1252000	Avelyn 
+1253000	Sniper Crossbow 
+1298000	徘徊弓 
+1299000	徘徊弩 
+1300000	Sorcerer's Catalyst 
+1301000	Beatrice's Catalyst 
+1302000	Tin Banishment Catalyst 
+1303000	Logan's Catalyst 
+1304000	Tin Darkmoon Catalyst 
+1305000	Oolacile Ivory Catalyst 
+1306000	Tin Crystallization Ctlyst. 
+1307000	Demon's Catalyst 
+1308000	Izalith Catalyst 
+1330000	Pyromancy Flame 
+1331000	Pyromancy Flame+10 
+1332000	Pyromancy Flame 
+1360000	Talisman 
+1361000	Canvas Talisman 
+1362000	Thorolund Talisman 
+1363000	Ivory Talisman 
+1365000	Sunlight Talisman 
+1366000	Darkmoon Talisman 
+1367000	Velka's Talisman 
+1396000	Skull Lantern 
+1397000	徘徊杖 
+1398000	徘徊触媒 
+1399000	徘徊タリスマン 
+1400000	East-West Shield 
+1401000	Wooden Shield 
+1402000	Large Leather Shield 
+1403000	Small Leather Shield 
+1404000	Target Shield 
+1405000	Buckler 
+1406000	Cracked Round Shield 
+1408000	Leather Shield 
+1409000	Plank Shield 
+1410000	Caduceus Round Shield 
+1411000	Crystal Ring Shield 
+1412000	Crystal Ring Shield 
+1413000	Crystal Ring Shield 
+1414000	Crystal Ring Shield 
+1450000	Heater Shield 
+1451000	Knight Shield 
+1452000	Tower Kite Shield 
+1453000	Grass Crest Shield 
+1454000	Hollow Soldier Shield 
+1455000	Balder Shield 
+1456000	Crest Shield 
+1457000	Dragon Crest Shield 
+1460000	Warrior's Round Shield 
+1461000	Iron Round Shield 
+1462000	Spider Shield 
+1470000	Spiked Shield 
+1471000	Crystal Shield 
+1472000	Sunlight Shield 
+1473000	Silver Knight Shield 
+1474000	Black Knight Shield 
+1475000	Pierce Shield 
+1476000	Red and White Round Shield 
+1477000	Caduceus Kite Shield 
+1478000	Gargoyle's Shield 
+1498000	徘徊小盾 
+1499000	徘徊中盾 
+1500000	Eagle Shield 
+1501000	Tower Shield 
+1502000	Giant Shield 
+1503000	Stone Greatshield 
+1505000	Havel's Greatshield 
+1506000	Bonewheel Shield 
+1507000	Greatshield of Artorias 
+1508000	Greatshield of Artorias 
+1509000	Greatshield of Artorias 
+1510000	Greatshield of Artorias 
+1599000	徘徊大盾 
+1600000	Whip 
+1601000	Notched Whip 
+1699000	徘徊ムチ 
+2000000	Standard Arrow 
+2001000	Large Arrow 
+2002000	Feather Arrow 
+2003000	Fire Arrow 
+2004000	Poison Arrow 
+2005000	Moonlight Arrow 
+2006000	Wooden Arrow 
+2007000	Dragonslayer Arrow 
+2008000	Gough's Great Arrow 
+2099000	Arrow 
+2100000	Standard Bolt 
+2101000	Heavy Bolt 
+2102000	Sniper Bolt 
+2103000	Wood Bolt 
+2104000	Lightning Bolt 
+2199000	Bolt 
+9000000	Effigy Shield 
+9001000	Sanctus 
+9002000	Bloodshield 
+9003000	Black Iron Greatshield 
+9004000	デザインコンテスト用盾Ｅ 
+9005000	デザインコンテスト用盾Ｆ 
+9006000	デザインコンテスト用盾Ｇ 
+9007000	デザインコンテスト用盾Ｈ 
+9010000	Gold Tracer 
+9011000	Dark Silver Tracer 
+9012000	Abyss Greatsword 
+9013000	Abyss Greatsword 
+9014000	Cleansing Greatshield 
+9015000	Stone Greataxe 
+9016000	Four-pronged Plow 
+9017000	Manus Catalyst 
+9018000	Oolacile Catalyst 
+9019000	Guardian Tail 
+9020000	Obsidian Greatsword 
+9021000	Gough's Greatbow 

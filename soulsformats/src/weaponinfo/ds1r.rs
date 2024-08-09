@@ -69,6 +69,7 @@ fn load_reinforcement(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Reinforcement>
 
 fn load_weapons(
     reg: &BND4,
+    weapon_names: &HashMap<u32, String>,
     sp_effects: &BTreeMap<u32, SpEffect>,
     reinforce: &BTreeMap<u32, Reinforcement>,
 ) -> anyhow::Result<Vec<WeaponInfo>> {
@@ -79,24 +80,28 @@ fn load_weapons(
 
     for ridx in 0..equip_param_weapon.row_count() {
         let (rid, name, rdata) = equip_param_weapon.raw_row(ridx);
-        if rid == 99999999 {
-            continue;
-        }
-        if rid < 1000000 {
-            // items
-            continue;
-        }
-        if (30000000..33000000).contains(&rid) {
-            // shields
-            continue;
-        }
 
-        if (50000000..53500000).contains(&rid) {
-            // arrows
-            continue;
-        }
+        let infusion_id = rid % 1000;
+        let base_id = rid - infusion_id;
+
+        let name = match (infusion_id, weapon_names.get(&base_id)) {
+            (0, Some(n)) => n.to_string(),
+            (100, Some(n)) => format!("Crystal {n}"),
+            (200, Some(n)) => format!("Lightning {n}"),
+            (300, Some(n)) => format!("Raw {n}"),
+            (400, Some(n)) => format!("Magic {n}"),
+            (500, Some(n)) => format!("Occult {n}"),
+            (600, Some(n)) => format!("Divine {n}"),
+            (700, Some(n)) => format!("Dark {n}"),
+            (800, Some(n)) => format!("Fire {n}"),
+            (900, Some(n)) => format!("Chaos {n}"),
+            _ => name.unwrap_or_default().to_string(),
+        };
+
+        // let base_name = weapon_names.get(&base_id).map(|x| x.as_str()).or(name).unwrap_or_default();
+
         let eqpr = EQUIP_PARAM_WEAPON_ST::unpack_from_slice(rdata)?;
-        let wpn = new_weaponinfo(name.unwrap_or_default().to_string(), rid, &eqpr, sp_effects, reinforce)?;
+        let wpn = new_weaponinfo(name, rid, &eqpr, sp_effects, reinforce)?;
         weapons.push(wpn);
     }
     Ok(weapons)
@@ -109,11 +114,11 @@ fn load_correct(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Scaling>> {
     })
 }
 
-pub fn load_weapondata(reg: &BND4) -> anyhow::Result<WeaponData> {
+pub fn load_weapondata(reg: &BND4, weapon_names: &HashMap<u32, String>) -> anyhow::Result<WeaponData> {
     let sp_effects = load_sp_effects(reg)?;
     let reinforcement = load_reinforcement(reg)?;
     let graphes = load_correct(reg)?;
-    let weapons = load_weapons(reg, &sp_effects, &reinforcement)?;
+    let weapons = load_weapons(reg, weapon_names, &sp_effects, &reinforcement)?;
     Ok(WeaponData {
         sp_effects,
         reinforcement,

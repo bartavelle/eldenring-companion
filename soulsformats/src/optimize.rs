@@ -32,6 +32,44 @@ pub struct WeaponStats<'t> {
     pub effects: Effect<&'t Scaling>,
 }
 
+const DEFAULT_CORRECT: Stat<Damage<i16>> = Stat {
+    str: Damage {
+        physics: 100,
+        magic: 0,
+        fire: 0,
+        lightning: 0,
+        holy: 0,
+    },
+    dex: Damage {
+        physics: 100,
+        magic: 0,
+        fire: 0,
+        lightning: 0,
+        holy: 0,
+    },
+    int: Damage {
+        physics: 0,
+        magic: 100,
+        fire: 0,
+        lightning: 0,
+        holy: 0,
+    },
+    fth: Damage {
+        physics: 0,
+        magic: 100,
+        fire: 0,
+        lightning: 0,
+        holy: 0,
+    },
+    arc: Damage {
+        physics: 0,
+        magic: 0,
+        fire: 0,
+        lightning: 0,
+        holy: 0,
+    },
+};
+
 impl<'t> WeaponStats<'t> {
     pub fn new(wpn: &WeaponInfo, wpndata: &'t WeaponData) -> Self {
         let damages = wpn
@@ -43,7 +81,11 @@ impl<'t> WeaponStats<'t> {
             .fmap_r(|&dmg_type| wpndata.graphes.get(&(dmg_type as u32)).unwrap());
 
         let reinforcement = wpndata.reinforcement.get(&(wpn.reinforce_id as u32)).unwrap();
-        let accorrect = wpndata.aec.get(&(wpn.correct_id as u32)).unwrap();
+        let accorrect = if wpndata.aec.is_empty() {
+            &DEFAULT_CORRECT
+        } else {
+            wpndata.aec.get(&(wpn.correct_id as u32)).unwrap()
+        };
 
         let constant_effect = if wpn
             .passives
