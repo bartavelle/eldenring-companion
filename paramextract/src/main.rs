@@ -62,7 +62,7 @@ enum Command {
     GenAll {
         #[arg(short, long, help = "Output directory")]
         out: PathBuf,
-        #[arg(short, long, help = "Limit amount of computer json (for testing)")]
+        #[arg(short, long, help = "Limit amount of compute (for testing)")]
         limit: Option<usize>,
     },
     ArmorDump,

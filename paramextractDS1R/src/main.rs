@@ -63,6 +63,12 @@ enum Command {
         #[arg(long, default_value_t = 10)]
         min_arc: u8,
     },
+    GenAll {
+        #[arg(short, long, help = "Output directory")]
+        out: PathBuf,
+        #[arg(short, long, help = "Limit amount of compute (for testing)")]
+        limit: Option<usize>,
+    },
 }
 
 fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
@@ -140,6 +146,121 @@ fn main() -> anyhow::Result<()> {
             for r in rbest {
                 println!("{r:?}")
             }
+        }
+        Command::GenAll { out, limit } => {
+            let weapon_names = load_names(&args.data, "weapons.txt")?;
+            let wpn_data = WeaponData::load_ds1r(&params, &weapon_names)?;
+            #[derive(PartialEq, Eq, Serialize, Debug, Clone, Copy)]
+            enum THStatus {
+                OneHand,
+                TwoHands,
+                Any,
+            }
+            #[derive(Serialize, Clone, Debug)]
+            struct WpnParams<'t> {
+                mixed: f32,
+                handling: THStatus,
+                id: u32,
+                name: &'t str,
+                mainid: u32,
+            }
+            let mut todo = Vec::new();
+            for wpn in &wpn_data.weapons {
+                // multiple or single damage type
+                if wpn.correct_a.str > 0.0 {
+                    for th in [THStatus::OneHand, THStatus::TwoHands] {
+                        todo.push((
+                            WpnParams {
+                                mixed: 1.0,
+                                handling: th,
+                                id: wpn.id,
+                                name: &wpn.name,
+                                mainid: wpn.mainid,
+                            },
+                            wpn,
+                        ));
+                    }
+                } else {
+                    todo.push((
+                        WpnParams {
+                            mixed: 1.0,
+                            handling: THStatus::Any,
+                            id: wpn.id,
+                            name: &wpn.name,
+                            mainid: wpn.mainid,
+                        },
+                        wpn,
+                    ));
+                }
+            }
+
+            if let Some(limit) = limit {
+                // TODO: properly resize
+                todo = todo.into_iter().take(limit).collect();
+            }
+            // reverse so that the slow ones (smithscript stuff) are computed first
+            todo.reverse();
+
+            eprintln!("TODO: {} elements", todo.len());
+
+            let index: RwLock<Vec<WpnParams>> = RwLock::new(Vec::new());
+            let done = AtomicUsize::new(0);
+            let total = todo.len();
+
+            todo.par_iter().for_each(|(params, wpn)| {
+                let start = std::time::Instant::now();
+                let thi = match params.handling {
+                    THStatus::Any => "NI",
+                    THStatus::OneHand => "1H",
+                    THStatus::TwoHands => "2H",
+                };
+                let optim_result = soulsformats::optimize::best_stats(
+                    wpn,
+                    &wpn_data,
+                    params.handling == THStatus::TwoHands,
+                    Stat::all(10),
+                );
+
+                let save_file = |mixed: f32, wpn: &WeaponInfo, best| {
+                    let mut path = out.clone();
+                    path.push(format!("{}-{thi}-{}.json", wpn.id, mixed));
+                    let mut fo = std::fs::File::create(path).unwrap();
+                    serde_json::to_writer(&mut fo, &best).unwrap();
+                };
+
+                let mut lk = index.write().unwrap();
+
+                if wpn.multidamage() {
+                    let mut p75 = params.clone();
+                    p75.mixed = 0.75;
+                    save_file(0.75, wpn, optim_result.r75);
+                    lk.push(p75);
+
+                    let mut p50 = params.clone();
+                    p50.mixed = 0.5;
+                    save_file(0.5, wpn, optim_result.r50);
+                    lk.push(p50);
+
+                    save_file(1.0, wpn, optim_result.r100);
+                    lk.push(params.clone());
+                } else {
+                    save_file(1.0, wpn, optim_result.r100);
+                    lk.push(params.clone())
+                }
+
+                let end = std::time::Instant::now();
+                let elapsed = end - start;
+                let dn = done.fetch_add(1, std::sync::atomic::Ordering::SeqCst);
+                println!("{dn}/{total} {:?} {:.2}s", params, elapsed.as_secs_f32())
+            });
+
+            // write summary
+            let params = index.into_inner().unwrap();
+            let mut path = out.clone();
+
+            path.push("index.json");
+            let mut fo = std::fs::File::create(path).unwrap();
+            serde_json::to_writer(&mut fo, &params).unwrap();
         }
     }
 
