@@ -67,8 +67,8 @@ impl<A: Copy> Absorptions<A> {
     }
 }
 
-impl Absorptions<f64> {
-    fn sum(&self) -> f64 {
+impl Absorptions<f32> {
+    fn sum(&self) -> f32 {
         self.fire + self.holy + self.lightning + self.magic + self.physical + self.pierce + self.slash + self.strike
     }
 }
@@ -77,9 +77,9 @@ impl Absorptions<f64> {
 pub struct Armor {
     pub category: ArmorCategory,
     pub name: String,
-    pub weight: f64,
-    pub absorptions: Absorptions<f64>,
-    pub resistances: Resistances<f64>,
+    pub weight: f32,
+    pub absorptions: Absorptions<f32>,
+    pub resistances: Resistances<f32>,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]
@@ -90,8 +90,8 @@ pub struct Resistances<A> {
     pub robustness: A,
     pub vitality: A,
 }
-impl Resistances<f64> {
-    fn sum(&self) -> f64 {
+impl Resistances<f32> {
+    fn sum(&self) -> f32 {
         self.focus + self.immunity + self.poise + self.robustness + self.vitality
     }
 }
@@ -119,11 +119,11 @@ impl<A> Body<Vec<A>> {
 
 #[derive(Serialize, Deserialize)]
 pub struct Weights {
-    pub absorptions: Absorptions<f64>,
-    pub resistances: Resistances<f64>,
+    pub absorptions: Absorptions<f32>,
+    pub resistances: Resistances<f32>,
 }
 impl Weights {
-    fn sum(&self) -> f64 {
+    fn sum(&self) -> f32 {
         self.absorptions.sum() + self.resistances.sum()
     }
 }
@@ -131,10 +131,10 @@ impl Weights {
 #[derive(Serialize, Deserialize, Clone)]
 pub struct Scored {
     pub name: String,
-    pub weight: f64,
-    pub score: f64, // individual part score
-    pub inv_absorptions: Absorptions<f64>,
-    pub resistances_score: f64,
+    pub weight: f32,
+    pub score: f32, // individual part score
+    pub inv_absorptions: Absorptions<f32>,
+    pub resistances_score: f32,
 }
 
 pub fn scores(i: Body<Vec<Armor>>, w: &Weights) -> Body<Vec<Scored>> {
@@ -243,7 +243,7 @@ fn prepare_list(i: &[Scored]) -> Vec<Scored> {
     i.into_iter().fold(NextComparer::new(), |acc, n| acc.next(n)).finalize()
 }
 
-fn compound_resistances(rs: &[Absorptions<f64>]) -> Absorptions<f64> {
+fn compound_resistances(rs: &[Absorptions<f32>]) -> Absorptions<f32> {
     let multiplied = rs
         .iter()
         .fold(Absorptions::all(1.0), |cur, n| cur.map2(*n, |a, b| a * b));
@@ -259,13 +259,13 @@ fn compound_resistances(rs: &[Absorptions<f64>]) -> Absorptions<f64> {
     }
 }
 
-fn score_multiple_resistances(rs: &[Absorptions<f64>], w: &Weights) -> f64 {
+fn score_multiple_resistances(rs: &[Absorptions<f32>], w: &Weights) -> f32 {
     let acc = compound_resistances(rs);
     let mul = acc.map2(w.absorptions, |a, b| a * b);
     mul.fire + mul.holy + mul.lightning + mul.magic + mul.physical + mul.pierce + mul.slash + mul.strike
 }
 
-pub fn search(i: &Body<Vec<Scored>>, w: &Weights, weight_budget: f64) -> (Body<String>, f64) {
+pub fn search(i: &Body<Vec<Scored>>, w: &Weights, weight_budget: f32) -> (Body<String>, f32) {
     // first, sort by scores
     let head = prepare_list(&i.head);
     let arms = prepare_list(&i.arms);
@@ -364,7 +364,7 @@ pub fn search(i: &Body<Vec<Scored>>, w: &Weights, weight_budget: f64) -> (Body<S
 }
 
 #[wasm_bindgen]
-pub fn optimize_armor(armors: JsValue, weights: JsValue, weight_budget: f64) -> JsValue {
+pub fn optimize_armor(armors: JsValue, weights: JsValue, weight_budget: f32) -> JsValue {
     let armors: Body<Vec<Armor>> = serde_wasm_bindgen::from_value(armors).unwrap();
     let weights: Weights = serde_wasm_bindgen::from_value(weights).unwrap();
 

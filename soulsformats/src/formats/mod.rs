@@ -4,6 +4,7 @@ use std::collections::BTreeMap;
 pub mod bnd3;
 pub mod bnd4;
 pub mod compression;
+pub mod fmg;
 pub mod params;
 
 pub fn load_params<A, B, F, K>(reg: &bnd4::BND4, name: &str, convert: F) -> anyhow::Result<BTreeMap<K, B>>

@@ -108,7 +108,7 @@ fn load_weapons(
 }
 
 fn load_correct(reg: &BND4) -> anyhow::Result<BTreeMap<u32, Scaling>> {
-    load_params(reg, "CalcCorrectGraph", |rid, nm, clc: CACL_CORRECT_GRAPH_ST| {
+    load_params(reg, "CalcCorrectGraph", |rid, _, clc: CACL_CORRECT_GRAPH_ST| {
         let row = Scaling::new_ds1r(&clc);
         (rid, row)
     })

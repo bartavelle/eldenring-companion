@@ -64,20 +64,20 @@ fn ds3(dir: &Path) -> GameData {
             panic!("invalid row {:?}", v);
         }
         let name = v[1].as_str().unwrap().to_string();
-        let weight = v[2].as_f64().unwrap();
-        let physical = v[3].as_f64().unwrap();
-        let strike = v[4].as_f64().unwrap();
-        let slash = v[5].as_f64().unwrap();
-        let pierce = v[6].as_f64().unwrap();
-        let magic = v[7].as_f64().unwrap();
-        let fire = v[8].as_f64().unwrap();
-        let lightning = v[9].as_f64().unwrap();
-        let holy = v[10].as_f64().unwrap(); // dark
-        let focus = v[11].as_f64().unwrap(); // bleed
-        let immunity = v[12].as_f64().unwrap();
-        let robustness = v[13].as_f64().unwrap(); // frost
-        let vitality = v[14].as_f64().unwrap();
-        let poise = v[15].as_f64().unwrap();
+        let weight = v[2].as_f64().unwrap() as f32;
+        let physical = v[3].as_f64().unwrap() as f32;
+        let strike = v[4].as_f64().unwrap() as f32;
+        let slash = v[5].as_f64().unwrap() as f32;
+        let pierce = v[6].as_f64().unwrap() as f32;
+        let magic = v[7].as_f64().unwrap() as f32;
+        let fire = v[8].as_f64().unwrap() as f32;
+        let lightning = v[9].as_f64().unwrap() as f32;
+        let holy = v[10].as_f64().unwrap() as f32; // dark
+        let focus = v[11].as_f64().unwrap() as f32; // bleed
+        let immunity = v[12].as_f64().unwrap() as f32;
+        let robustness = v[13].as_f64().unwrap() as f32; // frost
+        let vitality = v[14].as_f64().unwrap() as f32;
+        let poise = v[15].as_f64().unwrap() as f32;
         let category = match v[16].as_str().unwrap() {
             "Body" => ArmorCategory::Body,
             "Arms" => ArmorCategory::Arms,

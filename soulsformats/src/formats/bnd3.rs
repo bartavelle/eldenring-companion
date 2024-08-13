@@ -80,21 +80,6 @@ impl BND3 {
             files: headers,
         })
     }
-
-    pub fn file_names(&self) -> Vec<&str> {
-        self.files
-            .iter()
-            .map(|f| f.name.as_deref().unwrap_or_default())
-            .collect()
-    }
-
-    pub fn get_file<'a>(&'a self, name: &str) -> Option<&'a [u8]> {
-        let f = self
-            .files
-            .iter()
-            .find(|f| f.name.as_ref().map(|f| f.contains(name)).unwrap_or(false))?;
-        Some(&self.data[f.offset..f.offset + f.size])
-    }
 }
 
 fn header_from_reader<R: Read>(

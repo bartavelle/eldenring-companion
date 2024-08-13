@@ -1,0 +1,5546 @@
+{
+  "Anklet of the Great Lord": {
+    "category": "Legs",
+    "name": "Anklet of the Great Lord",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 45.980003,
+      "holy": 0.0,
+      "lightning": 45.980003,
+      "magic": 36.300003,
+      "physical": 36.300003,
+      "pierce": 33.396004,
+      "slash": 41.745007,
+      "strike": 39.204002
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 25.199999
+    }
+  },
+  "Antiquated Dress": {
+    "category": "Body",
+    "name": "Antiquated Dress",
+    "weight": 1.0,
+    "absorptions": {
+      "fire": 9.299999,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 51.149998,
+      "physical": 21.699999,
+      "pierce": 21.7,
+      "slash": 21.7,
+      "strike": 21.7
+    },
+    "resistances": {
+      "focus": 17.779999,
+      "immunity": 17.779999,
+      "poise": 0.0,
+      "robustness": 17.779999,
+      "vitality": 33.02
+    }
+  },
+  "Antiquated Gloves": {
+    "category": "Arms",
+    "name": "Antiquated Gloves",
+    "weight": 0.6,
+    "absorptions": {
+      "fire": 4.6499996,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 29.449999,
+      "physical": 12.4,
+      "pierce": 12.4,
+      "slash": 12.4,
+      "strike": 12.4
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 0.0,
+      "robustness": 10.16,
+      "vitality": 20.32
+    }
+  },
+  "Antiquated Skirt": {
+    "category": "Legs",
+    "name": "Antiquated Skirt",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 26.349998,
+      "holy": 0.0,
+      "lightning": 32.55,
+      "magic": 54.25,
+      "physical": 23.25,
+      "pierce": 23.25,
+      "slash": 23.25,
+      "strike": 23.25
+    },
+    "resistances": {
+      "focus": 25.4,
+      "immunity": 25.4,
+      "poise": 0.0,
+      "robustness": 25.4,
+      "vitality": 66.04
+    }
+  },
+  "Armor of Artorias": {
+    "category": "Body",
+    "name": "Armor of Artorias",
+    "weight": 10.5,
+    "absorptions": {
+      "fire": 71.299995,
+      "holy": 0.0,
+      "lightning": 34.1,
+      "magic": 34.1,
+      "physical": 65.1,
+      "pierce": 68.355,
+      "slash": 74.865,
+      "strike": 58.59
+    },
+    "resistances": {
+      "focus": 27.939999,
+      "immunity": 27.939999,
+      "poise": 15.0,
+      "robustness": 27.939999,
+      "vitality": 25.4
+    }
+  },
+  "Armor of Thorns": {
+    "category": "Body",
+    "name": "Armor of Thorns",
+    "weight": 10.5,
+    "absorptions": {
+      "fire": 51.149998,
+      "holy": 0.0,
+      "lightning": 31.0,
+      "magic": 43.399998,
+      "physical": 69.75,
+      "pierce": 69.75,
+      "slash": 76.0275,
+      "strike": 66.2625
+    },
+    "resistances": {
+      "focus": 22.86,
+      "immunity": 22.86,
+      "poise": 16.0,
+      "robustness": 33.02,
+      "vitality": 0.0
+    }
+  },
+  "Armor of the Glorious": {
+    "category": "Body",
+    "name": "Armor of the Glorious",
+    "weight": 13.3,
+    "absorptions": {
+      "fire": 82.28,
+      "holy": 0.0,
+      "lightning": 60.5,
+      "magic": 75.020004,
+      "physical": 113.740005,
+      "pierce": 113.74001,
+      "slash": 130.80101,
+      "strike": 108.05301
+    },
+    "resistances": {
+      "focus": 26.6,
+      "immunity": 26.6,
+      "poise": 20.0,
+      "robustness": 39.2,
+      "vitality": 33.6
+    }
+  },
+  "Armor of the Sun": {
+    "category": "Body",
+    "name": "Armor of the Sun",
+    "weight": 9.0,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 45.980003,
+      "magic": 50.82,
+      "physical": 84.700005,
+      "pierce": 83.006004,
+      "slash": 84.7,
+      "strike": 84.7
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 16.0,
+      "robustness": 32.2,
+      "vitality": 14.0
+    }
+  },
+  "Arms": {
+    "category": "Arms",
+    "name": "Arms",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Balder Armor": {
+    "category": "Body",
+    "name": "Balder Armor",
+    "weight": 10.9,
+    "absorptions": {
+      "fire": 43.56,
+      "holy": 0.0,
+      "lightning": 36.300003,
+      "magic": 36.300003,
+      "physical": 89.54,
+      "pierce": 85.9584,
+      "slash": 109.2388,
+      "strike": 87.7492
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 16.0,
+      "robustness": 28.0,
+      "vitality": 0.0
+    }
+  },
+  "Balder Gauntlets": {
+    "category": "Arms",
+    "name": "Balder Gauntlets",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 12.1,
+      "magic": 16.94,
+      "physical": 41.14,
+      "pierce": 39.4944,
+      "slash": 50.1908,
+      "strike": 40.3172
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 5.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Balder Helm": {
+    "category": "Head",
+    "name": "Balder Helm",
+    "weight": 4.2,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 14.52,
+      "physical": 33.88,
+      "pierce": 32.5248,
+      "slash": 41.333603,
+      "strike": 33.2024
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 6.0,
+      "robustness": 11.2,
+      "vitality": 0.0
+    }
+  },
+  "Balder Leggings": {
+    "category": "Legs",
+    "name": "Balder Leggings",
+    "weight": 6.4,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 24.2,
+      "physical": 53.24,
+      "pierce": 51.1104,
+      "slash": 64.952805,
+      "strike": 52.1752
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 9.0,
+      "robustness": 16.8,
+      "vitality": 0.0
+    }
+  },
+  "Big Hat": {
+    "category": "Head",
+    "name": "Big Hat",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 10.849999,
+      "holy": 0.0,
+      "lightning": 26.349998,
+      "magic": 66.65,
+      "physical": 21.699999,
+      "pierce": 19.529999,
+      "slash": 23.869997,
+      "strike": 23.869997
+    },
+    "resistances": {
+      "focus": 16.51,
+      "immunity": 16.51,
+      "poise": 0.0,
+      "robustness": 16.51,
+      "vitality": 0.0
+    }
+  },
+  "Black Cleric Robe": {
+    "category": "Body",
+    "name": "Black Cleric Robe",
+    "weight": 3.9,
+    "absorptions": {
+      "fire": 38.75,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 44.949997,
+      "physical": 35.649998,
+      "pierce": 35.649998,
+      "slash": 35.649998,
+      "strike": 38.858498
+    },
+    "resistances": {
+      "focus": 27.939999,
+      "immunity": 27.939999,
+      "poise": 0.0,
+      "robustness": 27.939999,
+      "vitality": 16.51
+    }
+  },
+  "Black Iron Armor": {
+    "category": "Body",
+    "name": "Black Iron Armor",
+    "weight": 15.6,
+    "absorptions": {
+      "fire": 79.049995,
+      "holy": 0.0,
+      "lightning": 32.55,
+      "magic": 46.5,
+      "physical": 105.399994,
+      "pierce": 105.399994,
+      "slash": 121.20999,
+      "strike": 100.12999
+    },
+    "resistances": {
+      "focus": 31.75,
+      "immunity": 31.75,
+      "poise": 31.0,
+      "robustness": 54.61,
+      "vitality": 16.51
+    }
+  },
+  "Black Iron Gauntlets": {
+    "category": "Arms",
+    "name": "Black Iron Gauntlets",
+    "weight": 9.2,
+    "absorptions": {
+      "fire": 46.5,
+      "holy": 0.0,
+      "lightning": 20.15,
+      "magic": 26.349998,
+      "physical": 62.0,
+      "pierce": 62.0,
+      "slash": 71.3,
+      "strike": 58.9
+    },
+    "resistances": {
+      "focus": 17.779999,
+      "immunity": 17.779999,
+      "poise": 18.0,
+      "robustness": 31.75,
+      "vitality": 10.16
+    }
+  },
+  "Black Iron Helm": {
+    "category": "Head",
+    "name": "Black Iron Helm",
+    "weight": 6.0,
+    "absorptions": {
+      "fire": 29.449999,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 17.05,
+      "physical": 41.85,
+      "pierce": 41.85,
+      "slash": 48.1275,
+      "strike": 39.757496
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 12.0,
+      "robustness": 21.59,
+      "vitality": 6.35
+    }
+  },
+  "Black Iron Leggings": {
+    "category": "Legs",
+    "name": "Black Iron Leggings",
+    "weight": 9.2,
+    "absorptions": {
+      "fire": 46.5,
+      "holy": 0.0,
+      "lightning": 20.15,
+      "magic": 26.349998,
+      "physical": 62.0,
+      "pierce": 62.0,
+      "slash": 71.3,
+      "strike": 58.9
+    },
+    "resistances": {
+      "focus": 17.779999,
+      "immunity": 17.779999,
+      "poise": 18.0,
+      "robustness": 31.75,
+      "vitality": 10.16
+    }
+  },
+  "Black Knight Armor": {
+    "category": "Body",
+    "name": "Black Knight Armor",
+    "weight": 13.0,
+    "absorptions": {
+      "fire": 74.399994,
+      "holy": 0.0,
+      "lightning": 26.349998,
+      "magic": 44.949997,
+      "physical": 88.35,
+      "pierce": 86.583,
+      "slash": 99.835495,
+      "strike": 83.9325
+    },
+    "resistances": {
+      "focus": 19.05,
+      "immunity": 19.05,
+      "poise": 21.0,
+      "robustness": 40.64,
+      "vitality": 0.0
+    }
+  },
+  "Black Knight Gauntlets": {
+    "category": "Arms",
+    "name": "Black Knight Gauntlets",
+    "weight": 6.0,
+    "absorptions": {
+      "fire": 35.649998,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 21.699999,
+      "physical": 40.3,
+      "pierce": 39.494,
+      "slash": 45.538998,
+      "strike": 38.285
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 10.0,
+      "robustness": 19.05,
+      "vitality": 0.0
+    }
+  },
+  "Black Knight Helm": {
+    "category": "Head",
+    "name": "Black Knight Helm",
+    "weight": 5.0,
+    "absorptions": {
+      "fire": 27.9,
+      "holy": 0.0,
+      "lightning": 9.299999,
+      "magic": 17.05,
+      "physical": 32.55,
+      "pierce": 31.898998,
+      "slash": 36.781498,
+      "strike": 30.9225
+    },
+    "resistances": {
+      "focus": 7.62,
+      "immunity": 7.62,
+      "poise": 8.0,
+      "robustness": 15.24,
+      "vitality": 0.0
+    }
+  },
+  "Black Knight Leggings": {
+    "category": "Legs",
+    "name": "Black Knight Leggings",
+    "weight": 7.0,
+    "absorptions": {
+      "fire": 40.3,
+      "holy": 0.0,
+      "lightning": 13.95,
+      "magic": 23.25,
+      "physical": 46.5,
+      "pierce": 45.57,
+      "slash": 52.545,
+      "strike": 44.175
+    },
+    "resistances": {
+      "focus": 11.43,
+      "immunity": 11.43,
+      "poise": 11.0,
+      "robustness": 21.59,
+      "vitality": 0.0
+    }
+  },
+  "Black Leather Armor": {
+    "category": "Body",
+    "name": "Black Leather Armor",
+    "weight": 3.1,
+    "absorptions": {
+      "fire": 33.88,
+      "holy": 0.0,
+      "lightning": 38.72,
+      "magic": 48.4,
+      "physical": 55.660004,
+      "pierce": 55.660004,
+      "slash": 55.660004,
+      "strike": 59.556206
+    },
+    "resistances": {
+      "focus": 43.399998,
+      "immunity": 43.399998,
+      "poise": 0.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Black Leather Boots": {
+    "category": "Legs",
+    "name": "Black Leather Boots",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 36.300003,
+      "magic": 45.980003,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 31.0728
+    },
+    "resistances": {
+      "focus": 43.399998,
+      "immunity": 43.399998,
+      "poise": 0.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Black Leather Gloves": {
+    "category": "Arms",
+    "name": "Black Leather Gloves",
+    "weight": 1.8,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 29.04,
+      "physical": 31.460001,
+      "pierce": 31.46,
+      "slash": 31.46,
+      "strike": 33.6622
+    },
+    "resistances": {
+      "focus": 25.199999,
+      "immunity": 25.199999,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Black Manchette": {
+    "category": "Arms",
+    "name": "Black Manchette",
+    "weight": 1.8,
+    "absorptions": {
+      "fire": 17.05,
+      "holy": 0.0,
+      "lightning": 13.95,
+      "magic": 21.699999,
+      "physical": 17.05,
+      "pierce": 17.05,
+      "slash": 17.05,
+      "strike": 18.5845
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 0.0,
+      "robustness": 12.7,
+      "vitality": 6.35
+    }
+  },
+  "Black Sorcerer Boots": {
+    "category": "Legs",
+    "name": "Black Sorcerer Boots",
+    "weight": 1.0,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 29.04,
+      "magic": 41.14,
+      "physical": 19.36,
+      "pierce": 19.36,
+      "slash": 21.1024,
+      "strike": 19.940802
+    },
+    "resistances": {
+      "focus": 25.199999,
+      "immunity": 25.199999,
+      "poise": 0.0,
+      "robustness": 25.199999,
+      "vitality": 2.8
+    }
+  },
+  "Black Sorcerer Cloak": {
+    "category": "Body",
+    "name": "Black Sorcerer Cloak",
+    "weight": 1.8,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 67.76,
+      "physical": 31.460001,
+      "pierce": 31.46,
+      "slash": 34.2914,
+      "strike": 32.4038
+    },
+    "resistances": {
+      "focus": 43.399998,
+      "immunity": 43.399998,
+      "poise": 0.0,
+      "robustness": 43.399998,
+      "vitality": 5.6
+    }
+  },
+  "Black Sorcerer Gauntlets": {
+    "category": "Arms",
+    "name": "Black Sorcerer Gauntlets",
+    "weight": 1.0,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 29.04,
+      "magic": 41.14,
+      "physical": 19.36,
+      "pierce": 19.36,
+      "slash": 21.1024,
+      "strike": 19.940802
+    },
+    "resistances": {
+      "focus": 25.199999,
+      "immunity": 25.199999,
+      "poise": 0.0,
+      "robustness": 25.199999,
+      "vitality": 2.8
+    }
+  },
+  "Black Sorcerer Hat": {
+    "category": "Head",
+    "name": "Black Sorcerer Hat",
+    "weight": 0.7,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 26.62,
+      "physical": 12.1,
+      "pierce": 12.1,
+      "slash": 13.189,
+      "strike": 12.463
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 16.8,
+      "vitality": 2.8
+    }
+  },
+  "Black Tights": {
+    "category": "Legs",
+    "name": "Black Tights",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 26.349998,
+      "holy": 0.0,
+      "lightning": 20.15,
+      "magic": 34.1,
+      "physical": 24.8,
+      "pierce": 24.8,
+      "slash": 24.8,
+      "strike": 27.032
+    },
+    "resistances": {
+      "focus": 19.05,
+      "immunity": 19.05,
+      "poise": 0.0,
+      "robustness": 19.05,
+      "vitality": 11.43
+    }
+  },
+  "Bloated Head": {
+    "category": "Head",
+    "name": "Bloated Head",
+    "weight": 2.5,
+    "absorptions": {
+      "fire": 21.78,
+      "holy": 0.0,
+      "lightning": 26.62,
+      "magic": 41.14,
+      "physical": 41.14,
+      "pierce": 41.14,
+      "slash": 41.14,
+      "strike": 41.14
+    },
+    "resistances": {
+      "focus": 44.8,
+      "immunity": 44.8,
+      "poise": 0.0,
+      "robustness": 22.4,
+      "vitality": 14.0
+    }
+  },
+  "Bloated Sorcerer Head": {
+    "category": "Head",
+    "name": "Bloated Sorcerer Head",
+    "weight": 2.2,
+    "absorptions": {
+      "fire": 21.78,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 53.24,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 33.88,
+      "strike": 33.88
+    },
+    "resistances": {
+      "focus": 53.2,
+      "immunity": 53.2,
+      "poise": 0.0,
+      "robustness": 11.2,
+      "vitality": 21.0
+    }
+  },
+  "Blood-Stained Skirt": {
+    "category": "Legs",
+    "name": "Blood-Stained Skirt",
+    "weight": 2.5,
+    "absorptions": {
+      "fire": 38.72,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 65.340004,
+      "physical": 31.460001,
+      "pierce": 31.46,
+      "slash": 31.46,
+      "strike": 39.325
+    },
+    "resistances": {
+      "focus": 30.8,
+      "immunity": 30.8,
+      "poise": 0.0,
+      "robustness": 40.6,
+      "vitality": 40.6
+    }
+  },
+  "Body": {
+    "category": "Body",
+    "name": "Body",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Boots of the Explorer": {
+    "category": "Legs",
+    "name": "Boots of the Explorer",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 26.62,
+      "holy": 0.0,
+      "lightning": 16.94,
+      "magic": 24.2,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 38.962,
+      "strike": 32.186
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 6.0,
+      "robustness": 11.2,
+      "vitality": 7.0
+    }
+  },
+  "Bracelet of the Great Lord": {
+    "category": "Arms",
+    "name": "Bracelet of the Great Lord",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 45.980003,
+      "holy": 0.0,
+      "lightning": 45.980003,
+      "magic": 36.300003,
+      "physical": 36.300003,
+      "pierce": 33.396004,
+      "slash": 41.745007,
+      "strike": 39.204002
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 25.199999
+    }
+  },
+  "Brass Armor": {
+    "category": "Body",
+    "name": "Brass Armor",
+    "weight": 10.9,
+    "absorptions": {
+      "fire": 38.75,
+      "holy": 0.0,
+      "lightning": 38.75,
+      "magic": 41.85,
+      "physical": 74.399994,
+      "pierce": 74.399994,
+      "slash": 84.07199,
+      "strike": 71.423996
+    },
+    "resistances": {
+      "focus": 25.4,
+      "immunity": 25.4,
+      "poise": 16.0,
+      "robustness": 30.48,
+      "vitality": 13.969999
+    }
+  },
+  "Brass Gauntlets": {
+    "category": "Arms",
+    "name": "Brass Gauntlets",
+    "weight": 5.4,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 21.699999,
+      "physical": 37.199997,
+      "pierce": 37.199997,
+      "slash": 42.035995,
+      "strike": 35.711998
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 8.0,
+      "robustness": 15.24,
+      "vitality": 7.62
+    }
+  },
+  "Brass Helm": {
+    "category": "Head",
+    "name": "Brass Helm",
+    "weight": 5.1,
+    "absorptions": {
+      "fire": 17.05,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 18.599998,
+      "physical": 34.1,
+      "pierce": 34.1,
+      "slash": 38.532997,
+      "strike": 32.736
+    },
+    "resistances": {
+      "focus": 11.43,
+      "immunity": 11.43,
+      "poise": 8.0,
+      "robustness": 13.969999,
+      "vitality": 7.62
+    }
+  },
+  "Brass Leggings": {
+    "category": "Legs",
+    "name": "Brass Leggings",
+    "weight": 6.4,
+    "absorptions": {
+      "fire": 23.25,
+      "holy": 0.0,
+      "lightning": 23.25,
+      "magic": 24.8,
+      "physical": 40.3,
+      "pierce": 40.3,
+      "slash": 45.538998,
+      "strike": 38.688
+    },
+    "resistances": {
+      "focus": 15.24,
+      "immunity": 15.24,
+      "poise": 9.0,
+      "robustness": 17.779999,
+      "vitality": 8.889999
+    }
+  },
+  "Brigand Armor": {
+    "category": "Body",
+    "name": "Brigand Armor",
+    "weight": 3.1,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 48.4,
+      "physical": 55.660004,
+      "pierce": 50.094006,
+      "slash": 55.660004,
+      "strike": 61.226006
+    },
+    "resistances": {
+      "focus": 28.0,
+      "immunity": 28.0,
+      "poise": 0.0,
+      "robustness": 28.0,
+      "vitality": 0.0
+    }
+  },
+  "Brigand Gauntlets": {
+    "category": "Arms",
+    "name": "Brigand Gauntlets",
+    "weight": 1.8,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 29.04,
+      "physical": 33.88,
+      "pierce": 30.492002,
+      "slash": 33.88,
+      "strike": 37.268
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 16.8,
+      "vitality": 0.0
+    }
+  },
+  "Brigand Hood": {
+    "category": "Head",
+    "name": "Brigand Hood",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 19.36,
+      "physical": 21.78,
+      "pierce": 19.602001,
+      "slash": 21.78,
+      "strike": 23.958
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 0.0,
+      "robustness": 11.2,
+      "vitality": 0.0
+    }
+  },
+  "Brigand Trousers": {
+    "category": "Legs",
+    "name": "Brigand Trousers",
+    "weight": 1.8,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 29.04,
+      "physical": 33.88,
+      "pierce": 30.492002,
+      "slash": 33.88,
+      "strike": 37.268
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 16.8,
+      "vitality": 0.0
+    }
+  },
+  "Catarina Armor": {
+    "category": "Body",
+    "name": "Catarina Armor",
+    "weight": 11.7,
+    "absorptions": {
+      "fire": 57.35,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 48.05,
+      "physical": 88.35,
+      "pierce": 88.35,
+      "slash": 101.6025,
+      "strike": 87.46649
+    },
+    "resistances": {
+      "focus": 30.48,
+      "immunity": 30.48,
+      "poise": 21.0,
+      "robustness": 43.18,
+      "vitality": 0.0
+    }
+  },
+  "Catarina Gauntlets": {
+    "category": "Arms",
+    "name": "Catarina Gauntlets",
+    "weight": 6.9,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 27.9,
+      "physical": 52.699997,
+      "pierce": 52.699997,
+      "slash": 60.604996,
+      "strike": 52.172997
+    },
+    "resistances": {
+      "focus": 16.51,
+      "immunity": 16.51,
+      "poise": 13.0,
+      "robustness": 26.67,
+      "vitality": 0.0
+    }
+  },
+  "Catarina Helm": {
+    "category": "Head",
+    "name": "Catarina Helm",
+    "weight": 4.5,
+    "absorptions": {
+      "fire": 20.15,
+      "holy": 0.0,
+      "lightning": 10.849999,
+      "magic": 18.599998,
+      "physical": 34.1,
+      "pierce": 34.1,
+      "slash": 39.214996,
+      "strike": 33.759
+    },
+    "resistances": {
+      "focus": 11.43,
+      "immunity": 11.43,
+      "poise": 8.0,
+      "robustness": 16.51,
+      "vitality": 0.0
+    }
+  },
+  "Catarina Leggings": {
+    "category": "Legs",
+    "name": "Catarina Leggings",
+    "weight": 6.9,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 27.9,
+      "physical": 52.699997,
+      "pierce": 52.699997,
+      "slash": 60.604996,
+      "strike": 52.172997
+    },
+    "resistances": {
+      "focus": 16.51,
+      "immunity": 16.51,
+      "poise": 13.0,
+      "robustness": 26.67,
+      "vitality": 0.0
+    }
+  },
+  "Chain Armor": {
+    "category": "Body",
+    "name": "Chain Armor",
+    "weight": 6.0,
+    "absorptions": {
+      "fire": 38.72,
+      "holy": 0.0,
+      "lightning": 16.94,
+      "magic": 50.82,
+      "physical": 72.600006,
+      "pierce": 70.422005,
+      "slash": 87.12001,
+      "strike": 72.600006
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 9.0,
+      "robustness": 28.0,
+      "vitality": 0.0
+    }
+  },
+  "Chain Helm": {
+    "category": "Head",
+    "name": "Chain Helm",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 7.26,
+      "magic": 24.2,
+      "physical": 29.04,
+      "pierce": 28.1688,
+      "slash": 34.848,
+      "strike": 29.04
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 5.0,
+      "robustness": 14.0,
+      "vitality": 0.0
+    }
+  },
+  "Chain Leggings": {
+    "category": "Legs",
+    "name": "Chain Leggings",
+    "weight": 4.6,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 12.1,
+      "magic": 33.88,
+      "physical": 43.56,
+      "pierce": 42.253204,
+      "slash": 52.272003,
+      "strike": 43.56
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 7.0,
+      "robustness": 21.0,
+      "vitality": 0.0
+    }
+  },
+  "Chester's Gloves": {
+    "category": "Arms",
+    "name": "Chester's Gloves",
+    "weight": 1.5,
+    "absorptions": {
+      "fire": 10.849999,
+      "holy": 0.0,
+      "lightning": 15.5,
+      "magic": 15.5,
+      "physical": 15.5,
+      "pierce": 15.5,
+      "slash": 15.5,
+      "strike": 20.925
+    },
+    "resistances": {
+      "focus": 13.969999,
+      "immunity": 13.969999,
+      "poise": 0.0,
+      "robustness": 19.05,
+      "vitality": 0.0
+    }
+  },
+  "Chester's Long Coat": {
+    "category": "Body",
+    "name": "Chester's Long Coat",
+    "weight": 4.5,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 43.399998,
+      "magic": 46.5,
+      "physical": 41.85,
+      "pierce": 41.85,
+      "slash": 41.85,
+      "strike": 56.4975
+    },
+    "resistances": {
+      "focus": 40.64,
+      "immunity": 40.64,
+      "poise": 0.0,
+      "robustness": 55.879997,
+      "vitality": 0.0
+    }
+  },
+  "Chester's Trousers": {
+    "category": "Legs",
+    "name": "Chester's Trousers",
+    "weight": 3.2,
+    "absorptions": {
+      "fire": 23.25,
+      "holy": 0.0,
+      "lightning": 31.0,
+      "magic": 32.55,
+      "physical": 29.449999,
+      "pierce": 29.45,
+      "slash": 29.45,
+      "strike": 39.757496
+    },
+    "resistances": {
+      "focus": 29.21,
+      "immunity": 29.21,
+      "poise": 0.0,
+      "robustness": 39.37,
+      "vitality": 0.0
+    }
+  },
+  "Cleric Armor": {
+    "category": "Body",
+    "name": "Cleric Armor",
+    "weight": 12.5,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 36.300003,
+      "magic": 55.660004,
+      "physical": 96.8,
+      "pierce": 96.8,
+      "slash": 111.32,
+      "strike": 96.8
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 20.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Cleric Gauntlets": {
+    "category": "Arms",
+    "name": "Cleric Gauntlets",
+    "weight": 7.4,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 31.460001,
+      "physical": 58.08,
+      "pierce": 58.08,
+      "slash": 66.792,
+      "strike": 58.08
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 12.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Cleric Helm": {
+    "category": "Head",
+    "name": "Cleric Helm",
+    "weight": 4.8,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 21.78,
+      "physical": 36.300003,
+      "pierce": 36.300003,
+      "slash": 41.745007,
+      "strike": 36.300003
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 8.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Cleric Leggings": {
+    "category": "Legs",
+    "name": "Cleric Leggings",
+    "weight": 7.4,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 31.460001,
+      "physical": 58.08,
+      "pierce": 58.08,
+      "slash": 66.792,
+      "strike": 58.08
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 12.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Crimson Gloves": {
+    "category": "Arms",
+    "name": "Crimson Gloves",
+    "weight": 0.8,
+    "absorptions": {
+      "fire": 6.2,
+      "holy": 0.0,
+      "lightning": 7.75,
+      "magic": 10.849999,
+      "physical": 10.849999,
+      "pierce": 10.85,
+      "slash": 10.85,
+      "strike": 11.9349985
+    },
+    "resistances": {
+      "focus": 5.08,
+      "immunity": 5.08,
+      "poise": 0.0,
+      "robustness": 5.08,
+      "vitality": 5.08
+    }
+  },
+  "Crimson Robe": {
+    "category": "Body",
+    "name": "Crimson Robe",
+    "weight": 3.9,
+    "absorptions": {
+      "fire": 29.449999,
+      "holy": 0.0,
+      "lightning": 37.199997,
+      "magic": 51.149998,
+      "physical": 49.6,
+      "pierce": 49.6,
+      "slash": 49.6,
+      "strike": 54.56
+    },
+    "resistances": {
+      "focus": 26.67,
+      "immunity": 26.67,
+      "poise": 0.0,
+      "robustness": 26.67,
+      "vitality": 26.67
+    }
+  },
+  "Crimson Waistcloth": {
+    "category": "Legs",
+    "name": "Crimson Waistcloth",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 26.349998,
+      "holy": 0.0,
+      "lightning": 32.55,
+      "magic": 44.949997,
+      "physical": 44.949997,
+      "pierce": 44.949997,
+      "slash": 44.949997,
+      "strike": 49.444996
+    },
+    "resistances": {
+      "focus": 24.13,
+      "immunity": 24.13,
+      "poise": 0.0,
+      "robustness": 24.13,
+      "vitality": 24.13
+    }
+  },
+  "Crown of Dusk": {
+    "category": "Head",
+    "name": "Crown of Dusk",
+    "weight": 0.4,
+    "absorptions": {
+      "fire": 4.84,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 26.62,
+      "physical": 12.1,
+      "pierce": 12.1,
+      "slash": 12.1,
+      "strike": 12.1
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 0.0,
+      "robustness": 7.0,
+      "vitality": 28.0
+    }
+  },
+  "Crown of the Dark Sun": {
+    "category": "Head",
+    "name": "Crown of the Dark Sun",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 29.04,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 29.04
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 16.8
+    }
+  },
+  "Crown of the Great Lord": {
+    "category": "Head",
+    "name": "Crown of the Great Lord",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 38.72,
+      "physical": 38.72,
+      "pierce": 35.622402,
+      "slash": 44.528004,
+      "strike": 41.817604
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 0.0,
+      "robustness": 21.0,
+      "vitality": 28.0
+    }
+  },
+  "Crystalline Armor": {
+    "category": "Body",
+    "name": "Crystalline Armor",
+    "weight": 10.9,
+    "absorptions": {
+      "fire": 36.300003,
+      "holy": 0.0,
+      "lightning": 16.94,
+      "magic": 50.82,
+      "physical": 142.78,
+      "pierce": 142.78,
+      "slash": 164.19699,
+      "strike": 121.363
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 16.0,
+      "robustness": 21.0,
+      "vitality": 0.0
+    }
+  },
+  "Crystalline Gauntlets": {
+    "category": "Arms",
+    "name": "Crystalline Gauntlets",
+    "weight": 6.4,
+    "absorptions": {
+      "fire": 21.78,
+      "holy": 0.0,
+      "lightning": 9.68,
+      "magic": 29.04,
+      "physical": 89.54,
+      "pierce": 89.54,
+      "slash": 102.97101,
+      "strike": 76.109
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 9.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Crystalline Helm": {
+    "category": "Head",
+    "name": "Crystalline Helm",
+    "weight": 4.2,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 4.84,
+      "magic": 19.36,
+      "physical": 60.5,
+      "pierce": 60.5,
+      "slash": 69.575,
+      "strike": 51.425
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 6.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Crystalline Leggings": {
+    "category": "Legs",
+    "name": "Crystalline Leggings",
+    "weight": 6.4,
+    "absorptions": {
+      "fire": 21.78,
+      "holy": 0.0,
+      "lightning": 9.68,
+      "magic": 29.04,
+      "physical": 89.54,
+      "pierce": 89.54,
+      "slash": 102.97101,
+      "strike": 76.109
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 9.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Dark Armor": {
+    "category": "Body",
+    "name": "Dark Armor",
+    "weight": 9.8,
+    "absorptions": {
+      "fire": 48.05,
+      "holy": 0.0,
+      "lightning": 41.85,
+      "magic": 46.5,
+      "physical": 69.75,
+      "pierce": 65.565,
+      "slash": 76.725,
+      "strike": 69.75
+    },
+    "resistances": {
+      "focus": 26.67,
+      "immunity": 26.67,
+      "poise": 16.0,
+      "robustness": 38.1,
+      "vitality": 0.0
+    }
+  },
+  "Dark Gauntlets": {
+    "category": "Arms",
+    "name": "Dark Gauntlets",
+    "weight": 5.8,
+    "absorptions": {
+      "fire": 27.9,
+      "holy": 0.0,
+      "lightning": 23.25,
+      "magic": 27.9,
+      "physical": 41.85,
+      "pierce": 39.339,
+      "slash": 46.035,
+      "strike": 41.85
+    },
+    "resistances": {
+      "focus": 15.24,
+      "immunity": 15.24,
+      "poise": 9.0,
+      "robustness": 22.86,
+      "vitality": 0.0
+    }
+  },
+  "Dark Leggings": {
+    "category": "Legs",
+    "name": "Dark Leggings",
+    "weight": 5.8,
+    "absorptions": {
+      "fire": 27.9,
+      "holy": 0.0,
+      "lightning": 23.25,
+      "magic": 27.9,
+      "physical": 41.85,
+      "pierce": 39.339,
+      "slash": 46.035,
+      "strike": 41.85
+    },
+    "resistances": {
+      "focus": 15.24,
+      "immunity": 15.24,
+      "poise": 9.0,
+      "robustness": 22.86,
+      "vitality": 0.0
+    }
+  },
+  "Dark Mask": {
+    "category": "Head",
+    "name": "Dark Mask",
+    "weight": 3.8,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 15.5,
+      "magic": 18.599998,
+      "physical": 27.9,
+      "pierce": 26.225998,
+      "slash": 30.69,
+      "strike": 27.9
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 6.0,
+      "robustness": 15.24,
+      "vitality": 0.0
+    }
+  },
+  "Dingy Gloves": {
+    "category": "Arms",
+    "name": "Dingy Gloves",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 31.460001,
+      "physical": 21.78,
+      "pierce": 21.78,
+      "slash": 21.78,
+      "strike": 27.225
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 19.6
+    }
+  },
+  "Dingy Hood": {
+    "category": "Head",
+    "name": "Dingy Hood",
+    "weight": 0.8,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 19.36,
+      "physical": 14.52,
+      "pierce": 14.52,
+      "slash": 14.52,
+      "strike": 18.15
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 12.599999
+    }
+  },
+  "Dingy Robe": {
+    "category": "Body",
+    "name": "Dingy Robe",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 45.980003,
+      "holy": 0.0,
+      "lightning": 60.5,
+      "magic": 79.86,
+      "physical": 55.660004,
+      "pierce": 55.660004,
+      "slash": 55.660004,
+      "strike": 69.575005
+    },
+    "resistances": {
+      "focus": 36.399998,
+      "immunity": 36.399998,
+      "poise": 0.0,
+      "robustness": 49.0,
+      "vitality": 49.0
+    }
+  },
+  "Dragon Arms": {
+    "category": "Arms",
+    "name": "Dragon Arms",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Dragon Body": {
+    "category": "Body",
+    "name": "Dragon Body",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Dragon Head": {
+    "category": "Head",
+    "name": "Dragon Head",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Dragon Legs": {
+    "category": "Legs",
+    "name": "Dragon Legs",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Eastern Armor": {
+    "category": "Body",
+    "name": "Eastern Armor",
+    "weight": 12.3,
+    "absorptions": {
+      "fire": 51.149998,
+      "holy": 0.0,
+      "lightning": 27.9,
+      "magic": 23.25,
+      "physical": 69.75,
+      "pierce": 67.6575,
+      "slash": 86.49,
+      "strike": 66.2625
+    },
+    "resistances": {
+      "focus": 35.559998,
+      "immunity": 35.559998,
+      "poise": 20.0,
+      "robustness": 48.26,
+      "vitality": 0.0
+    }
+  },
+  "Eastern Gauntlets": {
+    "category": "Arms",
+    "name": "Eastern Gauntlets",
+    "weight": 1.5,
+    "absorptions": {
+      "fire": 6.2,
+      "holy": 0.0,
+      "lightning": 3.1,
+      "magic": 1.55,
+      "physical": 9.299999,
+      "pierce": 9.020999,
+      "slash": 11.532,
+      "strike": 8.834999
+    },
+    "resistances": {
+      "focus": 5.08,
+      "immunity": 5.08,
+      "poise": 2.0,
+      "robustness": 6.35,
+      "vitality": 0.0
+    }
+  },
+  "Eastern Helm": {
+    "category": "Head",
+    "name": "Eastern Helm",
+    "weight": 4.7,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 10.849999,
+      "magic": 9.299999,
+      "physical": 26.349998,
+      "pierce": 25.5595,
+      "slash": 32.674,
+      "strike": 25.032497
+    },
+    "resistances": {
+      "focus": 13.969999,
+      "immunity": 13.969999,
+      "poise": 8.0,
+      "robustness": 19.05,
+      "vitality": 0.0
+    }
+  },
+  "Eastern Leggings": {
+    "category": "Legs",
+    "name": "Eastern Leggings",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 17.05,
+      "holy": 0.0,
+      "lightning": 9.299999,
+      "magic": 7.75,
+      "physical": 23.25,
+      "pierce": 22.5525,
+      "slash": 28.83,
+      "strike": 22.0875
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 6.0,
+      "robustness": 15.24,
+      "vitality": 0.0
+    }
+  },
+  "Egg": {
+    "category": "Head",
+    "name": "Egg",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Elite Cleric Armor": {
+    "category": "Body",
+    "name": "Elite Cleric Armor",
+    "weight": 13.3,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 36.300003,
+      "magic": 55.660004,
+      "physical": 99.22,
+      "pierce": 99.22,
+      "slash": 113.1108,
+      "strike": 99.22
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 23.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Elite Cleric Gauntlets": {
+    "category": "Arms",
+    "name": "Elite Cleric Gauntlets",
+    "weight": 7.8,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 31.460001,
+      "physical": 58.08,
+      "pierce": 58.08,
+      "slash": 66.211205,
+      "strike": 58.08
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 14.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Elite Cleric Helm": {
+    "category": "Head",
+    "name": "Elite Cleric Helm",
+    "weight": 5.1,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 21.78,
+      "physical": 38.72,
+      "pierce": 38.72,
+      "slash": 44.1408,
+      "strike": 38.72
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 9.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Elite Cleric Leggings": {
+    "category": "Legs",
+    "name": "Elite Cleric Leggings",
+    "weight": 7.8,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 31.460001,
+      "physical": 58.08,
+      "pierce": 58.08,
+      "slash": 66.211205,
+      "strike": 58.08
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 14.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Elite Knight Armor": {
+    "category": "Body",
+    "name": "Elite Knight Armor",
+    "weight": 11.7,
+    "absorptions": {
+      "fire": 43.56,
+      "holy": 0.0,
+      "lightning": 36.300003,
+      "magic": 41.14,
+      "physical": 94.380005,
+      "pierce": 94.38,
+      "slash": 109.480804,
+      "strike": 91.54861
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 20.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Elite Knight Gauntlets": {
+    "category": "Arms",
+    "name": "Elite Knight Gauntlets",
+    "weight": 3.7,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 12.1,
+      "magic": 16.94,
+      "physical": 43.56,
+      "pierce": 43.56,
+      "slash": 50.5296,
+      "strike": 42.253204
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 6.0,
+      "robustness": 9.8,
+      "vitality": 0.0
+    }
+  },
+  "Elite Knight Helm": {
+    "category": "Head",
+    "name": "Elite Knight Helm",
+    "weight": 4.5,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 16.94,
+      "physical": 36.300003,
+      "pierce": 36.300003,
+      "slash": 42.108,
+      "strike": 35.211002
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 8.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Elite Knight Leggings": {
+    "category": "Legs",
+    "name": "Elite Knight Leggings",
+    "weight": 6.9,
+    "absorptions": {
+      "fire": 26.62,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 26.62,
+      "physical": 55.660004,
+      "pierce": 55.660004,
+      "slash": 64.565605,
+      "strike": 53.990204
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 12.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Embraced Armor of Favor": {
+    "category": "Body",
+    "name": "Embraced Armor of Favor",
+    "weight": 11.7,
+    "absorptions": {
+      "fire": 46.5,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 35.649998,
+      "physical": 74.399994,
+      "pierce": 74.399994,
+      "slash": 86.30399,
+      "strike": 70.67999
+    },
+    "resistances": {
+      "focus": 27.939999,
+      "immunity": 27.939999,
+      "poise": 20.0,
+      "robustness": 35.559998,
+      "vitality": 27.939999
+    }
+  },
+  "Fang Boar Helm": {
+    "category": "Head",
+    "name": "Fang Boar Helm",
+    "weight": 8.0,
+    "absorptions": {
+      "fire": 6.2,
+      "holy": 0.0,
+      "lightning": 6.2,
+      "magic": 7.75,
+      "physical": 40.3,
+      "pierce": 40.3,
+      "slash": 48.36,
+      "strike": 36.27
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 12.0,
+      "robustness": 16.51,
+      "vitality": 0.0
+    }
+  },
+  "Gargoyle Helm": {
+    "category": "Head",
+    "name": "Gargoyle Helm",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 23.25,
+      "holy": 0.0,
+      "lightning": 23.25,
+      "magic": 23.25,
+      "physical": 23.25,
+      "pierce": 21.1575,
+      "slash": 29.5275,
+      "strike": 19.065
+    },
+    "resistances": {
+      "focus": 24.13,
+      "immunity": 24.13,
+      "poise": 8.0,
+      "robustness": 27.939999,
+      "vitality": 0.0
+    }
+  },
+  "Gauntlets of Artorias": {
+    "category": "Arms",
+    "name": "Gauntlets of Artorias",
+    "weight": 4.6,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 15.5,
+      "magic": 15.5,
+      "physical": 31.0,
+      "pierce": 32.55,
+      "slash": 35.65,
+      "strike": 27.9
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 7.0,
+      "robustness": 12.7,
+      "vitality": 11.43
+    }
+  },
+  "Gauntlets of Favor": {
+    "category": "Arms",
+    "name": "Gauntlets of Favor",
+    "weight": 5.0,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 15.5,
+      "physical": 32.55,
+      "pierce": 32.55,
+      "slash": 37.758,
+      "strike": 30.9225
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 8.0,
+      "robustness": 13.969999,
+      "vitality": 12.7
+    }
+  },
+  "Gauntlets of Thorns": {
+    "category": "Arms",
+    "name": "Gauntlets of Thorns",
+    "weight": 6.2,
+    "absorptions": {
+      "fire": 27.9,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 24.8,
+      "physical": 40.3,
+      "pierce": 40.3,
+      "slash": 43.927,
+      "strike": 38.285
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 9.0,
+      "robustness": 20.32,
+      "vitality": 0.0
+    }
+  },
+  "Gauntlets of the Channelers": {
+    "category": "Arms",
+    "name": "Gauntlets of the Channelers",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 31.460001,
+      "physical": 41.14,
+      "pierce": 41.14,
+      "slash": 46.8996,
+      "strike": 39.4944
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 3.0,
+      "robustness": 16.8,
+      "vitality": 0.0
+    }
+  },
+  "Gauntlets of the Vanquisher": {
+    "category": "Arms",
+    "name": "Gauntlets of the Vanquisher",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 16.94,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 16.94,
+      "physical": 26.62,
+      "pierce": 26.62,
+      "slash": 30.613,
+      "strike": 25.289001
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 4.0,
+      "robustness": 8.4,
+      "vitality": 5.6
+    }
+  },
+  "Giant Armor": {
+    "category": "Body",
+    "name": "Giant Armor",
+    "weight": 16.4,
+    "absorptions": {
+      "fire": 74.399994,
+      "holy": 0.0,
+      "lightning": 51.149998,
+      "magic": 49.6,
+      "physical": 111.6,
+      "pierce": 111.6,
+      "slash": 126.108,
+      "strike": 102.672005
+    },
+    "resistances": {
+      "focus": 24.13,
+      "immunity": 24.13,
+      "poise": 35.0,
+      "robustness": 40.64,
+      "vitality": 0.0
+    }
+  },
+  "Giant Gauntlets": {
+    "category": "Arms",
+    "name": "Giant Gauntlets",
+    "weight": 9.7,
+    "absorptions": {
+      "fire": 44.949997,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 29.449999,
+      "physical": 63.55,
+      "pierce": 63.55,
+      "slash": 71.8115,
+      "strike": 58.466
+    },
+    "resistances": {
+      "focus": 13.969999,
+      "immunity": 13.969999,
+      "poise": 21.0,
+      "robustness": 24.13,
+      "vitality": 0.0
+    }
+  },
+  "Giant Helm": {
+    "category": "Head",
+    "name": "Giant Helm",
+    "weight": 6.3,
+    "absorptions": {
+      "fire": 29.449999,
+      "holy": 0.0,
+      "lightning": 20.15,
+      "magic": 20.15,
+      "physical": 41.85,
+      "pierce": 41.85,
+      "slash": 47.290497,
+      "strike": 38.502
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 14.0,
+      "robustness": 16.51,
+      "vitality": 0.0
+    }
+  },
+  "Giant Leggings": {
+    "category": "Legs",
+    "name": "Giant Leggings",
+    "weight": 9.7,
+    "absorptions": {
+      "fire": 44.949997,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 29.449999,
+      "physical": 63.55,
+      "pierce": 63.55,
+      "slash": 71.8115,
+      "strike": 58.466
+    },
+    "resistances": {
+      "focus": 13.969999,
+      "immunity": 13.969999,
+      "poise": 21.0,
+      "robustness": 24.13,
+      "vitality": 0.0
+    }
+  },
+  "Gold-Hemmed Black Cloak": {
+    "category": "Body",
+    "name": "Gold-Hemmed Black Cloak",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 140.36,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 91.96001,
+      "physical": 75.020004,
+      "pierce": 75.020004,
+      "slash": 75.020004,
+      "strike": 80.27141
+    },
+    "resistances": {
+      "focus": 131.59999,
+      "immunity": 131.59999,
+      "poise": 0.0,
+      "robustness": 56.0,
+      "vitality": 0.0
+    }
+  },
+  "Gold-Hemmed Black Gloves": {
+    "category": "Arms",
+    "name": "Gold-Hemmed Black Gloves",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 58.08,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 31.460001,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 31.0728
+    },
+    "resistances": {
+      "focus": 44.8,
+      "immunity": 44.8,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Gold-Hemmed Black Hood": {
+    "category": "Head",
+    "name": "Gold-Hemmed Black Hood",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 53.24,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 36.300003,
+      "physical": 26.62,
+      "pierce": 26.62,
+      "slash": 26.62,
+      "strike": 28.4834
+    },
+    "resistances": {
+      "focus": 50.399998,
+      "immunity": 50.399998,
+      "poise": 0.0,
+      "robustness": 22.4,
+      "vitality": 0.0
+    }
+  },
+  "Gold-Hemmed Black Skirt": {
+    "category": "Legs",
+    "name": "Gold-Hemmed Black Skirt",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 118.58,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 65.340004,
+      "physical": 55.660004,
+      "pierce": 55.660004,
+      "slash": 55.660004,
+      "strike": 59.556206
+    },
+    "resistances": {
+      "focus": 109.2,
+      "immunity": 109.2,
+      "poise": 0.0,
+      "robustness": 44.8,
+      "vitality": 0.0
+    }
+  },
+  "Golem Armor": {
+    "category": "Body",
+    "name": "Golem Armor",
+    "weight": 16.4,
+    "absorptions": {
+      "fire": 99.22,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 108.9,
+      "physical": 220.22,
+      "pierce": 220.22,
+      "slash": 257.6574,
+      "strike": 202.6024
+    },
+    "resistances": {
+      "focus": 43.399998,
+      "immunity": 43.399998,
+      "poise": 33.0,
+      "robustness": 63.0,
+      "vitality": 0.0
+    }
+  },
+  "Golem Gauntlets": {
+    "category": "Arms",
+    "name": "Golem Gauntlets",
+    "weight": 9.7,
+    "absorptions": {
+      "fire": 55.660004,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 60.5,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 152.8956,
+      "strike": 120.22561
+    },
+    "resistances": {
+      "focus": 23.8,
+      "immunity": 23.8,
+      "poise": 20.0,
+      "robustness": 37.8,
+      "vitality": 0.0
+    }
+  },
+  "Golem Helm": {
+    "category": "Head",
+    "name": "Golem Helm",
+    "weight": 6.3,
+    "absorptions": {
+      "fire": 38.72,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 41.14,
+      "physical": 84.700005,
+      "pierce": 84.7,
+      "slash": 99.09901,
+      "strike": 77.924
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 13.0,
+      "robustness": 23.8,
+      "vitality": 0.0
+    }
+  },
+  "Golem Leggings": {
+    "category": "Legs",
+    "name": "Golem Leggings",
+    "weight": 9.7,
+    "absorptions": {
+      "fire": 55.660004,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 60.5,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 152.8956,
+      "strike": 120.22561
+    },
+    "resistances": {
+      "focus": 23.8,
+      "immunity": 23.8,
+      "poise": 20.0,
+      "robustness": 37.8,
+      "vitality": 0.0
+    }
+  },
+  "Gough's Armor": {
+    "category": "Body",
+    "name": "Gough's Armor",
+    "weight": 13.0,
+    "absorptions": {
+      "fire": 63.55,
+      "holy": 0.0,
+      "lightning": 32.55,
+      "magic": 43.399998,
+      "physical": 77.5,
+      "pierce": 73.625,
+      "slash": 81.375,
+      "strike": 77.5
+    },
+    "resistances": {
+      "focus": 15.24,
+      "immunity": 15.24,
+      "poise": 19.0,
+      "robustness": 26.67,
+      "vitality": 0.0
+    }
+  },
+  "Gough's Gauntlets": {
+    "category": "Arms",
+    "name": "Gough's Gauntlets",
+    "weight": 7.0,
+    "absorptions": {
+      "fire": 34.1,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 23.25,
+      "physical": 41.85,
+      "pierce": 39.757496,
+      "slash": 43.9425,
+      "strike": 41.85
+    },
+    "resistances": {
+      "focus": 7.62,
+      "immunity": 7.62,
+      "poise": 12.0,
+      "robustness": 13.969999,
+      "vitality": 0.0
+    }
+  },
+  "Gough's Helm": {
+    "category": "Head",
+    "name": "Gough's Helm",
+    "weight": 6.5,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 21.699999,
+      "physical": 38.75,
+      "pierce": 36.8125,
+      "slash": 40.6875,
+      "strike": 38.75
+    },
+    "resistances": {
+      "focus": 7.62,
+      "immunity": 7.62,
+      "poise": 9.0,
+      "robustness": 13.969999,
+      "vitality": 0.0
+    }
+  },
+  "Gough's Leggings": {
+    "category": "Legs",
+    "name": "Gough's Leggings",
+    "weight": 8.0,
+    "absorptions": {
+      "fire": 38.75,
+      "holy": 0.0,
+      "lightning": 20.15,
+      "magic": 26.349998,
+      "physical": 48.05,
+      "pierce": 45.6475,
+      "slash": 50.4525,
+      "strike": 48.05
+    },
+    "resistances": {
+      "focus": 8.889999,
+      "immunity": 8.889999,
+      "poise": 13.0,
+      "robustness": 16.51,
+      "vitality": 0.0
+    }
+  },
+  "Guardian Armor": {
+    "category": "Body",
+    "name": "Guardian Armor",
+    "weight": 17.0,
+    "absorptions": {
+      "fire": 101.64,
+      "holy": 0.0,
+      "lightning": 121.0,
+      "magic": 121.0,
+      "physical": 208.12001,
+      "pierce": 208.12003,
+      "slash": 239.33801,
+      "strike": 195.63281
+    },
+    "resistances": {
+      "focus": 19.6,
+      "immunity": 19.6,
+      "poise": 37.0,
+      "robustness": 58.8,
+      "vitality": 0.0
+    }
+  },
+  "Guardian Gauntlets": {
+    "category": "Arms",
+    "name": "Guardian Gauntlets",
+    "weight": 10.4,
+    "absorptions": {
+      "fire": 65.340004,
+      "holy": 0.0,
+      "lightning": 79.86,
+      "magic": 79.86,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 150.28201,
+      "strike": 122.83921
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 23.0,
+      "robustness": 37.8,
+      "vitality": 0.0
+    }
+  },
+  "Guardian Helm": {
+    "category": "Head",
+    "name": "Guardian Helm",
+    "weight": 7.2,
+    "absorptions": {
+      "fire": 45.980003,
+      "holy": 0.0,
+      "lightning": 55.660004,
+      "magic": 55.660004,
+      "physical": 99.22,
+      "pierce": 99.22,
+      "slash": 114.103,
+      "strike": 93.2668
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 15.0,
+      "robustness": 23.8,
+      "vitality": 0.0
+    }
+  },
+  "Guardian Leggings": {
+    "category": "Legs",
+    "name": "Guardian Leggings",
+    "weight": 10.4,
+    "absorptions": {
+      "fire": 65.340004,
+      "holy": 0.0,
+      "lightning": 79.86,
+      "magic": 79.86,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 150.28201,
+      "strike": 122.83921
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 23.0,
+      "robustness": 37.8,
+      "vitality": 0.0
+    }
+  },
+  "Hard Leather Armor": {
+    "category": "Body",
+    "name": "Hard Leather Armor",
+    "weight": 5.9,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 55.660004,
+      "magic": 48.4,
+      "physical": 62.920002,
+      "pierce": 62.92,
+      "slash": 62.92,
+      "strike": 66.6952
+    },
+    "resistances": {
+      "focus": 28.0,
+      "immunity": 28.0,
+      "poise": 0.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Hard Leather Boots": {
+    "category": "Legs",
+    "name": "Hard Leather Boots",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 16.94,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 29.04,
+      "physical": 31.460001,
+      "pierce": 31.46,
+      "slash": 31.46,
+      "strike": 33.3476
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Hard Leather Gauntlets": {
+    "category": "Arms",
+    "name": "Hard Leather Gauntlets",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 16.94,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 29.04,
+      "physical": 31.460001,
+      "pierce": 31.46,
+      "slash": 31.46,
+      "strike": 33.3476
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Havel's Armor": {
+    "category": "Body",
+    "name": "Havel's Armor",
+    "weight": 19.5,
+    "absorptions": {
+      "fire": 130.68001,
+      "holy": 0.0,
+      "lightning": 118.58,
+      "magic": 135.52,
+      "physical": 222.64001,
+      "pierce": 222.64001,
+      "slash": 256.036,
+      "strike": 189.244
+    },
+    "resistances": {
+      "focus": 15.4,
+      "immunity": 15.4,
+      "poise": 47.0,
+      "robustness": 63.0,
+      "vitality": 30.8
+    }
+  },
+  "Havel's Gauntlets": {
+    "category": "Arms",
+    "name": "Havel's Gauntlets",
+    "weight": 11.5,
+    "absorptions": {
+      "fire": 77.44,
+      "holy": 0.0,
+      "lightning": 70.18,
+      "magic": 77.44,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 150.28201,
+      "strike": 111.07801
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 28.0,
+      "robustness": 37.8,
+      "vitality": 18.199999
+    }
+  },
+  "Havel's Helm": {
+    "category": "Head",
+    "name": "Havel's Helm",
+    "weight": 7.5,
+    "absorptions": {
+      "fire": 53.24,
+      "holy": 0.0,
+      "lightning": 43.56,
+      "magic": 53.24,
+      "physical": 87.12,
+      "pierce": 87.12,
+      "slash": 100.18801,
+      "strike": 74.052
+    },
+    "resistances": {
+      "focus": 5.6,
+      "immunity": 5.6,
+      "poise": 18.0,
+      "robustness": 25.199999,
+      "vitality": 12.599999
+    }
+  },
+  "Havel's Leggings": {
+    "category": "Legs",
+    "name": "Havel's Leggings",
+    "weight": 11.5,
+    "absorptions": {
+      "fire": 77.44,
+      "holy": 0.0,
+      "lightning": 70.18,
+      "magic": 77.44,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 150.28201,
+      "strike": 111.07801
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 28.0,
+      "robustness": 37.8,
+      "vitality": 18.199999
+    }
+  },
+  "Head": {
+    "category": "Head",
+    "name": "Head",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Heavy Boots": {
+    "category": "Legs",
+    "name": "Heavy Boots",
+    "weight": 1.6,
+    "absorptions": {
+      "fire": 43.56,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 33.88,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 32.2344
+    },
+    "resistances": {
+      "focus": 49.0,
+      "immunity": 49.0,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 1.4
+    }
+  },
+  "Helm of Artorias": {
+    "category": "Head",
+    "name": "Helm of Artorias",
+    "weight": 4.2,
+    "absorptions": {
+      "fire": 29.449999,
+      "holy": 0.0,
+      "lightning": 13.95,
+      "magic": 13.95,
+      "physical": 27.9,
+      "pierce": 29.295,
+      "slash": 32.085,
+      "strike": 25.11
+    },
+    "resistances": {
+      "focus": 11.43,
+      "immunity": 11.43,
+      "poise": 6.0,
+      "robustness": 11.43,
+      "vitality": 11.43
+    }
+  },
+  "Helm of Favor": {
+    "category": "Head",
+    "name": "Helm of Favor",
+    "weight": 4.5,
+    "absorptions": {
+      "fire": 17.05,
+      "holy": 0.0,
+      "lightning": 10.849999,
+      "magic": 15.5,
+      "physical": 27.9,
+      "pierce": 27.9,
+      "slash": 32.364,
+      "strike": 26.505
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 8.0,
+      "robustness": 13.969999,
+      "vitality": 10.16
+    }
+  },
+  "Helm of Thorns": {
+    "category": "Head",
+    "name": "Helm of Thorns",
+    "weight": 4.1,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 15.5,
+      "physical": 26.349998,
+      "pierce": 26.349998,
+      "slash": 28.721498,
+      "strike": 25.032497
+    },
+    "resistances": {
+      "focus": 8.889999,
+      "immunity": 8.889999,
+      "poise": 6.0,
+      "robustness": 12.7,
+      "vitality": 0.0
+    }
+  },
+  "Helm of the Wise": {
+    "category": "Head",
+    "name": "Helm of the Wise",
+    "weight": 5.1,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 29.04,
+      "physical": 43.56,
+      "pierce": 43.56,
+      "slash": 50.094006,
+      "strike": 41.382004
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 8.0,
+      "robustness": 15.4,
+      "vitality": 25.199999
+    }
+  },
+  "Hollow Soldier Armor": {
+    "category": "Body",
+    "name": "Hollow Soldier Armor",
+    "weight": 7.8,
+    "absorptions": {
+      "fire": 41.14,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 62.920002,
+      "pierce": 55.3696,
+      "slash": 69.8412,
+      "strike": 62.92
+    },
+    "resistances": {
+      "focus": 18.199999,
+      "immunity": 18.199999,
+      "poise": 12.0,
+      "robustness": 25.199999,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Soldier Helm": {
+    "category": "Head",
+    "name": "Hollow Soldier Helm",
+    "weight": 3.0,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 9.68,
+      "magic": 14.52,
+      "physical": 24.2,
+      "pierce": 21.296001,
+      "slash": 26.862001,
+      "strike": 24.2
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 5.0,
+      "robustness": 9.8,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Soldier Waistcloth": {
+    "category": "Legs",
+    "name": "Hollow Soldier Waistcloth",
+    "weight": 1.5,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 19.36,
+      "physical": 31.460001,
+      "pierce": 27.6848,
+      "slash": 34.9206,
+      "strike": 31.46
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 7.0,
+      "robustness": 14.0,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Thief's Hood": {
+    "category": "Head",
+    "name": "Hollow Thief's Hood",
+    "weight": 1.1,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 16.94,
+      "magic": 19.36,
+      "physical": 19.36,
+      "pierce": 20.134401,
+      "slash": 19.36,
+      "strike": 21.1024
+    },
+    "resistances": {
+      "focus": 15.4,
+      "immunity": 15.4,
+      "poise": 0.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Thief's Leather Armor": {
+    "category": "Body",
+    "name": "Hollow Thief's Leather Armor",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 43.56,
+      "magic": 48.4,
+      "physical": 50.82,
+      "pierce": 52.8528,
+      "slash": 50.82,
+      "strike": 55.3938
+    },
+    "resistances": {
+      "focus": 40.6,
+      "immunity": 40.6,
+      "poise": 0.0,
+      "robustness": 21.0,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Thief's Tights": {
+    "category": "Legs",
+    "name": "Hollow Thief's Tights",
+    "weight": 1.7,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 26.62,
+      "physical": 29.04,
+      "pierce": 30.201601,
+      "slash": 29.04,
+      "strike": 31.6536
+    },
+    "resistances": {
+      "focus": 23.8,
+      "immunity": 23.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Warrior Armor": {
+    "category": "Body",
+    "name": "Hollow Warrior Armor",
+    "weight": 6.6,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 38.72,
+      "physical": 58.08,
+      "pierce": 55.176003,
+      "slash": 59.822403,
+      "strike": 56.3376
+    },
+    "resistances": {
+      "focus": 18.199999,
+      "immunity": 18.199999,
+      "poise": 8.0,
+      "robustness": 18.199999,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Warrior Helm": {
+    "category": "Head",
+    "name": "Hollow Warrior Helm",
+    "weight": 2.6,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 14.52,
+      "physical": 24.2,
+      "pierce": 22.99,
+      "slash": 24.926,
+      "strike": 23.474
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 3.0,
+      "robustness": 7.0,
+      "vitality": 0.0
+    }
+  },
+  "Hollow Warrior Waistcloth": {
+    "category": "Legs",
+    "name": "Hollow Warrior Waistcloth",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 19.36,
+      "physical": 31.460001,
+      "pierce": 29.887001,
+      "slash": 32.4038,
+      "strike": 30.516201
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 5.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Holy Robe": {
+    "category": "Body",
+    "name": "Holy Robe",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 33.88,
+      "holy": 0.0,
+      "lightning": 45.980003,
+      "magic": 55.660004,
+      "physical": 53.24,
+      "pierce": 53.24,
+      "slash": 53.24,
+      "strike": 62.823204
+    },
+    "resistances": {
+      "focus": 28.0,
+      "immunity": 28.0,
+      "poise": 0.0,
+      "robustness": 33.6,
+      "vitality": 0.0
+    }
+  },
+  "Holy Trousers": {
+    "category": "Legs",
+    "name": "Holy Trousers",
+    "weight": 2.0,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 29.04,
+      "magic": 36.300003,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 33.88,
+      "strike": 39.9784
+    },
+    "resistances": {
+      "focus": 18.199999,
+      "immunity": 18.199999,
+      "poise": 0.0,
+      "robustness": 21.0,
+      "vitality": 0.0
+    }
+  },
+  "Iron Bracelet": {
+    "category": "Arms",
+    "name": "Iron Bracelet",
+    "weight": 4.3,
+    "absorptions": {
+      "fire": 24.2,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 24.2,
+      "physical": 41.14,
+      "pierce": 40.3172,
+      "slash": 41.14,
+      "strike": 41.14
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 7.0,
+      "robustness": 15.4,
+      "vitality": 2.8
+    }
+  },
+  "Iron Helm": {
+    "category": "Head",
+    "name": "Iron Helm",
+    "weight": 4.5,
+    "absorptions": {
+      "fire": 24.2,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 24.2,
+      "physical": 33.88,
+      "pierce": 33.2024,
+      "slash": 33.88,
+      "strike": 33.88
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 8.0,
+      "robustness": 16.8,
+      "vitality": 2.8
+    }
+  },
+  "Iron Leggings": {
+    "category": "Legs",
+    "name": "Iron Leggings",
+    "weight": 5.3,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 26.62,
+      "magic": 29.04,
+      "physical": 50.82,
+      "pierce": 49.8036,
+      "slash": 50.82,
+      "strike": 50.82
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 9.0,
+      "robustness": 19.6,
+      "vitality": 2.8
+    }
+  },
+  "Knight Armor": {
+    "category": "Body",
+    "name": "Knight Armor",
+    "weight": 10.9,
+    "absorptions": {
+      "fire": 43.56,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 38.72,
+      "physical": 89.54,
+      "pierce": 87.7492,
+      "slash": 103.866394,
+      "strike": 85.062996
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 20.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Knight Gauntlets": {
+    "category": "Arms",
+    "name": "Knight Gauntlets",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 9.68,
+      "magic": 16.94,
+      "physical": 41.14,
+      "pierce": 40.3172,
+      "slash": 47.722397,
+      "strike": 39.083
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 6.0,
+      "robustness": 11.2,
+      "vitality": 0.0
+    }
+  },
+  "Knight Helm": {
+    "category": "Head",
+    "name": "Knight Helm",
+    "weight": 4.2,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 12.1,
+      "magic": 14.52,
+      "physical": 33.88,
+      "pierce": 33.2024,
+      "slash": 39.3008,
+      "strike": 32.186
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 8.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Knight Leggings": {
+    "category": "Legs",
+    "name": "Knight Leggings",
+    "weight": 6.4,
+    "absorptions": {
+      "fire": 26.62,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 24.2,
+      "physical": 53.24,
+      "pierce": 52.1752,
+      "slash": 61.758404,
+      "strike": 50.578003
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 12.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Leather Armor": {
+    "category": "Body",
+    "name": "Leather Armor",
+    "weight": 4.7,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 55.660004,
+      "magic": 48.4,
+      "physical": 58.08,
+      "pierce": 58.08,
+      "slash": 58.08,
+      "strike": 61.5648
+    },
+    "resistances": {
+      "focus": 28.0,
+      "immunity": 28.0,
+      "poise": 0.0,
+      "robustness": 29.4,
+      "vitality": 0.0
+    }
+  },
+  "Leather Boots": {
+    "category": "Legs",
+    "name": "Leather Boots",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 29.04,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 30.7824
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 18.199999,
+      "vitality": 0.0
+    }
+  },
+  "Leather Gauntlets": {
+    "category": "Arms",
+    "name": "Leather Gauntlets",
+    "weight": 3.6,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 9.68,
+      "magic": 24.2,
+      "physical": 29.04,
+      "pierce": 28.1688,
+      "slash": 34.848,
+      "strike": 29.04
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 5.0,
+      "robustness": 16.8,
+      "vitality": 0.0
+    }
+  },
+  "Leather Gloves": {
+    "category": "Arms",
+    "name": "Leather Gloves",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 29.04,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 30.7824
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 18.199999,
+      "vitality": 0.0
+    }
+  },
+  "Leggings of Artorias": {
+    "category": "Legs",
+    "name": "Leggings of Artorias",
+    "weight": 5.5,
+    "absorptions": {
+      "fire": 37.199997,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 17.05,
+      "physical": 35.649998,
+      "pierce": 37.4325,
+      "slash": 40.997494,
+      "strike": 32.085
+    },
+    "resistances": {
+      "focus": 13.969999,
+      "immunity": 13.969999,
+      "poise": 9.0,
+      "robustness": 13.969999,
+      "vitality": 12.7
+    }
+  },
+  "Leggings of Favor": {
+    "category": "Legs",
+    "name": "Leggings of Favor",
+    "weight": 6.9,
+    "absorptions": {
+      "fire": 27.9,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 21.699999,
+      "physical": 43.399998,
+      "pierce": 43.4,
+      "slash": 50.343998,
+      "strike": 41.23
+    },
+    "resistances": {
+      "focus": 17.779999,
+      "immunity": 17.779999,
+      "poise": 11.0,
+      "robustness": 19.05,
+      "vitality": 17.779999
+    }
+  },
+  "Leggings of Thorns": {
+    "category": "Legs",
+    "name": "Leggings of Thorns",
+    "weight": 6.2,
+    "absorptions": {
+      "fire": 27.9,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 24.8,
+      "physical": 40.3,
+      "pierce": 40.3,
+      "slash": 43.927,
+      "strike": 38.285
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 9.0,
+      "robustness": 20.32,
+      "vitality": 0.0
+    }
+  },
+  "Legs": {
+    "category": "Legs",
+    "name": "Legs",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Lord's Blade Gloves": {
+    "category": "Arms",
+    "name": "Lord's Blade Gloves",
+    "weight": 2.8,
+    "absorptions": {
+      "fire": 21.699999,
+      "holy": 0.0,
+      "lightning": 13.95,
+      "magic": 17.05,
+      "physical": 23.25,
+      "pierce": 25.575,
+      "slash": 24.4125,
+      "strike": 23.25
+    },
+    "resistances": {
+      "focus": 27.939999,
+      "immunity": 27.939999,
+      "poise": 3.0,
+      "robustness": 15.24,
+      "vitality": 13.969999
+    }
+  },
+  "Lord's Blade Robe": {
+    "category": "Body",
+    "name": "Lord's Blade Robe",
+    "weight": 6.4,
+    "absorptions": {
+      "fire": 49.6,
+      "holy": 0.0,
+      "lightning": 31.0,
+      "magic": 40.3,
+      "physical": 52.699997,
+      "pierce": 57.969994,
+      "slash": 55.334995,
+      "strike": 52.699997
+    },
+    "resistances": {
+      "focus": 62.23,
+      "immunity": 62.23,
+      "poise": 8.0,
+      "robustness": 35.559998,
+      "vitality": 31.75
+    }
+  },
+  "Lord's Blade Waistcloth": {
+    "category": "Legs",
+    "name": "Lord's Blade Waistcloth",
+    "weight": 5.0,
+    "absorptions": {
+      "fire": 38.75,
+      "holy": 0.0,
+      "lightning": 24.8,
+      "magic": 31.0,
+      "physical": 41.85,
+      "pierce": 46.035,
+      "slash": 43.9425,
+      "strike": 41.85
+    },
+    "resistances": {
+      "focus": 48.26,
+      "immunity": 48.26,
+      "poise": 6.0,
+      "robustness": 27.939999,
+      "vitality": 25.4
+    }
+  },
+  "Mage Smith Boots": {
+    "category": "Legs",
+    "name": "Mage Smith Boots",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 30.201601,
+      "strike": 31.363201
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Mage Smith Coat": {
+    "category": "Body",
+    "name": "Mage Smith Coat",
+    "weight": 2.3,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 65.340004,
+      "physical": 48.4,
+      "pierce": 48.4,
+      "slash": 50.336002,
+      "strike": 52.272003
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 22.4,
+      "vitality": 0.0
+    }
+  },
+  "Mage Smith Gauntlets": {
+    "category": "Arms",
+    "name": "Mage Smith Gauntlets",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 30.201601,
+      "strike": 31.363201
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Mage Smith Hat": {
+    "category": "Head",
+    "name": "Mage Smith Hat",
+    "weight": 0.9,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 24.2,
+      "physical": 19.36,
+      "pierce": 19.36,
+      "slash": 20.134401,
+      "strike": 20.908802
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 0.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Maiden Gloves": {
+    "category": "Arms",
+    "name": "Maiden Gloves",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 31.460001,
+      "physical": 26.62,
+      "pierce": 26.62,
+      "slash": 26.62,
+      "strike": 31.145401
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 7.0
+    }
+  },
+  "Maiden Hood": {
+    "category": "Head",
+    "name": "Maiden Hood",
+    "weight": 0.8,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 19.36,
+      "physical": 16.94,
+      "pierce": 16.94,
+      "slash": 16.94,
+      "strike": 19.819801
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 4.2
+    }
+  },
+  "Maiden Robe": {
+    "category": "Body",
+    "name": "Maiden Robe",
+    "weight": 2.0,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 53.24,
+      "physical": 45.980003,
+      "pierce": 45.980003,
+      "slash": 45.980003,
+      "strike": 53.7966
+    },
+    "resistances": {
+      "focus": 25.199999,
+      "immunity": 25.199999,
+      "poise": 0.0,
+      "robustness": 32.2,
+      "vitality": 11.2
+    }
+  },
+  "Maiden Skirt": {
+    "category": "Legs",
+    "name": "Maiden Skirt",
+    "weight": 2.5,
+    "absorptions": {
+      "fire": 38.72,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 65.340004,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 33.88,
+      "strike": 39.639603
+    },
+    "resistances": {
+      "focus": 30.8,
+      "immunity": 30.8,
+      "poise": 0.0,
+      "robustness": 40.6,
+      "vitality": 14.0
+    }
+  },
+  "Mask of Velka": {
+    "category": "Head",
+    "name": "Mask of Velka",
+    "weight": 2.5,
+    "absorptions": {
+      "fire": 15.5,
+      "holy": 0.0,
+      "lightning": 10.849999,
+      "magic": 18.599998,
+      "physical": 18.599998,
+      "pierce": 18.599998,
+      "slash": 18.599998,
+      "strike": 20.273998
+    },
+    "resistances": {
+      "focus": 11.43,
+      "immunity": 11.43,
+      "poise": 0.0,
+      "robustness": 11.43,
+      "vitality": 25.4
+    }
+  },
+  "Mask of the Child": {
+    "category": "Head",
+    "name": "Mask of the Child",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 24.2,
+      "physical": 14.52,
+      "pierce": 14.52,
+      "slash": 14.52,
+      "strike": 14.52
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Mask of the Father": {
+    "category": "Head",
+    "name": "Mask of the Father",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 24.2,
+      "physical": 14.52,
+      "pierce": 14.52,
+      "slash": 14.52,
+      "strike": 14.52
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Mask of the Mother": {
+    "category": "Head",
+    "name": "Mask of the Mother",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 14.52,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 29.04,
+      "physical": 14.52,
+      "pierce": 14.52,
+      "slash": 14.52,
+      "strike": 14.52
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 14.0,
+      "vitality": 0.0
+    }
+  },
+  "Mask of the Sealer": {
+    "category": "Head",
+    "name": "Mask of the Sealer",
+    "weight": 1.5,
+    "absorptions": {
+      "fire": 10.849999,
+      "holy": 0.0,
+      "lightning": 13.95,
+      "magic": 18.599998,
+      "physical": 18.599998,
+      "pierce": 18.599998,
+      "slash": 18.599998,
+      "strike": 20.46
+    },
+    "resistances": {
+      "focus": 10.16,
+      "immunity": 10.16,
+      "poise": 0.0,
+      "robustness": 10.16,
+      "vitality": 10.16
+    }
+  },
+  "Moonlight Gloves": {
+    "category": "Arms",
+    "name": "Moonlight Gloves",
+    "weight": 0.5,
+    "absorptions": {
+      "fire": 7.26,
+      "holy": 0.0,
+      "lightning": 7.26,
+      "magic": 12.1,
+      "physical": 7.26,
+      "pierce": 7.26,
+      "slash": 7.26,
+      "strike": 7.26
+    },
+    "resistances": {
+      "focus": 5.6,
+      "immunity": 5.6,
+      "poise": 0.0,
+      "robustness": 5.6,
+      "vitality": 7.0
+    }
+  },
+  "Moonlight Robe": {
+    "category": "Body",
+    "name": "Moonlight Robe",
+    "weight": 3.1,
+    "absorptions": {
+      "fire": 41.14,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 75.020004,
+      "physical": 48.4,
+      "pierce": 48.4,
+      "slash": 48.4,
+      "strike": 48.4
+    },
+    "resistances": {
+      "focus": 32.2,
+      "immunity": 32.2,
+      "poise": 0.0,
+      "robustness": 32.2,
+      "vitality": 43.399998
+    }
+  },
+  "Moonlight Waistcloth": {
+    "category": "Legs",
+    "name": "Moonlight Waistcloth",
+    "weight": 1.8,
+    "absorptions": {
+      "fire": 24.2,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 43.56,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 29.04
+    },
+    "resistances": {
+      "focus": 19.6,
+      "immunity": 19.6,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 25.199999
+    }
+  },
+  "No Travel Gear / Arms": {
+    "category": "Arms",
+    "name": "No Travel Gear / Arms",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "No Travel Gear / Body": {
+    "category": "Body",
+    "name": "No Travel Gear / Body",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "No Travel Gear / Head": {
+    "category": "Head",
+    "name": "No Travel Gear / Head",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "No Travel Gear / Legs": {
+    "category": "Legs",
+    "name": "No Travel Gear / Legs",
+    "weight": 0.0,
+    "absorptions": {
+      "fire": 0.0,
+      "holy": 0.0,
+      "lightning": 0.0,
+      "magic": 0.0,
+      "physical": 0.0,
+      "pierce": 0.0,
+      "slash": 0.0,
+      "strike": 0.0
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Ornstein's Armor": {
+    "category": "Body",
+    "name": "Ornstein's Armor",
+    "weight": 12.0,
+    "absorptions": {
+      "fire": 111.32001,
+      "holy": 0.0,
+      "lightning": 96.8,
+      "magic": 87.12,
+      "physical": 169.40001,
+      "pierce": 169.4,
+      "slash": 191.42201,
+      "strike": 160.93001
+    },
+    "resistances": {
+      "focus": 25.199999,
+      "immunity": 25.199999,
+      "poise": 19.0,
+      "robustness": 53.2,
+      "vitality": 25.199999
+    }
+  },
+  "Ornstein's Gauntlets": {
+    "category": "Arms",
+    "name": "Ornstein's Gauntlets",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 38.72,
+      "holy": 0.0,
+      "lightning": 33.88,
+      "magic": 29.04,
+      "physical": 70.18,
+      "pierce": 70.18,
+      "slash": 79.3034,
+      "strike": 66.671
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 6.0,
+      "robustness": 16.8,
+      "vitality": 8.4
+    }
+  },
+  "Ornstein's Helm": {
+    "category": "Head",
+    "name": "Ornstein's Helm",
+    "weight": 5.5,
+    "absorptions": {
+      "fire": 53.24,
+      "holy": 0.0,
+      "lightning": 43.56,
+      "magic": 38.72,
+      "physical": 77.44,
+      "pierce": 77.44,
+      "slash": 87.50721,
+      "strike": 73.568
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 9.0,
+      "robustness": 25.199999,
+      "vitality": 11.2
+    }
+  },
+  "Ornstein's Leggings": {
+    "category": "Legs",
+    "name": "Ornstein's Leggings",
+    "weight": 7.0,
+    "absorptions": {
+      "fire": 67.76,
+      "holy": 0.0,
+      "lightning": 58.08,
+      "magic": 48.4,
+      "physical": 96.8,
+      "pierce": 96.8,
+      "slash": 109.384,
+      "strike": 91.96
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 11.0,
+      "robustness": 30.8,
+      "vitality": 16.8
+    }
+  },
+  "Painting Guardian Gloves": {
+    "category": "Arms",
+    "name": "Painting Guardian Gloves",
+    "weight": 0.9,
+    "absorptions": {
+      "fire": 26.349998,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 34.1,
+      "physical": 9.299999,
+      "pierce": 9.299999,
+      "slash": 9.299999,
+      "strike": 11.159999
+    },
+    "resistances": {
+      "focus": 58.42,
+      "immunity": 58.42,
+      "poise": 0.0,
+      "robustness": 22.86,
+      "vitality": 12.7
+    }
+  },
+  "Painting Guardian Hood": {
+    "category": "Head",
+    "name": "Painting Guardian Hood",
+    "weight": 0.6,
+    "absorptions": {
+      "fire": 17.05,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 48.05,
+      "physical": 4.6499996,
+      "pierce": 4.6499996,
+      "slash": 4.6499996,
+      "strike": 5.5799994
+    },
+    "resistances": {
+      "focus": 38.1,
+      "immunity": 38.1,
+      "poise": 0.0,
+      "robustness": 15.24,
+      "vitality": 7.62
+    }
+  },
+  "Painting Guardian Robe": {
+    "category": "Body",
+    "name": "Painting Guardian Robe",
+    "weight": 1.6,
+    "absorptions": {
+      "fire": 44.949997,
+      "holy": 0.0,
+      "lightning": 32.55,
+      "magic": 52.699997,
+      "physical": 13.95,
+      "pierce": 13.95,
+      "slash": 13.95,
+      "strike": 16.74
+    },
+    "resistances": {
+      "focus": 99.06,
+      "immunity": 99.06,
+      "poise": 0.0,
+      "robustness": 40.64,
+      "vitality": 20.32
+    }
+  },
+  "Painting Guardian Waistcloth": {
+    "category": "Legs",
+    "name": "Painting Guardian Waistcloth",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 34.1,
+      "holy": 0.0,
+      "lightning": 32.55,
+      "magic": 46.5,
+      "physical": 34.1,
+      "pierce": 34.1,
+      "slash": 34.1,
+      "strike": 40.92
+    },
+    "resistances": {
+      "focus": 64.77,
+      "immunity": 64.77,
+      "poise": 0.0,
+      "robustness": 26.67,
+      "vitality": 12.7
+    }
+  },
+  "Paladin Armor": {
+    "category": "Body",
+    "name": "Paladin Armor",
+    "weight": 12.9,
+    "absorptions": {
+      "fire": 57.35,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 48.05,
+      "physical": 91.45,
+      "pierce": 91.45,
+      "slash": 105.1675,
+      "strike": 86.8775
+    },
+    "resistances": {
+      "focus": 30.48,
+      "immunity": 30.48,
+      "poise": 20.0,
+      "robustness": 43.18,
+      "vitality": 72.39
+    }
+  },
+  "Paladin Gauntlets": {
+    "category": "Arms",
+    "name": "Paladin Gauntlets",
+    "weight": 7.6,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 29.449999,
+      "physical": 54.25,
+      "pierce": 54.25,
+      "slash": 62.3875,
+      "strike": 51.5375
+    },
+    "resistances": {
+      "focus": 16.51,
+      "immunity": 16.51,
+      "poise": 12.0,
+      "robustness": 26.67,
+      "vitality": 43.18
+    }
+  },
+  "Paladin Helm": {
+    "category": "Head",
+    "name": "Paladin Helm",
+    "weight": 5.0,
+    "absorptions": {
+      "fire": 20.15,
+      "holy": 0.0,
+      "lightning": 10.849999,
+      "magic": 18.599998,
+      "physical": 34.1,
+      "pierce": 34.1,
+      "slash": 39.214996,
+      "strike": 32.394997
+    },
+    "resistances": {
+      "focus": 11.43,
+      "immunity": 11.43,
+      "poise": 8.0,
+      "robustness": 16.51,
+      "vitality": 27.939999
+    }
+  },
+  "Paladin Leggings": {
+    "category": "Legs",
+    "name": "Paladin Leggings",
+    "weight": 7.6,
+    "absorptions": {
+      "fire": 32.55,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 29.449999,
+      "physical": 54.25,
+      "pierce": 54.25,
+      "slash": 62.3875,
+      "strike": 51.5375
+    },
+    "resistances": {
+      "focus": 16.51,
+      "immunity": 16.51,
+      "poise": 12.0,
+      "robustness": 26.67,
+      "vitality": 43.18
+    }
+  },
+  "Pharis's Hat": {
+    "category": "Head",
+    "name": "Pharis's Hat",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 16.94,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 12.1,
+      "physical": 16.94,
+      "pierce": 16.94,
+      "slash": 16.94,
+      "strike": 17.9564
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 0.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Porcelain Mask": {
+    "category": "Head",
+    "name": "Porcelain Mask",
+    "weight": 2.5,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 15.5,
+      "physical": 20.15,
+      "pierce": 22.165,
+      "slash": 21.1575,
+      "strike": 20.15
+    },
+    "resistances": {
+      "focus": 24.13,
+      "immunity": 24.13,
+      "poise": 3.0,
+      "robustness": 13.969999,
+      "vitality": 13.969999
+    }
+  },
+  "Priest's Hat": {
+    "category": "Head",
+    "name": "Priest's Hat",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 16.94,
+      "magic": 21.78,
+      "physical": 19.36,
+      "pierce": 19.36,
+      "slash": 19.36,
+      "strike": 22.844799
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Robe of the Channelers": {
+    "category": "Body",
+    "name": "Robe of the Channelers",
+    "weight": 10.1,
+    "absorptions": {
+      "fire": 108.9,
+      "holy": 0.0,
+      "lightning": 84.700005,
+      "magic": 108.9,
+      "physical": 128.26001,
+      "pierce": 128.26001,
+      "slash": 146.2164,
+      "strike": 123.12961
+    },
+    "resistances": {
+      "focus": 46.2,
+      "immunity": 46.2,
+      "poise": 12.0,
+      "robustness": 53.2,
+      "vitality": 0.0
+    }
+  },
+  "Robe of the Great Lord": {
+    "category": "Body",
+    "name": "Robe of the Great Lord",
+    "weight": 6.0,
+    "absorptions": {
+      "fire": 99.22,
+      "holy": 0.0,
+      "lightning": 99.22,
+      "magic": 77.44,
+      "physical": 77.44,
+      "pierce": 71.244804,
+      "slash": 89.05601,
+      "strike": 83.63521
+    },
+    "resistances": {
+      "focus": 21.0,
+      "immunity": 21.0,
+      "poise": 0.0,
+      "robustness": 42.0,
+      "vitality": 56.0
+    }
+  },
+  "Royal Helm": {
+    "category": "Head",
+    "name": "Royal Helm",
+    "weight": 4.5,
+    "absorptions": {
+      "fire": 24.2,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 24.2,
+      "physical": 38.72,
+      "pierce": 38.72,
+      "slash": 38.72,
+      "strike": 33.6864
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 8.0,
+      "robustness": 22.4,
+      "vitality": 0.0
+    }
+  },
+  "Sack": {
+    "category": "Head",
+    "name": "Sack",
+    "weight": 0.6,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 9.68,
+      "magic": 14.52,
+      "physical": 14.52,
+      "pierce": 12.0516,
+      "slash": 14.52,
+      "strike": 24.248402
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 0.0,
+      "robustness": 16.8,
+      "vitality": 0.0
+    }
+  },
+  "Sage Robe": {
+    "category": "Body",
+    "name": "Sage Robe",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 44.949997,
+      "holy": 0.0,
+      "lightning": 54.25,
+      "magic": 43.399998,
+      "physical": 63.55,
+      "pierce": 63.55,
+      "slash": 66.091995,
+      "strike": 68.634
+    },
+    "resistances": {
+      "focus": 62.23,
+      "immunity": 62.23,
+      "poise": 0.0,
+      "robustness": 62.23,
+      "vitality": 0.0
+    }
+  },
+  "Shadow Garb": {
+    "category": "Body",
+    "name": "Shadow Garb",
+    "weight": 2.3,
+    "absorptions": {
+      "fire": 24.8,
+      "holy": 0.0,
+      "lightning": 26.349998,
+      "magic": 18.599998,
+      "physical": 35.649998,
+      "pierce": 35.649998,
+      "slash": 35.649998,
+      "strike": 39.214996
+    },
+    "resistances": {
+      "focus": 59.69,
+      "immunity": 59.69,
+      "poise": 0.0,
+      "robustness": 49.53,
+      "vitality": 0.0
+    }
+  },
+  "Shadow Gauntlets": {
+    "category": "Arms",
+    "name": "Shadow Gauntlets",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 13.95,
+      "holy": 0.0,
+      "lightning": 15.5,
+      "magic": 10.849999,
+      "physical": 20.15,
+      "pierce": 20.15,
+      "slash": 20.15,
+      "strike": 22.165
+    },
+    "resistances": {
+      "focus": 35.559998,
+      "immunity": 35.559998,
+      "poise": 0.0,
+      "robustness": 29.21,
+      "vitality": 0.0
+    }
+  },
+  "Shadow Leggings": {
+    "category": "Legs",
+    "name": "Shadow Leggings",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 13.95,
+      "holy": 0.0,
+      "lightning": 15.5,
+      "magic": 10.849999,
+      "physical": 20.15,
+      "pierce": 20.15,
+      "slash": 20.15,
+      "strike": 22.165
+    },
+    "resistances": {
+      "focus": 35.559998,
+      "immunity": 35.559998,
+      "poise": 0.0,
+      "robustness": 29.21,
+      "vitality": 0.0
+    }
+  },
+  "Shadow Mask": {
+    "category": "Head",
+    "name": "Shadow Mask",
+    "weight": 0.9,
+    "absorptions": {
+      "fire": 9.299999,
+      "holy": 0.0,
+      "lightning": 9.299999,
+      "magic": 7.75,
+      "physical": 13.95,
+      "pierce": 13.95,
+      "slash": 13.95,
+      "strike": 15.345
+    },
+    "resistances": {
+      "focus": 22.86,
+      "immunity": 22.86,
+      "poise": 0.0,
+      "robustness": 19.05,
+      "vitality": 0.0
+    }
+  },
+  "Silver Knight Armor": {
+    "category": "Body",
+    "name": "Silver Knight Armor",
+    "weight": 12.0,
+    "absorptions": {
+      "fire": 44.949997,
+      "holy": 0.0,
+      "lightning": 52.699997,
+      "magic": 40.3,
+      "physical": 80.6,
+      "pierce": 78.988,
+      "slash": 92.69,
+      "strike": 75.764
+    },
+    "resistances": {
+      "focus": 15.24,
+      "immunity": 15.24,
+      "poise": 19.0,
+      "robustness": 30.48,
+      "vitality": 2.54
+    }
+  },
+  "Silver Knight Gauntlets": {
+    "category": "Arms",
+    "name": "Silver Knight Gauntlets",
+    "weight": 5.5,
+    "absorptions": {
+      "fire": 21.699999,
+      "holy": 0.0,
+      "lightning": 24.8,
+      "magic": 18.599998,
+      "physical": 38.75,
+      "pierce": 37.975,
+      "slash": 44.5625,
+      "strike": 36.425
+    },
+    "resistances": {
+      "focus": 7.62,
+      "immunity": 7.62,
+      "poise": 9.0,
+      "robustness": 13.969999,
+      "vitality": 1.27
+    }
+  },
+  "Silver Knight Helm": {
+    "category": "Head",
+    "name": "Silver Knight Helm",
+    "weight": 4.8,
+    "absorptions": {
+      "fire": 17.05,
+      "holy": 0.0,
+      "lightning": 21.699999,
+      "magic": 15.5,
+      "physical": 32.55,
+      "pierce": 31.898998,
+      "slash": 37.4325,
+      "strike": 30.597
+    },
+    "resistances": {
+      "focus": 6.35,
+      "immunity": 6.35,
+      "poise": 8.0,
+      "robustness": 11.43,
+      "vitality": 1.27
+    }
+  },
+  "Silver Knight Leggings": {
+    "category": "Legs",
+    "name": "Silver Knight Leggings",
+    "weight": 6.5,
+    "absorptions": {
+      "fire": 24.8,
+      "holy": 0.0,
+      "lightning": 29.449999,
+      "magic": 23.25,
+      "physical": 43.399998,
+      "pierce": 42.531998,
+      "slash": 49.909996,
+      "strike": 40.795998
+    },
+    "resistances": {
+      "focus": 8.889999,
+      "immunity": 8.889999,
+      "poise": 11.0,
+      "robustness": 17.779999,
+      "vitality": 1.27
+    }
+  },
+  "Six-Eyed Helm of the Channelers": {
+    "category": "Head",
+    "name": "Six-Eyed Helm of the Channelers",
+    "weight": 3.9,
+    "absorptions": {
+      "fire": 41.14,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 43.56,
+      "physical": 48.4,
+      "pierce": 48.4,
+      "slash": 55.176003,
+      "strike": 46.464005
+    },
+    "resistances": {
+      "focus": 18.199999,
+      "immunity": 18.199999,
+      "poise": 5.0,
+      "robustness": 21.0,
+      "vitality": 0.0
+    }
+  },
+  "Smough's Armor": {
+    "category": "Body",
+    "name": "Smough's Armor",
+    "weight": 17.6,
+    "absorptions": {
+      "fire": 159.72,
+      "holy": 0.0,
+      "lightning": 142.78,
+      "magic": 125.840004,
+      "physical": 256.52002,
+      "pierce": 256.52002,
+      "slash": 294.99802,
+      "strike": 223.17242
+    },
+    "resistances": {
+      "focus": 39.2,
+      "immunity": 39.2,
+      "poise": 35.0,
+      "robustness": 75.6,
+      "vitality": 12.599999
+    }
+  },
+  "Smough's Gauntlets": {
+    "category": "Arms",
+    "name": "Smough's Gauntlets",
+    "weight": 10.4,
+    "absorptions": {
+      "fire": 96.8,
+      "holy": 0.0,
+      "lightning": 79.86,
+      "magic": 75.020004,
+      "physical": 147.62001,
+      "pierce": 147.62001,
+      "slash": 169.763,
+      "strike": 128.4294
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 21.0,
+      "robustness": 46.2,
+      "vitality": 7.0
+    }
+  },
+  "Smough's Helm": {
+    "category": "Head",
+    "name": "Smough's Helm",
+    "weight": 6.8,
+    "absorptions": {
+      "fire": 62.920002,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 45.980003,
+      "physical": 96.8,
+      "pierce": 96.8,
+      "slash": 111.32,
+      "strike": 84.216
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 14.0,
+      "robustness": 29.4,
+      "vitality": 7.0
+    }
+  },
+  "Smough's Leggings": {
+    "category": "Legs",
+    "name": "Smough's Leggings",
+    "weight": 10.4,
+    "absorptions": {
+      "fire": 96.8,
+      "holy": 0.0,
+      "lightning": 79.86,
+      "magic": 75.020004,
+      "physical": 147.62001,
+      "pierce": 147.62001,
+      "slash": 169.763,
+      "strike": 128.4294
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 21.0,
+      "robustness": 46.2,
+      "vitality": 7.0
+    }
+  },
+  "Snickering Top Hat": {
+    "category": "Head",
+    "name": "Snickering Top Hat",
+    "weight": 2.0,
+    "absorptions": {
+      "fire": 13.95,
+      "holy": 0.0,
+      "lightning": 18.599998,
+      "magic": 20.15,
+      "physical": 18.599998,
+      "pierce": 18.599998,
+      "slash": 18.599998,
+      "strike": 25.109997
+    },
+    "resistances": {
+      "focus": 17.779999,
+      "immunity": 17.779999,
+      "poise": 0.0,
+      "robustness": 24.13,
+      "vitality": 0.0
+    }
+  },
+  "Sorcerer Boots": {
+    "category": "Legs",
+    "name": "Sorcerer Boots",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 30.201601,
+      "strike": 31.363201
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Sorcerer Cloak": {
+    "category": "Body",
+    "name": "Sorcerer Cloak",
+    "weight": 2.3,
+    "absorptions": {
+      "fire": 31.460001,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 65.340004,
+      "physical": 48.4,
+      "pierce": 48.4,
+      "slash": 50.336002,
+      "strike": 52.272003
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 22.4,
+      "vitality": 0.0
+    }
+  },
+  "Sorcerer Gauntlets": {
+    "category": "Arms",
+    "name": "Sorcerer Gauntlets",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 30.201601,
+      "strike": 31.363201
+    },
+    "resistances": {
+      "focus": 9.8,
+      "immunity": 9.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Sorcerer Hat": {
+    "category": "Head",
+    "name": "Sorcerer Hat",
+    "weight": 0.9,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 24.2,
+      "physical": 19.36,
+      "pierce": 19.36,
+      "slash": 20.134401,
+      "strike": 20.908802
+    },
+    "resistances": {
+      "focus": 7.0,
+      "immunity": 7.0,
+      "poise": 0.0,
+      "robustness": 8.4,
+      "vitality": 0.0
+    }
+  },
+  "Standard Helm": {
+    "category": "Head",
+    "name": "Standard Helm",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 7.26,
+      "magic": 19.36,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 38.6232,
+      "strike": 19.3116
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 5.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Steel Armor": {
+    "category": "Body",
+    "name": "Steel Armor",
+    "weight": 14.0,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 53.24,
+      "physical": 101.64,
+      "pierce": 101.64,
+      "slash": 116.885994,
+      "strike": 95.5416
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 23.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Steel Gauntlets": {
+    "category": "Arms",
+    "name": "Steel Gauntlets",
+    "weight": 8.3,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 31.460001,
+      "physical": 60.5,
+      "pierce": 60.5,
+      "slash": 69.575,
+      "strike": 56.87
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 14.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Steel Helm": {
+    "category": "Head",
+    "name": "Steel Helm",
+    "weight": 5.4,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 12.1,
+      "magic": 19.36,
+      "physical": 38.72,
+      "pierce": 38.72,
+      "slash": 44.528004,
+      "strike": 36.3968
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 9.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Steel Leggings": {
+    "category": "Legs",
+    "name": "Steel Leggings",
+    "weight": 8.3,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 19.36,
+      "magic": 31.460001,
+      "physical": 60.5,
+      "pierce": 60.5,
+      "slash": 69.575,
+      "strike": 56.87
+    },
+    "resistances": {
+      "focus": 12.599999,
+      "immunity": 12.599999,
+      "poise": 14.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Stone Armor": {
+    "category": "Body",
+    "name": "Stone Armor",
+    "weight": 17.6,
+    "absorptions": {
+      "fire": 130.68001,
+      "holy": 0.0,
+      "lightning": 130.68001,
+      "magic": 108.9,
+      "physical": 220.22,
+      "pierce": 220.22,
+      "slash": 253.253,
+      "strike": 207.00679
+    },
+    "resistances": {
+      "focus": 22.4,
+      "immunity": 22.4,
+      "poise": 39.0,
+      "robustness": 63.0,
+      "vitality": 0.0
+    }
+  },
+  "Stone Gauntlets": {
+    "category": "Arms",
+    "name": "Stone Gauntlets",
+    "weight": 10.4,
+    "absorptions": {
+      "fire": 79.86,
+      "holy": 0.0,
+      "lightning": 79.86,
+      "magic": 65.340004,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 150.28201,
+      "strike": 122.83921
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 23.0,
+      "robustness": 37.8,
+      "vitality": 0.0
+    }
+  },
+  "Stone Helm": {
+    "category": "Head",
+    "name": "Stone Helm",
+    "weight": 6.8,
+    "absorptions": {
+      "fire": 50.82,
+      "holy": 0.0,
+      "lightning": 50.82,
+      "magic": 41.14,
+      "physical": 84.700005,
+      "pierce": 84.7,
+      "slash": 97.40501,
+      "strike": 79.618004
+    },
+    "resistances": {
+      "focus": 8.4,
+      "immunity": 8.4,
+      "poise": 15.0,
+      "robustness": 23.8,
+      "vitality": 0.0
+    }
+  },
+  "Stone Leggings": {
+    "category": "Legs",
+    "name": "Stone Leggings",
+    "weight": 10.4,
+    "absorptions": {
+      "fire": 79.86,
+      "holy": 0.0,
+      "lightning": 79.86,
+      "magic": 65.340004,
+      "physical": 130.68001,
+      "pierce": 130.68001,
+      "slash": 150.28201,
+      "strike": 122.83921
+    },
+    "resistances": {
+      "focus": 14.0,
+      "immunity": 14.0,
+      "poise": 23.0,
+      "robustness": 37.8,
+      "vitality": 0.0
+    }
+  },
+  "Sunlight Maggot": {
+    "category": "Head",
+    "name": "Sunlight Maggot",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 58.08,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 12.1,
+      "physical": 14.52,
+      "pierce": 14.52,
+      "slash": 14.52,
+      "strike": 14.52
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 0.0,
+      "robustness": 0.0,
+      "vitality": 0.0
+    }
+  },
+  "Symbol of Avarice": {
+    "category": "Head",
+    "name": "Symbol of Avarice",
+    "weight": 10.0,
+    "absorptions": {
+      "fire": 4.84,
+      "holy": 0.0,
+      "lightning": 4.84,
+      "magic": 19.36,
+      "physical": 50.82,
+      "pierce": 50.82,
+      "slash": 50.82,
+      "strike": 26.4264
+    },
+    "resistances": {
+      "focus": 0.0,
+      "immunity": 0.0,
+      "poise": 15.0,
+      "robustness": 14.0,
+      "vitality": 0.0
+    }
+  },
+  "Tattered Cloth Hood": {
+    "category": "Head",
+    "name": "Tattered Cloth Hood",
+    "weight": 1.1,
+    "absorptions": {
+      "fire": 29.04,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 21.78,
+      "physical": 19.36,
+      "pierce": 19.36,
+      "slash": 19.36,
+      "strike": 21.4896
+    },
+    "resistances": {
+      "focus": 32.2,
+      "immunity": 32.2,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 1.4
+    }
+  },
+  "Tattered Cloth Manchette": {
+    "category": "Arms",
+    "name": "Tattered Cloth Manchette",
+    "weight": 1.6,
+    "absorptions": {
+      "fire": 43.56,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 33.88,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 29.04,
+      "strike": 32.2344
+    },
+    "resistances": {
+      "focus": 49.0,
+      "immunity": 49.0,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 1.4
+    }
+  },
+  "Tattered Cloth Robe": {
+    "category": "Body",
+    "name": "Tattered Cloth Robe",
+    "weight": 2.7,
+    "absorptions": {
+      "fire": 72.600006,
+      "holy": 0.0,
+      "lightning": 41.14,
+      "magic": 55.660004,
+      "physical": 50.82,
+      "pierce": 50.82,
+      "slash": 50.82,
+      "strike": 56.410202
+    },
+    "resistances": {
+      "focus": 82.6,
+      "immunity": 82.6,
+      "poise": 0.0,
+      "robustness": 32.2,
+      "vitality": 2.8
+    }
+  },
+  "Thief Mask": {
+    "category": "Head",
+    "name": "Thief Mask",
+    "weight": 1.2,
+    "absorptions": {
+      "fire": 12.1,
+      "holy": 0.0,
+      "lightning": 14.52,
+      "magic": 19.36,
+      "physical": 21.78,
+      "pierce": 21.78,
+      "slash": 21.78,
+      "strike": 23.3046
+    },
+    "resistances": {
+      "focus": 16.8,
+      "immunity": 16.8,
+      "poise": 0.0,
+      "robustness": 12.599999,
+      "vitality": 0.0
+    }
+  },
+  "Traveling Boots": {
+    "category": "Legs",
+    "name": "Traveling Boots",
+    "weight": 1.6,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 30.201601,
+      "strike": 31.363201
+    },
+    "resistances": {
+      "focus": 19.6,
+      "immunity": 19.6,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Traveling Gloves": {
+    "category": "Arms",
+    "name": "Traveling Gloves",
+    "weight": 1.6,
+    "absorptions": {
+      "fire": 19.36,
+      "holy": 0.0,
+      "lightning": 24.2,
+      "magic": 38.72,
+      "physical": 29.04,
+      "pierce": 29.04,
+      "slash": 30.201601,
+      "strike": 31.363201
+    },
+    "resistances": {
+      "focus": 19.6,
+      "immunity": 19.6,
+      "poise": 0.0,
+      "robustness": 19.6,
+      "vitality": 0.0
+    }
+  },
+  "Waistcloth of the Channelers": {
+    "category": "Legs",
+    "name": "Waistcloth of the Channelers",
+    "weight": 6.0,
+    "absorptions": {
+      "fire": 65.340004,
+      "holy": 0.0,
+      "lightning": 48.4,
+      "magic": 65.340004,
+      "physical": 77.44,
+      "pierce": 77.44,
+      "slash": 88.2816,
+      "strike": 74.3424
+    },
+    "resistances": {
+      "focus": 28.0,
+      "immunity": 28.0,
+      "poise": 7.0,
+      "robustness": 32.2,
+      "vitality": 0.0
+    }
+  },
+  "Wanderer Boots": {
+    "category": "Legs",
+    "name": "Wanderer Boots",
+    "weight": 2.1,
+    "absorptions": {
+      "fire": 36.300003,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 29.04,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 36.251602,
+      "strike": 36.251602
+    },
+    "resistances": {
+      "focus": 18.199999,
+      "immunity": 18.199999,
+      "poise": 0.0,
+      "robustness": 18.199999,
+      "vitality": 0.0
+    }
+  },
+  "Wanderer Coat": {
+    "category": "Body",
+    "name": "Wanderer Coat",
+    "weight": 3.5,
+    "absorptions": {
+      "fire": 62.920002,
+      "holy": 0.0,
+      "lightning": 55.660004,
+      "magic": 50.82,
+      "physical": 55.660004,
+      "pierce": 55.660004,
+      "slash": 59.556206,
+      "strike": 59.556206
+    },
+    "resistances": {
+      "focus": 29.4,
+      "immunity": 29.4,
+      "poise": 0.0,
+      "robustness": 29.4,
+      "vitality": 0.0
+    }
+  },
+  "Wanderer Hood": {
+    "category": "Head",
+    "name": "Wanderer Hood",
+    "weight": 1.4,
+    "absorptions": {
+      "fire": 24.2,
+      "holy": 0.0,
+      "lightning": 21.78,
+      "magic": 19.36,
+      "physical": 21.78,
+      "pierce": 21.78,
+      "slash": 23.3046,
+      "strike": 23.3046
+    },
+    "resistances": {
+      "focus": 11.2,
+      "immunity": 11.2,
+      "poise": 0.0,
+      "robustness": 11.2,
+      "vitality": 0.0
+    }
+  },
+  "Wanderer Manchette": {
+    "category": "Arms",
+    "name": "Wanderer Manchette",
+    "weight": 2.1,
+    "absorptions": {
+      "fire": 36.300003,
+      "holy": 0.0,
+      "lightning": 31.460001,
+      "magic": 29.04,
+      "physical": 33.88,
+      "pierce": 33.88,
+      "slash": 36.251602,
+      "strike": 36.251602
+    },
+    "resistances": {
+      "focus": 18.199999,
+      "immunity": 18.199999,
+      "poise": 0.0,
+      "robustness": 18.199999,
+      "vitality": 0.0
+    }
+  },
+  "Witch Cloak": {
+    "category": "Body",
+    "name": "Witch Cloak",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 31.0,
+      "holy": 0.0,
+      "lightning": 40.3,
+      "magic": 66.65,
+      "physical": 51.149998,
+      "pierce": 51.15,
+      "slash": 51.15,
+      "strike": 56.7765
+    },
+    "resistances": {
+      "focus": 45.72,
+      "immunity": 45.72,
+      "poise": 0.0,
+      "robustness": 45.72,
+      "vitality": 15.24
+    }
+  },
+  "Witch Gloves": {
+    "category": "Arms",
+    "name": "Witch Gloves",
+    "weight": 1.7,
+    "absorptions": {
+      "fire": 13.95,
+      "holy": 0.0,
+      "lightning": 17.05,
+      "magic": 27.9,
+      "physical": 21.699999,
+      "pierce": 21.7,
+      "slash": 21.7,
+      "strike": 24.087
+    },
+    "resistances": {
+      "focus": 20.32,
+      "immunity": 20.32,
+      "poise": 0.0,
+      "robustness": 20.32,
+      "vitality": 7.62
+    }
+  },
+  "Witch Hat": {
+    "category": "Head",
+    "name": "Witch Hat",
+    "weight": 1.1,
+    "absorptions": {
+      "fire": 9.299999,
+      "holy": 0.0,
+      "lightning": 10.849999,
+      "magic": 18.599998,
+      "physical": 13.95,
+      "pierce": 13.95,
+      "slash": 13.95,
+      "strike": 15.4845
+    },
+    "resistances": {
+      "focus": 12.7,
+      "immunity": 12.7,
+      "poise": 0.0,
+      "robustness": 12.7,
+      "vitality": 13.969999
+    }
+  },
+  "Witch Skirt": {
+    "category": "Legs",
+    "name": "Witch Skirt",
+    "weight": 2.5,
+    "absorptions": {
+      "fire": 18.599998,
+      "holy": 0.0,
+      "lightning": 26.349998,
+      "magic": 41.85,
+      "physical": 26.349998,
+      "pierce": 26.349998,
+      "slash": 26.349998,
+      "strike": 29.248499
+    },
+    "resistances": {
+      "focus": 35.559998,
+      "immunity": 35.559998,
+      "poise": 0.0,
+      "robustness": 29.21,
+      "vitality": 10.16
+    }
+  },
+  "Xanthous Crown": {
+    "category": "Head",
+    "name": "Xanthous Crown",
+    "weight": 5.0,
+    "absorptions": {
+      "fire": 4.6499996,
+      "holy": 0.0,
+      "lightning": 12.4,
+      "magic": 23.25,
+      "physical": 27.9,
+      "pierce": 23.715,
+      "slash": 27.9,
+      "strike": 42.966
+    },
+    "resistances": {
+      "focus": 13.969999,
+      "immunity": 13.969999,
+      "poise": 0.0,
+      "robustness": 10.16,
+      "vitality": 44.45
+    }
+  },
+  "Xanthous Gloves": {
+    "category": "Arms",
+    "name": "Xanthous Gloves",
+    "weight": 2.3,
+    "absorptions": {
+      "fire": 6.2,
+      "holy": 0.0,
+      "lightning": 21.699999,
+      "magic": 34.1,
+      "physical": 27.9,
+      "pierce": 25.389,
+      "slash": 27.9,
+      "strike": 31.248001
+    },
+    "resistances": {
+      "focus": 22.86,
+      "immunity": 22.86,
+      "poise": 0.0,
+      "robustness": 15.24,
+      "vitality": 0.0
+    }
+  },
+  "Xanthous Overcoat": {
+    "category": "Body",
+    "name": "Xanthous Overcoat",
+    "weight": 3.9,
+    "absorptions": {
+      "fire": 10.849999,
+      "holy": 0.0,
+      "lightning": 35.649998,
+      "magic": 57.35,
+      "physical": 49.6,
+      "pierce": 45.136,
+      "slash": 49.6,
+      "strike": 55.552
+    },
+    "resistances": {
+      "focus": 36.829998,
+      "immunity": 36.829998,
+      "poise": 0.0,
+      "robustness": 27.939999,
+      "vitality": 0.0
+    }
+  },
+  "Xanthous Waistcloth": {
+    "category": "Legs",
+    "name": "Xanthous Waistcloth",
+    "weight": 4.0,
+    "absorptions": {
+      "fire": 10.849999,
+      "holy": 0.0,
+      "lightning": 35.649998,
+      "magic": 60.449997,
+      "physical": 49.6,
+      "pierce": 45.136,
+      "slash": 49.6,
+      "strike": 55.552
+    },
+    "resistances": {
+      "focus": 38.1,
+      "immunity": 38.1,
+      "poise": 0.0,
+      "robustness": 27.939999,
+      "vitality": 0.0
+    }
+  }
+}

@@ -29,7 +29,7 @@ pub fn assert_u32<R: Read>(expected: u32, r: &mut R) {
 }
 
 pub fn read_ascii(data: &[u8]) -> String {
-    let rdata = match memchr::memchr(0, &data) {
+    let rdata = match memchr::memchr(0, data) {
         None => data,
         Some(last) => &data[..last],
     };

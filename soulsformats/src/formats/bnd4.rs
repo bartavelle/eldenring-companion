@@ -115,6 +115,15 @@ impl BND4 {
             .find(|f| f.name.as_ref().map(|f| f.contains(name)).unwrap_or(false))?;
         Some(&self.data[f.offset..f.offset + f.size])
     }
+
+    pub fn get_nth_file(&self, idx: usize) -> Option<&[u8]> {
+        let f = if idx >= self.files.len() {
+            return None;
+        } else {
+            &self.files[idx]
+        };
+        Some(&self.data[f.offset..f.offset + f.size])
+    }
 }
 
 #[derive(Debug)]

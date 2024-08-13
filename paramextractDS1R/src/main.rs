@@ -4,6 +4,7 @@ use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 use serde::Serialize;
 use soulsformats::formats::bnd4::BND4;
 use soulsformats::formats::compression::decompress;
+use soulsformats::formats::fmg::Fmg;
 use soulsformats::optimize::calc_damage;
 use soulsformats::weaponinfo::{WeaponData, WeaponInfo};
 use std::{
@@ -16,9 +17,7 @@ use std::{
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
-    #[arg(short, long, help = "Param file")]
-    params: PathBuf,
-    #[arg(short, long, help = "Data dir (contains names)")]
+    #[arg(short, long, help = "Data dir")]
     data: PathBuf,
     #[command(subcommand)]
     command: Command,
@@ -99,12 +98,19 @@ fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
     Ok(out)
 }
 
+fn load_dcx(dir: &Path, name: &str) -> anyhow::Result<BND4> {
+    let mut dir = dir.to_owned();
+    dir.push(name);
+    let content = std::fs::read(&dir)?;
+    let dec = decompress(content);
+    Ok(soulsformats::formats::bnd3::BND3::parse(dec)?.into())
+}
+
 fn main() -> anyhow::Result<()> {
     let args = Args::parse();
 
-    let content = std::fs::read(args.params)?;
-    let dec = decompress(content);
-    let params: BND4 = soulsformats::formats::bnd3::BND3::parse(dec)?.into();
+    let params = load_dcx(&args.data, "GameParam.parambnd.dcx")?;
+    let itemsnames = load_dcx(&args.data, "item.msgbnd.dcx")?;
 
     eprintln!("version {}", params.version);
 
@@ -115,7 +121,16 @@ fn main() -> anyhow::Result<()> {
             serde_json::to_writer_pretty(stdout(), &wpn_data)?;
         }
         Command::ArmorDump => {
-            let armor = soulsformats::armor::load_armor_ds1(&params)?;
+            let mut armor_names = Fmg::default();
+            for (idx, fname) in itemsnames.file_names().iter().enumerate() {
+                if fname.ends_with("Armor_name_.fmg") {
+                    let anf = itemsnames.get_nth_file(idx).unwrap();
+                    let cur_armor_names = Fmg::load(anf)?;
+                    armor_names = armor_names.merge(cur_armor_names);
+                }
+            }
+
+            let armor = soulsformats::armor::load_armor_ds1(&params, &armor_names.entries)?;
             let to_json = armor
                 .into_values()
                 .map(|armor| (armor.name.clone(), armor))

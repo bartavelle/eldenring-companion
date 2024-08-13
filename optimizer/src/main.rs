@@ -23,7 +23,7 @@ struct Opt {
     weights: VWeights,
     /// maximum weight budget
     #[structopt(long, default_value = "65")]
-    max: f64,
+    max: f32,
     #[structopt(long, default_value = "elden_ring")]
     game: Game,
     #[structopt(subcommand)]
@@ -34,31 +34,31 @@ struct Opt {
 #[structopt()]
 struct VWeights {
     #[structopt(long, default_value = "0.0")]
-    fire: f64,
+    fire: f32,
     #[structopt(long, default_value = "0.0")]
-    holy: f64,
+    holy: f32,
     #[structopt(long, default_value = "0.0")]
-    lightning: f64,
+    lightning: f32,
     #[structopt(long, default_value = "0.0")]
-    magic: f64,
+    magic: f32,
     #[structopt(long, default_value = "1.0")]
-    physical: f64,
+    physical: f32,
     #[structopt(long, default_value = "0.0")]
-    pierce: f64,
+    pierce: f32,
     #[structopt(long, default_value = "0.0")]
-    slash: f64,
+    slash: f32,
     #[structopt(long, default_value = "0.0")]
-    strike: f64,
+    strike: f32,
     #[structopt(long, default_value = "0.0")]
-    focus: f64,
+    focus: f32,
     #[structopt(long, default_value = "0.0")]
-    immunity: f64,
+    immunity: f32,
     #[structopt(long, default_value = "0.0")]
-    poise: f64,
+    poise: f32,
     #[structopt(long, default_value = "0.0")]
-    robustness: f64,
+    robustness: f32,
     #[structopt(long, default_value = "0.0")]
-    vitality: f64,
+    vitality: f32,
 }
 
 impl From<VWeights> for Weights {
@@ -129,8 +129,8 @@ fn individual(warmor: &Body<Vec<Scored>>) {
     let max_score = alliter().map(|a| a.score).max_by(|a, b| a.total_cmp(b)).unwrap() + 1.0;
     let max_weight = alliter().map(|a| a.weight).max_by(|a, b| a.total_cmp(b)).unwrap() + 1.0;
 
-    let w = |n: f64| 50.0 + n * 1820.0 / max_weight;
-    let h = |n: f64| 50.0 + (max_score - n) * 980.0 / max_score;
+    let w = |n: f32| 50.0 + n * 1820.0 / max_weight;
+    let h = |n: f32| 50.0 + (max_score - n) * 980.0 / max_score;
 
     {
         let mut sc = 0.0;
@@ -191,7 +191,7 @@ fn individual(warmor: &Body<Vec<Scored>>) {
     println!("</svg>");
 }
 
-fn combination(warmor: &Body<Vec<Scored>>, weights: &Weights, max_weight: f64) {
+fn combination(warmor: &Body<Vec<Scored>>, weights: &Weights, max_weight: f32) {
     println!(
         r#"<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -220,8 +220,8 @@ fn combination(warmor: &Body<Vec<Scored>>, weights: &Weights, max_weight: f64) {
     );
     let (_, max_score) = search(warmor, weights, max_weight);
 
-    let w = |n: f64| 50.0 + n * 1820.0 / max_weight;
-    let h = |n: f64| 50.0 + (max_score - n) * 980.0 / max_score;
+    let w = |n: f32| 50.0 + n * 1820.0 / max_weight;
+    let h = |n: f32| 50.0 + (max_score - n) * 980.0 / max_score;
 
     {
         let mut sc = 0.0;
