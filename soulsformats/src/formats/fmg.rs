@@ -1,5 +1,5 @@
 use std::{
-    collections::BTreeMap,
+    collections::HashMap,
     io::{Cursor, Seek},
 };
 
@@ -16,7 +16,7 @@ enum Version {
 
 #[derive(Default, Debug)]
 pub struct Fmg {
-    pub entries: BTreeMap<u32, String>,
+    pub entries: HashMap<u32, String>,
 }
 
 impl Fmg {
@@ -81,7 +81,7 @@ impl Fmg {
             }
         }
 
-        let mut entries = BTreeMap::new();
+        let mut entries = HashMap::new();
 
         for group in groups {
             cur.seek(std::io::SeekFrom::Start(

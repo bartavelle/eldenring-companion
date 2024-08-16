@@ -64,7 +64,7 @@ pub fn load_armor(reg: &BND4, armor_names: &HashMap<u32, String>) -> anyhow::Res
     )
 }
 
-pub fn load_armor_ds1(reg: &BND4, names: &BTreeMap<u32, String>) -> anyhow::Result<BTreeMap<u32, Armor>> {
+pub fn load_armor_ds1(reg: &BND4, names: &HashMap<u32, String>) -> anyhow::Result<BTreeMap<u32, Armor>> {
     let reinf = load_params(
         reg,
         "ReinforceParamProtector",
@@ -97,9 +97,6 @@ pub fn load_armor_ds1(reg: &BND4, names: &BTreeMap<u32, String>) -> anyhow::Resu
             }
             .unwrap();
 
-            if name == "Wanderer Hood" {
-                eprintln!("{raw_armor:#?}");
-            }
             let physical = raw_armor.defense_physics as f32 * max_reinf.physics_def_rate;
             let rate = |x: i16| physical * (100.0 + x as f32) / 100.0;
 
@@ -108,14 +105,14 @@ pub fn load_armor_ds1(reg: &BND4, names: &BTreeMap<u32, String>) -> anyhow::Resu
                 name: name.to_string(),
                 weight: raw_armor.weight,
                 absorptions: Absorptions {
-                    fire: raw_armor.defense_fire as f32 * max_reinf.fire_def_rate,
+                    fire: raw_armor.defense_fire as f32 * max_reinf.fire_def_rate / 10.0,
                     holy: 0.0,
-                    lightning: raw_armor.defense_thunder as f32 * max_reinf.thunder_def_rate,
-                    magic: raw_armor.defense_magic as f32 * max_reinf.magic_def_rate,
-                    physical,
-                    pierce: rate(raw_armor.defense_thrust) * max_reinf.thrust_def_rate,
-                    slash: rate(raw_armor.defense_slash) * max_reinf.slash_def_rate,
-                    strike: rate(raw_armor.defense_blow) * max_reinf.blow_def_rate,
+                    lightning: raw_armor.defense_thunder as f32 * max_reinf.thunder_def_rate / 10.0,
+                    magic: raw_armor.defense_magic as f32 * max_reinf.magic_def_rate / 10.0,
+                    physical: physical/ 10.0,
+                    pierce: rate(raw_armor.defense_thrust) * max_reinf.thrust_def_rate / 10.0,
+                    slash: rate(raw_armor.defense_slash) * max_reinf.slash_def_rate/10.0,
+                    strike: rate(raw_armor.defense_blow) * max_reinf.blow_def_rate/10.0,
                 },
                 resistances: Resistances {
                     focus: raw_armor.resist_poison as f32 * max_reinf.resist_poison_rate,

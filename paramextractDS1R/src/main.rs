@@ -70,40 +70,24 @@ enum Command {
     },
 }
 
-fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
-    let mut dir = dir.to_owned();
-    let mut namesmap: HashMap<String, u8> = HashMap::new();
-    dir.push(name);
-    let f = std::fs::File::open(dir)?;
-    let b = BufReader::new(f);
-    let mut out = HashMap::new();
-    for l in b.lines() {
-        let l = l?;
-        match l.split_once('\t') {
-            Some((rawid, nm)) => {
-                let name = nm.trim().to_string();
-                let name = if let Some(prev) = namesmap.insert(name.clone(), 0) {
-                    let newname = format!("{} ({})", &name, prev + 1);
-                    namesmap.insert(name, prev + 1);
-                    newname
-                } else {
-                    name
-                };
-                let id = rawid.parse()?;
-                out.insert(id, name);
-            }
-            None => panic!("malformed name line {l}"),
-        }
-    }
-    Ok(out)
-}
-
 fn load_dcx(dir: &Path, name: &str) -> anyhow::Result<BND4> {
     let mut dir = dir.to_owned();
     dir.push(name);
     let content = std::fs::read(&dir)?;
     let dec = decompress(content);
     Ok(soulsformats::formats::bnd3::BND3::parse(dec)?.into())
+}
+
+fn load_names(itemsnames: &BND4, filename: &str) -> anyhow::Result<HashMap<u32, String>> {
+    let mut armor_names = Fmg::default();
+    for (idx, fname) in itemsnames.file_names().iter().enumerate() {
+        if fname.ends_with(filename) {
+            let anf = itemsnames.get_nth_file(idx).unwrap();
+            let cur_armor_names = Fmg::load(anf)?;
+            armor_names = armor_names.merge(cur_armor_names);
+        }
+    }
+    Ok(armor_names.entries)
 }
 
 fn main() -> anyhow::Result<()> {
@@ -116,21 +100,13 @@ fn main() -> anyhow::Result<()> {
 
     match args.command {
         Command::WeaponDump => {
-            let weapon_names = load_names(&args.data, "weapons.txt")?;
+            let weapon_names = load_names(&itemsnames, "Weapon_name_.fmg")?;
             let wpn_data = WeaponData::load_ds1r(&params, &weapon_names)?;
             serde_json::to_writer_pretty(stdout(), &wpn_data)?;
         }
         Command::ArmorDump => {
-            let mut armor_names = Fmg::default();
-            for (idx, fname) in itemsnames.file_names().iter().enumerate() {
-                if fname.ends_with("Armor_name_.fmg") {
-                    let anf = itemsnames.get_nth_file(idx).unwrap();
-                    let cur_armor_names = Fmg::load(anf)?;
-                    armor_names = armor_names.merge(cur_armor_names);
-                }
-            }
-
-            let armor = soulsformats::armor::load_armor_ds1(&params, &armor_names.entries)?;
+            let armor_names = load_names(&itemsnames, "Armor_name_.fmg")?;
+            let armor = soulsformats::armor::load_armor_ds1(&params, &armor_names)?;
             let to_json = armor
                 .into_values()
                 .map(|armor| (armor.name.clone(), armor))
@@ -147,7 +123,7 @@ fn main() -> anyhow::Result<()> {
             min_fth,
             min_arc,
         } => {
-            let weapon_names = load_names(&args.data, "weapons.txt")?;
+            let weapon_names = load_names(&itemsnames, "Weapon_name_.fmg")?;
             let wpn_data = WeaponData::load_ds1r(&params, &weapon_names)?;
             let mins = Stat {
                 str: min_str,
@@ -174,7 +150,7 @@ fn main() -> anyhow::Result<()> {
             }
         }
         Command::GenAll { out, limit } => {
-            let weapon_names = load_names(&args.data, "weapons.txt")?;
+            let weapon_names = load_names(&itemsnames, "Weapon_name_.fmg")?;
             let wpn_data = WeaponData::load_ds1r(&params, &weapon_names)?;
             #[derive(PartialEq, Eq, Serialize, Debug, Clone, Copy)]
             enum THStatus {

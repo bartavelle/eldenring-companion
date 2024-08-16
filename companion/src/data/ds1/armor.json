@@ -4,14 +4,14 @@
     "name": "Anklet of the Great Lord",
     "weight": 2.8,
     "absorptions": {
-      "fire": 45.980003,
+      "fire": 4.5980005,
       "holy": 0.0,
-      "lightning": 45.980003,
-      "magic": 36.300003,
-      "physical": 36.300003,
-      "pierce": 33.396004,
-      "slash": 41.745007,
-      "strike": 39.204002
+      "lightning": 4.5980005,
+      "magic": 3.6300004,
+      "physical": 3.6300004,
+      "pierce": 3.3396003,
+      "slash": 4.1745005,
+      "strike": 3.9204001
     },
     "resistances": {
       "focus": 9.8,
@@ -26,14 +26,14 @@
     "name": "Antiquated Dress",
     "weight": 1.0,
     "absorptions": {
-      "fire": 9.299999,
+      "fire": 0.92999995,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 51.149998,
-      "physical": 21.699999,
-      "pierce": 21.7,
-      "slash": 21.7,
-      "strike": 21.7
+      "lightning": 2.945,
+      "magic": 5.115,
+      "physical": 2.1699998,
+      "pierce": 2.17,
+      "slash": 2.17,
+      "strike": 2.17
     },
     "resistances": {
       "focus": 17.779999,
@@ -48,14 +48,14 @@
     "name": "Antiquated Gloves",
     "weight": 0.6,
     "absorptions": {
-      "fire": 4.6499996,
+      "fire": 0.46499997,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 29.449999,
-      "physical": 12.4,
-      "pierce": 12.4,
-      "slash": 12.4,
-      "strike": 12.4
+      "lightning": 1.7049999,
+      "magic": 2.945,
+      "physical": 1.24,
+      "pierce": 1.24,
+      "slash": 1.24,
+      "strike": 1.24
     },
     "resistances": {
       "focus": 10.16,
@@ -70,14 +70,14 @@
     "name": "Antiquated Skirt",
     "weight": 3.0,
     "absorptions": {
-      "fire": 26.349998,
+      "fire": 2.6349998,
       "holy": 0.0,
-      "lightning": 32.55,
-      "magic": 54.25,
-      "physical": 23.25,
-      "pierce": 23.25,
-      "slash": 23.25,
-      "strike": 23.25
+      "lightning": 3.2549999,
+      "magic": 5.425,
+      "physical": 2.325,
+      "pierce": 2.325,
+      "slash": 2.325,
+      "strike": 2.325
     },
     "resistances": {
       "focus": 25.4,
@@ -92,14 +92,14 @@
     "name": "Armor of Artorias",
     "weight": 10.5,
     "absorptions": {
-      "fire": 71.299995,
+      "fire": 7.1299996,
       "holy": 0.0,
-      "lightning": 34.1,
-      "magic": 34.1,
-      "physical": 65.1,
-      "pierce": 68.355,
-      "slash": 74.865,
-      "strike": 58.59
+      "lightning": 3.4099998,
+      "magic": 3.4099998,
+      "physical": 6.5099998,
+      "pierce": 6.8355002,
+      "slash": 7.4865,
+      "strike": 5.859
     },
     "resistances": {
       "focus": 27.939999,
@@ -114,14 +114,14 @@
     "name": "Armor of Thorns",
     "weight": 10.5,
     "absorptions": {
-      "fire": 51.149998,
+      "fire": 5.115,
       "holy": 0.0,
-      "lightning": 31.0,
-      "magic": 43.399998,
-      "physical": 69.75,
-      "pierce": 69.75,
-      "slash": 76.0275,
-      "strike": 66.2625
+      "lightning": 3.1,
+      "magic": 4.3399997,
+      "physical": 6.975,
+      "pierce": 6.975,
+      "slash": 7.60275,
+      "strike": 6.62625
     },
     "resistances": {
       "focus": 22.86,
@@ -136,14 +136,14 @@
     "name": "Armor of the Glorious",
     "weight": 13.3,
     "absorptions": {
-      "fire": 82.28,
+      "fire": 8.228,
       "holy": 0.0,
-      "lightning": 60.5,
-      "magic": 75.020004,
-      "physical": 113.740005,
-      "pierce": 113.74001,
-      "slash": 130.80101,
-      "strike": 108.05301
+      "lightning": 6.05,
+      "magic": 7.5020003,
+      "physical": 11.374001,
+      "pierce": 11.3740015,
+      "slash": 13.080101,
+      "strike": 10.805301
     },
     "resistances": {
       "focus": 26.6,
@@ -158,14 +158,14 @@
     "name": "Armor of the Sun",
     "weight": 9.0,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 45.980003,
-      "magic": 50.82,
-      "physical": 84.700005,
-      "pierce": 83.006004,
-      "slash": 84.7,
-      "strike": 84.7
+      "lightning": 4.5980005,
+      "magic": 5.082,
+      "physical": 8.47,
+      "pierce": 8.3006,
+      "slash": 8.469999,
+      "strike": 8.469999
     },
     "resistances": {
       "focus": 22.4,
@@ -202,14 +202,14 @@
     "name": "Balder Armor",
     "weight": 10.9,
     "absorptions": {
-      "fire": 43.56,
+      "fire": 4.356,
       "holy": 0.0,
-      "lightning": 36.300003,
-      "magic": 36.300003,
-      "physical": 89.54,
-      "pierce": 85.9584,
-      "slash": 109.2388,
-      "strike": 87.7492
+      "lightning": 3.6300004,
+      "magic": 3.6300004,
+      "physical": 8.954,
+      "pierce": 8.5958395,
+      "slash": 10.92388,
+      "strike": 8.7749195
     },
     "resistances": {
       "focus": 22.4,
@@ -224,14 +224,14 @@
     "name": "Balder Gauntlets",
     "weight": 3.5,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 12.1,
-      "magic": 16.94,
-      "physical": 41.14,
-      "pierce": 39.4944,
-      "slash": 50.1908,
-      "strike": 40.3172
+      "lightning": 1.21,
+      "magic": 1.694,
+      "physical": 4.114,
+      "pierce": 3.94944,
+      "slash": 5.01908,
+      "strike": 4.03172
     },
     "resistances": {
       "focus": 7.0,
@@ -246,14 +246,14 @@
     "name": "Balder Helm",
     "weight": 4.2,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 14.52,
-      "physical": 33.88,
-      "pierce": 32.5248,
-      "slash": 41.333603,
-      "strike": 33.2024
+      "lightning": 1.452,
+      "magic": 1.452,
+      "physical": 3.388,
+      "pierce": 3.25248,
+      "slash": 4.1333604,
+      "strike": 3.32024
     },
     "resistances": {
       "focus": 8.4,
@@ -268,14 +268,14 @@
     "name": "Balder Leggings",
     "weight": 6.4,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 24.2,
-      "physical": 53.24,
-      "pierce": 51.1104,
-      "slash": 64.952805,
-      "strike": 52.1752
+      "lightning": 2.178,
+      "magic": 2.42,
+      "physical": 5.3240004,
+      "pierce": 5.11104,
+      "slash": 6.4952803,
+      "strike": 5.21752
     },
     "resistances": {
       "focus": 12.599999,
@@ -290,14 +290,14 @@
     "name": "Big Hat",
     "weight": 3.0,
     "absorptions": {
-      "fire": 10.849999,
+      "fire": 1.0849999,
       "holy": 0.0,
-      "lightning": 26.349998,
-      "magic": 66.65,
-      "physical": 21.699999,
-      "pierce": 19.529999,
-      "slash": 23.869997,
-      "strike": 23.869997
+      "lightning": 2.6349998,
+      "magic": 6.665,
+      "physical": 2.1699998,
+      "pierce": 1.9529998,
+      "slash": 2.3869996,
+      "strike": 2.3869996
     },
     "resistances": {
       "focus": 16.51,
@@ -312,14 +312,14 @@
     "name": "Black Cleric Robe",
     "weight": 3.9,
     "absorptions": {
-      "fire": 38.75,
+      "fire": 3.875,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 44.949997,
-      "physical": 35.649998,
-      "pierce": 35.649998,
-      "slash": 35.649998,
-      "strike": 38.858498
+      "lightning": 2.945,
+      "magic": 4.495,
+      "physical": 3.5649998,
+      "pierce": 3.5649998,
+      "slash": 3.5649998,
+      "strike": 3.8858497
     },
     "resistances": {
       "focus": 27.939999,
@@ -334,14 +334,14 @@
     "name": "Black Iron Armor",
     "weight": 15.6,
     "absorptions": {
-      "fire": 79.049995,
+      "fire": 7.9049997,
       "holy": 0.0,
-      "lightning": 32.55,
-      "magic": 46.5,
-      "physical": 105.399994,
-      "pierce": 105.399994,
-      "slash": 121.20999,
-      "strike": 100.12999
+      "lightning": 3.2549999,
+      "magic": 4.65,
+      "physical": 10.539999,
+      "pierce": 10.539999,
+      "slash": 12.120999,
+      "strike": 10.012999
     },
     "resistances": {
       "focus": 31.75,
@@ -356,14 +356,14 @@
     "name": "Black Iron Gauntlets",
     "weight": 9.2,
     "absorptions": {
-      "fire": 46.5,
+      "fire": 4.65,
       "holy": 0.0,
-      "lightning": 20.15,
-      "magic": 26.349998,
-      "physical": 62.0,
-      "pierce": 62.0,
-      "slash": 71.3,
-      "strike": 58.9
+      "lightning": 2.0149999,
+      "magic": 2.6349998,
+      "physical": 6.2,
+      "pierce": 6.2,
+      "slash": 7.13,
+      "strike": 5.8900003
     },
     "resistances": {
       "focus": 17.779999,
@@ -378,14 +378,14 @@
     "name": "Black Iron Helm",
     "weight": 6.0,
     "absorptions": {
-      "fire": 29.449999,
+      "fire": 2.945,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 17.05,
-      "physical": 41.85,
-      "pierce": 41.85,
-      "slash": 48.1275,
-      "strike": 39.757496
+      "lightning": 1.24,
+      "magic": 1.7049999,
+      "physical": 4.185,
+      "pierce": 4.185,
+      "slash": 4.81275,
+      "strike": 3.9757495
     },
     "resistances": {
       "focus": 12.7,
@@ -400,14 +400,14 @@
     "name": "Black Iron Leggings",
     "weight": 9.2,
     "absorptions": {
-      "fire": 46.5,
+      "fire": 4.65,
       "holy": 0.0,
-      "lightning": 20.15,
-      "magic": 26.349998,
-      "physical": 62.0,
-      "pierce": 62.0,
-      "slash": 71.3,
-      "strike": 58.9
+      "lightning": 2.0149999,
+      "magic": 2.6349998,
+      "physical": 6.2,
+      "pierce": 6.2,
+      "slash": 7.13,
+      "strike": 5.8900003
     },
     "resistances": {
       "focus": 17.779999,
@@ -422,14 +422,14 @@
     "name": "Black Knight Armor",
     "weight": 13.0,
     "absorptions": {
-      "fire": 74.399994,
+      "fire": 7.4399996,
       "holy": 0.0,
-      "lightning": 26.349998,
-      "magic": 44.949997,
-      "physical": 88.35,
-      "pierce": 86.583,
-      "slash": 99.835495,
-      "strike": 83.9325
+      "lightning": 2.6349998,
+      "magic": 4.495,
+      "physical": 8.835,
+      "pierce": 8.6583,
+      "slash": 9.983549,
+      "strike": 8.39325
     },
     "resistances": {
       "focus": 19.05,
@@ -444,14 +444,14 @@
     "name": "Black Knight Gauntlets",
     "weight": 6.0,
     "absorptions": {
-      "fire": 35.649998,
+      "fire": 3.5649998,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 21.699999,
-      "physical": 40.3,
-      "pierce": 39.494,
-      "slash": 45.538998,
-      "strike": 38.285
+      "lightning": 1.24,
+      "magic": 2.1699998,
+      "physical": 4.0299997,
+      "pierce": 3.9494,
+      "slash": 4.5539,
+      "strike": 3.8285
     },
     "resistances": {
       "focus": 10.16,
@@ -466,14 +466,14 @@
     "name": "Black Knight Helm",
     "weight": 5.0,
     "absorptions": {
-      "fire": 27.9,
+      "fire": 2.79,
       "holy": 0.0,
-      "lightning": 9.299999,
-      "magic": 17.05,
-      "physical": 32.55,
-      "pierce": 31.898998,
-      "slash": 36.781498,
-      "strike": 30.9225
+      "lightning": 0.92999995,
+      "magic": 1.7049999,
+      "physical": 3.2549999,
+      "pierce": 3.1899,
+      "slash": 3.6781497,
+      "strike": 3.09225
     },
     "resistances": {
       "focus": 7.62,
@@ -488,14 +488,14 @@
     "name": "Black Knight Leggings",
     "weight": 7.0,
     "absorptions": {
-      "fire": 40.3,
+      "fire": 4.0299997,
       "holy": 0.0,
-      "lightning": 13.95,
-      "magic": 23.25,
-      "physical": 46.5,
-      "pierce": 45.57,
-      "slash": 52.545,
-      "strike": 44.175
+      "lightning": 1.395,
+      "magic": 2.325,
+      "physical": 4.65,
+      "pierce": 4.557,
+      "slash": 5.2545,
+      "strike": 4.4175
     },
     "resistances": {
       "focus": 11.43,
@@ -510,14 +510,14 @@
     "name": "Black Leather Armor",
     "weight": 3.1,
     "absorptions": {
-      "fire": 33.88,
+      "fire": 3.388,
       "holy": 0.0,
-      "lightning": 38.72,
-      "magic": 48.4,
-      "physical": 55.660004,
-      "pierce": 55.660004,
-      "slash": 55.660004,
-      "strike": 59.556206
+      "lightning": 3.8720002,
+      "magic": 4.84,
+      "physical": 5.5660005,
+      "pierce": 5.5660005,
+      "slash": 5.5660005,
+      "strike": 5.955621
     },
     "resistances": {
       "focus": 43.399998,
@@ -532,14 +532,14 @@
     "name": "Black Leather Boots",
     "weight": 3.0,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 36.300003,
-      "magic": 45.980003,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 31.0728
+      "lightning": 3.6300004,
+      "magic": 4.5980005,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 3.10728
     },
     "resistances": {
       "focus": 43.399998,
@@ -554,14 +554,14 @@
     "name": "Black Leather Gloves",
     "weight": 1.8,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 29.04,
-      "physical": 31.460001,
-      "pierce": 31.46,
-      "slash": 31.46,
-      "strike": 33.6622
+      "lightning": 2.178,
+      "magic": 2.904,
+      "physical": 3.1460001,
+      "pierce": 3.146,
+      "slash": 3.146,
+      "strike": 3.36622
     },
     "resistances": {
       "focus": 25.199999,
@@ -576,14 +576,14 @@
     "name": "Black Manchette",
     "weight": 1.8,
     "absorptions": {
-      "fire": 17.05,
+      "fire": 1.7049999,
       "holy": 0.0,
-      "lightning": 13.95,
-      "magic": 21.699999,
-      "physical": 17.05,
-      "pierce": 17.05,
-      "slash": 17.05,
-      "strike": 18.5845
+      "lightning": 1.395,
+      "magic": 2.1699998,
+      "physical": 1.7049999,
+      "pierce": 1.7049999,
+      "slash": 1.7049999,
+      "strike": 1.8584499
     },
     "resistances": {
       "focus": 12.7,
@@ -598,14 +598,14 @@
     "name": "Black Sorcerer Boots",
     "weight": 1.0,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 29.04,
-      "magic": 41.14,
-      "physical": 19.36,
-      "pierce": 19.36,
-      "slash": 21.1024,
-      "strike": 19.940802
+      "lightning": 2.904,
+      "magic": 4.114,
+      "physical": 1.9360001,
+      "pierce": 1.9360001,
+      "slash": 2.11024,
+      "strike": 1.9940802
     },
     "resistances": {
       "focus": 25.199999,
@@ -620,14 +620,14 @@
     "name": "Black Sorcerer Cloak",
     "weight": 1.8,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 67.76,
-      "physical": 31.460001,
-      "pierce": 31.46,
-      "slash": 34.2914,
-      "strike": 32.4038
+      "lightning": 5.082,
+      "magic": 6.776,
+      "physical": 3.1460001,
+      "pierce": 3.146,
+      "slash": 3.42914,
+      "strike": 3.24038
     },
     "resistances": {
       "focus": 43.399998,
@@ -642,14 +642,14 @@
     "name": "Black Sorcerer Gauntlets",
     "weight": 1.0,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 29.04,
-      "magic": 41.14,
-      "physical": 19.36,
-      "pierce": 19.36,
-      "slash": 21.1024,
-      "strike": 19.940802
+      "lightning": 2.904,
+      "magic": 4.114,
+      "physical": 1.9360001,
+      "pierce": 1.9360001,
+      "slash": 2.11024,
+      "strike": 1.9940802
     },
     "resistances": {
       "focus": 25.199999,
@@ -664,14 +664,14 @@
     "name": "Black Sorcerer Hat",
     "weight": 0.7,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 26.62,
-      "physical": 12.1,
-      "pierce": 12.1,
-      "slash": 13.189,
-      "strike": 12.463
+      "lightning": 1.9360001,
+      "magic": 2.6620002,
+      "physical": 1.21,
+      "pierce": 1.21,
+      "slash": 1.3189,
+      "strike": 1.2463
     },
     "resistances": {
       "focus": 16.8,
@@ -686,14 +686,14 @@
     "name": "Black Tights",
     "weight": 2.8,
     "absorptions": {
-      "fire": 26.349998,
+      "fire": 2.6349998,
       "holy": 0.0,
-      "lightning": 20.15,
-      "magic": 34.1,
-      "physical": 24.8,
-      "pierce": 24.8,
-      "slash": 24.8,
-      "strike": 27.032
+      "lightning": 2.0149999,
+      "magic": 3.4099998,
+      "physical": 2.48,
+      "pierce": 2.48,
+      "slash": 2.48,
+      "strike": 2.7031999
     },
     "resistances": {
       "focus": 19.05,
@@ -708,14 +708,14 @@
     "name": "Bloated Head",
     "weight": 2.5,
     "absorptions": {
-      "fire": 21.78,
+      "fire": 2.178,
       "holy": 0.0,
-      "lightning": 26.62,
-      "magic": 41.14,
-      "physical": 41.14,
-      "pierce": 41.14,
-      "slash": 41.14,
-      "strike": 41.14
+      "lightning": 2.6620002,
+      "magic": 4.114,
+      "physical": 4.114,
+      "pierce": 4.114,
+      "slash": 4.114,
+      "strike": 4.114
     },
     "resistances": {
       "focus": 44.8,
@@ -730,14 +730,14 @@
     "name": "Bloated Sorcerer Head",
     "weight": 2.2,
     "absorptions": {
-      "fire": 21.78,
+      "fire": 2.178,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 53.24,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 33.88,
-      "strike": 33.88
+      "lightning": 3.1460001,
+      "magic": 5.3240004,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.388,
+      "strike": 3.388
     },
     "resistances": {
       "focus": 53.2,
@@ -752,14 +752,14 @@
     "name": "Blood-Stained Skirt",
     "weight": 2.5,
     "absorptions": {
-      "fire": 38.72,
+      "fire": 3.8720002,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 65.340004,
-      "physical": 31.460001,
-      "pierce": 31.46,
-      "slash": 31.46,
-      "strike": 39.325
+      "lightning": 5.082,
+      "magic": 6.5340004,
+      "physical": 3.1460001,
+      "pierce": 3.146,
+      "slash": 3.146,
+      "strike": 3.9325001
     },
     "resistances": {
       "focus": 30.8,
@@ -796,14 +796,14 @@
     "name": "Boots of the Explorer",
     "weight": 4.0,
     "absorptions": {
-      "fire": 26.62,
+      "fire": 2.6620002,
       "holy": 0.0,
-      "lightning": 16.94,
-      "magic": 24.2,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 38.962,
-      "strike": 32.186
+      "lightning": 1.694,
+      "magic": 2.42,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.8962002,
+      "strike": 3.2186
     },
     "resistances": {
       "focus": 8.4,
@@ -818,14 +818,14 @@
     "name": "Bracelet of the Great Lord",
     "weight": 2.8,
     "absorptions": {
-      "fire": 45.980003,
+      "fire": 4.5980005,
       "holy": 0.0,
-      "lightning": 45.980003,
-      "magic": 36.300003,
-      "physical": 36.300003,
-      "pierce": 33.396004,
-      "slash": 41.745007,
-      "strike": 39.204002
+      "lightning": 4.5980005,
+      "magic": 3.6300004,
+      "physical": 3.6300004,
+      "pierce": 3.3396003,
+      "slash": 4.1745005,
+      "strike": 3.9204001
     },
     "resistances": {
       "focus": 9.8,
@@ -840,14 +840,14 @@
     "name": "Brass Armor",
     "weight": 10.9,
     "absorptions": {
-      "fire": 38.75,
+      "fire": 3.875,
       "holy": 0.0,
-      "lightning": 38.75,
-      "magic": 41.85,
-      "physical": 74.399994,
-      "pierce": 74.399994,
-      "slash": 84.07199,
-      "strike": 71.423996
+      "lightning": 3.875,
+      "magic": 4.185,
+      "physical": 7.4399996,
+      "pierce": 7.4399996,
+      "slash": 8.407199,
+      "strike": 7.1424
     },
     "resistances": {
       "focus": 25.4,
@@ -862,14 +862,14 @@
     "name": "Brass Gauntlets",
     "weight": 5.4,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 21.699999,
-      "physical": 37.199997,
-      "pierce": 37.199997,
-      "slash": 42.035995,
-      "strike": 35.711998
+      "lightning": 1.8599999,
+      "magic": 2.1699998,
+      "physical": 3.7199998,
+      "pierce": 3.7199998,
+      "slash": 4.2035995,
+      "strike": 3.5712
     },
     "resistances": {
       "focus": 12.7,
@@ -884,14 +884,14 @@
     "name": "Brass Helm",
     "weight": 5.1,
     "absorptions": {
-      "fire": 17.05,
+      "fire": 1.7049999,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 18.599998,
-      "physical": 34.1,
-      "pierce": 34.1,
-      "slash": 38.532997,
-      "strike": 32.736
+      "lightning": 1.7049999,
+      "magic": 1.8599999,
+      "physical": 3.4099998,
+      "pierce": 3.4099998,
+      "slash": 3.8532996,
+      "strike": 3.2736
     },
     "resistances": {
       "focus": 11.43,
@@ -906,14 +906,14 @@
     "name": "Brass Leggings",
     "weight": 6.4,
     "absorptions": {
-      "fire": 23.25,
+      "fire": 2.325,
       "holy": 0.0,
-      "lightning": 23.25,
-      "magic": 24.8,
-      "physical": 40.3,
-      "pierce": 40.3,
-      "slash": 45.538998,
-      "strike": 38.688
+      "lightning": 2.325,
+      "magic": 2.48,
+      "physical": 4.0299997,
+      "pierce": 4.0299997,
+      "slash": 4.5539,
+      "strike": 3.8688
     },
     "resistances": {
       "focus": 15.24,
@@ -928,14 +928,14 @@
     "name": "Brigand Armor",
     "weight": 3.1,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 48.4,
-      "physical": 55.660004,
-      "pierce": 50.094006,
-      "slash": 55.660004,
-      "strike": 61.226006
+      "lightning": 4.114,
+      "magic": 4.84,
+      "physical": 5.5660005,
+      "pierce": 5.0094004,
+      "slash": 5.5660005,
+      "strike": 6.1226006
     },
     "resistances": {
       "focus": 28.0,
@@ -950,14 +950,14 @@
     "name": "Brigand Gauntlets",
     "weight": 1.8,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 29.04,
-      "physical": 33.88,
-      "pierce": 30.492002,
-      "slash": 33.88,
-      "strike": 37.268
+      "lightning": 2.42,
+      "magic": 2.904,
+      "physical": 3.388,
+      "pierce": 3.0492003,
+      "slash": 3.388,
+      "strike": 3.7268002
     },
     "resistances": {
       "focus": 16.8,
@@ -972,14 +972,14 @@
     "name": "Brigand Hood",
     "weight": 1.2,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 19.36,
-      "physical": 21.78,
-      "pierce": 19.602001,
-      "slash": 21.78,
-      "strike": 23.958
+      "lightning": 1.452,
+      "magic": 1.9360001,
+      "physical": 2.178,
+      "pierce": 1.9602001,
+      "slash": 2.178,
+      "strike": 2.3958
     },
     "resistances": {
       "focus": 11.2,
@@ -994,14 +994,14 @@
     "name": "Brigand Trousers",
     "weight": 1.8,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 29.04,
-      "physical": 33.88,
-      "pierce": 30.492002,
-      "slash": 33.88,
-      "strike": 37.268
+      "lightning": 2.42,
+      "magic": 2.904,
+      "physical": 3.388,
+      "pierce": 3.0492003,
+      "slash": 3.388,
+      "strike": 3.7268002
     },
     "resistances": {
       "focus": 16.8,
@@ -1016,14 +1016,14 @@
     "name": "Catarina Armor",
     "weight": 11.7,
     "absorptions": {
-      "fire": 57.35,
+      "fire": 5.7349997,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 48.05,
-      "physical": 88.35,
-      "pierce": 88.35,
-      "slash": 101.6025,
-      "strike": 87.46649
+      "lightning": 2.945,
+      "magic": 4.805,
+      "physical": 8.835,
+      "pierce": 8.835,
+      "slash": 10.16025,
+      "strike": 8.746649
     },
     "resistances": {
       "focus": 30.48,
@@ -1038,14 +1038,14 @@
     "name": "Catarina Gauntlets",
     "weight": 6.9,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 27.9,
-      "physical": 52.699997,
-      "pierce": 52.699997,
-      "slash": 60.604996,
-      "strike": 52.172997
+      "lightning": 1.8599999,
+      "magic": 2.79,
+      "physical": 5.2699995,
+      "pierce": 5.2699995,
+      "slash": 6.0604997,
+      "strike": 5.2172995
     },
     "resistances": {
       "focus": 16.51,
@@ -1060,14 +1060,14 @@
     "name": "Catarina Helm",
     "weight": 4.5,
     "absorptions": {
-      "fire": 20.15,
+      "fire": 2.0149999,
       "holy": 0.0,
-      "lightning": 10.849999,
-      "magic": 18.599998,
-      "physical": 34.1,
-      "pierce": 34.1,
-      "slash": 39.214996,
-      "strike": 33.759
+      "lightning": 1.0849999,
+      "magic": 1.8599999,
+      "physical": 3.4099998,
+      "pierce": 3.4099998,
+      "slash": 3.9214997,
+      "strike": 3.3758998
     },
     "resistances": {
       "focus": 11.43,
@@ -1082,14 +1082,14 @@
     "name": "Catarina Leggings",
     "weight": 6.9,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 27.9,
-      "physical": 52.699997,
-      "pierce": 52.699997,
-      "slash": 60.604996,
-      "strike": 52.172997
+      "lightning": 1.8599999,
+      "magic": 2.79,
+      "physical": 5.2699995,
+      "pierce": 5.2699995,
+      "slash": 6.0604997,
+      "strike": 5.2172995
     },
     "resistances": {
       "focus": 16.51,
@@ -1104,14 +1104,14 @@
     "name": "Chain Armor",
     "weight": 6.0,
     "absorptions": {
-      "fire": 38.72,
+      "fire": 3.8720002,
       "holy": 0.0,
-      "lightning": 16.94,
-      "magic": 50.82,
-      "physical": 72.600006,
-      "pierce": 70.422005,
-      "slash": 87.12001,
-      "strike": 72.600006
+      "lightning": 1.694,
+      "magic": 5.082,
+      "physical": 7.2600007,
+      "pierce": 7.0422006,
+      "slash": 8.712001,
+      "strike": 7.2600007
     },
     "resistances": {
       "focus": 16.8,
@@ -1126,14 +1126,14 @@
     "name": "Chain Helm",
     "weight": 3.0,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 7.26,
-      "magic": 24.2,
-      "physical": 29.04,
-      "pierce": 28.1688,
-      "slash": 34.848,
-      "strike": 29.04
+      "lightning": 0.726,
+      "magic": 2.42,
+      "physical": 2.904,
+      "pierce": 2.81688,
+      "slash": 3.4847999,
+      "strike": 2.904
     },
     "resistances": {
       "focus": 8.4,
@@ -1148,14 +1148,14 @@
     "name": "Chain Leggings",
     "weight": 4.6,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 12.1,
-      "magic": 33.88,
-      "physical": 43.56,
-      "pierce": 42.253204,
-      "slash": 52.272003,
-      "strike": 43.56
+      "lightning": 1.21,
+      "magic": 3.388,
+      "physical": 4.356,
+      "pierce": 4.2253203,
+      "slash": 5.2272005,
+      "strike": 4.356
     },
     "resistances": {
       "focus": 12.599999,
@@ -1170,14 +1170,14 @@
     "name": "Chester's Gloves",
     "weight": 1.5,
     "absorptions": {
-      "fire": 10.849999,
+      "fire": 1.0849999,
       "holy": 0.0,
-      "lightning": 15.5,
-      "magic": 15.5,
-      "physical": 15.5,
-      "pierce": 15.5,
-      "slash": 15.5,
-      "strike": 20.925
+      "lightning": 1.55,
+      "magic": 1.55,
+      "physical": 1.55,
+      "pierce": 1.55,
+      "slash": 1.55,
+      "strike": 2.0925
     },
     "resistances": {
       "focus": 13.969999,
@@ -1192,14 +1192,14 @@
     "name": "Chester's Long Coat",
     "weight": 4.5,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 43.399998,
-      "magic": 46.5,
-      "physical": 41.85,
-      "pierce": 41.85,
-      "slash": 41.85,
-      "strike": 56.4975
+      "lightning": 4.3399997,
+      "magic": 4.65,
+      "physical": 4.185,
+      "pierce": 4.185,
+      "slash": 4.185,
+      "strike": 5.64975
     },
     "resistances": {
       "focus": 40.64,
@@ -1214,14 +1214,14 @@
     "name": "Chester's Trousers",
     "weight": 3.2,
     "absorptions": {
-      "fire": 23.25,
+      "fire": 2.325,
       "holy": 0.0,
-      "lightning": 31.0,
-      "magic": 32.55,
-      "physical": 29.449999,
-      "pierce": 29.45,
-      "slash": 29.45,
-      "strike": 39.757496
+      "lightning": 3.1,
+      "magic": 3.2549999,
+      "physical": 2.945,
+      "pierce": 2.9450002,
+      "slash": 2.9450002,
+      "strike": 3.9757495
     },
     "resistances": {
       "focus": 29.21,
@@ -1236,14 +1236,14 @@
     "name": "Cleric Armor",
     "weight": 12.5,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 36.300003,
-      "magic": 55.660004,
-      "physical": 96.8,
-      "pierce": 96.8,
-      "slash": 111.32,
-      "strike": 96.8
+      "lightning": 3.6300004,
+      "magic": 5.5660005,
+      "physical": 9.68,
+      "pierce": 9.68,
+      "slash": 11.132,
+      "strike": 9.68
     },
     "resistances": {
       "focus": 22.4,
@@ -1258,14 +1258,14 @@
     "name": "Cleric Gauntlets",
     "weight": 7.4,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 31.460001,
-      "physical": 58.08,
-      "pierce": 58.08,
-      "slash": 66.792,
-      "strike": 58.08
+      "lightning": 2.178,
+      "magic": 3.1460001,
+      "physical": 5.808,
+      "pierce": 5.808,
+      "slash": 6.6792,
+      "strike": 5.808
     },
     "resistances": {
       "focus": 12.599999,
@@ -1280,14 +1280,14 @@
     "name": "Cleric Helm",
     "weight": 4.8,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 21.78,
-      "physical": 36.300003,
-      "pierce": 36.300003,
-      "slash": 41.745007,
-      "strike": 36.300003
+      "lightning": 1.452,
+      "magic": 2.178,
+      "physical": 3.6300004,
+      "pierce": 3.6300004,
+      "slash": 4.1745005,
+      "strike": 3.6300004
     },
     "resistances": {
       "focus": 8.4,
@@ -1302,14 +1302,14 @@
     "name": "Cleric Leggings",
     "weight": 7.4,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 31.460001,
-      "physical": 58.08,
-      "pierce": 58.08,
-      "slash": 66.792,
-      "strike": 58.08
+      "lightning": 2.178,
+      "magic": 3.1460001,
+      "physical": 5.808,
+      "pierce": 5.808,
+      "slash": 6.6792,
+      "strike": 5.808
     },
     "resistances": {
       "focus": 12.599999,
@@ -1324,14 +1324,14 @@
     "name": "Crimson Gloves",
     "weight": 0.8,
     "absorptions": {
-      "fire": 6.2,
+      "fire": 0.62,
       "holy": 0.0,
-      "lightning": 7.75,
-      "magic": 10.849999,
-      "physical": 10.849999,
-      "pierce": 10.85,
-      "slash": 10.85,
-      "strike": 11.9349985
+      "lightning": 0.775,
+      "magic": 1.0849999,
+      "physical": 1.0849999,
+      "pierce": 1.085,
+      "slash": 1.085,
+      "strike": 1.1934998
     },
     "resistances": {
       "focus": 5.08,
@@ -1346,14 +1346,14 @@
     "name": "Crimson Robe",
     "weight": 3.9,
     "absorptions": {
-      "fire": 29.449999,
+      "fire": 2.945,
       "holy": 0.0,
-      "lightning": 37.199997,
-      "magic": 51.149998,
-      "physical": 49.6,
-      "pierce": 49.6,
-      "slash": 49.6,
-      "strike": 54.56
+      "lightning": 3.7199998,
+      "magic": 5.115,
+      "physical": 4.96,
+      "pierce": 4.96,
+      "slash": 4.96,
+      "strike": 5.4560003
     },
     "resistances": {
       "focus": 26.67,
@@ -1368,14 +1368,14 @@
     "name": "Crimson Waistcloth",
     "weight": 3.5,
     "absorptions": {
-      "fire": 26.349998,
+      "fire": 2.6349998,
       "holy": 0.0,
-      "lightning": 32.55,
-      "magic": 44.949997,
-      "physical": 44.949997,
-      "pierce": 44.949997,
-      "slash": 44.949997,
-      "strike": 49.444996
+      "lightning": 3.2549999,
+      "magic": 4.495,
+      "physical": 4.495,
+      "pierce": 4.495,
+      "slash": 4.495,
+      "strike": 4.9444995
     },
     "resistances": {
       "focus": 24.13,
@@ -1390,14 +1390,14 @@
     "name": "Crown of Dusk",
     "weight": 0.4,
     "absorptions": {
-      "fire": 4.84,
+      "fire": 0.48400003,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 26.62,
-      "physical": 12.1,
-      "pierce": 12.1,
-      "slash": 12.1,
-      "strike": 12.1
+      "lightning": 1.452,
+      "magic": 2.6620002,
+      "physical": 1.21,
+      "pierce": 1.21,
+      "slash": 1.21,
+      "strike": 1.21
     },
     "resistances": {
       "focus": 7.0,
@@ -1412,14 +1412,14 @@
     "name": "Crown of the Dark Sun",
     "weight": 3.0,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 29.04,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 29.04
+      "lightning": 1.452,
+      "magic": 2.904,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 2.904
     },
     "resistances": {
       "focus": 12.599999,
@@ -1434,14 +1434,14 @@
     "name": "Crown of the Great Lord",
     "weight": 3.0,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 38.72,
-      "physical": 38.72,
-      "pierce": 35.622402,
-      "slash": 44.528004,
-      "strike": 41.817604
+      "lightning": 5.082,
+      "magic": 3.8720002,
+      "physical": 3.8720002,
+      "pierce": 3.5622401,
+      "slash": 4.4528003,
+      "strike": 4.1817603
     },
     "resistances": {
       "focus": 11.2,
@@ -1456,14 +1456,14 @@
     "name": "Crystalline Armor",
     "weight": 10.9,
     "absorptions": {
-      "fire": 36.300003,
+      "fire": 3.6300004,
       "holy": 0.0,
-      "lightning": 16.94,
-      "magic": 50.82,
-      "physical": 142.78,
-      "pierce": 142.78,
-      "slash": 164.19699,
-      "strike": 121.363
+      "lightning": 1.694,
+      "magic": 5.082,
+      "physical": 14.278,
+      "pierce": 14.278,
+      "slash": 16.419699,
+      "strike": 12.1363
     },
     "resistances": {
       "focus": 0.0,
@@ -1478,14 +1478,14 @@
     "name": "Crystalline Gauntlets",
     "weight": 6.4,
     "absorptions": {
-      "fire": 21.78,
+      "fire": 2.178,
       "holy": 0.0,
-      "lightning": 9.68,
-      "magic": 29.04,
-      "physical": 89.54,
-      "pierce": 89.54,
-      "slash": 102.97101,
-      "strike": 76.109
+      "lightning": 0.96800005,
+      "magic": 2.904,
+      "physical": 8.954,
+      "pierce": 8.954,
+      "slash": 10.297101,
+      "strike": 7.6109
     },
     "resistances": {
       "focus": 0.0,
@@ -1500,14 +1500,14 @@
     "name": "Crystalline Helm",
     "weight": 4.2,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 4.84,
-      "magic": 19.36,
-      "physical": 60.5,
-      "pierce": 60.5,
-      "slash": 69.575,
-      "strike": 51.425
+      "lightning": 0.48400003,
+      "magic": 1.9360001,
+      "physical": 6.05,
+      "pierce": 6.05,
+      "slash": 6.9574995,
+      "strike": 5.1425
     },
     "resistances": {
       "focus": 0.0,
@@ -1522,14 +1522,14 @@
     "name": "Crystalline Leggings",
     "weight": 6.4,
     "absorptions": {
-      "fire": 21.78,
+      "fire": 2.178,
       "holy": 0.0,
-      "lightning": 9.68,
-      "magic": 29.04,
-      "physical": 89.54,
-      "pierce": 89.54,
-      "slash": 102.97101,
-      "strike": 76.109
+      "lightning": 0.96800005,
+      "magic": 2.904,
+      "physical": 8.954,
+      "pierce": 8.954,
+      "slash": 10.297101,
+      "strike": 7.6109
     },
     "resistances": {
       "focus": 0.0,
@@ -1544,14 +1544,14 @@
     "name": "Dark Armor",
     "weight": 9.8,
     "absorptions": {
-      "fire": 48.05,
+      "fire": 4.805,
       "holy": 0.0,
-      "lightning": 41.85,
-      "magic": 46.5,
-      "physical": 69.75,
-      "pierce": 65.565,
-      "slash": 76.725,
-      "strike": 69.75
+      "lightning": 4.185,
+      "magic": 4.65,
+      "physical": 6.975,
+      "pierce": 6.5565004,
+      "slash": 7.6724997,
+      "strike": 6.975
     },
     "resistances": {
       "focus": 26.67,
@@ -1566,14 +1566,14 @@
     "name": "Dark Gauntlets",
     "weight": 5.8,
     "absorptions": {
-      "fire": 27.9,
+      "fire": 2.79,
       "holy": 0.0,
-      "lightning": 23.25,
-      "magic": 27.9,
-      "physical": 41.85,
-      "pierce": 39.339,
-      "slash": 46.035,
-      "strike": 41.85
+      "lightning": 2.325,
+      "magic": 2.79,
+      "physical": 4.185,
+      "pierce": 3.9339,
+      "slash": 4.6035,
+      "strike": 4.185
     },
     "resistances": {
       "focus": 15.24,
@@ -1588,14 +1588,14 @@
     "name": "Dark Leggings",
     "weight": 5.8,
     "absorptions": {
-      "fire": 27.9,
+      "fire": 2.79,
       "holy": 0.0,
-      "lightning": 23.25,
-      "magic": 27.9,
-      "physical": 41.85,
-      "pierce": 39.339,
-      "slash": 46.035,
-      "strike": 41.85
+      "lightning": 2.325,
+      "magic": 2.79,
+      "physical": 4.185,
+      "pierce": 3.9339,
+      "slash": 4.6035,
+      "strike": 4.185
     },
     "resistances": {
       "focus": 15.24,
@@ -1610,14 +1610,14 @@
     "name": "Dark Mask",
     "weight": 3.8,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 15.5,
-      "magic": 18.599998,
-      "physical": 27.9,
-      "pierce": 26.225998,
-      "slash": 30.69,
-      "strike": 27.9
+      "lightning": 1.55,
+      "magic": 1.8599999,
+      "physical": 2.79,
+      "pierce": 2.6225998,
+      "slash": 3.069,
+      "strike": 2.79
     },
     "resistances": {
       "focus": 10.16,
@@ -1632,14 +1632,14 @@
     "name": "Dingy Gloves",
     "weight": 1.2,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 31.460001,
-      "physical": 21.78,
-      "pierce": 21.78,
-      "slash": 21.78,
-      "strike": 27.225
+      "lightning": 2.42,
+      "magic": 3.1460001,
+      "physical": 2.178,
+      "pierce": 2.178,
+      "slash": 2.178,
+      "strike": 2.7225
     },
     "resistances": {
       "focus": 14.0,
@@ -1654,14 +1654,14 @@
     "name": "Dingy Hood",
     "weight": 0.8,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 19.36,
-      "physical": 14.52,
-      "pierce": 14.52,
-      "slash": 14.52,
-      "strike": 18.15
+      "lightning": 1.452,
+      "magic": 1.9360001,
+      "physical": 1.452,
+      "pierce": 1.452,
+      "slash": 1.452,
+      "strike": 1.8149999
     },
     "resistances": {
       "focus": 9.8,
@@ -1676,14 +1676,14 @@
     "name": "Dingy Robe",
     "weight": 3.0,
     "absorptions": {
-      "fire": 45.980003,
+      "fire": 4.5980005,
       "holy": 0.0,
-      "lightning": 60.5,
-      "magic": 79.86,
-      "physical": 55.660004,
-      "pierce": 55.660004,
-      "slash": 55.660004,
-      "strike": 69.575005
+      "lightning": 6.05,
+      "magic": 7.986,
+      "physical": 5.5660005,
+      "pierce": 5.5660005,
+      "slash": 5.5660005,
+      "strike": 6.9575005
     },
     "resistances": {
       "focus": 36.399998,
@@ -1786,14 +1786,14 @@
     "name": "Eastern Armor",
     "weight": 12.3,
     "absorptions": {
-      "fire": 51.149998,
+      "fire": 5.115,
       "holy": 0.0,
-      "lightning": 27.9,
-      "magic": 23.25,
-      "physical": 69.75,
-      "pierce": 67.6575,
-      "slash": 86.49,
-      "strike": 66.2625
+      "lightning": 2.79,
+      "magic": 2.325,
+      "physical": 6.975,
+      "pierce": 6.76575,
+      "slash": 8.649,
+      "strike": 6.62625
     },
     "resistances": {
       "focus": 35.559998,
@@ -1808,14 +1808,14 @@
     "name": "Eastern Gauntlets",
     "weight": 1.5,
     "absorptions": {
-      "fire": 6.2,
+      "fire": 0.62,
       "holy": 0.0,
-      "lightning": 3.1,
-      "magic": 1.55,
-      "physical": 9.299999,
-      "pierce": 9.020999,
-      "slash": 11.532,
-      "strike": 8.834999
+      "lightning": 0.31,
+      "magic": 0.155,
+      "physical": 0.92999995,
+      "pierce": 0.9020999,
+      "slash": 1.1531999,
+      "strike": 0.8834999
     },
     "resistances": {
       "focus": 5.08,
@@ -1830,14 +1830,14 @@
     "name": "Eastern Helm",
     "weight": 4.7,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 10.849999,
-      "magic": 9.299999,
-      "physical": 26.349998,
-      "pierce": 25.5595,
-      "slash": 32.674,
-      "strike": 25.032497
+      "lightning": 1.0849999,
+      "magic": 0.92999995,
+      "physical": 2.6349998,
+      "pierce": 2.55595,
+      "slash": 3.2674,
+      "strike": 2.5032496
     },
     "resistances": {
       "focus": 13.969999,
@@ -1852,14 +1852,14 @@
     "name": "Eastern Leggings",
     "weight": 4.0,
     "absorptions": {
-      "fire": 17.05,
+      "fire": 1.7049999,
       "holy": 0.0,
-      "lightning": 9.299999,
-      "magic": 7.75,
-      "physical": 23.25,
-      "pierce": 22.5525,
-      "slash": 28.83,
-      "strike": 22.0875
+      "lightning": 0.92999995,
+      "magic": 0.775,
+      "physical": 2.325,
+      "pierce": 2.25525,
+      "slash": 2.883,
+      "strike": 2.20875
     },
     "resistances": {
       "focus": 12.7,
@@ -1896,14 +1896,14 @@
     "name": "Elite Cleric Armor",
     "weight": 13.3,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 36.300003,
-      "magic": 55.660004,
-      "physical": 99.22,
-      "pierce": 99.22,
-      "slash": 113.1108,
-      "strike": 99.22
+      "lightning": 3.6300004,
+      "magic": 5.5660005,
+      "physical": 9.922,
+      "pierce": 9.922,
+      "slash": 11.31108,
+      "strike": 9.922
     },
     "resistances": {
       "focus": 22.4,
@@ -1918,14 +1918,14 @@
     "name": "Elite Cleric Gauntlets",
     "weight": 7.8,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 31.460001,
-      "physical": 58.08,
-      "pierce": 58.08,
-      "slash": 66.211205,
-      "strike": 58.08
+      "lightning": 2.178,
+      "magic": 3.1460001,
+      "physical": 5.808,
+      "pierce": 5.808,
+      "slash": 6.6211205,
+      "strike": 5.808
     },
     "resistances": {
       "focus": 12.599999,
@@ -1940,14 +1940,14 @@
     "name": "Elite Cleric Helm",
     "weight": 5.1,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 21.78,
-      "physical": 38.72,
-      "pierce": 38.72,
-      "slash": 44.1408,
-      "strike": 38.72
+      "lightning": 1.452,
+      "magic": 2.178,
+      "physical": 3.8720002,
+      "pierce": 3.8720002,
+      "slash": 4.41408,
+      "strike": 3.8720002
     },
     "resistances": {
       "focus": 8.4,
@@ -1962,14 +1962,14 @@
     "name": "Elite Cleric Leggings",
     "weight": 7.8,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 31.460001,
-      "physical": 58.08,
-      "pierce": 58.08,
-      "slash": 66.211205,
-      "strike": 58.08
+      "lightning": 2.178,
+      "magic": 3.1460001,
+      "physical": 5.808,
+      "pierce": 5.808,
+      "slash": 6.6211205,
+      "strike": 5.808
     },
     "resistances": {
       "focus": 12.599999,
@@ -1984,14 +1984,14 @@
     "name": "Elite Knight Armor",
     "weight": 11.7,
     "absorptions": {
-      "fire": 43.56,
+      "fire": 4.356,
       "holy": 0.0,
-      "lightning": 36.300003,
-      "magic": 41.14,
-      "physical": 94.380005,
-      "pierce": 94.38,
-      "slash": 109.480804,
-      "strike": 91.54861
+      "lightning": 3.6300004,
+      "magic": 4.114,
+      "physical": 9.438001,
+      "pierce": 9.438,
+      "slash": 10.94808,
+      "strike": 9.1548605
     },
     "resistances": {
       "focus": 22.4,
@@ -2006,14 +2006,14 @@
     "name": "Elite Knight Gauntlets",
     "weight": 3.7,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 12.1,
-      "magic": 16.94,
-      "physical": 43.56,
-      "pierce": 43.56,
-      "slash": 50.5296,
-      "strike": 42.253204
+      "lightning": 1.21,
+      "magic": 1.694,
+      "physical": 4.356,
+      "pierce": 4.356,
+      "slash": 5.05296,
+      "strike": 4.2253203
     },
     "resistances": {
       "focus": 7.0,
@@ -2028,14 +2028,14 @@
     "name": "Elite Knight Helm",
     "weight": 4.5,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 16.94,
-      "physical": 36.300003,
-      "pierce": 36.300003,
-      "slash": 42.108,
-      "strike": 35.211002
+      "lightning": 1.452,
+      "magic": 1.694,
+      "physical": 3.6300004,
+      "pierce": 3.6300004,
+      "slash": 4.2108,
+      "strike": 3.5211003
     },
     "resistances": {
       "focus": 8.4,
@@ -2050,14 +2050,14 @@
     "name": "Elite Knight Leggings",
     "weight": 6.9,
     "absorptions": {
-      "fire": 26.62,
+      "fire": 2.6620002,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 26.62,
-      "physical": 55.660004,
-      "pierce": 55.660004,
-      "slash": 64.565605,
-      "strike": 53.990204
+      "lightning": 2.178,
+      "magic": 2.6620002,
+      "physical": 5.5660005,
+      "pierce": 5.5660005,
+      "slash": 6.4565606,
+      "strike": 5.39902
     },
     "resistances": {
       "focus": 12.599999,
@@ -2072,14 +2072,14 @@
     "name": "Embraced Armor of Favor",
     "weight": 11.7,
     "absorptions": {
-      "fire": 46.5,
+      "fire": 4.65,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 35.649998,
-      "physical": 74.399994,
-      "pierce": 74.399994,
-      "slash": 86.30399,
-      "strike": 70.67999
+      "lightning": 2.945,
+      "magic": 3.5649998,
+      "physical": 7.4399996,
+      "pierce": 7.4399996,
+      "slash": 8.6304,
+      "strike": 7.0679994
     },
     "resistances": {
       "focus": 27.939999,
@@ -2094,14 +2094,14 @@
     "name": "Fang Boar Helm",
     "weight": 8.0,
     "absorptions": {
-      "fire": 6.2,
+      "fire": 0.62,
       "holy": 0.0,
-      "lightning": 6.2,
-      "magic": 7.75,
-      "physical": 40.3,
-      "pierce": 40.3,
-      "slash": 48.36,
-      "strike": 36.27
+      "lightning": 0.62,
+      "magic": 0.775,
+      "physical": 4.0299997,
+      "pierce": 4.0299997,
+      "slash": 4.836,
+      "strike": 3.627
     },
     "resistances": {
       "focus": 10.16,
@@ -2116,14 +2116,14 @@
     "name": "Gargoyle Helm",
     "weight": 3.5,
     "absorptions": {
-      "fire": 23.25,
+      "fire": 2.325,
       "holy": 0.0,
-      "lightning": 23.25,
-      "magic": 23.25,
-      "physical": 23.25,
-      "pierce": 21.1575,
-      "slash": 29.5275,
-      "strike": 19.065
+      "lightning": 2.325,
+      "magic": 2.325,
+      "physical": 2.325,
+      "pierce": 2.1157498,
+      "slash": 2.95275,
+      "strike": 1.9065001
     },
     "resistances": {
       "focus": 24.13,
@@ -2138,14 +2138,14 @@
     "name": "Gauntlets of Artorias",
     "weight": 4.6,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 15.5,
-      "magic": 15.5,
-      "physical": 31.0,
-      "pierce": 32.55,
-      "slash": 35.65,
-      "strike": 27.9
+      "lightning": 1.55,
+      "magic": 1.55,
+      "physical": 3.1,
+      "pierce": 3.2549999,
+      "slash": 3.565,
+      "strike": 2.79
     },
     "resistances": {
       "focus": 12.7,
@@ -2160,14 +2160,14 @@
     "name": "Gauntlets of Favor",
     "weight": 5.0,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 15.5,
-      "physical": 32.55,
-      "pierce": 32.55,
-      "slash": 37.758,
-      "strike": 30.9225
+      "lightning": 1.24,
+      "magic": 1.55,
+      "physical": 3.2549999,
+      "pierce": 3.2549999,
+      "slash": 3.7758,
+      "strike": 3.09225
     },
     "resistances": {
       "focus": 12.7,
@@ -2182,14 +2182,14 @@
     "name": "Gauntlets of Thorns",
     "weight": 6.2,
     "absorptions": {
-      "fire": 27.9,
+      "fire": 2.79,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 24.8,
-      "physical": 40.3,
-      "pierce": 40.3,
-      "slash": 43.927,
-      "strike": 38.285
+      "lightning": 1.8599999,
+      "magic": 2.48,
+      "physical": 4.0299997,
+      "pierce": 4.0299997,
+      "slash": 4.3926997,
+      "strike": 3.8285
     },
     "resistances": {
       "focus": 12.7,
@@ -2204,14 +2204,14 @@
     "name": "Gauntlets of the Channelers",
     "weight": 3.0,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 31.460001,
-      "physical": 41.14,
-      "pierce": 41.14,
-      "slash": 46.8996,
-      "strike": 39.4944
+      "lightning": 2.42,
+      "magic": 3.1460001,
+      "physical": 4.114,
+      "pierce": 4.114,
+      "slash": 4.68996,
+      "strike": 3.94944
     },
     "resistances": {
       "focus": 14.0,
@@ -2226,14 +2226,14 @@
     "name": "Gauntlets of the Vanquisher",
     "weight": 3.0,
     "absorptions": {
-      "fire": 16.94,
+      "fire": 1.694,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 16.94,
-      "physical": 26.62,
-      "pierce": 26.62,
-      "slash": 30.613,
-      "strike": 25.289001
+      "lightning": 1.452,
+      "magic": 1.694,
+      "physical": 2.6620002,
+      "pierce": 2.6620002,
+      "slash": 3.0613,
+      "strike": 2.5289001
     },
     "resistances": {
       "focus": 7.0,
@@ -2248,14 +2248,14 @@
     "name": "Giant Armor",
     "weight": 16.4,
     "absorptions": {
-      "fire": 74.399994,
+      "fire": 7.4399996,
       "holy": 0.0,
-      "lightning": 51.149998,
-      "magic": 49.6,
-      "physical": 111.6,
-      "pierce": 111.6,
-      "slash": 126.108,
-      "strike": 102.672005
+      "lightning": 5.115,
+      "magic": 4.96,
+      "physical": 11.16,
+      "pierce": 11.16,
+      "slash": 12.6108,
+      "strike": 10.2672
     },
     "resistances": {
       "focus": 24.13,
@@ -2270,14 +2270,14 @@
     "name": "Giant Gauntlets",
     "weight": 9.7,
     "absorptions": {
-      "fire": 44.949997,
+      "fire": 4.495,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 29.449999,
-      "physical": 63.55,
-      "pierce": 63.55,
-      "slash": 71.8115,
-      "strike": 58.466
+      "lightning": 2.945,
+      "magic": 2.945,
+      "physical": 6.355,
+      "pierce": 6.355,
+      "slash": 7.18115,
+      "strike": 5.8466
     },
     "resistances": {
       "focus": 13.969999,
@@ -2292,14 +2292,14 @@
     "name": "Giant Helm",
     "weight": 6.3,
     "absorptions": {
-      "fire": 29.449999,
+      "fire": 2.945,
       "holy": 0.0,
-      "lightning": 20.15,
-      "magic": 20.15,
-      "physical": 41.85,
-      "pierce": 41.85,
-      "slash": 47.290497,
-      "strike": 38.502
+      "lightning": 2.0149999,
+      "magic": 2.0149999,
+      "physical": 4.185,
+      "pierce": 4.185,
+      "slash": 4.7290497,
+      "strike": 3.8502
     },
     "resistances": {
       "focus": 10.16,
@@ -2314,14 +2314,14 @@
     "name": "Giant Leggings",
     "weight": 9.7,
     "absorptions": {
-      "fire": 44.949997,
+      "fire": 4.495,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 29.449999,
-      "physical": 63.55,
-      "pierce": 63.55,
-      "slash": 71.8115,
-      "strike": 58.466
+      "lightning": 2.945,
+      "magic": 2.945,
+      "physical": 6.355,
+      "pierce": 6.355,
+      "slash": 7.18115,
+      "strike": 5.8466
     },
     "resistances": {
       "focus": 13.969999,
@@ -2336,14 +2336,14 @@
     "name": "Gold-Hemmed Black Cloak",
     "weight": 3.5,
     "absorptions": {
-      "fire": 140.36,
+      "fire": 14.036,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 91.96001,
-      "physical": 75.020004,
-      "pierce": 75.020004,
-      "slash": 75.020004,
-      "strike": 80.27141
+      "lightning": 5.082,
+      "magic": 9.196001,
+      "physical": 7.5020003,
+      "pierce": 7.5020003,
+      "slash": 7.5020003,
+      "strike": 8.027141
     },
     "resistances": {
       "focus": 131.59999,
@@ -2358,14 +2358,14 @@
     "name": "Gold-Hemmed Black Gloves",
     "weight": 1.2,
     "absorptions": {
-      "fire": 58.08,
+      "fire": 5.808,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 31.460001,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 31.0728
+      "lightning": 1.9360001,
+      "magic": 3.1460001,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 3.10728
     },
     "resistances": {
       "focus": 44.8,
@@ -2380,14 +2380,14 @@
     "name": "Gold-Hemmed Black Hood",
     "weight": 1.4,
     "absorptions": {
-      "fire": 53.24,
+      "fire": 5.3240004,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 36.300003,
-      "physical": 26.62,
-      "pierce": 26.62,
-      "slash": 26.62,
-      "strike": 28.4834
+      "lightning": 1.9360001,
+      "magic": 3.6300004,
+      "physical": 2.6620002,
+      "pierce": 2.6620002,
+      "slash": 2.6620002,
+      "strike": 2.84834
     },
     "resistances": {
       "focus": 50.399998,
@@ -2402,14 +2402,14 @@
     "name": "Gold-Hemmed Black Skirt",
     "weight": 3.0,
     "absorptions": {
-      "fire": 118.58,
+      "fire": 11.858,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 65.340004,
-      "physical": 55.660004,
-      "pierce": 55.660004,
-      "slash": 55.660004,
-      "strike": 59.556206
+      "lightning": 4.114,
+      "magic": 6.5340004,
+      "physical": 5.5660005,
+      "pierce": 5.5660005,
+      "slash": 5.5660005,
+      "strike": 5.955621
     },
     "resistances": {
       "focus": 109.2,
@@ -2424,14 +2424,14 @@
     "name": "Golem Armor",
     "weight": 16.4,
     "absorptions": {
-      "fire": 99.22,
+      "fire": 9.922,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 108.9,
-      "physical": 220.22,
-      "pierce": 220.22,
-      "slash": 257.6574,
-      "strike": 202.6024
+      "lightning": 4.114,
+      "magic": 10.89,
+      "physical": 22.022,
+      "pierce": 22.022,
+      "slash": 25.765741,
+      "strike": 20.26024
     },
     "resistances": {
       "focus": 43.399998,
@@ -2446,14 +2446,14 @@
     "name": "Golem Gauntlets",
     "weight": 9.7,
     "absorptions": {
-      "fire": 55.660004,
+      "fire": 5.5660005,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 60.5,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 152.8956,
-      "strike": 120.22561
+      "lightning": 2.42,
+      "magic": 6.05,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.28956,
+      "strike": 12.022561
     },
     "resistances": {
       "focus": 23.8,
@@ -2468,14 +2468,14 @@
     "name": "Golem Helm",
     "weight": 6.3,
     "absorptions": {
-      "fire": 38.72,
+      "fire": 3.8720002,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 41.14,
-      "physical": 84.700005,
-      "pierce": 84.7,
-      "slash": 99.09901,
-      "strike": 77.924
+      "lightning": 1.452,
+      "magic": 4.114,
+      "physical": 8.47,
+      "pierce": 8.469999,
+      "slash": 9.909901,
+      "strike": 7.7924004
     },
     "resistances": {
       "focus": 16.8,
@@ -2490,14 +2490,14 @@
     "name": "Golem Leggings",
     "weight": 9.7,
     "absorptions": {
-      "fire": 55.660004,
+      "fire": 5.5660005,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 60.5,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 152.8956,
-      "strike": 120.22561
+      "lightning": 2.42,
+      "magic": 6.05,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.28956,
+      "strike": 12.022561
     },
     "resistances": {
       "focus": 23.8,
@@ -2512,14 +2512,14 @@
     "name": "Gough's Armor",
     "weight": 13.0,
     "absorptions": {
-      "fire": 63.55,
+      "fire": 6.355,
       "holy": 0.0,
-      "lightning": 32.55,
-      "magic": 43.399998,
-      "physical": 77.5,
-      "pierce": 73.625,
-      "slash": 81.375,
-      "strike": 77.5
+      "lightning": 3.2549999,
+      "magic": 4.3399997,
+      "physical": 7.75,
+      "pierce": 7.3625,
+      "slash": 8.1375,
+      "strike": 7.75
     },
     "resistances": {
       "focus": 15.24,
@@ -2534,14 +2534,14 @@
     "name": "Gough's Gauntlets",
     "weight": 7.0,
     "absorptions": {
-      "fire": 34.1,
+      "fire": 3.4099998,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 23.25,
-      "physical": 41.85,
-      "pierce": 39.757496,
-      "slash": 43.9425,
-      "strike": 41.85
+      "lightning": 1.7049999,
+      "magic": 2.325,
+      "physical": 4.185,
+      "pierce": 3.9757495,
+      "slash": 4.39425,
+      "strike": 4.185
     },
     "resistances": {
       "focus": 7.62,
@@ -2556,14 +2556,14 @@
     "name": "Gough's Helm",
     "weight": 6.5,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 21.699999,
-      "physical": 38.75,
-      "pierce": 36.8125,
-      "slash": 40.6875,
-      "strike": 38.75
+      "lightning": 1.7049999,
+      "magic": 2.1699998,
+      "physical": 3.875,
+      "pierce": 3.68125,
+      "slash": 4.06875,
+      "strike": 3.875
     },
     "resistances": {
       "focus": 7.62,
@@ -2578,14 +2578,14 @@
     "name": "Gough's Leggings",
     "weight": 8.0,
     "absorptions": {
-      "fire": 38.75,
+      "fire": 3.875,
       "holy": 0.0,
-      "lightning": 20.15,
-      "magic": 26.349998,
-      "physical": 48.05,
-      "pierce": 45.6475,
-      "slash": 50.4525,
-      "strike": 48.05
+      "lightning": 2.0149999,
+      "magic": 2.6349998,
+      "physical": 4.805,
+      "pierce": 4.5647497,
+      "slash": 5.04525,
+      "strike": 4.805
     },
     "resistances": {
       "focus": 8.889999,
@@ -2600,14 +2600,14 @@
     "name": "Guardian Armor",
     "weight": 17.0,
     "absorptions": {
-      "fire": 101.64,
+      "fire": 10.164,
       "holy": 0.0,
-      "lightning": 121.0,
-      "magic": 121.0,
-      "physical": 208.12001,
-      "pierce": 208.12003,
-      "slash": 239.33801,
-      "strike": 195.63281
+      "lightning": 12.1,
+      "magic": 12.1,
+      "physical": 20.812,
+      "pierce": 20.812002,
+      "slash": 23.933802,
+      "strike": 19.563282
     },
     "resistances": {
       "focus": 19.6,
@@ -2622,14 +2622,14 @@
     "name": "Guardian Gauntlets",
     "weight": 10.4,
     "absorptions": {
-      "fire": 65.340004,
+      "fire": 6.5340004,
       "holy": 0.0,
-      "lightning": 79.86,
-      "magic": 79.86,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 150.28201,
-      "strike": 122.83921
+      "lightning": 7.986,
+      "magic": 7.986,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.028201,
+      "strike": 12.283921
     },
     "resistances": {
       "focus": 14.0,
@@ -2644,14 +2644,14 @@
     "name": "Guardian Helm",
     "weight": 7.2,
     "absorptions": {
-      "fire": 45.980003,
+      "fire": 4.5980005,
       "holy": 0.0,
-      "lightning": 55.660004,
-      "magic": 55.660004,
-      "physical": 99.22,
-      "pierce": 99.22,
-      "slash": 114.103,
-      "strike": 93.2668
+      "lightning": 5.5660005,
+      "magic": 5.5660005,
+      "physical": 9.922,
+      "pierce": 9.922,
+      "slash": 11.410299,
+      "strike": 9.32668
     },
     "resistances": {
       "focus": 8.4,
@@ -2666,14 +2666,14 @@
     "name": "Guardian Leggings",
     "weight": 10.4,
     "absorptions": {
-      "fire": 65.340004,
+      "fire": 6.5340004,
       "holy": 0.0,
-      "lightning": 79.86,
-      "magic": 79.86,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 150.28201,
-      "strike": 122.83921
+      "lightning": 7.986,
+      "magic": 7.986,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.028201,
+      "strike": 12.283921
     },
     "resistances": {
       "focus": 14.0,
@@ -2688,14 +2688,14 @@
     "name": "Hard Leather Armor",
     "weight": 5.9,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 55.660004,
-      "magic": 48.4,
-      "physical": 62.920002,
-      "pierce": 62.92,
-      "slash": 62.92,
-      "strike": 66.6952
+      "lightning": 5.5660005,
+      "magic": 4.84,
+      "physical": 6.2920003,
+      "pierce": 6.292,
+      "slash": 6.292,
+      "strike": 6.66952
     },
     "resistances": {
       "focus": 28.0,
@@ -2710,14 +2710,14 @@
     "name": "Hard Leather Boots",
     "weight": 3.5,
     "absorptions": {
-      "fire": 16.94,
+      "fire": 1.694,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 29.04,
-      "physical": 31.460001,
-      "pierce": 31.46,
-      "slash": 31.46,
-      "strike": 33.3476
+      "lightning": 3.1460001,
+      "magic": 2.904,
+      "physical": 3.1460001,
+      "pierce": 3.146,
+      "slash": 3.146,
+      "strike": 3.33476
     },
     "resistances": {
       "focus": 16.8,
@@ -2732,14 +2732,14 @@
     "name": "Hard Leather Gauntlets",
     "weight": 3.5,
     "absorptions": {
-      "fire": 16.94,
+      "fire": 1.694,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 29.04,
-      "physical": 31.460001,
-      "pierce": 31.46,
-      "slash": 31.46,
-      "strike": 33.3476
+      "lightning": 3.1460001,
+      "magic": 2.904,
+      "physical": 3.1460001,
+      "pierce": 3.146,
+      "slash": 3.146,
+      "strike": 3.33476
     },
     "resistances": {
       "focus": 16.8,
@@ -2754,14 +2754,14 @@
     "name": "Havel's Armor",
     "weight": 19.5,
     "absorptions": {
-      "fire": 130.68001,
+      "fire": 13.068001,
       "holy": 0.0,
-      "lightning": 118.58,
-      "magic": 135.52,
-      "physical": 222.64001,
-      "pierce": 222.64001,
-      "slash": 256.036,
-      "strike": 189.244
+      "lightning": 11.858,
+      "magic": 13.552,
+      "physical": 22.264002,
+      "pierce": 22.264002,
+      "slash": 25.603601,
+      "strike": 18.9244
     },
     "resistances": {
       "focus": 15.4,
@@ -2776,14 +2776,14 @@
     "name": "Havel's Gauntlets",
     "weight": 11.5,
     "absorptions": {
-      "fire": 77.44,
+      "fire": 7.7440004,
       "holy": 0.0,
-      "lightning": 70.18,
-      "magic": 77.44,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 150.28201,
-      "strike": 111.07801
+      "lightning": 7.018,
+      "magic": 7.7440004,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.028201,
+      "strike": 11.107801
     },
     "resistances": {
       "focus": 7.0,
@@ -2798,14 +2798,14 @@
     "name": "Havel's Helm",
     "weight": 7.5,
     "absorptions": {
-      "fire": 53.24,
+      "fire": 5.3240004,
       "holy": 0.0,
-      "lightning": 43.56,
-      "magic": 53.24,
-      "physical": 87.12,
-      "pierce": 87.12,
-      "slash": 100.18801,
-      "strike": 74.052
+      "lightning": 4.356,
+      "magic": 5.3240004,
+      "physical": 8.712,
+      "pierce": 8.712,
+      "slash": 10.018801,
+      "strike": 7.4052
     },
     "resistances": {
       "focus": 5.6,
@@ -2820,14 +2820,14 @@
     "name": "Havel's Leggings",
     "weight": 11.5,
     "absorptions": {
-      "fire": 77.44,
+      "fire": 7.7440004,
       "holy": 0.0,
-      "lightning": 70.18,
-      "magic": 77.44,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 150.28201,
-      "strike": 111.07801
+      "lightning": 7.018,
+      "magic": 7.7440004,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.028201,
+      "strike": 11.107801
     },
     "resistances": {
       "focus": 7.0,
@@ -2864,14 +2864,14 @@
     "name": "Heavy Boots",
     "weight": 1.6,
     "absorptions": {
-      "fire": 43.56,
+      "fire": 4.356,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 33.88,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 32.2344
+      "lightning": 2.42,
+      "magic": 3.388,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 3.2234402
     },
     "resistances": {
       "focus": 49.0,
@@ -2886,14 +2886,14 @@
     "name": "Helm of Artorias",
     "weight": 4.2,
     "absorptions": {
-      "fire": 29.449999,
+      "fire": 2.945,
       "holy": 0.0,
-      "lightning": 13.95,
-      "magic": 13.95,
-      "physical": 27.9,
-      "pierce": 29.295,
-      "slash": 32.085,
-      "strike": 25.11
+      "lightning": 1.395,
+      "magic": 1.395,
+      "physical": 2.79,
+      "pierce": 2.9295,
+      "slash": 3.2085,
+      "strike": 2.5110002
     },
     "resistances": {
       "focus": 11.43,
@@ -2908,14 +2908,14 @@
     "name": "Helm of Favor",
     "weight": 4.5,
     "absorptions": {
-      "fire": 17.05,
+      "fire": 1.7049999,
       "holy": 0.0,
-      "lightning": 10.849999,
-      "magic": 15.5,
-      "physical": 27.9,
-      "pierce": 27.9,
-      "slash": 32.364,
-      "strike": 26.505
+      "lightning": 1.0849999,
+      "magic": 1.55,
+      "physical": 2.79,
+      "pierce": 2.79,
+      "slash": 3.2364,
+      "strike": 2.6504998
     },
     "resistances": {
       "focus": 10.16,
@@ -2930,14 +2930,14 @@
     "name": "Helm of Thorns",
     "weight": 4.1,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 15.5,
-      "physical": 26.349998,
-      "pierce": 26.349998,
-      "slash": 28.721498,
-      "strike": 25.032497
+      "lightning": 1.24,
+      "magic": 1.55,
+      "physical": 2.6349998,
+      "pierce": 2.6349998,
+      "slash": 2.87215,
+      "strike": 2.5032496
     },
     "resistances": {
       "focus": 8.889999,
@@ -2952,14 +2952,14 @@
     "name": "Helm of the Wise",
     "weight": 5.1,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 29.04,
-      "physical": 43.56,
-      "pierce": 43.56,
-      "slash": 50.094006,
-      "strike": 41.382004
+      "lightning": 2.42,
+      "magic": 2.904,
+      "physical": 4.356,
+      "pierce": 4.356,
+      "slash": 5.0094004,
+      "strike": 4.1382003
     },
     "resistances": {
       "focus": 9.8,
@@ -2974,14 +2974,14 @@
     "name": "Hollow Soldier Armor",
     "weight": 7.8,
     "absorptions": {
-      "fire": 41.14,
+      "fire": 4.114,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 62.920002,
-      "pierce": 55.3696,
-      "slash": 69.8412,
-      "strike": 62.92
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 6.2920003,
+      "pierce": 5.5369596,
+      "slash": 6.9841204,
+      "strike": 6.292
     },
     "resistances": {
       "focus": 18.199999,
@@ -2996,14 +2996,14 @@
     "name": "Hollow Soldier Helm",
     "weight": 3.0,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 9.68,
-      "magic": 14.52,
-      "physical": 24.2,
-      "pierce": 21.296001,
-      "slash": 26.862001,
-      "strike": 24.2
+      "lightning": 0.96800005,
+      "magic": 1.452,
+      "physical": 2.42,
+      "pierce": 2.1296,
+      "slash": 2.6862001,
+      "strike": 2.42
     },
     "resistances": {
       "focus": 7.0,
@@ -3018,14 +3018,14 @@
     "name": "Hollow Soldier Waistcloth",
     "weight": 1.5,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 19.36,
-      "physical": 31.460001,
-      "pierce": 27.6848,
-      "slash": 34.9206,
-      "strike": 31.46
+      "lightning": 1.452,
+      "magic": 1.9360001,
+      "physical": 3.1460001,
+      "pierce": 2.7684798,
+      "slash": 3.4920602,
+      "strike": 3.146
     },
     "resistances": {
       "focus": 8.4,
@@ -3040,14 +3040,14 @@
     "name": "Hollow Thief's Hood",
     "weight": 1.1,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 16.94,
-      "magic": 19.36,
-      "physical": 19.36,
-      "pierce": 20.134401,
-      "slash": 19.36,
-      "strike": 21.1024
+      "lightning": 1.694,
+      "magic": 1.9360001,
+      "physical": 1.9360001,
+      "pierce": 2.0134401,
+      "slash": 1.9360001,
+      "strike": 2.11024
     },
     "resistances": {
       "focus": 15.4,
@@ -3062,14 +3062,14 @@
     "name": "Hollow Thief's Leather Armor",
     "weight": 2.8,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 43.56,
-      "magic": 48.4,
-      "physical": 50.82,
-      "pierce": 52.8528,
-      "slash": 50.82,
-      "strike": 55.3938
+      "lightning": 4.356,
+      "magic": 4.84,
+      "physical": 5.082,
+      "pierce": 5.2852798,
+      "slash": 5.082,
+      "strike": 5.53938
     },
     "resistances": {
       "focus": 40.6,
@@ -3084,14 +3084,14 @@
     "name": "Hollow Thief's Tights",
     "weight": 1.7,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 26.62,
-      "physical": 29.04,
-      "pierce": 30.201601,
-      "slash": 29.04,
-      "strike": 31.6536
+      "lightning": 2.42,
+      "magic": 2.6620002,
+      "physical": 2.904,
+      "pierce": 3.0201602,
+      "slash": 2.904,
+      "strike": 3.16536
     },
     "resistances": {
       "focus": 23.8,
@@ -3106,14 +3106,14 @@
     "name": "Hollow Warrior Armor",
     "weight": 6.6,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 38.72,
-      "physical": 58.08,
-      "pierce": 55.176003,
-      "slash": 59.822403,
-      "strike": 56.3376
+      "lightning": 4.114,
+      "magic": 3.8720002,
+      "physical": 5.808,
+      "pierce": 5.5176,
+      "slash": 5.98224,
+      "strike": 5.63376
     },
     "resistances": {
       "focus": 18.199999,
@@ -3128,14 +3128,14 @@
     "name": "Hollow Warrior Helm",
     "weight": 2.6,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 14.52,
-      "physical": 24.2,
-      "pierce": 22.99,
-      "slash": 24.926,
-      "strike": 23.474
+      "lightning": 1.452,
+      "magic": 1.452,
+      "physical": 2.42,
+      "pierce": 2.299,
+      "slash": 2.4926,
+      "strike": 2.3474002
     },
     "resistances": {
       "focus": 7.0,
@@ -3150,14 +3150,14 @@
     "name": "Hollow Warrior Waistcloth",
     "weight": 1.4,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 19.36,
-      "physical": 31.460001,
-      "pierce": 29.887001,
-      "slash": 32.4038,
-      "strike": 30.516201
+      "lightning": 1.9360001,
+      "magic": 1.9360001,
+      "physical": 3.1460001,
+      "pierce": 2.9887002,
+      "slash": 3.24038,
+      "strike": 3.05162
     },
     "resistances": {
       "focus": 8.4,
@@ -3172,14 +3172,14 @@
     "name": "Holy Robe",
     "weight": 4.0,
     "absorptions": {
-      "fire": 33.88,
+      "fire": 3.388,
       "holy": 0.0,
-      "lightning": 45.980003,
-      "magic": 55.660004,
-      "physical": 53.24,
-      "pierce": 53.24,
-      "slash": 53.24,
-      "strike": 62.823204
+      "lightning": 4.5980005,
+      "magic": 5.5660005,
+      "physical": 5.3240004,
+      "pierce": 5.3240004,
+      "slash": 5.3240004,
+      "strike": 6.2823205
     },
     "resistances": {
       "focus": 28.0,
@@ -3194,14 +3194,14 @@
     "name": "Holy Trousers",
     "weight": 2.0,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 29.04,
-      "magic": 36.300003,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 33.88,
-      "strike": 39.9784
+      "lightning": 2.904,
+      "magic": 3.6300004,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.388,
+      "strike": 3.9978402
     },
     "resistances": {
       "focus": 18.199999,
@@ -3216,14 +3216,14 @@
     "name": "Iron Bracelet",
     "weight": 4.3,
     "absorptions": {
-      "fire": 24.2,
+      "fire": 2.42,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 24.2,
-      "physical": 41.14,
-      "pierce": 40.3172,
-      "slash": 41.14,
-      "strike": 41.14
+      "lightning": 2.178,
+      "magic": 2.42,
+      "physical": 4.114,
+      "pierce": 4.03172,
+      "slash": 4.114,
+      "strike": 4.114
     },
     "resistances": {
       "focus": 9.8,
@@ -3238,14 +3238,14 @@
     "name": "Iron Helm",
     "weight": 4.5,
     "absorptions": {
-      "fire": 24.2,
+      "fire": 2.42,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 24.2,
-      "physical": 33.88,
-      "pierce": 33.2024,
-      "slash": 33.88,
-      "strike": 33.88
+      "lightning": 2.178,
+      "magic": 2.42,
+      "physical": 3.388,
+      "pierce": 3.32024,
+      "slash": 3.388,
+      "strike": 3.388
     },
     "resistances": {
       "focus": 11.2,
@@ -3260,14 +3260,14 @@
     "name": "Iron Leggings",
     "weight": 5.3,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 26.62,
-      "magic": 29.04,
-      "physical": 50.82,
-      "pierce": 49.8036,
-      "slash": 50.82,
-      "strike": 50.82
+      "lightning": 2.6620002,
+      "magic": 2.904,
+      "physical": 5.082,
+      "pierce": 4.98036,
+      "slash": 5.082,
+      "strike": 5.082
     },
     "resistances": {
       "focus": 12.599999,
@@ -3282,14 +3282,14 @@
     "name": "Knight Armor",
     "weight": 10.9,
     "absorptions": {
-      "fire": 43.56,
+      "fire": 4.356,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 38.72,
-      "physical": 89.54,
-      "pierce": 87.7492,
-      "slash": 103.866394,
-      "strike": 85.062996
+      "lightning": 3.1460001,
+      "magic": 3.8720002,
+      "physical": 8.954,
+      "pierce": 8.7749195,
+      "slash": 10.38664,
+      "strike": 8.5063
     },
     "resistances": {
       "focus": 22.4,
@@ -3304,14 +3304,14 @@
     "name": "Knight Gauntlets",
     "weight": 3.5,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 9.68,
-      "magic": 16.94,
-      "physical": 41.14,
-      "pierce": 40.3172,
-      "slash": 47.722397,
-      "strike": 39.083
+      "lightning": 0.96800005,
+      "magic": 1.694,
+      "physical": 4.114,
+      "pierce": 4.03172,
+      "slash": 4.7722397,
+      "strike": 3.9083
     },
     "resistances": {
       "focus": 7.0,
@@ -3326,14 +3326,14 @@
     "name": "Knight Helm",
     "weight": 4.2,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 12.1,
-      "magic": 14.52,
-      "physical": 33.88,
-      "pierce": 33.2024,
-      "slash": 39.3008,
-      "strike": 32.186
+      "lightning": 1.21,
+      "magic": 1.452,
+      "physical": 3.388,
+      "pierce": 3.32024,
+      "slash": 3.93008,
+      "strike": 3.2186
     },
     "resistances": {
       "focus": 8.4,
@@ -3348,14 +3348,14 @@
     "name": "Knight Leggings",
     "weight": 6.4,
     "absorptions": {
-      "fire": 26.62,
+      "fire": 2.6620002,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 24.2,
-      "physical": 53.24,
-      "pierce": 52.1752,
-      "slash": 61.758404,
-      "strike": 50.578003
+      "lightning": 1.9360001,
+      "magic": 2.42,
+      "physical": 5.3240004,
+      "pierce": 5.21752,
+      "slash": 6.1758404,
+      "strike": 5.0578003
     },
     "resistances": {
       "focus": 12.599999,
@@ -3370,14 +3370,14 @@
     "name": "Leather Armor",
     "weight": 4.7,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 55.660004,
-      "magic": 48.4,
-      "physical": 58.08,
-      "pierce": 58.08,
-      "slash": 58.08,
-      "strike": 61.5648
+      "lightning": 5.5660005,
+      "magic": 4.84,
+      "physical": 5.808,
+      "pierce": 5.808,
+      "slash": 5.808,
+      "strike": 6.15648
     },
     "resistances": {
       "focus": 28.0,
@@ -3392,14 +3392,14 @@
     "name": "Leather Boots",
     "weight": 2.8,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 29.04,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 30.7824
+      "lightning": 3.1460001,
+      "magic": 2.904,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 3.07824
     },
     "resistances": {
       "focus": 16.8,
@@ -3414,14 +3414,14 @@
     "name": "Leather Gauntlets",
     "weight": 3.6,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 9.68,
-      "magic": 24.2,
-      "physical": 29.04,
-      "pierce": 28.1688,
-      "slash": 34.848,
-      "strike": 29.04
+      "lightning": 0.96800005,
+      "magic": 2.42,
+      "physical": 2.904,
+      "pierce": 2.81688,
+      "slash": 3.4847999,
+      "strike": 2.904
     },
     "resistances": {
       "focus": 9.8,
@@ -3436,14 +3436,14 @@
     "name": "Leather Gloves",
     "weight": 2.8,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 29.04,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 30.7824
+      "lightning": 3.1460001,
+      "magic": 2.904,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 3.07824
     },
     "resistances": {
       "focus": 16.8,
@@ -3458,14 +3458,14 @@
     "name": "Leggings of Artorias",
     "weight": 5.5,
     "absorptions": {
-      "fire": 37.199997,
+      "fire": 3.7199998,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 17.05,
-      "physical": 35.649998,
-      "pierce": 37.4325,
-      "slash": 40.997494,
-      "strike": 32.085
+      "lightning": 1.7049999,
+      "magic": 1.7049999,
+      "physical": 3.5649998,
+      "pierce": 3.74325,
+      "slash": 4.0997496,
+      "strike": 3.2085
     },
     "resistances": {
       "focus": 13.969999,
@@ -3480,14 +3480,14 @@
     "name": "Leggings of Favor",
     "weight": 6.9,
     "absorptions": {
-      "fire": 27.9,
+      "fire": 2.79,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 21.699999,
-      "physical": 43.399998,
-      "pierce": 43.4,
-      "slash": 50.343998,
-      "strike": 41.23
+      "lightning": 1.7049999,
+      "magic": 2.1699998,
+      "physical": 4.3399997,
+      "pierce": 4.34,
+      "slash": 5.0344,
+      "strike": 4.123
     },
     "resistances": {
       "focus": 17.779999,
@@ -3502,14 +3502,14 @@
     "name": "Leggings of Thorns",
     "weight": 6.2,
     "absorptions": {
-      "fire": 27.9,
+      "fire": 2.79,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 24.8,
-      "physical": 40.3,
-      "pierce": 40.3,
-      "slash": 43.927,
-      "strike": 38.285
+      "lightning": 1.8599999,
+      "magic": 2.48,
+      "physical": 4.0299997,
+      "pierce": 4.0299997,
+      "slash": 4.3926997,
+      "strike": 3.8285
     },
     "resistances": {
       "focus": 12.7,
@@ -3546,14 +3546,14 @@
     "name": "Lord's Blade Gloves",
     "weight": 2.8,
     "absorptions": {
-      "fire": 21.699999,
+      "fire": 2.1699998,
       "holy": 0.0,
-      "lightning": 13.95,
-      "magic": 17.05,
-      "physical": 23.25,
-      "pierce": 25.575,
-      "slash": 24.4125,
-      "strike": 23.25
+      "lightning": 1.395,
+      "magic": 1.7049999,
+      "physical": 2.325,
+      "pierce": 2.5575001,
+      "slash": 2.44125,
+      "strike": 2.325
     },
     "resistances": {
       "focus": 27.939999,
@@ -3568,14 +3568,14 @@
     "name": "Lord's Blade Robe",
     "weight": 6.4,
     "absorptions": {
-      "fire": 49.6,
+      "fire": 4.96,
       "holy": 0.0,
-      "lightning": 31.0,
-      "magic": 40.3,
-      "physical": 52.699997,
-      "pierce": 57.969994,
-      "slash": 55.334995,
-      "strike": 52.699997
+      "lightning": 3.1,
+      "magic": 4.0299997,
+      "physical": 5.2699995,
+      "pierce": 5.7969995,
+      "slash": 5.5334997,
+      "strike": 5.2699995
     },
     "resistances": {
       "focus": 62.23,
@@ -3590,14 +3590,14 @@
     "name": "Lord's Blade Waistcloth",
     "weight": 5.0,
     "absorptions": {
-      "fire": 38.75,
+      "fire": 3.875,
       "holy": 0.0,
-      "lightning": 24.8,
-      "magic": 31.0,
-      "physical": 41.85,
-      "pierce": 46.035,
-      "slash": 43.9425,
-      "strike": 41.85
+      "lightning": 2.48,
+      "magic": 3.1,
+      "physical": 4.185,
+      "pierce": 4.6035,
+      "slash": 4.39425,
+      "strike": 4.185
     },
     "resistances": {
       "focus": 48.26,
@@ -3612,14 +3612,14 @@
     "name": "Mage Smith Boots",
     "weight": 1.4,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 30.201601,
-      "strike": 31.363201
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 3.0201602,
+      "strike": 3.13632
     },
     "resistances": {
       "focus": 9.8,
@@ -3634,14 +3634,14 @@
     "name": "Mage Smith Coat",
     "weight": 2.3,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 65.340004,
-      "physical": 48.4,
-      "pierce": 48.4,
-      "slash": 50.336002,
-      "strike": 52.272003
+      "lightning": 4.114,
+      "magic": 6.5340004,
+      "physical": 4.84,
+      "pierce": 4.84,
+      "slash": 5.0336003,
+      "strike": 5.2272005
     },
     "resistances": {
       "focus": 16.8,
@@ -3656,14 +3656,14 @@
     "name": "Mage Smith Gauntlets",
     "weight": 1.4,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 30.201601,
-      "strike": 31.363201
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 3.0201602,
+      "strike": 3.13632
     },
     "resistances": {
       "focus": 9.8,
@@ -3678,14 +3678,14 @@
     "name": "Mage Smith Hat",
     "weight": 0.9,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 24.2,
-      "physical": 19.36,
-      "pierce": 19.36,
-      "slash": 20.134401,
-      "strike": 20.908802
+      "lightning": 1.452,
+      "magic": 2.42,
+      "physical": 1.9360001,
+      "pierce": 1.9360001,
+      "slash": 2.0134401,
+      "strike": 2.0908802
     },
     "resistances": {
       "focus": 7.0,
@@ -3700,14 +3700,14 @@
     "name": "Maiden Gloves",
     "weight": 1.2,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 31.460001,
-      "physical": 26.62,
-      "pierce": 26.62,
-      "slash": 26.62,
-      "strike": 31.145401
+      "lightning": 2.42,
+      "magic": 3.1460001,
+      "physical": 2.6620002,
+      "pierce": 2.6620002,
+      "slash": 2.6620002,
+      "strike": 3.11454
     },
     "resistances": {
       "focus": 14.0,
@@ -3722,14 +3722,14 @@
     "name": "Maiden Hood",
     "weight": 0.8,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 19.36,
-      "physical": 16.94,
-      "pierce": 16.94,
-      "slash": 16.94,
-      "strike": 19.819801
+      "lightning": 1.452,
+      "magic": 1.9360001,
+      "physical": 1.694,
+      "pierce": 1.694,
+      "slash": 1.694,
+      "strike": 1.9819801
     },
     "resistances": {
       "focus": 9.8,
@@ -3744,14 +3744,14 @@
     "name": "Maiden Robe",
     "weight": 2.0,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 53.24,
-      "physical": 45.980003,
-      "pierce": 45.980003,
-      "slash": 45.980003,
-      "strike": 53.7966
+      "lightning": 4.114,
+      "magic": 5.3240004,
+      "physical": 4.5980005,
+      "pierce": 4.5980005,
+      "slash": 4.5980005,
+      "strike": 5.37966
     },
     "resistances": {
       "focus": 25.199999,
@@ -3766,14 +3766,14 @@
     "name": "Maiden Skirt",
     "weight": 2.5,
     "absorptions": {
-      "fire": 38.72,
+      "fire": 3.8720002,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 65.340004,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 33.88,
-      "strike": 39.639603
+      "lightning": 5.082,
+      "magic": 6.5340004,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.388,
+      "strike": 3.9639602
     },
     "resistances": {
       "focus": 30.8,
@@ -3788,14 +3788,14 @@
     "name": "Mask of Velka",
     "weight": 2.5,
     "absorptions": {
-      "fire": 15.5,
+      "fire": 1.55,
       "holy": 0.0,
-      "lightning": 10.849999,
-      "magic": 18.599998,
-      "physical": 18.599998,
-      "pierce": 18.599998,
-      "slash": 18.599998,
-      "strike": 20.273998
+      "lightning": 1.0849999,
+      "magic": 1.8599999,
+      "physical": 1.8599999,
+      "pierce": 1.8599999,
+      "slash": 1.8599999,
+      "strike": 2.0273998
     },
     "resistances": {
       "focus": 11.43,
@@ -3810,14 +3810,14 @@
     "name": "Mask of the Child",
     "weight": 1.2,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 24.2,
-      "physical": 14.52,
-      "pierce": 14.52,
-      "slash": 14.52,
-      "strike": 14.52
+      "lightning": 2.42,
+      "magic": 2.42,
+      "physical": 1.452,
+      "pierce": 1.452,
+      "slash": 1.452,
+      "strike": 1.452
     },
     "resistances": {
       "focus": 0.0,
@@ -3832,14 +3832,14 @@
     "name": "Mask of the Father",
     "weight": 1.2,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 24.2,
-      "physical": 14.52,
-      "pierce": 14.52,
-      "slash": 14.52,
-      "strike": 14.52
+      "lightning": 1.9360001,
+      "magic": 2.42,
+      "physical": 1.452,
+      "pierce": 1.452,
+      "slash": 1.452,
+      "strike": 1.452
     },
     "resistances": {
       "focus": 0.0,
@@ -3854,14 +3854,14 @@
     "name": "Mask of the Mother",
     "weight": 1.2,
     "absorptions": {
-      "fire": 14.52,
+      "fire": 1.452,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 29.04,
-      "physical": 14.52,
-      "pierce": 14.52,
-      "slash": 14.52,
-      "strike": 14.52
+      "lightning": 1.9360001,
+      "magic": 2.904,
+      "physical": 1.452,
+      "pierce": 1.452,
+      "slash": 1.452,
+      "strike": 1.452
     },
     "resistances": {
       "focus": 0.0,
@@ -3876,14 +3876,14 @@
     "name": "Mask of the Sealer",
     "weight": 1.5,
     "absorptions": {
-      "fire": 10.849999,
+      "fire": 1.0849999,
       "holy": 0.0,
-      "lightning": 13.95,
-      "magic": 18.599998,
-      "physical": 18.599998,
-      "pierce": 18.599998,
-      "slash": 18.599998,
-      "strike": 20.46
+      "lightning": 1.395,
+      "magic": 1.8599999,
+      "physical": 1.8599999,
+      "pierce": 1.8599999,
+      "slash": 1.8599999,
+      "strike": 2.046
     },
     "resistances": {
       "focus": 10.16,
@@ -3898,14 +3898,14 @@
     "name": "Moonlight Gloves",
     "weight": 0.5,
     "absorptions": {
-      "fire": 7.26,
+      "fire": 0.726,
       "holy": 0.0,
-      "lightning": 7.26,
-      "magic": 12.1,
-      "physical": 7.26,
-      "pierce": 7.26,
-      "slash": 7.26,
-      "strike": 7.26
+      "lightning": 0.726,
+      "magic": 1.21,
+      "physical": 0.726,
+      "pierce": 0.726,
+      "slash": 0.726,
+      "strike": 0.726
     },
     "resistances": {
       "focus": 5.6,
@@ -3920,14 +3920,14 @@
     "name": "Moonlight Robe",
     "weight": 3.1,
     "absorptions": {
-      "fire": 41.14,
+      "fire": 4.114,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 75.020004,
-      "physical": 48.4,
-      "pierce": 48.4,
-      "slash": 48.4,
-      "strike": 48.4
+      "lightning": 4.114,
+      "magic": 7.5020003,
+      "physical": 4.84,
+      "pierce": 4.84,
+      "slash": 4.84,
+      "strike": 4.84
     },
     "resistances": {
       "focus": 32.2,
@@ -3942,14 +3942,14 @@
     "name": "Moonlight Waistcloth",
     "weight": 1.8,
     "absorptions": {
-      "fire": 24.2,
+      "fire": 2.42,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 43.56,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 29.04
+      "lightning": 2.42,
+      "magic": 4.356,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 2.904
     },
     "resistances": {
       "focus": 19.6,
@@ -4052,14 +4052,14 @@
     "name": "Ornstein's Armor",
     "weight": 12.0,
     "absorptions": {
-      "fire": 111.32001,
+      "fire": 11.132001,
       "holy": 0.0,
-      "lightning": 96.8,
-      "magic": 87.12,
-      "physical": 169.40001,
-      "pierce": 169.4,
-      "slash": 191.42201,
-      "strike": 160.93001
+      "lightning": 9.68,
+      "magic": 8.712,
+      "physical": 16.94,
+      "pierce": 16.939999,
+      "slash": 19.1422,
+      "strike": 16.093
     },
     "resistances": {
       "focus": 25.199999,
@@ -4074,14 +4074,14 @@
     "name": "Ornstein's Gauntlets",
     "weight": 4.0,
     "absorptions": {
-      "fire": 38.72,
+      "fire": 3.8720002,
       "holy": 0.0,
-      "lightning": 33.88,
-      "magic": 29.04,
-      "physical": 70.18,
-      "pierce": 70.18,
-      "slash": 79.3034,
-      "strike": 66.671
+      "lightning": 3.388,
+      "magic": 2.904,
+      "physical": 7.018,
+      "pierce": 7.018,
+      "slash": 7.93034,
+      "strike": 6.6671
     },
     "resistances": {
       "focus": 8.4,
@@ -4096,14 +4096,14 @@
     "name": "Ornstein's Helm",
     "weight": 5.5,
     "absorptions": {
-      "fire": 53.24,
+      "fire": 5.3240004,
       "holy": 0.0,
-      "lightning": 43.56,
-      "magic": 38.72,
-      "physical": 77.44,
-      "pierce": 77.44,
-      "slash": 87.50721,
-      "strike": 73.568
+      "lightning": 4.356,
+      "magic": 3.8720002,
+      "physical": 7.7440004,
+      "pierce": 7.7440004,
+      "slash": 8.750721,
+      "strike": 7.3568
     },
     "resistances": {
       "focus": 11.2,
@@ -4118,14 +4118,14 @@
     "name": "Ornstein's Leggings",
     "weight": 7.0,
     "absorptions": {
-      "fire": 67.76,
+      "fire": 6.776,
       "holy": 0.0,
-      "lightning": 58.08,
-      "magic": 48.4,
-      "physical": 96.8,
-      "pierce": 96.8,
-      "slash": 109.384,
-      "strike": 91.96
+      "lightning": 5.808,
+      "magic": 4.84,
+      "physical": 9.68,
+      "pierce": 9.68,
+      "slash": 10.9384,
+      "strike": 9.196
     },
     "resistances": {
       "focus": 16.8,
@@ -4140,14 +4140,14 @@
     "name": "Painting Guardian Gloves",
     "weight": 0.9,
     "absorptions": {
-      "fire": 26.349998,
+      "fire": 2.6349998,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 34.1,
-      "physical": 9.299999,
-      "pierce": 9.299999,
-      "slash": 9.299999,
-      "strike": 11.159999
+      "lightning": 1.8599999,
+      "magic": 3.4099998,
+      "physical": 0.92999995,
+      "pierce": 0.92999995,
+      "slash": 0.92999995,
+      "strike": 1.1159999
     },
     "resistances": {
       "focus": 58.42,
@@ -4162,14 +4162,14 @@
     "name": "Painting Guardian Hood",
     "weight": 0.6,
     "absorptions": {
-      "fire": 17.05,
+      "fire": 1.7049999,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 48.05,
-      "physical": 4.6499996,
-      "pierce": 4.6499996,
-      "slash": 4.6499996,
-      "strike": 5.5799994
+      "lightning": 1.24,
+      "magic": 4.805,
+      "physical": 0.46499997,
+      "pierce": 0.46499997,
+      "slash": 0.46499997,
+      "strike": 0.55799997
     },
     "resistances": {
       "focus": 38.1,
@@ -4184,14 +4184,14 @@
     "name": "Painting Guardian Robe",
     "weight": 1.6,
     "absorptions": {
-      "fire": 44.949997,
+      "fire": 4.495,
       "holy": 0.0,
-      "lightning": 32.55,
-      "magic": 52.699997,
-      "physical": 13.95,
-      "pierce": 13.95,
-      "slash": 13.95,
-      "strike": 16.74
+      "lightning": 3.2549999,
+      "magic": 5.2699995,
+      "physical": 1.395,
+      "pierce": 1.395,
+      "slash": 1.395,
+      "strike": 1.674
     },
     "resistances": {
       "focus": 99.06,
@@ -4206,14 +4206,14 @@
     "name": "Painting Guardian Waistcloth",
     "weight": 4.0,
     "absorptions": {
-      "fire": 34.1,
+      "fire": 3.4099998,
       "holy": 0.0,
-      "lightning": 32.55,
-      "magic": 46.5,
-      "physical": 34.1,
-      "pierce": 34.1,
-      "slash": 34.1,
-      "strike": 40.92
+      "lightning": 3.2549999,
+      "magic": 4.65,
+      "physical": 3.4099998,
+      "pierce": 3.4099998,
+      "slash": 3.4099998,
+      "strike": 4.092
     },
     "resistances": {
       "focus": 64.77,
@@ -4228,14 +4228,14 @@
     "name": "Paladin Armor",
     "weight": 12.9,
     "absorptions": {
-      "fire": 57.35,
+      "fire": 5.7349997,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 48.05,
-      "physical": 91.45,
-      "pierce": 91.45,
-      "slash": 105.1675,
-      "strike": 86.8775
+      "lightning": 2.945,
+      "magic": 4.805,
+      "physical": 9.1449995,
+      "pierce": 9.1449995,
+      "slash": 10.51675,
+      "strike": 8.68775
     },
     "resistances": {
       "focus": 30.48,
@@ -4250,14 +4250,14 @@
     "name": "Paladin Gauntlets",
     "weight": 7.6,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 29.449999,
-      "physical": 54.25,
-      "pierce": 54.25,
-      "slash": 62.3875,
-      "strike": 51.5375
+      "lightning": 1.8599999,
+      "magic": 2.945,
+      "physical": 5.425,
+      "pierce": 5.425,
+      "slash": 6.23875,
+      "strike": 5.15375
     },
     "resistances": {
       "focus": 16.51,
@@ -4272,14 +4272,14 @@
     "name": "Paladin Helm",
     "weight": 5.0,
     "absorptions": {
-      "fire": 20.15,
+      "fire": 2.0149999,
       "holy": 0.0,
-      "lightning": 10.849999,
-      "magic": 18.599998,
-      "physical": 34.1,
-      "pierce": 34.1,
-      "slash": 39.214996,
-      "strike": 32.394997
+      "lightning": 1.0849999,
+      "magic": 1.8599999,
+      "physical": 3.4099998,
+      "pierce": 3.4099998,
+      "slash": 3.9214997,
+      "strike": 3.2394996
     },
     "resistances": {
       "focus": 11.43,
@@ -4294,14 +4294,14 @@
     "name": "Paladin Leggings",
     "weight": 7.6,
     "absorptions": {
-      "fire": 32.55,
+      "fire": 3.2549999,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 29.449999,
-      "physical": 54.25,
-      "pierce": 54.25,
-      "slash": 62.3875,
-      "strike": 51.5375
+      "lightning": 1.8599999,
+      "magic": 2.945,
+      "physical": 5.425,
+      "pierce": 5.425,
+      "slash": 6.23875,
+      "strike": 5.15375
     },
     "resistances": {
       "focus": 16.51,
@@ -4316,14 +4316,14 @@
     "name": "Pharis's Hat",
     "weight": 1.2,
     "absorptions": {
-      "fire": 16.94,
+      "fire": 1.694,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 12.1,
-      "physical": 16.94,
-      "pierce": 16.94,
-      "slash": 16.94,
-      "strike": 17.9564
+      "lightning": 1.452,
+      "magic": 1.21,
+      "physical": 1.694,
+      "pierce": 1.694,
+      "slash": 1.694,
+      "strike": 1.79564
     },
     "resistances": {
       "focus": 7.0,
@@ -4338,14 +4338,14 @@
     "name": "Porcelain Mask",
     "weight": 2.5,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 15.5,
-      "physical": 20.15,
-      "pierce": 22.165,
-      "slash": 21.1575,
-      "strike": 20.15
+      "lightning": 1.24,
+      "magic": 1.55,
+      "physical": 2.0149999,
+      "pierce": 2.2165,
+      "slash": 2.1157498,
+      "strike": 2.0149999
     },
     "resistances": {
       "focus": 24.13,
@@ -4360,14 +4360,14 @@
     "name": "Priest's Hat",
     "weight": 1.2,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 16.94,
-      "magic": 21.78,
-      "physical": 19.36,
-      "pierce": 19.36,
-      "slash": 19.36,
-      "strike": 22.844799
+      "lightning": 1.694,
+      "magic": 2.178,
+      "physical": 1.9360001,
+      "pierce": 1.9360001,
+      "slash": 1.9360001,
+      "strike": 2.2844799
     },
     "resistances": {
       "focus": 11.2,
@@ -4382,14 +4382,14 @@
     "name": "Robe of the Channelers",
     "weight": 10.1,
     "absorptions": {
-      "fire": 108.9,
+      "fire": 10.89,
       "holy": 0.0,
-      "lightning": 84.700005,
-      "magic": 108.9,
-      "physical": 128.26001,
-      "pierce": 128.26001,
-      "slash": 146.2164,
-      "strike": 123.12961
+      "lightning": 8.47,
+      "magic": 10.89,
+      "physical": 12.826001,
+      "pierce": 12.826001,
+      "slash": 14.62164,
+      "strike": 12.312961
     },
     "resistances": {
       "focus": 46.2,
@@ -4404,14 +4404,14 @@
     "name": "Robe of the Great Lord",
     "weight": 6.0,
     "absorptions": {
-      "fire": 99.22,
+      "fire": 9.922,
       "holy": 0.0,
-      "lightning": 99.22,
-      "magic": 77.44,
-      "physical": 77.44,
-      "pierce": 71.244804,
-      "slash": 89.05601,
-      "strike": 83.63521
+      "lightning": 9.922,
+      "magic": 7.7440004,
+      "physical": 7.7440004,
+      "pierce": 7.1244802,
+      "slash": 8.905601,
+      "strike": 8.363521
     },
     "resistances": {
       "focus": 21.0,
@@ -4426,14 +4426,14 @@
     "name": "Royal Helm",
     "weight": 4.5,
     "absorptions": {
-      "fire": 24.2,
+      "fire": 2.42,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 24.2,
-      "physical": 38.72,
-      "pierce": 38.72,
-      "slash": 38.72,
-      "strike": 33.6864
+      "lightning": 1.452,
+      "magic": 2.42,
+      "physical": 3.8720002,
+      "pierce": 3.8720002,
+      "slash": 3.8720002,
+      "strike": 3.3686402
     },
     "resistances": {
       "focus": 16.8,
@@ -4448,14 +4448,14 @@
     "name": "Sack",
     "weight": 0.6,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 9.68,
-      "magic": 14.52,
-      "physical": 14.52,
-      "pierce": 12.0516,
-      "slash": 14.52,
-      "strike": 24.248402
+      "lightning": 0.96800005,
+      "magic": 1.452,
+      "physical": 1.452,
+      "pierce": 1.20516,
+      "slash": 1.452,
+      "strike": 2.4248402
     },
     "resistances": {
       "focus": 14.0,
@@ -4470,14 +4470,14 @@
     "name": "Sage Robe",
     "weight": 4.0,
     "absorptions": {
-      "fire": 44.949997,
+      "fire": 4.495,
       "holy": 0.0,
-      "lightning": 54.25,
-      "magic": 43.399998,
-      "physical": 63.55,
-      "pierce": 63.55,
-      "slash": 66.091995,
-      "strike": 68.634
+      "lightning": 5.425,
+      "magic": 4.3399997,
+      "physical": 6.355,
+      "pierce": 6.355,
+      "slash": 6.6091995,
+      "strike": 6.8634005
     },
     "resistances": {
       "focus": 62.23,
@@ -4492,14 +4492,14 @@
     "name": "Shadow Garb",
     "weight": 2.3,
     "absorptions": {
-      "fire": 24.8,
+      "fire": 2.48,
       "holy": 0.0,
-      "lightning": 26.349998,
-      "magic": 18.599998,
-      "physical": 35.649998,
-      "pierce": 35.649998,
-      "slash": 35.649998,
-      "strike": 39.214996
+      "lightning": 2.6349998,
+      "magic": 1.8599999,
+      "physical": 3.5649998,
+      "pierce": 3.5649998,
+      "slash": 3.5649998,
+      "strike": 3.9214997
     },
     "resistances": {
       "focus": 59.69,
@@ -4514,14 +4514,14 @@
     "name": "Shadow Gauntlets",
     "weight": 1.4,
     "absorptions": {
-      "fire": 13.95,
+      "fire": 1.395,
       "holy": 0.0,
-      "lightning": 15.5,
-      "magic": 10.849999,
-      "physical": 20.15,
-      "pierce": 20.15,
-      "slash": 20.15,
-      "strike": 22.165
+      "lightning": 1.55,
+      "magic": 1.0849999,
+      "physical": 2.0149999,
+      "pierce": 2.0149999,
+      "slash": 2.0149999,
+      "strike": 2.2165
     },
     "resistances": {
       "focus": 35.559998,
@@ -4536,14 +4536,14 @@
     "name": "Shadow Leggings",
     "weight": 1.4,
     "absorptions": {
-      "fire": 13.95,
+      "fire": 1.395,
       "holy": 0.0,
-      "lightning": 15.5,
-      "magic": 10.849999,
-      "physical": 20.15,
-      "pierce": 20.15,
-      "slash": 20.15,
-      "strike": 22.165
+      "lightning": 1.55,
+      "magic": 1.0849999,
+      "physical": 2.0149999,
+      "pierce": 2.0149999,
+      "slash": 2.0149999,
+      "strike": 2.2165
     },
     "resistances": {
       "focus": 35.559998,
@@ -4558,14 +4558,14 @@
     "name": "Shadow Mask",
     "weight": 0.9,
     "absorptions": {
-      "fire": 9.299999,
+      "fire": 0.92999995,
       "holy": 0.0,
-      "lightning": 9.299999,
-      "magic": 7.75,
-      "physical": 13.95,
-      "pierce": 13.95,
-      "slash": 13.95,
-      "strike": 15.345
+      "lightning": 0.92999995,
+      "magic": 0.775,
+      "physical": 1.395,
+      "pierce": 1.395,
+      "slash": 1.395,
+      "strike": 1.5345
     },
     "resistances": {
       "focus": 22.86,
@@ -4580,14 +4580,14 @@
     "name": "Silver Knight Armor",
     "weight": 12.0,
     "absorptions": {
-      "fire": 44.949997,
+      "fire": 4.495,
       "holy": 0.0,
-      "lightning": 52.699997,
-      "magic": 40.3,
-      "physical": 80.6,
-      "pierce": 78.988,
-      "slash": 92.69,
-      "strike": 75.764
+      "lightning": 5.2699995,
+      "magic": 4.0299997,
+      "physical": 8.059999,
+      "pierce": 7.8988,
+      "slash": 9.269,
+      "strike": 7.5764
     },
     "resistances": {
       "focus": 15.24,
@@ -4602,14 +4602,14 @@
     "name": "Silver Knight Gauntlets",
     "weight": 5.5,
     "absorptions": {
-      "fire": 21.699999,
+      "fire": 2.1699998,
       "holy": 0.0,
-      "lightning": 24.8,
-      "magic": 18.599998,
-      "physical": 38.75,
-      "pierce": 37.975,
-      "slash": 44.5625,
-      "strike": 36.425
+      "lightning": 2.48,
+      "magic": 1.8599999,
+      "physical": 3.875,
+      "pierce": 3.7975,
+      "slash": 4.45625,
+      "strike": 3.6425
     },
     "resistances": {
       "focus": 7.62,
@@ -4624,14 +4624,14 @@
     "name": "Silver Knight Helm",
     "weight": 4.8,
     "absorptions": {
-      "fire": 17.05,
+      "fire": 1.7049999,
       "holy": 0.0,
-      "lightning": 21.699999,
-      "magic": 15.5,
-      "physical": 32.55,
-      "pierce": 31.898998,
-      "slash": 37.4325,
-      "strike": 30.597
+      "lightning": 2.1699998,
+      "magic": 1.55,
+      "physical": 3.2549999,
+      "pierce": 3.1899,
+      "slash": 3.74325,
+      "strike": 3.0597
     },
     "resistances": {
       "focus": 6.35,
@@ -4646,14 +4646,14 @@
     "name": "Silver Knight Leggings",
     "weight": 6.5,
     "absorptions": {
-      "fire": 24.8,
+      "fire": 2.48,
       "holy": 0.0,
-      "lightning": 29.449999,
-      "magic": 23.25,
-      "physical": 43.399998,
-      "pierce": 42.531998,
-      "slash": 49.909996,
-      "strike": 40.795998
+      "lightning": 2.945,
+      "magic": 2.325,
+      "physical": 4.3399997,
+      "pierce": 4.2531996,
+      "slash": 4.9909997,
+      "strike": 4.0796
     },
     "resistances": {
       "focus": 8.889999,
@@ -4668,14 +4668,14 @@
     "name": "Six-Eyed Helm of the Channelers",
     "weight": 3.9,
     "absorptions": {
-      "fire": 41.14,
+      "fire": 4.114,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 43.56,
-      "physical": 48.4,
-      "pierce": 48.4,
-      "slash": 55.176003,
-      "strike": 46.464005
+      "lightning": 3.1460001,
+      "magic": 4.356,
+      "physical": 4.84,
+      "pierce": 4.84,
+      "slash": 5.5176,
+      "strike": 4.6464005
     },
     "resistances": {
       "focus": 18.199999,
@@ -4690,14 +4690,14 @@
     "name": "Smough's Armor",
     "weight": 17.6,
     "absorptions": {
-      "fire": 159.72,
+      "fire": 15.972,
       "holy": 0.0,
-      "lightning": 142.78,
-      "magic": 125.840004,
-      "physical": 256.52002,
-      "pierce": 256.52002,
-      "slash": 294.99802,
-      "strike": 223.17242
+      "lightning": 14.278,
+      "magic": 12.584001,
+      "physical": 25.652002,
+      "pierce": 25.652002,
+      "slash": 29.499802,
+      "strike": 22.317242
     },
     "resistances": {
       "focus": 39.2,
@@ -4712,14 +4712,14 @@
     "name": "Smough's Gauntlets",
     "weight": 10.4,
     "absorptions": {
-      "fire": 96.8,
+      "fire": 9.68,
       "holy": 0.0,
-      "lightning": 79.86,
-      "magic": 75.020004,
-      "physical": 147.62001,
-      "pierce": 147.62001,
-      "slash": 169.763,
-      "strike": 128.4294
+      "lightning": 7.986,
+      "magic": 7.5020003,
+      "physical": 14.762001,
+      "pierce": 14.762001,
+      "slash": 16.9763,
+      "strike": 12.842939
     },
     "resistances": {
       "focus": 22.4,
@@ -4734,14 +4734,14 @@
     "name": "Smough's Helm",
     "weight": 6.8,
     "absorptions": {
-      "fire": 62.920002,
+      "fire": 6.2920003,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 45.980003,
-      "physical": 96.8,
-      "pierce": 96.8,
-      "slash": 111.32,
-      "strike": 84.216
+      "lightning": 5.082,
+      "magic": 4.5980005,
+      "physical": 9.68,
+      "pierce": 9.68,
+      "slash": 11.132,
+      "strike": 8.4216
     },
     "resistances": {
       "focus": 16.8,
@@ -4756,14 +4756,14 @@
     "name": "Smough's Leggings",
     "weight": 10.4,
     "absorptions": {
-      "fire": 96.8,
+      "fire": 9.68,
       "holy": 0.0,
-      "lightning": 79.86,
-      "magic": 75.020004,
-      "physical": 147.62001,
-      "pierce": 147.62001,
-      "slash": 169.763,
-      "strike": 128.4294
+      "lightning": 7.986,
+      "magic": 7.5020003,
+      "physical": 14.762001,
+      "pierce": 14.762001,
+      "slash": 16.9763,
+      "strike": 12.842939
     },
     "resistances": {
       "focus": 22.4,
@@ -4778,14 +4778,14 @@
     "name": "Snickering Top Hat",
     "weight": 2.0,
     "absorptions": {
-      "fire": 13.95,
+      "fire": 1.395,
       "holy": 0.0,
-      "lightning": 18.599998,
-      "magic": 20.15,
-      "physical": 18.599998,
-      "pierce": 18.599998,
-      "slash": 18.599998,
-      "strike": 25.109997
+      "lightning": 1.8599999,
+      "magic": 2.0149999,
+      "physical": 1.8599999,
+      "pierce": 1.8599999,
+      "slash": 1.8599999,
+      "strike": 2.5109997
     },
     "resistances": {
       "focus": 17.779999,
@@ -4800,14 +4800,14 @@
     "name": "Sorcerer Boots",
     "weight": 1.4,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 30.201601,
-      "strike": 31.363201
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 3.0201602,
+      "strike": 3.13632
     },
     "resistances": {
       "focus": 9.8,
@@ -4822,14 +4822,14 @@
     "name": "Sorcerer Cloak",
     "weight": 2.3,
     "absorptions": {
-      "fire": 31.460001,
+      "fire": 3.1460001,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 65.340004,
-      "physical": 48.4,
-      "pierce": 48.4,
-      "slash": 50.336002,
-      "strike": 52.272003
+      "lightning": 4.114,
+      "magic": 6.5340004,
+      "physical": 4.84,
+      "pierce": 4.84,
+      "slash": 5.0336003,
+      "strike": 5.2272005
     },
     "resistances": {
       "focus": 16.8,
@@ -4844,14 +4844,14 @@
     "name": "Sorcerer Gauntlets",
     "weight": 1.4,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 30.201601,
-      "strike": 31.363201
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 3.0201602,
+      "strike": 3.13632
     },
     "resistances": {
       "focus": 9.8,
@@ -4866,14 +4866,14 @@
     "name": "Sorcerer Hat",
     "weight": 0.9,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 24.2,
-      "physical": 19.36,
-      "pierce": 19.36,
-      "slash": 20.134401,
-      "strike": 20.908802
+      "lightning": 1.452,
+      "magic": 2.42,
+      "physical": 1.9360001,
+      "pierce": 1.9360001,
+      "slash": 2.0134401,
+      "strike": 2.0908802
     },
     "resistances": {
       "focus": 7.0,
@@ -4888,14 +4888,14 @@
     "name": "Standard Helm",
     "weight": 3.5,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 7.26,
-      "magic": 19.36,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 38.6232,
-      "strike": 19.3116
+      "lightning": 0.726,
+      "magic": 1.9360001,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.86232,
+      "strike": 1.93116
     },
     "resistances": {
       "focus": 11.2,
@@ -4910,14 +4910,14 @@
     "name": "Steel Armor",
     "weight": 14.0,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 53.24,
-      "physical": 101.64,
-      "pierce": 101.64,
-      "slash": 116.885994,
-      "strike": 95.5416
+      "lightning": 3.1460001,
+      "magic": 5.3240004,
+      "physical": 10.164,
+      "pierce": 10.164,
+      "slash": 11.6886,
+      "strike": 9.55416
     },
     "resistances": {
       "focus": 22.4,
@@ -4932,14 +4932,14 @@
     "name": "Steel Gauntlets",
     "weight": 8.3,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 31.460001,
-      "physical": 60.5,
-      "pierce": 60.5,
-      "slash": 69.575,
-      "strike": 56.87
+      "lightning": 1.9360001,
+      "magic": 3.1460001,
+      "physical": 6.05,
+      "pierce": 6.05,
+      "slash": 6.9574995,
+      "strike": 5.687
     },
     "resistances": {
       "focus": 12.599999,
@@ -4954,14 +4954,14 @@
     "name": "Steel Helm",
     "weight": 5.4,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 12.1,
-      "magic": 19.36,
-      "physical": 38.72,
-      "pierce": 38.72,
-      "slash": 44.528004,
-      "strike": 36.3968
+      "lightning": 1.21,
+      "magic": 1.9360001,
+      "physical": 3.8720002,
+      "pierce": 3.8720002,
+      "slash": 4.4528003,
+      "strike": 3.6396801
     },
     "resistances": {
       "focus": 8.4,
@@ -4976,14 +4976,14 @@
     "name": "Steel Leggings",
     "weight": 8.3,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 19.36,
-      "magic": 31.460001,
-      "physical": 60.5,
-      "pierce": 60.5,
-      "slash": 69.575,
-      "strike": 56.87
+      "lightning": 1.9360001,
+      "magic": 3.1460001,
+      "physical": 6.05,
+      "pierce": 6.05,
+      "slash": 6.9574995,
+      "strike": 5.687
     },
     "resistances": {
       "focus": 12.599999,
@@ -4998,14 +4998,14 @@
     "name": "Stone Armor",
     "weight": 17.6,
     "absorptions": {
-      "fire": 130.68001,
+      "fire": 13.068001,
       "holy": 0.0,
-      "lightning": 130.68001,
-      "magic": 108.9,
-      "physical": 220.22,
-      "pierce": 220.22,
-      "slash": 253.253,
-      "strike": 207.00679
+      "lightning": 13.068001,
+      "magic": 10.89,
+      "physical": 22.022,
+      "pierce": 22.022,
+      "slash": 25.3253,
+      "strike": 20.70068
     },
     "resistances": {
       "focus": 22.4,
@@ -5020,14 +5020,14 @@
     "name": "Stone Gauntlets",
     "weight": 10.4,
     "absorptions": {
-      "fire": 79.86,
+      "fire": 7.986,
       "holy": 0.0,
-      "lightning": 79.86,
-      "magic": 65.340004,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 150.28201,
-      "strike": 122.83921
+      "lightning": 7.986,
+      "magic": 6.5340004,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.028201,
+      "strike": 12.283921
     },
     "resistances": {
       "focus": 14.0,
@@ -5042,14 +5042,14 @@
     "name": "Stone Helm",
     "weight": 6.8,
     "absorptions": {
-      "fire": 50.82,
+      "fire": 5.082,
       "holy": 0.0,
-      "lightning": 50.82,
-      "magic": 41.14,
-      "physical": 84.700005,
-      "pierce": 84.7,
-      "slash": 97.40501,
-      "strike": 79.618004
+      "lightning": 5.082,
+      "magic": 4.114,
+      "physical": 8.47,
+      "pierce": 8.469999,
+      "slash": 9.7405,
+      "strike": 7.9618006
     },
     "resistances": {
       "focus": 8.4,
@@ -5064,14 +5064,14 @@
     "name": "Stone Leggings",
     "weight": 10.4,
     "absorptions": {
-      "fire": 79.86,
+      "fire": 7.986,
       "holy": 0.0,
-      "lightning": 79.86,
-      "magic": 65.340004,
-      "physical": 130.68001,
-      "pierce": 130.68001,
-      "slash": 150.28201,
-      "strike": 122.83921
+      "lightning": 7.986,
+      "magic": 6.5340004,
+      "physical": 13.068001,
+      "pierce": 13.068001,
+      "slash": 15.028201,
+      "strike": 12.283921
     },
     "resistances": {
       "focus": 14.0,
@@ -5086,14 +5086,14 @@
     "name": "Sunlight Maggot",
     "weight": 1.4,
     "absorptions": {
-      "fire": 58.08,
+      "fire": 5.808,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 12.1,
-      "physical": 14.52,
-      "pierce": 14.52,
-      "slash": 14.52,
-      "strike": 14.52
+      "lightning": 3.1460001,
+      "magic": 1.21,
+      "physical": 1.452,
+      "pierce": 1.452,
+      "slash": 1.452,
+      "strike": 1.452
     },
     "resistances": {
       "focus": 0.0,
@@ -5108,14 +5108,14 @@
     "name": "Symbol of Avarice",
     "weight": 10.0,
     "absorptions": {
-      "fire": 4.84,
+      "fire": 0.48400003,
       "holy": 0.0,
-      "lightning": 4.84,
-      "magic": 19.36,
-      "physical": 50.82,
-      "pierce": 50.82,
-      "slash": 50.82,
-      "strike": 26.4264
+      "lightning": 0.48400003,
+      "magic": 1.9360001,
+      "physical": 5.082,
+      "pierce": 5.082,
+      "slash": 5.082,
+      "strike": 2.6426399
     },
     "resistances": {
       "focus": 0.0,
@@ -5130,14 +5130,14 @@
     "name": "Tattered Cloth Hood",
     "weight": 1.1,
     "absorptions": {
-      "fire": 29.04,
+      "fire": 2.904,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 21.78,
-      "physical": 19.36,
-      "pierce": 19.36,
-      "slash": 19.36,
-      "strike": 21.4896
+      "lightning": 1.452,
+      "magic": 2.178,
+      "physical": 1.9360001,
+      "pierce": 1.9360001,
+      "slash": 1.9360001,
+      "strike": 2.1489599
     },
     "resistances": {
       "focus": 32.2,
@@ -5152,14 +5152,14 @@
     "name": "Tattered Cloth Manchette",
     "weight": 1.6,
     "absorptions": {
-      "fire": 43.56,
+      "fire": 4.356,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 33.88,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 29.04,
-      "strike": 32.2344
+      "lightning": 2.42,
+      "magic": 3.388,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 2.904,
+      "strike": 3.2234402
     },
     "resistances": {
       "focus": 49.0,
@@ -5174,14 +5174,14 @@
     "name": "Tattered Cloth Robe",
     "weight": 2.7,
     "absorptions": {
-      "fire": 72.600006,
+      "fire": 7.2600007,
       "holy": 0.0,
-      "lightning": 41.14,
-      "magic": 55.660004,
-      "physical": 50.82,
-      "pierce": 50.82,
-      "slash": 50.82,
-      "strike": 56.410202
+      "lightning": 4.114,
+      "magic": 5.5660005,
+      "physical": 5.082,
+      "pierce": 5.082,
+      "slash": 5.082,
+      "strike": 5.6410203
     },
     "resistances": {
       "focus": 82.6,
@@ -5196,14 +5196,14 @@
     "name": "Thief Mask",
     "weight": 1.2,
     "absorptions": {
-      "fire": 12.1,
+      "fire": 1.21,
       "holy": 0.0,
-      "lightning": 14.52,
-      "magic": 19.36,
-      "physical": 21.78,
-      "pierce": 21.78,
-      "slash": 21.78,
-      "strike": 23.3046
+      "lightning": 1.452,
+      "magic": 1.9360001,
+      "physical": 2.178,
+      "pierce": 2.178,
+      "slash": 2.178,
+      "strike": 2.33046
     },
     "resistances": {
       "focus": 16.8,
@@ -5218,14 +5218,14 @@
     "name": "Traveling Boots",
     "weight": 1.6,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 30.201601,
-      "strike": 31.363201
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 3.0201602,
+      "strike": 3.13632
     },
     "resistances": {
       "focus": 19.6,
@@ -5240,14 +5240,14 @@
     "name": "Traveling Gloves",
     "weight": 1.6,
     "absorptions": {
-      "fire": 19.36,
+      "fire": 1.9360001,
       "holy": 0.0,
-      "lightning": 24.2,
-      "magic": 38.72,
-      "physical": 29.04,
-      "pierce": 29.04,
-      "slash": 30.201601,
-      "strike": 31.363201
+      "lightning": 2.42,
+      "magic": 3.8720002,
+      "physical": 2.904,
+      "pierce": 2.904,
+      "slash": 3.0201602,
+      "strike": 3.13632
     },
     "resistances": {
       "focus": 19.6,
@@ -5262,14 +5262,14 @@
     "name": "Waistcloth of the Channelers",
     "weight": 6.0,
     "absorptions": {
-      "fire": 65.340004,
+      "fire": 6.5340004,
       "holy": 0.0,
-      "lightning": 48.4,
-      "magic": 65.340004,
-      "physical": 77.44,
-      "pierce": 77.44,
-      "slash": 88.2816,
-      "strike": 74.3424
+      "lightning": 4.84,
+      "magic": 6.5340004,
+      "physical": 7.7440004,
+      "pierce": 7.7440004,
+      "slash": 8.82816,
+      "strike": 7.43424
     },
     "resistances": {
       "focus": 28.0,
@@ -5284,14 +5284,14 @@
     "name": "Wanderer Boots",
     "weight": 2.1,
     "absorptions": {
-      "fire": 36.300003,
+      "fire": 3.6300004,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 29.04,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 36.251602,
-      "strike": 36.251602
+      "lightning": 3.1460001,
+      "magic": 2.904,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.6251602,
+      "strike": 3.6251602
     },
     "resistances": {
       "focus": 18.199999,
@@ -5306,14 +5306,14 @@
     "name": "Wanderer Coat",
     "weight": 3.5,
     "absorptions": {
-      "fire": 62.920002,
+      "fire": 6.2920003,
       "holy": 0.0,
-      "lightning": 55.660004,
-      "magic": 50.82,
-      "physical": 55.660004,
-      "pierce": 55.660004,
-      "slash": 59.556206,
-      "strike": 59.556206
+      "lightning": 5.5660005,
+      "magic": 5.082,
+      "physical": 5.5660005,
+      "pierce": 5.5660005,
+      "slash": 5.955621,
+      "strike": 5.955621
     },
     "resistances": {
       "focus": 29.4,
@@ -5328,14 +5328,14 @@
     "name": "Wanderer Hood",
     "weight": 1.4,
     "absorptions": {
-      "fire": 24.2,
+      "fire": 2.42,
       "holy": 0.0,
-      "lightning": 21.78,
-      "magic": 19.36,
-      "physical": 21.78,
-      "pierce": 21.78,
-      "slash": 23.3046,
-      "strike": 23.3046
+      "lightning": 2.178,
+      "magic": 1.9360001,
+      "physical": 2.178,
+      "pierce": 2.178,
+      "slash": 2.33046,
+      "strike": 2.33046
     },
     "resistances": {
       "focus": 11.2,
@@ -5350,14 +5350,14 @@
     "name": "Wanderer Manchette",
     "weight": 2.1,
     "absorptions": {
-      "fire": 36.300003,
+      "fire": 3.6300004,
       "holy": 0.0,
-      "lightning": 31.460001,
-      "magic": 29.04,
-      "physical": 33.88,
-      "pierce": 33.88,
-      "slash": 36.251602,
-      "strike": 36.251602
+      "lightning": 3.1460001,
+      "magic": 2.904,
+      "physical": 3.388,
+      "pierce": 3.388,
+      "slash": 3.6251602,
+      "strike": 3.6251602
     },
     "resistances": {
       "focus": 18.199999,
@@ -5372,14 +5372,14 @@
     "name": "Witch Cloak",
     "weight": 4.0,
     "absorptions": {
-      "fire": 31.0,
+      "fire": 3.1,
       "holy": 0.0,
-      "lightning": 40.3,
-      "magic": 66.65,
-      "physical": 51.149998,
-      "pierce": 51.15,
-      "slash": 51.15,
-      "strike": 56.7765
+      "lightning": 4.0299997,
+      "magic": 6.665,
+      "physical": 5.115,
+      "pierce": 5.1150002,
+      "slash": 5.1150002,
+      "strike": 5.67765
     },
     "resistances": {
       "focus": 45.72,
@@ -5394,14 +5394,14 @@
     "name": "Witch Gloves",
     "weight": 1.7,
     "absorptions": {
-      "fire": 13.95,
+      "fire": 1.395,
       "holy": 0.0,
-      "lightning": 17.05,
-      "magic": 27.9,
-      "physical": 21.699999,
-      "pierce": 21.7,
-      "slash": 21.7,
-      "strike": 24.087
+      "lightning": 1.7049999,
+      "magic": 2.79,
+      "physical": 2.1699998,
+      "pierce": 2.17,
+      "slash": 2.17,
+      "strike": 2.4087
     },
     "resistances": {
       "focus": 20.32,
@@ -5416,14 +5416,14 @@
     "name": "Witch Hat",
     "weight": 1.1,
     "absorptions": {
-      "fire": 9.299999,
+      "fire": 0.92999995,
       "holy": 0.0,
-      "lightning": 10.849999,
-      "magic": 18.599998,
-      "physical": 13.95,
-      "pierce": 13.95,
-      "slash": 13.95,
-      "strike": 15.4845
+      "lightning": 1.0849999,
+      "magic": 1.8599999,
+      "physical": 1.395,
+      "pierce": 1.395,
+      "slash": 1.395,
+      "strike": 1.54845
     },
     "resistances": {
       "focus": 12.7,
@@ -5438,14 +5438,14 @@
     "name": "Witch Skirt",
     "weight": 2.5,
     "absorptions": {
-      "fire": 18.599998,
+      "fire": 1.8599999,
       "holy": 0.0,
-      "lightning": 26.349998,
-      "magic": 41.85,
-      "physical": 26.349998,
-      "pierce": 26.349998,
-      "slash": 26.349998,
-      "strike": 29.248499
+      "lightning": 2.6349998,
+      "magic": 4.185,
+      "physical": 2.6349998,
+      "pierce": 2.6349998,
+      "slash": 2.6349998,
+      "strike": 2.92485
     },
     "resistances": {
       "focus": 35.559998,
@@ -5460,14 +5460,14 @@
     "name": "Xanthous Crown",
     "weight": 5.0,
     "absorptions": {
-      "fire": 4.6499996,
+      "fire": 0.46499997,
       "holy": 0.0,
-      "lightning": 12.4,
-      "magic": 23.25,
-      "physical": 27.9,
-      "pierce": 23.715,
-      "slash": 27.9,
-      "strike": 42.966
+      "lightning": 1.24,
+      "magic": 2.325,
+      "physical": 2.79,
+      "pierce": 2.3715,
+      "slash": 2.79,
+      "strike": 4.2966
     },
     "resistances": {
       "focus": 13.969999,
@@ -5482,14 +5482,14 @@
     "name": "Xanthous Gloves",
     "weight": 2.3,
     "absorptions": {
-      "fire": 6.2,
+      "fire": 0.62,
       "holy": 0.0,
-      "lightning": 21.699999,
-      "magic": 34.1,
-      "physical": 27.9,
-      "pierce": 25.389,
-      "slash": 27.9,
-      "strike": 31.248001
+      "lightning": 2.1699998,
+      "magic": 3.4099998,
+      "physical": 2.79,
+      "pierce": 2.5389,
+      "slash": 2.79,
+      "strike": 3.1248002
     },
     "resistances": {
       "focus": 22.86,
@@ -5504,14 +5504,14 @@
     "name": "Xanthous Overcoat",
     "weight": 3.9,
     "absorptions": {
-      "fire": 10.849999,
+      "fire": 1.0849999,
       "holy": 0.0,
-      "lightning": 35.649998,
-      "magic": 57.35,
-      "physical": 49.6,
-      "pierce": 45.136,
-      "slash": 49.6,
-      "strike": 55.552
+      "lightning": 3.5649998,
+      "magic": 5.7349997,
+      "physical": 4.96,
+      "pierce": 4.5136003,
+      "slash": 4.96,
+      "strike": 5.5551996
     },
     "resistances": {
       "focus": 36.829998,
@@ -5526,14 +5526,14 @@
     "name": "Xanthous Waistcloth",
     "weight": 4.0,
     "absorptions": {
-      "fire": 10.849999,
+      "fire": 1.0849999,
       "holy": 0.0,
-      "lightning": 35.649998,
-      "magic": 60.449997,
-      "physical": 49.6,
-      "pierce": 45.136,
-      "slash": 49.6,
-      "strike": 55.552
+      "lightning": 3.5649998,
+      "magic": 6.0449996,
+      "physical": 4.96,
+      "pierce": 4.5136003,
+      "slash": 4.96,
+      "strike": 5.5551996
     },
     "resistances": {
       "focus": 38.1,
