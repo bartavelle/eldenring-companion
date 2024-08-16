@@ -75,6 +75,7 @@ enum Command {
         #[arg(short, long, help = "Amount of weapons to display", default_value_t = 30)]
         limit: usize,
     },
+    BadArmors,
 }
 
 fn load_names(dir: &Path, name: &str) -> anyhow::Result<HashMap<u32, String>> {
@@ -296,6 +297,33 @@ fn main() -> anyhow::Result<()> {
             path.push("index.json");
             let mut fo = std::fs::File::create(path).unwrap();
             serde_json::to_writer(&mut fo, &params).unwrap();
+        }
+        Command::BadArmors => {
+            let armor_names = load_names(&args.data, "EquipParamProtector.txt")?;
+            let armor = soulsformats::armor::load_armor(&regulations, &armor_names)?;
+            // find all armor where all resistantes are worse than another armor, but weight is higher or equal
+            for worst in armor.values() {
+                for better in armor.values() {
+                    if worst.absorptions.fire <= better.absorptions.fire
+                        && worst.absorptions.holy <= better.absorptions.holy
+                        && worst.absorptions.lightning <= better.absorptions.lightning
+                        && worst.absorptions.magic <= better.absorptions.magic
+                        && worst.absorptions.physical <= better.absorptions.physical
+                        && worst.absorptions.pierce <= better.absorptions.pierce
+                        && worst.absorptions.slash <= better.absorptions.slash
+                        && worst.absorptions.strike <= better.absorptions.strike
+                        && worst.category == better.category
+                        && worst.resistances.focus <= better.resistances.focus
+                        && worst.resistances.poise <= better.resistances.poise
+                        && worst.resistances.robustness <= better.resistances.robustness
+                        && worst.resistances.immunity <= better.resistances.immunity
+                        && worst.resistances.vitality <= better.resistances.vitality
+                        && worst.weight > better.weight
+                    {
+                        println!("{} < {}", worst.name, better.name);
+                    }
+                }
+            }
         }
     }
 
